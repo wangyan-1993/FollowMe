@@ -1,41 +1,25 @@
 //
-//  TravelViewController.m
+//  ThirdTravelViewController.m
 //  FollowMe
 //
 //  Created by SCJY on 16/3/15.
 //  Copyright © 2016年 SCJY. All rights reserved.
 //
 
-#import "TravelViewController.h"
-#import "SecondTravelViewController.h"
-@interface TravelViewController ()<UIWebViewDelegate>
+#import "ThirdTravelViewController.h"
+
+@interface ThirdTravelViewController ()<UIWebViewDelegate>
 @property(nonatomic, strong) UIWebView *webView;
 @end
 
-@implementation TravelViewController
+@implementation ThirdTravelViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSURL *url = [[NSURL alloc]initWithString:@"http://web.breadtrip.com/product/topics/"];
+    NSURL *url = [[NSURL alloc]initWithString:self.string];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     [self.view addSubview:self.webView];
-}
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    NSLog(@"%@", request);
-//    switch (navigationType) {
-//        case UIWebViewNavigationTypeOther:
-//        {
-//            SecondTravelViewController *secondTVC = [[SecondTravelViewController alloc]init];
-//            secondTVC.string = [NSString stringWithFormat:@"%@", request];
-//            [self.navigationController pushViewController:secondTVC animated:YES];
-//        }
-//            break;
-//            
-//        default:
-//            break;
-//    }
-    return YES;
 }
 - (UIWebView *)webView{
     if (_webView == nil) {
@@ -44,6 +28,7 @@
     }
     return _webView;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
