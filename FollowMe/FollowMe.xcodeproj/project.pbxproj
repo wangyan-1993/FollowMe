@@ -70,6 +70,12 @@
 			children = (
 				7A422B151C97EAB800B51C11 /* AppDelegate.h */,
 				7A422B161C97EAB800B51C11 /* AppDelegate.m */,
+				7A4780A51C97EEBB00C6E5C2 /* City */,
+				7A4780A91C97EEBB00C6E5C2 /* Library */,
+				7A4780AA1C97EEBB00C6E5C2 /* Mine */,
+				7A4780AE1C97EEBB00C6E5C2 /* Plus */,
+				7A4780B21C97EEBB00C6E5C2 /* Recommend */,
+				7A4780B61C97EEBB00C6E5C2 /* Travel */,
 				7A422B181C97EAB800B51C11 /* Assets.xcassets */,
 				7A422B1A1C97EAB800B51C11 /* LaunchScreen.storyboard */,
 				7A422B1D1C97EAB800B51C11 /* Info.plist */,
@@ -84,6 +90,168 @@
 				7A422B131C97EAB800B51C11 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7A4780A51C97EEBB00C6E5C2 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				7A4780A61C97EEBB00C6E5C2 /* Controllers */,
+				7A4780A71C97EEBB00C6E5C2 /* Models */,
+				7A4780A81C97EEBB00C6E5C2 /* Views */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		7A4780A61C97EEBB00C6E5C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7A4780A71C97EEBB00C6E5C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A4780A81C97EEBB00C6E5C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A4780A91C97EEBB00C6E5C2 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		7A4780AA1C97EEBB00C6E5C2 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				7A4780AB1C97EEBB00C6E5C2 /* Controllers */,
+				7A4780AC1C97EEBB00C6E5C2 /* Models */,
+				7A4780AD1C97EEBB00C6E5C2 /* Views */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		7A4780AB1C97EEBB00C6E5C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7A4780AC1C97EEBB00C6E5C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A4780AD1C97EEBB00C6E5C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A4780AE1C97EEBB00C6E5C2 /* Plus */ = {
+			isa = PBXGroup;
+			children = (
+				7A4780AF1C97EEBB00C6E5C2 /* Controllers */,
+				7A4780B01C97EEBB00C6E5C2 /* Models */,
+				7A4780B11C97EEBB00C6E5C2 /* Views */,
+			);
+			path = Plus;
+			sourceTree = "<group>";
+		};
+		7A4780AF1C97EEBB00C6E5C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7A4780B01C97EEBB00C6E5C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A4780B11C97EEBB00C6E5C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A4780B21C97EEBB00C6E5C2 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				7A4780B31C97EEBB00C6E5C2 /* Controllers */,
+				7A4780B41C97EEBB00C6E5C2 /* Models */,
+				7A4780B51C97EEBB00C6E5C2 /* Views */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		7A4780B31C97EEBB00C6E5C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7A4780B41C97EEBB00C6E5C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A4780B51C97EEBB00C6E5C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A4780B61C97EEBB00C6E5C2 /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				7A4780B71C97EEBB00C6E5C2 /* Controllers */,
+				7A4780B81C97EEBB00C6E5C2 /* Models */,
+				7A4780B91C97EEBB00C6E5C2 /* Views */,
+			);
+			path = Travel;
+			sourceTree = "<group>";
+		};
+		7A4780B71C97EEBB00C6E5C2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7A4780B81C97EEBB00C6E5C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A4780B91C97EEBB00C6E5C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EF18E5F6C389E731AE4CF69C /* Pods */ = {
