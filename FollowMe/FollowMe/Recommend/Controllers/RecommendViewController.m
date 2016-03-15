@@ -18,10 +18,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+<<<<<<< HEAD
 //设置背景颜色
     self.view.backgroundColor = [UIColor cyanColor];
 //请求数据
     [self workOne];
+=======
+>>>>>>> 62a41e9dc665b3acb1a68929f7b9dcc9531401ca
 }
 #pragma mark -------------请求网络数据---------------
 - (void)workOne{

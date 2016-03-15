@@ -361,7 +361,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				7A2B4A741C98177E005B699B /* recommend.plist in Resources */,
+=======
+>>>>>>> 62a41e9dc665b3acb1a68929f7b9dcc9531401ca
 				7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */,
 				7A422B1C1C97EAB800B51C11 /* LaunchScreen.storyboard in Resources */,
 			);
