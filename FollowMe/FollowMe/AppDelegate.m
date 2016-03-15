@@ -7,9 +7,13 @@
 //
 
 #import "AppDelegate.h"
-
-@interface AppDelegate ()
-
+#import "RecommendViewController.h"
+#import "CityViewController.h"
+#import "MineViewController.h"
+#import "PlusViewController.h"
+#import "TravelViewController.h"
+@interface AppDelegate ()<UITabBarControllerDelegate>
+@property(nonatomic, strong) UITabBarController *tabBarVC;
 @end
 
 @implementation AppDelegate
@@ -18,6 +22,51 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    self.tabBarVC = [[UITabBarController alloc]init];
+    self.tabBarVC.delegate = self;
+    RecommendViewController *recommendVC = [[RecommendViewController alloc]init];
+    UINavigationController *recommendNav = [[UINavigationController alloc]initWithRootViewController:recommendVC];
+    recommendNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_explore_normal.9"];
+    
+    UIImage *select1 = [UIImage imageNamed:@"tabbar_explore_selected.9"];
+    recommendNav.tabBarItem.selectedImage = [select1 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    CityViewController *cityVC = [[CityViewController alloc]init];
+    UINavigationController *cityNav = [[UINavigationController alloc]initWithRootViewController:cityVC];
+    cityNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_cityhunter_normal.9"];
+    
+    UIImage *select2 = [UIImage imageNamed:@"tabbar_cityhunter_selected.9"];
+    cityNav.tabBarItem.selectedImage = [select2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+    
+    TravelViewController *travelVC = [[TravelViewController alloc]init];
+    UINavigationController *travelNav = [[UINavigationController alloc]initWithRootViewController:travelVC];
+    travelNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_cityhunter_normal.9"];
+    
+    UIImage *select3 = [UIImage imageNamed:@"tabbar_cityhunter_selected.9"];
+    travelNav.tabBarItem.selectedImage = [select3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+    
+   MineViewController *mineVC = [[MineViewController alloc]init];
+    UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mineVC];
+    mineNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_cityhunter_normal.9"];
+    
+    UIImage *select4 = [UIImage imageNamed:@"tabbar_cityhunter_selected.9"];
+    mineNav.tabBarItem.selectedImage = [select4 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+    PlusViewController *plusVC = [[PlusViewController alloc]init];
+    UINavigationController *plusNav = [[UINavigationController alloc]initWithRootViewController:plusVC];
+    plusNav.tabBarItem.image = [UIImage imageNamed:@"add_spot_normal"];
+    
+    UIImage *select5 = [UIImage imageNamed:@"add_spot_pressed"];
+    plusNav.tabBarItem.selectedImage = [select5 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    self.tabBarVC.viewControllers = @[recommendNav, cityVC, plusNav, travelNav, mineNav];
+    self.tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
+    self.window.rootViewController = self.tabBarVC;
+
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

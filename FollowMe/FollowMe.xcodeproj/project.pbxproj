@@ -12,6 +12,19 @@
 		7A422B171C97EAB800B51C11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A422B161C97EAB800B51C11 /* AppDelegate.m */; };
 		7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A422B181C97EAB800B51C11 /* Assets.xcassets */; };
 		7A422B1C1C97EAB800B51C11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A422B1A1C97EAB800B51C11 /* LaunchScreen.storyboard */; };
+		7A4780BC1C97F09100C6E5C2 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4780BB1C97F09100C6E5C2 /* RecommendViewController.m */; };
+		7A4780BF1C97F0AD00C6E5C2 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4780BE1C97F0AD00C6E5C2 /* CityViewController.m */; };
+		7A4780C21C97F0C000C6E5C2 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4780C11C97F0C000C6E5C2 /* MineViewController.m */; };
+		7A4780C51C97F0CF00C6E5C2 /* PlusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4780C41C97F0CF00C6E5C2 /* PlusViewController.m */; };
+		7A4780C81C97F0E200C6E5C2 /* TravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4780C71C97F0E200C6E5C2 /* TravelViewController.m */; };
+		7A4780D11C97F6CD00C6E5C2 /* tabbar_cityhunter_normal.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4780C91C97F6CD00C6E5C2 /* tabbar_cityhunter_normal.9.png */; };
+		7A4780D21C97F6CD00C6E5C2 /* tabbar_cityhunter_selected.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4780CA1C97F6CD00C6E5C2 /* tabbar_cityhunter_selected.9.png */; };
+		7A4780D31C97F6CD00C6E5C2 /* tabbar_destination_normal.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4780CB1C97F6CD00C6E5C2 /* tabbar_destination_normal.9.png */; };
+		7A4780D41C97F6CD00C6E5C2 /* tabbar_destination_selected.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4780CC1C97F6CD00C6E5C2 /* tabbar_destination_selected.9.png */; };
+		7A4780D51C97F6CD00C6E5C2 /* tabbar_explore_normal.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4780CD1C97F6CD00C6E5C2 /* tabbar_explore_normal.9.png */; };
+		7A4780D61C97F6CD00C6E5C2 /* tabbar_explore_selected.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4780CE1C97F6CD00C6E5C2 /* tabbar_explore_selected.9.png */; };
+		7A4780D71C97F6CD00C6E5C2 /* tabbar_me_normal.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4780CF1C97F6CD00C6E5C2 /* tabbar_me_normal.9.png */; };
+		7A4780D81C97F6CD00C6E5C2 /* tabbar_me_selected.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4780D01C97F6CD00C6E5C2 /* tabbar_me_selected.9.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,9 +33,27 @@
 		7A422B131C97EAB800B51C11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A422B151C97EAB800B51C11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7A422B161C97EAB800B51C11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7A422B181C97EAB800B51C11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A422B181C97EAB800B51C11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		7A422B1B1C97EAB800B51C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A422B1D1C97EAB800B51C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A4780BA1C97F09100C6E5C2 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		7A4780BB1C97F09100C6E5C2 /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		7A4780BD1C97F0AD00C6E5C2 /* CityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityViewController.h; sourceTree = "<group>"; };
+		7A4780BE1C97F0AD00C6E5C2 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
+		7A4780C01C97F0C000C6E5C2 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		7A4780C11C97F0C000C6E5C2 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		7A4780C31C97F0CF00C6E5C2 /* PlusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlusViewController.h; sourceTree = "<group>"; };
+		7A4780C41C97F0CF00C6E5C2 /* PlusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlusViewController.m; sourceTree = "<group>"; };
+		7A4780C61C97F0E200C6E5C2 /* TravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelViewController.h; sourceTree = "<group>"; };
+		7A4780C71C97F0E200C6E5C2 /* TravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelViewController.m; sourceTree = "<group>"; };
+		7A4780C91C97F6CD00C6E5C2 /* tabbar_cityhunter_normal.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_cityhunter_normal.9.png; sourceTree = "<group>"; };
+		7A4780CA1C97F6CD00C6E5C2 /* tabbar_cityhunter_selected.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_cityhunter_selected.9.png; sourceTree = "<group>"; };
+		7A4780CB1C97F6CD00C6E5C2 /* tabbar_destination_normal.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_destination_normal.9.png; sourceTree = "<group>"; };
+		7A4780CC1C97F6CD00C6E5C2 /* tabbar_destination_selected.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_destination_selected.9.png; sourceTree = "<group>"; };
+		7A4780CD1C97F6CD00C6E5C2 /* tabbar_explore_normal.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_explore_normal.9.png; sourceTree = "<group>"; };
+		7A4780CE1C97F6CD00C6E5C2 /* tabbar_explore_selected.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_explore_selected.9.png; sourceTree = "<group>"; };
+		7A4780CF1C97F6CD00C6E5C2 /* tabbar_me_normal.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_me_normal.9.png; sourceTree = "<group>"; };
+		7A4780D01C97F6CD00C6E5C2 /* tabbar_me_selected.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_me_selected.9.png; sourceTree = "<group>"; };
 		9CE4DD61D59F51D056051F5E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C6BB71441200E7E1032CFB63 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,13 +101,12 @@
 			children = (
 				7A422B151C97EAB800B51C11 /* AppDelegate.h */,
 				7A422B161C97EAB800B51C11 /* AppDelegate.m */,
+				7A4780B21C97EEBB00C6E5C2 /* Recommend */,
 				7A4780A51C97EEBB00C6E5C2 /* City */,
-				7A4780A91C97EEBB00C6E5C2 /* Library */,
 				7A4780AA1C97EEBB00C6E5C2 /* Mine */,
 				7A4780AE1C97EEBB00C6E5C2 /* Plus */,
-				7A4780B21C97EEBB00C6E5C2 /* Recommend */,
+				7A4780A91C97EEBB00C6E5C2 /* Library */,
 				7A4780B61C97EEBB00C6E5C2 /* Travel */,
-				7A422B181C97EAB800B51C11 /* Assets.xcassets */,
 				7A422B1A1C97EAB800B51C11 /* LaunchScreen.storyboard */,
 				7A422B1D1C97EAB800B51C11 /* Info.plist */,
 				7A422B121C97EAB700B51C11 /* Supporting Files */,
@@ -105,6 +135,8 @@
 		7A4780A61C97EEBB00C6E5C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A4780BD1C97F0AD00C6E5C2 /* CityViewController.h */,
+				7A4780BE1C97F0AD00C6E5C2 /* CityViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +175,8 @@
 		7A4780AB1C97EEBB00C6E5C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A4780C01C97F0C000C6E5C2 /* MineViewController.h */,
+				7A4780C11C97F0C000C6E5C2 /* MineViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +208,8 @@
 		7A4780AF1C97EEBB00C6E5C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A4780C31C97F0CF00C6E5C2 /* PlusViewController.h */,
+				7A4780C41C97F0CF00C6E5C2 /* PlusViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -205,6 +241,8 @@
 		7A4780B31C97EEBB00C6E5C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A4780BA1C97F09100C6E5C2 /* RecommendViewController.h */,
+				7A4780BB1C97F09100C6E5C2 /* RecommendViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +264,15 @@
 		7A4780B61C97EEBB00C6E5C2 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				7A4780C91C97F6CD00C6E5C2 /* tabbar_cityhunter_normal.9.png */,
+				7A4780CA1C97F6CD00C6E5C2 /* tabbar_cityhunter_selected.9.png */,
+				7A4780CB1C97F6CD00C6E5C2 /* tabbar_destination_normal.9.png */,
+				7A4780CC1C97F6CD00C6E5C2 /* tabbar_destination_selected.9.png */,
+				7A4780CD1C97F6CD00C6E5C2 /* tabbar_explore_normal.9.png */,
+				7A4780CE1C97F6CD00C6E5C2 /* tabbar_explore_selected.9.png */,
+				7A4780CF1C97F6CD00C6E5C2 /* tabbar_me_normal.9.png */,
+				7A4780D01C97F6CD00C6E5C2 /* tabbar_me_selected.9.png */,
+				7A422B181C97EAB800B51C11 /* Assets.xcassets */,
 				7A4780B71C97EEBB00C6E5C2 /* Controllers */,
 				7A4780B81C97EEBB00C6E5C2 /* Models */,
 				7A4780B91C97EEBB00C6E5C2 /* Views */,
@@ -236,6 +283,8 @@
 		7A4780B71C97EEBB00C6E5C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A4780C61C97F0E200C6E5C2 /* TravelViewController.h */,
+				7A4780C71C97F0E200C6E5C2 /* TravelViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -323,8 +372,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4780D21C97F6CD00C6E5C2 /* tabbar_cityhunter_selected.9.png in Resources */,
+				7A4780D81C97F6CD00C6E5C2 /* tabbar_me_selected.9.png in Resources */,
+				7A4780D61C97F6CD00C6E5C2 /* tabbar_explore_selected.9.png in Resources */,
+				7A4780D71C97F6CD00C6E5C2 /* tabbar_me_normal.9.png in Resources */,
+				7A4780D11C97F6CD00C6E5C2 /* tabbar_cityhunter_normal.9.png in Resources */,
 				7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */,
 				7A422B1C1C97EAB800B51C11 /* LaunchScreen.storyboard in Resources */,
+				7A4780D41C97F6CD00C6E5C2 /* tabbar_destination_selected.9.png in Resources */,
+				7A4780D51C97F6CD00C6E5C2 /* tabbar_explore_normal.9.png in Resources */,
+				7A4780D31C97F6CD00C6E5C2 /* tabbar_destination_normal.9.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +441,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A422B171C97EAB800B51C11 /* AppDelegate.m in Sources */,
+				7A4780C81C97F0E200C6E5C2 /* TravelViewController.m in Sources */,
 				7A422B141C97EAB800B51C11 /* main.m in Sources */,
+				7A4780C21C97F0C000C6E5C2 /* MineViewController.m in Sources */,
+				7A4780BC1C97F09100C6E5C2 /* RecommendViewController.m in Sources */,
+				7A4780C51C97F0CF00C6E5C2 /* PlusViewController.m in Sources */,
+				7A4780BF1C97F0AD00C6E5C2 /* CityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
