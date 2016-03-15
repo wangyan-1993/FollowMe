@@ -27,43 +27,31 @@
     self.tabBarVC.delegate = self;
     RecommendViewController *recommendVC = [[RecommendViewController alloc]init];
     UINavigationController *recommendNav = [[UINavigationController alloc]initWithRootViewController:recommendVC];
-    recommendNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_explore_normal.9"];
-    
-    UIImage *select1 = [UIImage imageNamed:@"tabbar_explore_selected.9"];
-    recommendNav.tabBarItem.selectedImage = [select1 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
+    recommendNav.tabBarItem.image = [UIImage imageNamed:@"heart"];
+    recommendNav.tabBarItem.title = @"推荐";
     CityViewController *cityVC = [[CityViewController alloc]init];
     UINavigationController *cityNav = [[UINavigationController alloc]initWithRootViewController:cityVC];
-    cityNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_cityhunter_normal.9"];
-    
-    UIImage *select2 = [UIImage imageNamed:@"tabbar_cityhunter_selected.9"];
-    cityNav.tabBarItem.selectedImage = [select2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-
+    cityNav.tabBarItem.image = [UIImage imageNamed:@"28-star"];
+cityNav.tabBarItem.title = @"城市猎人";
     
     TravelViewController *travelVC = [[TravelViewController alloc]init];
     UINavigationController *travelNav = [[UINavigationController alloc]initWithRootViewController:travelVC];
-    travelNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_cityhunter_normal.9"];
-    
-    UIImage *select3 = [UIImage imageNamed:@"tabbar_cityhunter_selected.9"];
-    travelNav.tabBarItem.selectedImage = [select3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-
+    travelNav.tabBarItem.image = [UIImage imageNamed:@"23-bird"];
+travelNav.tabBarItem.title = @"自由行";
     
    MineViewController *mineVC = [[MineViewController alloc]init];
     UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mineVC];
-    mineNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_cityhunter_normal.9"];
+    mineNav.tabBarItem.image = [UIImage imageNamed:@"53-house"];
     
-    UIImage *select4 = [UIImage imageNamed:@"tabbar_cityhunter_selected.9"];
-    mineNav.tabBarItem.selectedImage = [select4 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-
+mineNav.tabBarItem.title = @"我的";
     PlusViewController *plusVC = [[PlusViewController alloc]init];
     UINavigationController *plusNav = [[UINavigationController alloc]initWithRootViewController:plusVC];
-    plusNav.tabBarItem.image = [UIImage imageNamed:@"add_spot_normal"];
+    plusNav.tabBarItem.image = [UIImage imageNamed:@"10-medical"];
     
-    UIImage *select5 = [UIImage imageNamed:@"add_spot_pressed"];
-    plusNav.tabBarItem.selectedImage = [select5 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    self.tabBarVC.viewControllers = @[recommendNav, cityVC, plusNav, travelNav, mineNav];
-    self.tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
+    plusNav.tabBarItem.title = @"记录";
+    self.tabBarVC.viewControllers = @[recommendNav, cityNav, plusNav, travelNav, mineNav];
+    self.tabBarVC.tabBar.tintColor = [UIColor whiteColor];
+    self.tabBarVC.tabBar.barTintColor = [UIColor colorWithRed:53/256.0f green:159/256.0f blue:180/256.0f alpha:1];
     self.window.rootViewController = self.tabBarVC;
 
     
