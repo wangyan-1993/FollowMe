@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E20F207E4BA81E872F57D27 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BB71441200E7E1032CFB63 /* libPods.a */; };
+		7A2B4A741C98177E005B699B /* recommend.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A2B4A731C98177E005B699B /* recommend.plist */; };
 		7A422B141C97EAB800B51C11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A422B131C97EAB800B51C11 /* main.m */; };
 		7A422B171C97EAB800B51C11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A422B161C97EAB800B51C11 /* AppDelegate.m */; };
 		7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A422B181C97EAB800B51C11 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		737A4A8526CBB407BDBC1B85 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7A2B4A731C98177E005B699B /* recommend.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = recommend.plist; sourceTree = "<group>"; };
 		7A422B0F1C97EAB700B51C11 /* FollowMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A422B131C97EAB800B51C11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A422B151C97EAB800B51C11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7A2B4A721C981754005B699B /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				7A2B4A731C98177E005B699B /* recommend.plist */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
 		7A422B061C97EAB700B51C11 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 				7A4780AE1C97EEBB00C6E5C2 /* Plus */,
 				7A4780A91C97EEBB00C6E5C2 /* Library */,
 				7A4780B61C97EEBB00C6E5C2 /* Travel */,
+				7A2B4A721C981754005B699B /* Table */,
 				7A422B1A1C97EAB800B51C11 /* LaunchScreen.storyboard */,
 				7A422B181C97EAB800B51C11 /* Assets.xcassets */,
 				7A422B1D1C97EAB800B51C11 /* Info.plist */,
@@ -360,6 +371,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+
 				7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */,
 				7A422B1C1C97EAB800B51C11 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -536,6 +549,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -549,6 +563,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
