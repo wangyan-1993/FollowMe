@@ -7,6 +7,7 @@
 //
 
 #import "SearchTravelViewController.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
 
 @interface SearchTravelViewController ()<UISearchBarDelegate>
 @property(nonatomic, strong) UISearchBar *mySearchBar;
@@ -24,7 +25,26 @@
     self.mySearchBar.autocorrectionType = UITextAutocorrectionTypeDefault;
     self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [self showBackBtn];
+    [self loadData];
 }
+
+- (void)loadData{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    [manager GET:@"http://api.breadtrip.com/product/search/?keyword=%E4%B8%9C%E4%BA%AC" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        WLZLog(@"%@", downloadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        WLZLog(@"%@", responseObject);
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        WLZLog(@"%@", error);
+    }];
+
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -27,6 +27,7 @@
 		7AB8FD031C99090800D9A121 /* JCTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCFF1C99090800D9A121 /* JCTagListView.m */; };
 		7AB8FD0A1C99406F00D9A121 /* travel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AB8FD091C99406F00D9A121 /* travel.plist */; };
 		7AB8FD131C99829700D9A121 /* SearchTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FD121C99829700D9A121 /* SearchTravelViewController.m */; };
+		7AB8FD151C999C2000D9A121 /* search.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AB8FD141C999C2000D9A121 /* search.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		7AB8FD091C99406F00D9A121 /* travel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = travel.plist; sourceTree = "<group>"; };
 		7AB8FD111C99829700D9A121 /* SearchTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTravelViewController.h; sourceTree = "<group>"; };
 		7AB8FD121C99829700D9A121 /* SearchTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTravelViewController.m; sourceTree = "<group>"; };
+		7AB8FD141C999C2000D9A121 /* search.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = search.plist; sourceTree = "<group>"; };
 		9CE4DD61D59F51D056051F5E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C6BB71441200E7E1032CFB63 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB8FD091C99406F00D9A121 /* travel.plist */,
+				7AB8FD141C999C2000D9A121 /* search.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				7AB8FD0A1C99406F00D9A121 /* travel.plist in Resources */,
 				7AB8FD001C99090800D9A121 /* .gitkeep in Resources */,
 				7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */,
+				7AB8FD151C999C2000D9A121 /* search.plist in Resources */,
 				7A422B1C1C97EAB800B51C11 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

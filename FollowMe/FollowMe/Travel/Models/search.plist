@@ -1,0 +1,98 @@
+{
+data =     {
+product =         (
+{
+data =                 (
+{
+"cover_image_url" = "http://photos.breadtrip.com/covers_2016_02_27_d3b09c3fddd930678c18e1933c9fb954.image?imageView2/2/w/344/h/246/format/jpg/interlace/1/q/85";
+location = "\U540d\U53e4\U5c4b";
+"market_price" = 6080;
+price = 5499;
+title = "\U6e05\U660e\U957f\U5047 <\U540d\U53e4\U5c4b \U4e1c\U4eac \U5bcc\U58eb\U5c71 \U4eac\U90fd \U5927\U962a6\U65e5\U6e38> \U8d4f\U6a31\U540d\U6240\U4e00\U7f51\U6253\U5c3d";
+    url = "http://vacation.breadtrip.com/share/product/1008967/book/";
+    },
+    {
+    "cover_image_url" = "http://photos.breadtrip.com/covers_2016_03_14_d65834bae40565aec2df90fdc51ca30e.image?imageView2/2/w/344/h/246/format/jpg/interlace/1/q/85";
+    location = "\U4e1c\U4eac";
+    "market_price" = 7600;
+    price = 7600;
+    title = "\U3010\U8fbe\U4eba\U5e26\U961f\U3011\U76ae\U4e8c\U5e26\U4f60\U4f53\U9a8c\U6700Local\U7684\U4e1c\U4eac";
+    url = "http://vacation.breadtrip.com/share/product/1009105/book/";
+    },
+    {
+    "cover_image_url" = "http://photos.breadtrip.com/covers_2016_02_24_ce6b499118f2c09bff80bfac9d8da3bc.image?imageView2/2/w/344/h/246/format/jpg/interlace/1/q/85";
+    location = "\U4e1c\U4eac";
+    "market_price" = 9800;
+    price = 7180;
+    title = "\U5317\U4eac\Uff0d\U4e1c\U4eac\U76f4\U98de\U516d\U65e5\U5f80\U8fd4\Uff08\U542b\U9152\U5e97\U3001\U7b7e\U8bc1\U3001WIFI\Uff09";
+    url = "http://vacation.breadtrip.com/share/product/1008958/book/";
+    },
+    {
+    "cover_image_url" = "http://photos.breadtrip.com/covers_2015_12_17_cec835ab9fa47db868d6b0d5ed802309.jpg?imageView2/2/w/344/h/246/format/jpg/interlace/1/q/85";
+    location = "\U4e1c\U4eac";
+    "market_price" = 2380;
+    price = 1559;
+    title = "\U4e1c\U4eac\U51fa\U53d1\U6cb3\U53e3\U6e56\U9732\U5929\U6e29\U6cc92\U65e5\U6e38\Uff08\U542b\U6e29\U6cc9\U9152\U5e97\Uff0b3\U65e5\U4ea4\U901a\U5238\Uff09";
+    url = "http://vacation.breadtrip.com/share/product/1003/book/";
+    }
+    );
+    "has_more" = 1;
+    "next_start" = 10;
+    title = "\U7279\U4ef7\U7cbe\U9009";
+    url = "http://web.breadtrip.com/product/search/product/?keyword=\U4e1c\U4eac";
+    },
+    {
+    data =                 (
+    {
+    "comment_score" = "5\U5206";
+    "cover_image_url" = "http://pavo.elongstatic.com/208/0002LWUs.jpg?imageView2/2/w/344/h/246/format/jpg/interlace/1/";
+    location = "\U4e1c\U4eac";
+    "market_price" = "";
+    price = 1231;
+    star = "\U56db\U661f";
+    title = "\U4e1c\U4eac\U5343\U5e74\U4e09\U4e95\U82b1\U56ed\U9152\U5e97";
+    url = "http://vacation.breadtrip.com/hotel/product/list/561b55898e50215e59419cb4/";
+    },
+    {
+    "comment_score" = "4\U5206";
+    "cover_image_url" = "http://pavo.elongstatic.com/208/00040RSK.jpg?imageView2/2/w/344/h/246/format/jpg/interlace/1/";
+    location = "\U4e1c\U4eac";
+    "market_price" = "";
+    price = 1292;
+    star = "\U56db\U661f";
+    title = "\U4e1c\U4eac\U559c\U6765\U767b\U90fd\U9152\U5e97";
+    url = "http://vacation.breadtrip.com/hotel/product/list/561b55898e50215e59419cbf/";
+    },
+    {
+    "comment_score" = "4.5\U5206";
+    "cover_image_url" = "http://pavo.elongstatic.com/208/00040OYS.jpg?imageView2/2/w/344/h/246/format/jpg/interlace/1/";
+    location = "\U4e1c\U4eac";
+    "market_price" = "";
+    price = 777;
+    star = "\U4e09\U661f\U534a";
+    title = "\U4e1c\U4eac\U5ead\U9152\U5e97";
+    url = "http://vacation.breadtrip.com/hotel/product/list/561b55898e50215e59419cc1/";
+    },
+    {
+    "comment_score" = "4.5\U5206";
+    "cover_image_url" = "http://pavo.elongstatic.com/208/0003KEZA.jpg?imageView2/2/w/344/h/246/format/jpg/interlace/1/";
+    location = "\U4e1c\U4eac";
+    "market_price" = "";
+    price = 759;
+    star = "\U4e09\U661f\U534a";
+    title = "\U4e1c\U4eac\U65b0\U5bbf\U4e2d\U5fc3\U99a8\U4e50\U5ead\U9152\U5e97";
+    url = "http://vacation.breadtrip.com/hotel/product/list/561b55898e50215e59419cc4/";
+    }
+    );
+    "has_more" = 1;
+    "next_start" = 10;
+    title = "\U9152\U5e97\U4f4f\U5bbf";
+    url = "http://web.breadtrip.com/product/search/hotel/?keyword=\U4e1c\U4eac";
+    }
+    );
+    topic =         (
+    );
+    };
+    message = "";
+    status = 0;
+}
