@@ -32,18 +32,17 @@
     CityViewController *cityVC = [[CityViewController alloc]init];
     UINavigationController *cityNav = [[UINavigationController alloc]initWithRootViewController:cityVC];
     cityNav.tabBarItem.image = [UIImage imageNamed:@"28-star"];
-cityNav.tabBarItem.title = @"城市猎人";
+    cityNav.tabBarItem.title = @"城市猎人";
    
     TravelViewController *travelVC = [[TravelViewController alloc]init];
     UINavigationController *travelNav = [[UINavigationController alloc]initWithRootViewController:travelVC];
     travelNav.tabBarItem.image = [UIImage imageNamed:@"23-bird"];
-travelNav.tabBarItem.title = @"自由行";
+    travelNav.tabBarItem.title = @"自由行";
     
-   MineViewController *mineVC = [[MineViewController alloc]init];
+    MineViewController *mineVC = [[MineViewController alloc]init];
     UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mineVC];
     mineNav.tabBarItem.image = [UIImage imageNamed:@"53-house"];
-    
-mineNav.tabBarItem.title = @"我的";
+    mineNav.tabBarItem.title = @"我的";
     PlusViewController *plusVC = [[PlusViewController alloc]init];
     UINavigationController *plusNav = [[UINavigationController alloc]initWithRootViewController:plusVC];
     plusNav.tabBarItem.image = [UIImage imageNamed:@"10-medical"];
