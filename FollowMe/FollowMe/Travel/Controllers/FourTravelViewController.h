@@ -1,5 +1,5 @@
 //
-//  SecondTravelViewController.h
+//  FourTravelViewController.h
 //  FollowMe
 //
 //  Created by SCJY on 16/3/16.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondTravelViewController : UIViewController
+@interface FourTravelViewController : UIViewController
 @property(nonatomic, copy) NSString *urlString;
+
 @end

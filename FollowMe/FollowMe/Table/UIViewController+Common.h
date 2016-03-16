@@ -1,5 +1,5 @@
 //
-//  ThirdTravelViewController.h
+//  UIViewController+Common.h
 //  FollowMe
 //
 //  Created by SCJY on 16/3/16.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThirdTravelViewController : UIViewController
-@property(nonatomic, copy) NSString *urlString;
+@interface UIViewController (Common)
+//导航栏添加返回按钮
+- (void)showBackBtn;
 @end

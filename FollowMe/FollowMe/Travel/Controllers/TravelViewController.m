@@ -8,6 +8,7 @@
 
 #import "TravelViewController.h"
 #import "SecondTravelViewController.h"
+#import "ThirdTravelViewController.h"
 @interface TravelViewController ()<UIWebViewDelegate>
 @property(nonatomic, strong) UIWebView *webView;
 @end
@@ -16,31 +17,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     NSURL *url = [[NSURL alloc]initWithString:@"http://web.breadtrip.com/product/topics/"];
+    self.navigationController.navigationBar.barTintColor = kMainColor;
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     [self.view addSubview:self.webView];
+    
+}
+-  (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
 }
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    NSLog(@"%@", request);
-//    switch (navigationType) {
-//        case UIWebViewNavigationTypeOther:
-//        {
-//            SecondTravelViewController *secondTVC = [[SecondTravelViewController alloc]init];
-//            secondTVC.string = [NSString stringWithFormat:@"%@", request];
-//            [self.navigationController pushViewController:secondTVC animated:YES];
-//        }
-//            break;
-//            
-//        default:
-//            break;
-//    }
+   
+    NSString *urlStr = request.URL.absoluteString;
+   
+    NSArray *array = [urlStr componentsSeparatedByString:@"/"];
+    NSInteger length = array.count;
+    NSString *string1 = array[length-3];
+    NSString *string2 = array[length-2];
+    if ([string1 isEqualToString:@"product_topic"]) {
+        SecondTravelViewController *second = [[SecondTravelViewController alloc]init];
+        second.urlString = urlStr;
+        second.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:second animated:YES];
+        
+        [self.webView stopLoading];
+    }
+    if ([string2 isEqualToString:@"book"]) {
+        ThirdTravelViewController *third = [[ThirdTravelViewController alloc]init];
+        third.urlString = urlStr;
+        third.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:third animated:YES];
+        [self.webView stopLoading];
+
+    }
+    
     return YES;
 }
+
+
 - (UIWebView *)webView{
     if (_webView == nil) {
-        self.webView = [[UIWebView alloc]initWithFrame:self.view.frame];
+        self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
         self.webView.delegate = self;
+        
     }
     return _webView;
 }

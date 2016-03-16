@@ -33,7 +33,7 @@
     UINavigationController *cityNav = [[UINavigationController alloc]initWithRootViewController:cityVC];
     cityNav.tabBarItem.image = [UIImage imageNamed:@"28-star"];
 cityNav.tabBarItem.title = @"城市猎人";
-    
+   
     TravelViewController *travelVC = [[TravelViewController alloc]init];
     UINavigationController *travelNav = [[UINavigationController alloc]initWithRootViewController:travelVC];
     travelNav.tabBarItem.image = [UIImage imageNamed:@"23-bird"];
@@ -51,7 +51,7 @@ mineNav.tabBarItem.title = @"我的";
     plusNav.tabBarItem.title = @"记录";
     self.tabBarVC.viewControllers = @[recommendNav, cityNav, plusNav, travelNav, mineNav];
     self.tabBarVC.tabBar.tintColor = [UIColor whiteColor];
-    self.tabBarVC.tabBar.barTintColor = [UIColor colorWithRed:53/256.0f green:159/256.0f blue:180/256.0f alpha:1];
+    self.tabBarVC.tabBar.barTintColor = kMainColor;
     self.window.rootViewController = self.tabBarVC;
 
     

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3E20F207E4BA81E872F57D27 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BB71441200E7E1032CFB63 /* libPods.a */; };
-		7A2B4A741C98177E005B699B /* recommend.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A2B4A731C98177E005B699B /* recommend.plist */; };
 		7A422B141C97EAB800B51C11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A422B131C97EAB800B51C11 /* main.m */; };
 		7A422B171C97EAB800B51C11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A422B161C97EAB800B51C11 /* AppDelegate.m */; };
 		7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A422B181C97EAB800B51C11 /* Assets.xcassets */; };
@@ -18,8 +17,10 @@
 		7A4780C21C97F0C000C6E5C2 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4780C11C97F0C000C6E5C2 /* MineViewController.m */; };
 		7A4780C51C97F0CF00C6E5C2 /* PlusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4780C41C97F0CF00C6E5C2 /* PlusViewController.m */; };
 		7A4780C81C97F0E200C6E5C2 /* TravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4780C71C97F0E200C6E5C2 /* TravelViewController.m */; };
-		7A4780DC1C9833D300C6E5C2 /* SecondTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4780DB1C9833D300C6E5C2 /* SecondTravelViewController.m */; };
-		7A4780DF1C9833E900C6E5C2 /* ThirdTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4780DE1C9833E900C6E5C2 /* ThirdTravelViewController.m */; };
+		7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */; };
+		7AB8FCF11C98E40F00D9A121 /* ThirdTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCF01C98E40F00D9A121 /* ThirdTravelViewController.m */; };
+		7AB8FCF41C98E68A00D9A121 /* FourTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCF31C98E68A00D9A121 /* FourTravelViewController.m */; };
+		7AB8FCF71C98ECD500D9A121 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCF61C98ECD500D9A121 /* UIViewController+Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,10 +44,14 @@
 		7A4780C61C97F0E200C6E5C2 /* TravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelViewController.h; sourceTree = "<group>"; };
 		7A4780C71C97F0E200C6E5C2 /* TravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelViewController.m; sourceTree = "<group>"; };
 		7A4780D91C980CAA00C6E5C2 /* Header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.pch; sourceTree = "<group>"; };
-		7A4780DA1C9833D300C6E5C2 /* SecondTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTravelViewController.h; sourceTree = "<group>"; };
-		7A4780DB1C9833D300C6E5C2 /* SecondTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTravelViewController.m; sourceTree = "<group>"; };
-		7A4780DD1C9833E900C6E5C2 /* ThirdTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTravelViewController.h; sourceTree = "<group>"; };
-		7A4780DE1C9833E900C6E5C2 /* ThirdTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdTravelViewController.m; sourceTree = "<group>"; };
+		7AB8FCEC1C98DDD900D9A121 /* SecondTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTravelViewController.h; sourceTree = "<group>"; };
+		7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTravelViewController.m; sourceTree = "<group>"; };
+		7AB8FCEF1C98E40F00D9A121 /* ThirdTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTravelViewController.h; sourceTree = "<group>"; };
+		7AB8FCF01C98E40F00D9A121 /* ThirdTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdTravelViewController.m; sourceTree = "<group>"; };
+		7AB8FCF21C98E68A00D9A121 /* FourTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourTravelViewController.h; sourceTree = "<group>"; };
+		7AB8FCF31C98E68A00D9A121 /* FourTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourTravelViewController.m; sourceTree = "<group>"; };
+		7AB8FCF51C98ECD500D9A121 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Common.h"; sourceTree = "<group>"; };
+		7AB8FCF61C98ECD500D9A121 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
 		9CE4DD61D59F51D056051F5E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C6BB71441200E7E1032CFB63 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				7A2B4A731C98177E005B699B /* recommend.plist */,
+				7AB8FCF51C98ECD500D9A121 /* UIViewController+Common.h */,
+				7AB8FCF61C98ECD500D9A121 /* UIViewController+Common.m */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -280,10 +287,12 @@
 			children = (
 				7A4780C61C97F0E200C6E5C2 /* TravelViewController.h */,
 				7A4780C71C97F0E200C6E5C2 /* TravelViewController.m */,
-				7A4780DA1C9833D300C6E5C2 /* SecondTravelViewController.h */,
-				7A4780DB1C9833D300C6E5C2 /* SecondTravelViewController.m */,
-				7A4780DD1C9833E900C6E5C2 /* ThirdTravelViewController.h */,
-				7A4780DE1C9833E900C6E5C2 /* ThirdTravelViewController.m */,
+				7AB8FCEC1C98DDD900D9A121 /* SecondTravelViewController.h */,
+				7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */,
+				7AB8FCEF1C98E40F00D9A121 /* ThirdTravelViewController.h */,
+				7AB8FCF01C98E40F00D9A121 /* ThirdTravelViewController.m */,
+				7AB8FCF21C98E68A00D9A121 /* FourTravelViewController.h */,
+				7AB8FCF31C98E68A00D9A121 /* FourTravelViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -371,8 +380,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-
 				7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */,
 				7A422B1C1C97EAB800B51C11 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -433,14 +440,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A4780DC1C9833D300C6E5C2 /* SecondTravelViewController.m in Sources */,
+				7AB8FCF71C98ECD500D9A121 /* UIViewController+Common.m in Sources */,
+				7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */,
 				7A422B171C97EAB800B51C11 /* AppDelegate.m in Sources */,
 				7A4780C81C97F0E200C6E5C2 /* TravelViewController.m in Sources */,
 				7A422B141C97EAB800B51C11 /* main.m in Sources */,
 				7A4780C21C97F0C000C6E5C2 /* MineViewController.m in Sources */,
 				7A4780BC1C97F09100C6E5C2 /* RecommendViewController.m in Sources */,
+				7AB8FCF41C98E68A00D9A121 /* FourTravelViewController.m in Sources */,
 				7A4780C51C97F0CF00C6E5C2 /* PlusViewController.m in Sources */,
-				7A4780DF1C9833E900C6E5C2 /* ThirdTravelViewController.m in Sources */,
+				7AB8FCF11C98E40F00D9A121 /* ThirdTravelViewController.m in Sources */,
 				7A4780BF1C97F0AD00C6E5C2 /* CityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

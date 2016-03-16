@@ -1,48 +1,31 @@
 //
-//  SecondTravelViewController.m
+//  FourTravelViewController.m
 //  FollowMe
 //
 //  Created by SCJY on 16/3/16.
 //  Copyright © 2016年 SCJY. All rights reserved.
 //
 
-#import "SecondTravelViewController.h"
-#import "ThirdTravelViewController.h"
+#import "FourTravelViewController.h"
 
-@interface SecondTravelViewController ()<UIWebViewDelegate>
+@interface FourTravelViewController ()<UIWebViewDelegate>
 @property(nonatomic, strong) UIWebView *webView;
+
 @end
 
-@implementation SecondTravelViewController
+@implementation FourTravelViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSURL *url = [[NSURL alloc]initWithString:self.urlString];
-    self.navigationController.navigationBar.barTintColor = kMainColor;
-self.title = @"更多";
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     [self showBackBtn];
-    [self.view addSubview:self.webView];
- 
-}
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    
-    NSString *urlStr = request.URL.absoluteString;
-    NSArray *array = [urlStr componentsSeparatedByString:@"/"];
-    NSInteger length = array.count;
-    NSString *string1 = array[length-3];
-    if (![string1 isEqualToString:@"product_topic"]) {
-        ThirdTravelViewController *third = [[ThirdTravelViewController alloc]init];
-        third.urlString = urlStr;
-        [self.navigationController pushViewController:third animated:YES];
-        [self.webView stopLoading];
-    }
+    self.navigationController.navigationBar.barTintColor = kMainColor;
 
+    [self.view addSubview:self.webView];
     
-    
-    
-    return YES;
+
 }
 - (UIWebView *)webView{
     if (_webView == nil) {
