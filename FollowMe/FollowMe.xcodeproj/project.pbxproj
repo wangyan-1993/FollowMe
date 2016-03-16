@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3E20F207E4BA81E872F57D27 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BB71441200E7E1032CFB63 /* libPods.a */; };
+		7A0017EA1C9911C30033B78F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7A0017E61C9911C30033B78F /* README.md */; };
+		7A0017EB1C9911C30033B78F /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0017E91C9911C30033B78F /* UIViewController+KNSemiModal.m */; };
+		7A0017EF1C992FBB0033B78F /* cityFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0017ED1C992FBB0033B78F /* cityFirstTableViewCell.m */; };
+		7A0017F01C992FBB0033B78F /* cityFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0017EE1C992FBB0033B78F /* cityFirstTableViewCell.xib */; };
+		7A0017F81C9935B20033B78F /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0017F71C9935B20033B78F /* Property List.plist */; };
+		7A0017FA1C993AEE0033B78F /* cityFirst2List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0017F91C993AEE0033B78F /* cityFirst2List.plist */; };
+		7A0017FD1C993FB30033B78F /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0017FC1C993FB30033B78F /* cityModel.m */; };
 		7A422B141C97EAB800B51C11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A422B131C97EAB800B51C11 /* main.m */; };
 		7A422B171C97EAB800B51C11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A422B161C97EAB800B51C11 /* AppDelegate.m */; };
 		7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A422B181C97EAB800B51C11 /* Assets.xcassets */; };
@@ -25,6 +32,16 @@
 
 /* Begin PBXFileReference section */
 		737A4A8526CBB407BDBC1B85 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7A0017E61C9911C30033B78F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7A0017E81C9911C30033B78F /* UIViewController+KNSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KNSemiModal.h"; sourceTree = "<group>"; };
+		7A0017E91C9911C30033B78F /* UIViewController+KNSemiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KNSemiModal.m"; sourceTree = "<group>"; };
+		7A0017EC1C992FBB0033B78F /* cityFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cityFirstTableViewCell.h; path = FollowMe/Table/cityFirstTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		7A0017ED1C992FBB0033B78F /* cityFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cityFirstTableViewCell.m; path = FollowMe/Table/cityFirstTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		7A0017EE1C992FBB0033B78F /* cityFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = cityFirstTableViewCell.xib; path = FollowMe/Table/cityFirstTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		7A0017F71C9935B20033B78F /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		7A0017F91C993AEE0033B78F /* cityFirst2List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityFirst2List.plist; sourceTree = "<group>"; };
+		7A0017FB1C993FB30033B78F /* cityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cityModel.h; sourceTree = "<group>"; };
+		7A0017FC1C993FB30033B78F /* cityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cityModel.m; sourceTree = "<group>"; };
 		7A2B4A731C98177E005B699B /* recommend.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = recommend.plist; sourceTree = "<group>"; };
 		7A422B0F1C97EAB700B51C11 /* FollowMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A422B131C97EAB800B51C11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,12 +93,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7A0017E51C9911C30033B78F /* KNSemiModalViewController_hons82 */ = {
+			isa = PBXGroup;
+			children = (
+				7A0017E61C9911C30033B78F /* README.md */,
+				7A0017E71C9911C30033B78F /* Source */,
+			);
+			path = KNSemiModalViewController_hons82;
+			sourceTree = "<group>";
+		};
+		7A0017E71C9911C30033B78F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7A0017E81C9911C30033B78F /* UIViewController+KNSemiModal.h */,
+				7A0017E91C9911C30033B78F /* UIViewController+KNSemiModal.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		7A2B4A721C981754005B699B /* Table */ = {
 			isa = PBXGroup;
 			children = (
 				7A2B4A731C98177E005B699B /* recommend.plist */,
 				7AB8FCF51C98ECD500D9A121 /* UIViewController+Common.h */,
 				7AB8FCF61C98ECD500D9A121 /* UIViewController+Common.m */,
+				7A0017E51C9911C30033B78F /* KNSemiModalViewController_hons82 */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -155,6 +191,10 @@
 		7A4780A71C97EEBB00C6E5C2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A0017F71C9935B20033B78F /* Property List.plist */,
+				7A0017F91C993AEE0033B78F /* cityFirst2List.plist */,
+				7A0017FB1C993FB30033B78F /* cityModel.h */,
+				7A0017FC1C993FB30033B78F /* cityModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +202,9 @@
 		7A4780A81C97EEBB00C6E5C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7A0017EC1C992FBB0033B78F /* cityFirstTableViewCell.h */,
+				7A0017ED1C992FBB0033B78F /* cityFirstTableViewCell.m */,
+				7A0017EE1C992FBB0033B78F /* cityFirstTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,6 +424,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */,
+				7A0017F01C992FBB0033B78F /* cityFirstTableViewCell.xib in Resources */,
+				7A0017F81C9935B20033B78F /* Property List.plist in Resources */,
+				7A0017FA1C993AEE0033B78F /* cityFirst2List.plist in Resources */,
 				7A422B1C1C97EAB800B51C11 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,15 +488,19 @@
 			files = (
 				7AB8FCF71C98ECD500D9A121 /* UIViewController+Common.m in Sources */,
 				7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */,
+				7A0017EB1C9911C30033B78F /* UIViewController+KNSemiModal.m in Sources */,
 				7A422B171C97EAB800B51C11 /* AppDelegate.m in Sources */,
 				7A4780C81C97F0E200C6E5C2 /* TravelViewController.m in Sources */,
 				7A422B141C97EAB800B51C11 /* main.m in Sources */,
 				7A4780C21C97F0C000C6E5C2 /* MineViewController.m in Sources */,
+				7A0017EA1C9911C30033B78F /* README.md in Sources */,
 				7A4780BC1C97F09100C6E5C2 /* RecommendViewController.m in Sources */,
+				7A0017EF1C992FBB0033B78F /* cityFirstTableViewCell.m in Sources */,
 				7AB8FCF41C98E68A00D9A121 /* FourTravelViewController.m in Sources */,
 				7A4780C51C97F0CF00C6E5C2 /* PlusViewController.m in Sources */,
 				7AB8FCF11C98E40F00D9A121 /* ThirdTravelViewController.m in Sources */,
 				7A4780BF1C97F0AD00C6E5C2 /* CityViewController.m in Sources */,
+				7A0017FD1C993FB30033B78F /* cityModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
