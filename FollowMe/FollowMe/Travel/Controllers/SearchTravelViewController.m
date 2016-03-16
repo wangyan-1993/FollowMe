@@ -8,8 +8,8 @@
 
 #import "SearchTravelViewController.h"
 
-@interface SearchTravelViewController ()
-
+@interface SearchTravelViewController ()<UISearchBarDelegate>
+@property(nonatomic, strong) UISearchBar *mySearchBar;
 @end
 
 @implementation SearchTravelViewController
@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(40, 10, kWidth-40, 40)];
+    self.mySearchBar.delegate = self;
+    self.mySearchBar.text = self.cityName;
+    [self.navigationController.navigationBar addSubview:self.mySearchBar];
+    self.mySearchBar.autocorrectionType = UITextAutocorrectionTypeDefault;
+    self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    [self showBackBtn];
 }
 
 - (void)didReceiveMemoryWarning {

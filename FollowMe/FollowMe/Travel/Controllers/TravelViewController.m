@@ -33,7 +33,6 @@
     [self.view addSubview:self.webView];
     self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 10, kWidth, 40)];
     self.mySearchBar.delegate = self;
-    [self.navigationController.navigationBar addSubview:self.mySearchBar];
     self.mySearchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.mySearchBar.placeholder = @"搜索目的地";
@@ -93,11 +92,18 @@
         }
         [weakself.searchList.collectionView reloadData];
         SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
+        weakself.mySearchBar.hidden = YES;
+        search.cityName = weakself.cityArray[index];
         [weakself.navigationController pushViewController:search animated:YES];
+       
     }];
   [self.searchList setCompletionBlockWithSelected:^(NSInteger index) {
       SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
+      search.cityName = weakself.cityArray[index];
+
       [weakself.navigationController pushViewController:search animated:YES];
+      weakself.mySearchBar.hidden = YES;
+
   }];
     
 }
@@ -149,6 +155,8 @@
     [UIView animateWithDuration:0.6 animations:^{
         self.whiteView.frame = CGRectMake(0, -kHeight, kWidth, kHeight);
     }];
+    self.mySearchBar.text = nil;
+
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     for (NSString *str in self.searchList.tags) {
@@ -161,6 +169,12 @@
         [self.searchList.tags removeObjectAtIndex:0];
     }
     [self.searchList.collectionView reloadData];
+    SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
+    search.cityName = searchBar.text;
+
+    [self.navigationController pushViewController:search animated:YES];
+    self.mySearchBar.hidden = YES;
+
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.mySearchBar resignFirstResponder];
