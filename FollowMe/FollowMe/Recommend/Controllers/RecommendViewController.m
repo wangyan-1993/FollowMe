@@ -48,7 +48,7 @@ static NSString *itemID = @"itemId";
     //collectionview添加进系统视图
     [self.headerView addSubview:self.collectionView];
     //请求数据
-    [self workOne];
+//    [self workOne];
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headerView;
 

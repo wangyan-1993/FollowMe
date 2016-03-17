@@ -11,11 +11,18 @@
 #import "UIViewController+KNSemiModal.h"
 #import "cityModel.h"
 #import "cityFirstTableViewCell.h"
+#import "DetailViewController.h"
+#import "PersonViewController.h"
+#import "selectCityViewController.h"
 
 
 static NSString *identifier = @"cell";
 
+#define huiSE [UIColor colorWithRed:235/255 green:237/255 blue:235/255 alpha:0.5];
 @interface CityViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
+
+
+
 //segement中遇到的属性；
 @property(nonatomic, strong) UISegmentedControl *segmented;
 @property(nonatomic, strong) UIView *firstView;
@@ -26,6 +33,12 @@ static NSString *identifier = @"cell";
 
 @property(nonatomic, strong) UITableView *tableView;
 
+@property(nonatomic, strong) UILabel *clasifyLable;
+@property(nonatomic, strong) UIButton *clasifyButton;
+@property(nonatomic, strong) UIButton *selectButton;
+
+
+
 
 
 @end
@@ -35,17 +48,40 @@ static NSString *identifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = kMainColor;
+    self.view.backgroundColor = huiSE;
+    
+//    self.title = @"城市猎人带你玩";
+    self.navigationController.navigationItem.title= @"城市猎人带你玩";
+    self.navigationController.navigationBar.barTintColor = kMainColor;
+    
+//导航左侧视图按钮：
+    self.selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.selectButton.frame = CGRectMake(0, 0, 60,44);
+    [self.selectButton addTarget:self action:@selector(selectCity) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.selectButton setImage:[UIImage imageNamed:@"heart"] forState:UIControlStateNormal];
+    //调整button图片的位置，四个数字分别指，图片距离button边界位置上下左右的距离；
+    [self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(0, self.selectButton.frame.size.width-25, 0, 0)];
+    [self.selectButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 10)];
+    [self.selectButton setTitle:@"北京" forState:UIControlStateNormal];
+
+//    [self.view addSubview:self.selectButton];
+    
+    UIBarButtonItem *leftbar = [[UIBarButtonItem alloc] initWithCustomView:self.selectButton];
+    self.navigationItem.leftBarButtonItem = leftbar;
+    leftbar.tintColor = [UIColor whiteColor];
+    
+    
     
     //搜索框；
-    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 10, kWidth, 40)];
-    self.mySearchBar.delegate = self;
-    [self.navigationController.navigationBar addSubview:self.mySearchBar];
-    self.mySearchBar.autocorrectionType = UITextAutocorrectionTypeNo;
-    self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.mySearchBar.placeholder = @"搜索目的地";
-    
-    [self.navigationController.navigationBar addSubview:self.mySearchBar];
+//    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 10, kWidth, 40)];
+//    self.mySearchBar.delegate = self;
+//    [self.navigationController.navigationBar addSubview:self.mySearchBar];
+//    self.mySearchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+//    self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+//    self.mySearchBar.placeholder = @"搜索目的地";
+//    
+//    [self.navigationController.navigationBar addSubview:self.mySearchBar];
     
     
     //SegmentedControl :用到的方法；
@@ -53,18 +89,22 @@ static NSString *identifier = @"cell";
     _segmented = [[UISegmentedControl alloc] initWithItems:segment];
     
     _segmented.frame = CGRectMake(0, 64, kWidth, 35);
-    _segmented.tintColor = [UIColor grayColor];
+    _segmented.tintColor = [UIColor whiteColor];
+    self.segmented.momentary = YES;
     [_segmented addTarget:self action:@selector(segmentedAction:) forControlEvents:UIControlEventValueChanged];
     
     [self.view addSubview:_segmented];
     
-    //注册cell；
+    //首页图片
     
+    
+    
+    //注册cell；
     
     [self.tableView registerNib:[UINib nibWithNibName:@"cityFirstTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
     
     
-    
+    //请求数据
     [self uptataConfig];
     
     
@@ -96,10 +136,11 @@ static NSString *identifier = @"cell";
         
         for (NSDictionary *dic in dictio[@"product_list"]) {
             cityModel *model = [[cityModel alloc]initWithCity:dic];
-//            [cityModel setValuesForKeysWithDictionary:dic];
+
+            
             [self.listArray addObject:model];
             
-//            [self.listArray addObject:dic];
+
         }
         [self.tableView reloadData];
         
@@ -144,6 +185,8 @@ static NSString *identifier = @"cell";
 //日期筛选点击方法
 -(void)dataChose{
     
+    [self.firstView removeFromSuperview];
+    
     self.secondView = [[UIView alloc] initWithFrame:CGRectMake(0, kHeight - kHeight*2/3, kWidth, kHeight*2/3)];
     self.secondView.backgroundColor = [UIColor whiteColor];
     [self presentSemiView:_segmented];
@@ -170,13 +213,10 @@ static NSString *identifier = @"cell";
     
     cityFirstTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
-    
-//    if (indexPath.row > self.listArray.count) {
-//        
-//        cell.model = self.listArray[indexPath.row];
-//
-//    }
     cell.model = self.listArray[indexPath.row];
+    [cell.ClassifyButton addTarget:self action:@selector(classAction) forControlEvents:UIControlEventTouchUpInside];
+   
+    
     
     
     return cell;
@@ -187,6 +227,9 @@ static NSString *identifier = @"cell";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    DetailViewController *detail = [[DetailViewController alloc] init];
+    [self.navigationController pushViewController:detail animated:NO];
+
     
     
     
@@ -196,6 +239,7 @@ static NSString *identifier = @"cell";
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return self.listArray.count;
+//    return 10;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -203,6 +247,24 @@ static NSString *identifier = @"cell";
     return kHeight*0.5;
 }
 
+#pragma mark---------------导航栏点击方法；
+-(void)classAction{
+    
+    PersonViewController *person = [[PersonViewController alloc] init];
+    [self.navigationController pushViewController:person animated:YES];
+
+}
+
+-(void)selectCity{
+    
+    selectCityViewController *selectVC = [[selectCityViewController alloc] init];
+    [self.navigationController pushViewController:selectVC animated:YES];
+    
+    
+    
+    
+    
+}
 
 
 
@@ -220,7 +282,7 @@ static NSString *identifier = @"cell";
 -(UITableView *)tableView{
     if (_tableView == nil) {
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 105, kWidth, kHeight - 144) style:UITableViewStylePlain];
-        
+        self.tableView.rowHeight = 285;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         [self.view addSubview:self.tableView];
@@ -228,10 +290,41 @@ static NSString *identifier = @"cell";
     return _tableView;
 }
 
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.mySearchBar.hidden = YES;
+    self.hidesBottomBarWhenPushed = YES;
+    
+}
+
+-(UILabel *)clasifyLable{
+    if (_clasifyLable == nil) {
+        self.clasifyLable = [[UILabel alloc] init];
+    }
+    return _clasifyLable;
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.hidesBottomBarWhenPushed = NO;
+}
+
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    self.hidesBottomBarWhenPushed = NO;
+//}
+
+
+
+
 
 /*
 #pragma mark - Navigation
