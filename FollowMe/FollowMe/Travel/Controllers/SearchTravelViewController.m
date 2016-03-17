@@ -11,11 +11,15 @@
 #import "SearchModel.h"
 #import "SearchCollectionViewCell.h"
 #import "ThirdTravelViewController.h"
+#import "FiveTravelViewController.h"
+
 @interface SearchTravelViewController ()<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property(nonatomic, strong) UISearchBar *mySearchBar;
 @property(nonatomic, strong) NSMutableArray *numArray;
 @property(nonatomic, strong) NSMutableArray *urlArray;
+@property(nonatomic, strong) NSMutableArray *titleArray;
 @property(nonatomic, strong) UICollectionView *collectionView;
+@property(nonatomic, strong) UIButton *btn;
 @end
 
 @implementation SearchTravelViewController
@@ -30,25 +34,40 @@
     self.mySearchBar.autocorrectionType = UITextAutocorrectionTypeDefault;
     self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [self showBackBtn];
+
     [self.view addSubview:self.collectionView];
-    [self loadData];
+    [self loadDataWithString:self.mySearchBar.text];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.mySearchBar.hidden = YES;
 }
-- (void)loadData{
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.mySearchBar.hidden = NO;
+}
+
+- (void)loadDataWithString:(NSString *)string{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    NSString *str = [NSString stringWithFormat:@"%@%@",@"http://api.breadtrip.com/product/search/?keyword=", self.cityName];
+    NSString *str = [NSString stringWithFormat:@"%@%@",@"http://api.breadtrip.com/product/search/?keyword=", string];
     NSString *urlString = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [manager GET:urlString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         WLZLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         //WLZLog(@"%@", responseObject);
+        if (self.numArray.count > 0) {
+            [self.numArray removeAllObjects];
+        }
+        if (self.urlArray.count > 0) {
+            [self.urlArray removeAllObjects];
+        }
+        if (self.titleArray.count > 0) {
+            [self.titleArray removeAllObjects];
+        }
         NSDictionary *dictionary = responseObject;
-        
+        self.titleArray = [NSMutableArray new];
         NSDictionary *dict = dictionary[@"data"];
         NSArray *array = dict[@"product"];
         for (NSDictionary *dic in array) {
@@ -56,6 +75,7 @@
             NSMutableArray *allArray = [NSMutableArray new];
             NSArray *arr = dic[@"data"];
             NSString *url = dic[@"url"];
+            NSString *title = dic[@"title"];
             for (NSDictionary *dataDic in arr) {
                 SearchModel *model = [[SearchModel alloc]initWithDictionary:dataDic];
                 [allArray addObject:model];
@@ -63,6 +83,7 @@
             }
             [self.numArray addObject:allArray];
             [self.urlArray addObject:url];
+            [self.titleArray addObject:title];
         }
 
         [self.collectionView reloadData];
@@ -83,7 +104,7 @@
     SearchCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"city" forIndexPath:indexPath];
     
     SearchModel *model = self.numArray[indexPath.section][indexPath.row];
-    WLZLog(@"%@", model.title);
+//    WLZLog(@"%@", model.title);
    cell.backgroundColor = [UIColor whiteColor];
     cell.model = model;
     cell.layer.cornerRadius = 5;
@@ -102,6 +123,44 @@
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return self.numArray.count;
 }
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+
+    UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
+       self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    WLZLog(@"%@", self.btn);
+    self.btn.frame = CGRectMake(0, 0, kWidth, 50);
+    [self.btn setTitle:self.titleArray[indexPath.section] forState:UIControlStateNormal];
+    NSLog(@"%@", self.btn.titleLabel.text);
+    self.btn.tag = indexPath.section;
+    [self.btn addTarget:self action:@selector(openMore:) forControlEvents:UIControlEventTouchUpInside];
+    [reusableView addSubview:self.btn];
+       return reusableView;
+
+}
+- (void)openMore:(UIButton *)btn{
+    FiveTravelViewController *five = [[FiveTravelViewController alloc]init];
+    
+    
+    NSString *urlStr = [self.urlArray[btn.tag] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    five.urlString = urlStr;
+    
+    five.hidesBottomBarWhenPushed = YES;
+    five.name = self.titleArray[btn.tag];
+    WLZLog(@"%@", self.titleArray);
+WLZLog(@"%@", five.name);    self.mySearchBar.hidden = YES;
+    [self.navigationController pushViewController:five animated:YES];
+
+}
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    CGSize size={kWidth,50};
+    return size;
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.btn removeFromSuperview];
+    [self loadDataWithString:searchBar.text];
+}
+
 
 #pragma mark---懒加载
 
@@ -117,6 +176,20 @@
     }
     return _urlArray;
 }
+-(NSMutableArray *)titleArray{
+    if (_titleArray == nil) {
+        self.titleArray =[NSMutableArray new];
+    }
+    return _titleArray;
+}
+//- (UIButton *)btn{
+//    if (_btn == nil) {
+//        self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        self.btn.frame = CGRectMake(0, 0, kWidth, 50);
+//
+//    }
+//    return _btn;
+//}
 //--------
 
 - (UICollectionView *)collectionView{

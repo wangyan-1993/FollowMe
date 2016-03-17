@@ -36,6 +36,7 @@
 		7A4F87F41C9A3B7F00183EC8 /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4F87F31C9A3B7F00183EC8 /* Recommend.storyboard */; };
 		7A4F87F71C9A444700183EC8 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87F61C9A444700183EC8 /* SearchModel.m */; };
 		7A4F87FA1C9A4D1600183EC8 /* SearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */; };
+		7A4F87FD1C9A9B3E00183EC8 /* FiveTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */; };
 		7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */; };
 		7AB8FCF11C98E40F00D9A121 /* ThirdTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCF01C98E40F00D9A121 /* ThirdTravelViewController.m */; };
 		7AB8FCF41C98E68A00D9A121 /* FourTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCF31C98E68A00D9A121 /* FourTravelViewController.m */; };
@@ -97,6 +98,8 @@
 		7A4F87F61C9A444700183EC8 /* SearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
 		7A4F87F81C9A4D1600183EC8 /* SearchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCollectionViewCell.h; sourceTree = "<group>"; };
 		7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionViewCell.m; sourceTree = "<group>"; };
+		7A4F87FB1C9A9B3E00183EC8 /* FiveTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveTravelViewController.h; sourceTree = "<group>"; };
+		7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveTravelViewController.m; sourceTree = "<group>"; };
 		7AB8FCEC1C98DDD900D9A121 /* SecondTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTravelViewController.h; sourceTree = "<group>"; };
 		7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTravelViewController.m; sourceTree = "<group>"; };
 		7AB8FCEF1C98E40F00D9A121 /* ThirdTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTravelViewController.h; sourceTree = "<group>"; };
@@ -396,6 +399,8 @@
 				7AB8FCF01C98E40F00D9A121 /* ThirdTravelViewController.m */,
 				7AB8FCF21C98E68A00D9A121 /* FourTravelViewController.h */,
 				7AB8FCF31C98E68A00D9A121 /* FourTravelViewController.m */,
+				7A4F87FB1C9A9B3E00183EC8 /* FiveTravelViewController.h */,
+				7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */,
 				7AB8FD111C99829700D9A121 /* SearchTravelViewController.h */,
 				7AB8FD121C99829700D9A121 /* SearchTravelViewController.m */,
 			);
@@ -587,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4F87FD1C9A9B3E00183EC8 /* FiveTravelViewController.m in Sources */,
 				7AB8FD011C99090800D9A121 /* JCCollectionViewTagFlowLayout.m in Sources */,
 				7AB8FCF71C98ECD500D9A121 /* UIViewController+Common.m in Sources */,
 				7AB8FD031C99090800D9A121 /* JCTagListView.m in Sources */,

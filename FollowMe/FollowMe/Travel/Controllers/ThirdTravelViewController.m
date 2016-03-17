@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     NSURL *url = [[NSURL alloc]initWithString:self.urlString];
     self.navigationController.navigationBar.barTintColor = kMainColor;
-self.title = @"产品介绍";
+self.title = @"介绍";
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     [self showBackBtn];
 
@@ -32,15 +32,18 @@ self.title = @"产品介绍";
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     NSString *urlStr = request.URL.absoluteString;
     NSArray *array = [urlStr componentsSeparatedByString:@"/"];
+    NSArray *array2 = [urlStr componentsSeparatedByString:@"&"];
     NSInteger length = array.count;
     NSString *string1 = array[length-2];
+    NSString *string2 = array.lastObject;
+    NSString *string3 = array2.lastObject;
+    WLZLog(@"%@", request);
+    FourTravelViewController *four = [[FourTravelViewController alloc]init];
     switch (navigationType) {
         case UIWebViewNavigationTypeLinkClicked:
         {
-            if ([string1 isEqualToString:@"detail"]) {
-                
-            }
-            FourTravelViewController *four = [[FourTravelViewController alloc]init];
+            
+
             if ([string1 isEqualToString:@"detail"]) {
                 four.title = @"产品详情";
             }
@@ -56,11 +59,55 @@ self.title = @"产品介绍";
             [self.webView stopLoading];
         }
             break;
+            case UIWebViewNavigationTypeOther:
+        {
+            if ([string1 isEqualToString:@"map"]) {
+                four.title = @"地址";
+                four.urlString = request.URL.absoluteString;
+                four.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:four animated:YES];
+                [self.webView stopLoading];
+
+            }
+            if ([string2 isEqualToString:@"?type=info"]) {
+                four.title = @"酒店详情";
+                four.urlString = request.URL.absoluteString;
+                four.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:four animated:YES];
+                [self.webView stopLoading];
+
+            }
+            if ([string2 isEqualToString:@"?type=facility"]) {
+                four.title = @"酒店设施";
+                four.urlString = request.URL.absoluteString;
+                four.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:four animated:YES];
+                [self.webView stopLoading];
+
+            }
+            if ([string2 isEqualToString:@"?type=policy"]) {
+                four.title = @"酒店声明";
+                four.urlString = request.URL.absoluteString;
+                four.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:four animated:YES];
+                [self.webView stopLoading];
+
+            }
+            if ([urlStr rangeOfString:@"rooms"].location != NSNotFound) {
+                four.title = @"酒店房型";
+                four.urlString = request.URL.absoluteString;
+                four.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:four animated:YES];
+                [self.webView stopLoading];
+                
+            }
+
             
+        }
+            break;
         default:
             break;
     }
-    
     
     return YES;
 }
