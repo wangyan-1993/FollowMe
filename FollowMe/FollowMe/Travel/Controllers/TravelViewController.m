@@ -100,9 +100,8 @@
   [self.searchList setCompletionBlockWithSelected:^(NSInteger index) {
       SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
       search.cityName = weakself.cityArray[index];
-
-      [weakself.navigationController pushViewController:search animated:YES];
       weakself.mySearchBar.hidden = YES;
+      [weakself.navigationController pushViewController:search animated:YES];
 
   }];
     
@@ -171,9 +170,8 @@
     [self.searchList.collectionView reloadData];
     SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
     search.cityName = searchBar.text;
-
-    [self.navigationController pushViewController:search animated:YES];
     self.mySearchBar.hidden = YES;
+    [self.navigationController pushViewController:search animated:YES];
 
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
