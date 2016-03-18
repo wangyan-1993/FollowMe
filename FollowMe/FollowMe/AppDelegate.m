@@ -38,8 +38,8 @@
     UINavigationController *travelNav = [[UINavigationController alloc]initWithRootViewController:travelVC];
     travelNav.tabBarItem.image = [UIImage imageNamed:@"23-bird"];
     travelNav.tabBarItem.title = @"自由行";
-    UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
-    UINavigationController *mineNav = mineStoryBoard.instantiateInitialViewController;
+    MineViewController *mine = [[MineViewController alloc]init];
+    UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mine];
     mineNav.tabBarItem.image = [UIImage imageNamed:@"53-house"];
     mineNav.tabBarItem.title = @"我的";
     PlusViewController *plusVC = [[PlusViewController alloc]init];

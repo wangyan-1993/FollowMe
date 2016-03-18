@@ -17,101 +17,10 @@
                     <view key="view" contentMode="scaleToFill" id="pmg-bw-aMe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6D-Wd-khU">
-                                <rect key="frame" x="154" y="178" width="60" height="90"/>
-                                <state key="normal" title="微博登陆">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="xinlangLogin:" destination="68n-W8-UIC" eventType="touchUpInside" id="1yL-W1-rRf"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="——使用面包账号登录——" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULD-zj-spJ">
-                                <rect key="frame" x="81" y="286" width="206" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="weixin" translatesAutoresizingMaskIntoConstraints="NO" id="b7K-MM-TPD">
-                                <rect key="frame" x="42" y="178" width="60" height="60"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSC-rL-Rw8">
-                                <rect key="frame" x="11" y="536" width="137" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="忘记密码">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="forgetCode:" destination="68n-W8-UIC" eventType="touchUpInside" id="OYM-Hj-L0R"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="weibo" translatesAutoresizingMaskIntoConstraints="NO" id="bJj-NX-1Th">
-                                <rect key="frame" x="154" y="178" width="60" height="60"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qq" translatesAutoresizingMaskIntoConstraints="NO" id="SmQ-Gd-Y3f">
-                                <rect key="frame" x="277" y="178" width="60" height="60"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYm-wn-fau">
-                                <rect key="frame" x="227" y="536" width="137" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="注册账号">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="resignAccount:" destination="68n-W8-UIC" eventType="touchUpInside" id="2jq-2N-oAL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgx-Af-oda">
-                                <rect key="frame" x="42" y="178" width="60" height="90"/>
-                                <state key="normal" title="微信登陆">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="weixinLogin:" destination="68n-W8-UIC" eventType="touchUpInside" id="4nD-dc-qEk"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="你好,面粉!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4u-bN-BEG">
-                                <rect key="frame" x="75" y="89" width="218" height="56"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZn-2u-eOY">
-                                <rect key="frame" x="67" y="429" width="235" height="41"/>
-                                <state key="normal" title="面包用户或邮箱登陆">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="emailLogin:" destination="68n-W8-UIC" eventType="touchUpInside" id="fha-g9-tKQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoF-Yy-n83">
-                                <rect key="frame" x="71" y="364" width="227" height="38"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="通过手机号登陆"/>
-                                <connections>
-                                    <action selector="phoneLogin:" destination="68n-W8-UIC" eventType="touchUpInside" id="ef9-sX-lKh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFq-WC-MMy">
-                                <rect key="frame" x="277" y="178" width="60" height="90"/>
-                                <state key="normal" title="qq登陆">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="qqLogin:" destination="68n-W8-UIC" eventType="touchUpInside" id="Dpy-HJ-Uox"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="我的" id="OQ7-J9-6Xk"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="emailBtn" destination="aZn-2u-eOY" id="ZhO-Mx-sY8"/>
-                        <outlet property="phoneBtn" destination="FoF-Yy-n83" id="hhR-qa-xOJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jL-IW-yg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -381,9 +290,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="qq" width="56" height="56"/>
-        <image name="weibo" width="512" height="512"/>
         <image name="weibosdkback" width="45" height="45"/>
-        <image name="weixin" width="56" height="56"/>
     </resources>
 </document>
