@@ -229,7 +229,7 @@
     _dateLabel.text = [NSString stringWithFormat:@"%@: %@",
                        NSLocalizedString(@"最后更新", @""),
                        dateString];
- 
+
 }
 
 @end
