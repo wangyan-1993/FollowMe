@@ -27,7 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(40, 10, kWidth-40, 40)];
+    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(40, 2, kWidth-50, 40)];
+    self.mySearchBar.layer.cornerRadius = 10;
+    self.mySearchBar.clipsToBounds = YES;
     self.mySearchBar.delegate = self;
     self.mySearchBar.text = self.cityName;
     [self.navigationController.navigationBar addSubview:self.mySearchBar];
