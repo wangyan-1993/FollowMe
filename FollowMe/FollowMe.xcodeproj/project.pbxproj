@@ -35,6 +35,15 @@
 		7A4F87EE1C9A3B1200183EC8 /* Plus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A4F87ED1C9A3B1200183EC8 /* Plus.plist */; };
 		7A4F87F01C9A3B4A00183EC8 /* Plus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4F87EF1C9A3B4A00183EC8 /* Plus.storyboard */; };
 		7A4F87F41C9A3B7F00183EC8 /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4F87F31C9A3B7F00183EC8 /* Recommend.storyboard */; };
+
+		7A892A3A1C9A43BB00D2D11F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A391C9A43BB00D2D11F /* DetailViewController.m */; };
+		7A892A3D1C9A66BA00D2D11F /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A3C1C9A66BA00D2D11F /* PersonViewController.m */; };
+		7A892A3F1C9AA0DC00D2D11F /* city.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A892A3E1C9AA0DC00D2D11F /* city.storyboard */; };
+		7A892A421C9AA8B300D2D11F /* selectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A411C9AA8B300D2D11F /* selectCityViewController.m */; };
+
+		7A4F87F71C9A444700183EC8 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87F61C9A444700183EC8 /* SearchModel.m */; };
+		7A4F87FA1C9A4D1600183EC8 /* SearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */; };
+		7A4F87FD1C9A9B3E00183EC8 /* FiveTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */; };
 		7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */; };
 		7AB8FCF11C98E40F00D9A121 /* ThirdTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCF01C98E40F00D9A121 /* ThirdTravelViewController.m */; };
 		7AB8FCF41C98E68A00D9A121 /* FourTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCF31C98E68A00D9A121 /* FourTravelViewController.m */; };
@@ -100,6 +109,20 @@
 		7A4F87ED1C9A3B1200183EC8 /* Plus.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Plus.plist; sourceTree = "<group>"; };
 		7A4F87EF1C9A3B4A00183EC8 /* Plus.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plus.storyboard; sourceTree = "<group>"; };
 		7A4F87F31C9A3B7F00183EC8 /* Recommend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
+		7A892A381C9A43BB00D2D11F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		7A892A391C9A43BB00D2D11F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		7A892A3B1C9A66BA00D2D11F /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		7A892A3C1C9A66BA00D2D11F /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		7A892A3E1C9AA0DC00D2D11F /* city.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = city.storyboard; sourceTree = "<group>"; };
+		7A892A401C9AA8B300D2D11F /* selectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectCityViewController.h; sourceTree = "<group>"; };
+		7A892A411C9AA8B300D2D11F /* selectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectCityViewController.m; sourceTree = "<group>"; };
+
+		7A4F87F51C9A444700183EC8 /* SearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
+		7A4F87F61C9A444700183EC8 /* SearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
+		7A4F87F81C9A4D1600183EC8 /* SearchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCollectionViewCell.h; sourceTree = "<group>"; };
+		7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionViewCell.m; sourceTree = "<group>"; };
+		7A4F87FB1C9A9B3E00183EC8 /* FiveTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveTravelViewController.h; sourceTree = "<group>"; };
+		7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveTravelViewController.m; sourceTree = "<group>"; };
 		7AB8FCEC1C98DDD900D9A121 /* SecondTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTravelViewController.h; sourceTree = "<group>"; };
 		7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTravelViewController.m; sourceTree = "<group>"; };
 		7AB8FCEF1C98E40F00D9A121 /* ThirdTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTravelViewController.h; sourceTree = "<group>"; };
@@ -246,6 +269,12 @@
 			children = (
 				7A4780BD1C97F0AD00C6E5C2 /* CityViewController.h */,
 				7A4780BE1C97F0AD00C6E5C2 /* CityViewController.m */,
+				7A892A381C9A43BB00D2D11F /* DetailViewController.h */,
+				7A892A391C9A43BB00D2D11F /* DetailViewController.m */,
+				7A892A3B1C9A66BA00D2D11F /* PersonViewController.h */,
+				7A892A3C1C9A66BA00D2D11F /* PersonViewController.m */,
+				7A892A401C9AA8B300D2D11F /* selectCityViewController.h */,
+				7A892A411C9AA8B300D2D11F /* selectCityViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +296,7 @@
 				7A4F87E41C9A3AC800183EC8 /* cityFirstTableViewCell.h */,
 				7A4F87E51C9A3AC800183EC8 /* cityFirstTableViewCell.m */,
 				7A4F87E61C9A3AC800183EC8 /* cityFirstTableViewCell.xib */,
+				7A892A3E1C9AA0DC00D2D11F /* city.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,6 +444,8 @@
 				7AB8FCF01C98E40F00D9A121 /* ThirdTravelViewController.m */,
 				7AB8FCF21C98E68A00D9A121 /* FourTravelViewController.h */,
 				7AB8FCF31C98E68A00D9A121 /* FourTravelViewController.m */,
+				7A4F87FB1C9A9B3E00183EC8 /* FiveTravelViewController.h */,
+				7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */,
 				7AB8FD111C99829700D9A121 /* SearchTravelViewController.h */,
 				7AB8FD121C99829700D9A121 /* SearchTravelViewController.m */,
 			);
@@ -425,6 +457,8 @@
 			children = (
 				7AB8FD091C99406F00D9A121 /* travel.plist */,
 				7AB8FD141C999C2000D9A121 /* search.plist */,
+				7A4F87F51C9A444700183EC8 /* SearchModel.h */,
+				7A4F87F61C9A444700183EC8 /* SearchModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -432,6 +466,8 @@
 		7A4780B91C97EEBB00C6E5C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7A4F87F81C9A4D1600183EC8 /* SearchCollectionViewCell.h */,
+				7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -523,6 +559,7 @@
 				TargetAttributes = {
 					7A422B0E1C97EAB700B51C11 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = HNSLUR37K3;
 					};
 				};
 			};
@@ -567,6 +604,7 @@
 				7A3B516D1C9A3EBF000AA140 /* RecommendTableViewCell.xib in Resources */,
 				7A4B58A11C99A03D00DC4CE1 /* CollectionViewCell.xib in Resources */,
 				7A422B1C1C97EAB800B51C11 /* LaunchScreen.storyboard in Resources */,
+				7A892A3F1C9AA0DC00D2D11F /* city.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,10 +663,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4F87FD1C9A9B3E00183EC8 /* FiveTravelViewController.m in Sources */,
 				7AB8FD011C99090800D9A121 /* JCCollectionViewTagFlowLayout.m in Sources */,
 				7AF6D8201C9AB07E004994A3 /* PullingRefreshTableView.m in Sources */,
 				7AF6D8221C9AB07E004994A3 /* ProgressHUD.m in Sources */,
 				7AB8FCF71C98ECD500D9A121 /* UIViewController+Common.m in Sources */,
+				7A892A3A1C9A43BB00D2D11F /* DetailViewController.m in Sources */,
 				7AB8FD031C99090800D9A121 /* JCTagListView.m in Sources */,
 				7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */,
 				7A0017EB1C9911C30033B78F /* UIViewController+KNSemiModal.m in Sources */,
@@ -647,10 +687,14 @@
 				7AB8FD131C99829700D9A121 /* SearchTravelViewController.m in Sources */,
 				7AB8FD021C99090800D9A121 /* JCTagCell.m in Sources */,
 				7AB8FCF41C98E68A00D9A121 /* FourTravelViewController.m in Sources */,
+				7A892A421C9AA8B300D2D11F /* selectCityViewController.m in Sources */,
+				7A4F87FA1C9A4D1600183EC8 /* SearchCollectionViewCell.m in Sources */,
 				7A4780C51C97F0CF00C6E5C2 /* PlusViewController.m in Sources */,
 				7AB8FCF11C98E40F00D9A121 /* ThirdTravelViewController.m in Sources */,
 				7A4780BF1C97F0AD00C6E5C2 /* CityViewController.m in Sources */,
+				7A4F87F71C9A444700183EC8 /* SearchModel.m in Sources */,
 				7A0017FD1C993FB30033B78F /* cityModel.m in Sources */,
+				7A892A3D1C9A66BA00D2D11F /* PersonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,11 +797,14 @@
 			baseConfigurationReference = 9CE4DD61D59F51D056051F5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FollowMe/Header.pch";
 				INFOPLIST_FILE = FollowMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -767,11 +814,14 @@
 			baseConfigurationReference = 737A4A8526CBB407BDBC1B85 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FollowMe/Header.pch";
 				INFOPLIST_FILE = FollowMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

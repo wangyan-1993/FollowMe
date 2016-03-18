@@ -77,32 +77,42 @@
     self.searchList.tagCornerRadius = 10.0f;
     NSArray *ayyay1 = [NSArray arrayWithArray:self.cityArray];
     [self.cityList.tags addObjectsFromArray:ayyay1];
-
+//小标签的点击方法
     __block TravelViewController *weakself = self;
+    //
     [self.cityList setCompletionBlockWithSelected:^(NSInteger index) {
         weakself.mySearchBar.text = weakself.cityArray[index];
+        //推出下一个页面
+        SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
+        //隐藏搜索栏
+        weakself.mySearchBar.hidden = YES;
+        //将点击值传进下一个页面搜索栏
+        search.cityName = weakself.cityArray[index];
+        [weakself.navigationController pushViewController:search animated:YES];
+
+        //forin循环，判断搜索记录是否包含当前所点击的城市
         for (NSString *str in weakself.searchList.tags) {
+           
+            //如果包含，直接退出
             if ([weakself.cityArray[index] isEqualToString:str]) {
                 return;
             }
         }
+        //不包含写进搜索记录；
         [weakself.searchList.tags addObject:weakself.cityArray[index]];
+        //搜索记录最多显示十个
         if (weakself.searchList.tags.count > 10) {
             [weakself.searchList.tags removeObjectAtIndex:0];
         }
+        //刷新搜索记录
         [weakself.searchList.collectionView reloadData];
-        SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
-        weakself.mySearchBar.hidden = YES;
-        search.cityName = weakself.cityArray[index];
-        [weakself.navigationController pushViewController:search animated:YES];
-       
+        
     }];
   [self.searchList setCompletionBlockWithSelected:^(NSInteger index) {
       SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
       search.cityName = weakself.cityArray[index];
-
-      [weakself.navigationController pushViewController:search animated:YES];
       weakself.mySearchBar.hidden = YES;
+      [weakself.navigationController pushViewController:search animated:YES];
 
   }];
     
@@ -139,7 +149,7 @@
 }
 
 #pragma mark---UISearchBarDelegate
-
+//搜索栏输入导入时候
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
     [self addWhiteView];
     [self.mySearchBar setShowsCancelButton:YES animated:YES];
@@ -148,7 +158,7 @@
     }];
     return YES;
 }
-
+//取消按钮的点击方法
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
     [searchBar setShowsCancelButton:NO animated:YES];
@@ -158,6 +168,7 @@
     self.mySearchBar.text = nil;
 
 }
+//搜索按钮的点击方法
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     for (NSString *str in self.searchList.tags) {
         if ([searchBar.text isEqualToString:str]) {
@@ -171,11 +182,11 @@
     [self.searchList.collectionView reloadData];
     SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
     search.cityName = searchBar.text;
-
-    [self.navigationController pushViewController:search animated:YES];
     self.mySearchBar.hidden = YES;
+    [self.navigationController pushViewController:search animated:YES];
 
 }
+//点击空白回收键盘
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.mySearchBar resignFirstResponder];
 }

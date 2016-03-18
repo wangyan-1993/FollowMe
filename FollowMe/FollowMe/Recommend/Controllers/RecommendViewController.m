@@ -89,6 +89,8 @@ static NSString *itemID = @"itemId";
     [self.headerView addSubview:self.collectionView];
     //请求数据
     [self workOne];
+//    [self workOne];
+    [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headerView;
 //注册tableView
     [self.tableView registerNib:[UINib nibWithNibName:@"RecommendTableViewCell" bundle:nil] forCellReuseIdentifier:@"tableViewCell"];
