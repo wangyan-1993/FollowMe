@@ -13,6 +13,9 @@
 		7A0017F81C9935B20033B78F /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0017F71C9935B20033B78F /* Property List.plist */; };
 		7A0017FA1C993AEE0033B78F /* cityFirst2List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0017F91C993AEE0033B78F /* cityFirst2List.plist */; };
 		7A0017FD1C993FB30033B78F /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0017FC1C993FB30033B78F /* cityModel.m */; };
+		7A21BF1B1C9BB19800E2321F /* ChoseCityList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A21BF1A1C9BB19800E2321F /* ChoseCityList.plist */; };
+		7A21BF1E1C9BC54000E2321F /* ChoseCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A21BF1D1C9BC54000E2321F /* ChoseCityModel.m */; };
+		7A21BF211C9BD44900E2321F /* selectHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A21BF201C9BD44900E2321F /* selectHotViewController.m */; };
 		7A3B51681C9A3C8C000AA140 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B51671C9A3C8C000AA140 /* RecommendModel.m */; };
 		7A3B516C1C9A3EBF000AA140 /* RecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B516A1C9A3EBF000AA140 /* RecommendTableViewCell.m */; };
 		7A3B516D1C9A3EBF000AA140 /* RecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3B516B1C9A3EBF000AA140 /* RecommendTableViewCell.xib */; };
@@ -70,6 +73,11 @@
 		7A0017F91C993AEE0033B78F /* cityFirst2List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityFirst2List.plist; sourceTree = "<group>"; };
 		7A0017FB1C993FB30033B78F /* cityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cityModel.h; sourceTree = "<group>"; };
 		7A0017FC1C993FB30033B78F /* cityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cityModel.m; sourceTree = "<group>"; };
+		7A21BF1A1C9BB19800E2321F /* ChoseCityList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChoseCityList.plist; sourceTree = "<group>"; };
+		7A21BF1C1C9BC54000E2321F /* ChoseCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoseCityModel.h; sourceTree = "<group>"; };
+		7A21BF1D1C9BC54000E2321F /* ChoseCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoseCityModel.m; sourceTree = "<group>"; };
+		7A21BF1F1C9BD44900E2321F /* selectHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectHotViewController.h; sourceTree = "<group>"; };
+		7A21BF201C9BD44900E2321F /* selectHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectHotViewController.m; sourceTree = "<group>"; };
 		7A2B4A731C98177E005B699B /* recommend.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = recommend.plist; path = ../../Table/recommend.plist; sourceTree = "<group>"; };
 		7A3B51661C9A3C8C000AA140 /* RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendModel.h; sourceTree = "<group>"; };
 		7A3B51671C9A3C8C000AA140 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
@@ -272,6 +280,8 @@
 				7A892A3C1C9A66BA00D2D11F /* PersonViewController.m */,
 				7A892A401C9AA8B300D2D11F /* selectCityViewController.h */,
 				7A892A411C9AA8B300D2D11F /* selectCityViewController.m */,
+				7A21BF1F1C9BD44900E2321F /* selectHotViewController.h */,
+				7A21BF201C9BD44900E2321F /* selectHotViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -283,6 +293,9 @@
 				7A0017F91C993AEE0033B78F /* cityFirst2List.plist */,
 				7A0017FB1C993FB30033B78F /* cityModel.h */,
 				7A0017FC1C993FB30033B78F /* cityModel.m */,
+				7A21BF1C1C9BC54000E2321F /* ChoseCityModel.h */,
+				7A21BF1D1C9BC54000E2321F /* ChoseCityModel.m */,
+				7A21BF1A1C9BB19800E2321F /* ChoseCityList.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -599,6 +612,7 @@
 				7A4F87F01C9A3B4A00183EC8 /* Plus.storyboard in Resources */,
 				7AF6D8211C9AB07E004994A3 /* ProgressHUD.bundle in Resources */,
 				7A3B516D1C9A3EBF000AA140 /* RecommendTableViewCell.xib in Resources */,
+				7A21BF1B1C9BB19800E2321F /* ChoseCityList.plist in Resources */,
 				7A4B58A11C99A03D00DC4CE1 /* CollectionViewCell.xib in Resources */,
 				7A422B1C1C97EAB800B51C11 /* LaunchScreen.storyboard in Resources */,
 				7A892A3F1C9AA0DC00D2D11F /* city.storyboard in Resources */,
@@ -669,12 +683,14 @@
 				7AB8FD031C99090800D9A121 /* JCTagListView.m in Sources */,
 				7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */,
 				7A0017EB1C9911C30033B78F /* UIViewController+KNSemiModal.m in Sources */,
+				7A21BF1E1C9BC54000E2321F /* ChoseCityModel.m in Sources */,
 				7A422B171C97EAB800B51C11 /* AppDelegate.m in Sources */,
 				7A4780C81C97F0E200C6E5C2 /* TravelViewController.m in Sources */,
 				7A422B141C97EAB800B51C11 /* main.m in Sources */,
 				7A3B51681C9A3C8C000AA140 /* RecommendModel.m in Sources */,
 				7A4F87E71C9A3AC800183EC8 /* cityFirstTableViewCell.m in Sources */,
 				7AF6D8251C9AE122004994A3 /* allCollectionViewController.m in Sources */,
+				7A21BF211C9BD44900E2321F /* selectHotViewController.m in Sources */,
 				7A4780C21C97F0C000C6E5C2 /* MineViewController.m in Sources */,
 				7A0017EA1C9911C30033B78F /* README.md in Sources */,
 				7A4780BC1C97F09100C6E5C2 /* RecommendViewController.m in Sources */,
