@@ -12,6 +12,8 @@
 #import "JCTagListView.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "SearchTravelViewController.h"
+#import "ProgressHUD.h"
+#import "DataBaseManager.h"
 @interface TravelViewController ()<UIWebViewDelegate, UISearchBarDelegate>
 @property(nonatomic, strong) UIWebView *webView;
 @property(nonatomic, strong) UISearchBar *mySearchBar;
@@ -31,13 +33,16 @@
     self.navigationController.navigationBar.barTintColor = kMainColor;
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     [self.view addSubview:self.webView];
-    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 10, kWidth, 40)];
+    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10, 0, kWidth-20, 40)];
+    self.mySearchBar.layer.cornerRadius = 10;
+    self.mySearchBar.clipsToBounds = YES;
     self.mySearchBar.delegate = self;
     self.mySearchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.mySearchBar.placeholder = @"搜索目的地";
     [self.navigationController.navigationBar addSubview:self.mySearchBar];
     [self loadData];
+    
     
 }
 -  (void)viewWillAppear:(BOOL)animated{
@@ -75,8 +80,20 @@
     self.searchList.canSelectTags = YES;
     self.cityList.tagCornerRadius = 10.0f;
     self.searchList.tagCornerRadius = 10.0f;
+#pragma mark---数据库
+    //************************创建数据库，
+    DataBaseManager *dbManager = [DataBaseManager shareInatance];
+    //并传入所建数据库的名字！！！！！！！！！！！！！！！！必须传名字
+    dbManager.name = @"city";
+    
+    
     NSArray *ayyay1 = [NSArray arrayWithArray:self.cityArray];
     [self.cityList.tags addObjectsFromArray:ayyay1];
+    //查询数据库里的所有元素
+    NSArray *array =[NSArray arrayWithArray:[dbManager selectAllCollect]];
+    //显示搜索记录
+    [self.searchList.tags addObjectsFromArray:array];
+    
 //小标签的点击方法
     __block TravelViewController *weakself = self;
     //
@@ -100,6 +117,9 @@
         }
         //不包含写进搜索记录；
         [weakself.searchList.tags addObject:weakself.cityArray[index]];
+#pragma mark---数据库       
+        //************************在数据库添加元素
+        [dbManager insertIntoSearch:weakself.cityArray[index]];
         //搜索记录最多显示十个
         if (weakself.searchList.tags.count > 10) {
             [weakself.searchList.tags removeObjectAtIndex:0];
@@ -120,7 +140,7 @@
 
 #pragma mark---UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-   
+    [ProgressHUD show:@"数据正在加载"];
     NSString *urlStr = request.URL.absoluteString;
    
     NSArray *array = [urlStr componentsSeparatedByString:@"/"];
@@ -146,6 +166,14 @@
     }
     
     return YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [ProgressHUD showSuccess:@"数据已加载完毕"];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error{
+    [ProgressHUD showError:[NSString stringWithFormat:@"%@", error]];
 }
 
 #pragma mark---UISearchBarDelegate

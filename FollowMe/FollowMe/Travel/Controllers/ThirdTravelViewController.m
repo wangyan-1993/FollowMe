@@ -36,6 +36,7 @@ self.title = @"介绍";
     NSString *string1 = array[length-2];
     NSString *string2 = array.lastObject;
     WLZLog(@"%@", request);
+    WLZLog(@"%ld", navigationType);
     FourTravelViewController *four = [[FourTravelViewController alloc]init];
     switch (navigationType) {
         case UIWebViewNavigationTypeLinkClicked:
@@ -50,6 +51,9 @@ self.title = @"介绍";
             }
             if ([string1 isEqualToString:@"notice"]) {
                 four.title = @"预订须知";
+            }
+            if ([string1 isEqualToString:@"schedule"]) {
+                four.title = @"行程时间表";
             }
             four.urlString = request.URL.absoluteString;
             four.hidesBottomBarWhenPushed = YES;
@@ -67,6 +71,15 @@ self.title = @"介绍";
                 [self.webView stopLoading];
 
             }
+            if ([string1 isEqualToString:@"order"]) {
+                four.title = @"订单";
+                four.urlString = request.URL.absoluteString;
+                four.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:four animated:YES];
+                [self.webView stopLoading];
+                
+            }
+
             if ([string2 isEqualToString:@"?type=info"]) {
                 four.title = @"酒店详情";
                 four.urlString = request.URL.absoluteString;
