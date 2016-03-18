@@ -213,7 +213,7 @@ WLZLog(@"%@", five.name);    self.mySearchBar.hidden = YES;
         self.collectionView.delegate = self;
         self.collectionView.backgroundColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:0.3];
         
-        //注册item类型
+        //注册item类型，要用自定义的collectionViewCell
         [self.collectionView registerClass:[SearchCollectionViewCell class] forCellWithReuseIdentifier:@"city"];
         //注册区头
         [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
