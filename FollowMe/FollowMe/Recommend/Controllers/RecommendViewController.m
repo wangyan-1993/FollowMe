@@ -19,17 +19,19 @@
 #import "PullingRefreshTableView.h"
 //菊花第三方
 #import "ProgressHUD.h"
+#import "JCTagListView.h"
 //全局静态变量
 static NSString *collectionHeader = @"cityHeader";
 static NSString *itemID = @"itemId";
 //广告轮播代理（JXBAdPageViewDelegate）
-@interface RecommendViewController ()<JXBAdPageViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,UISearchBarDelegate,UITextFieldDelegate>{
+@interface RecommendViewController ()<JXBAdPageViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,UISearchBarDelegate,UITextFieldDelegate,UISearchBarDelegate>{
     //广告轮播数据数组
-    NSMutableArray *_AdvertisementArray;
+
     //上拉加载的时候
     NSString *_next_start;
 
 }
+@property (nonatomic, strong) NSMutableArray *advertisementArray;
 //广告轮播图
 @property (nonatomic, strong) JXBAdPageView    *AdvertisementImageView;
 //collerctionView属性
@@ -51,44 +53,36 @@ static NSString *itemID = @"itemId";
 //tableViewSection头部标题
 @property (nonatomic, strong) NSDictionary *tableViewSectionArray;
 @property(nonatomic, assign) BOOL refreshing;
+//搜索栏第三方
+@property(nonatomic, strong) UISearchBar *mySearchBar;
 @end
 
 @implementation RecommendViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.backgroundColor = kMainColor;
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 44)];
-    
+    self.navigationController.navigationBar.barTintColor = kMainColor;
+    //附近
     UIButton *nearbyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     nearbyBtn.frame = CGRectMake(kWidth-90, 0, 90, 44);
     [nearbyBtn setTitle:@"附近" forState:UIControlStateNormal];
     [nearbyBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [titleView addSubview:nearbyBtn];
-    
-    UITextField *searchField = [[UITextField alloc] initWithFrame:CGRectMake(5, 7, kWidth-95, 30)];
-    
-    //设置输入框的背景颜色
-    searchField.backgroundColor = [UIColor redColor];
-    searchField.placeholder = @"搜索目的地、游记、故事集、用户";
-    //设置字体颜色
-    searchField.textColor = [UIColor whiteColor];
-    //输入框中是否有个叉号，在什么时候显示，用于一次性删除输入框中的内容
-    searchField.clearButtonMode = UITextFieldViewModeAlways;
-    //设置代理
-    searchField.delegate = self;
-    [titleView addSubview:searchField];
-    
-    self.navigationItem.titleView = titleView;
+    [self.navigationController.navigationBar addSubview:nearbyBtn];
+ //搜索框
+    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10, 7, kWidth-80, 30)];
+    self.mySearchBar.delegate = self;
+    self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    self.mySearchBar.placeholder = @"搜索目的地、游记、故事集、用户";
+    [self.navigationController.navigationBar addSubview:self.mySearchBar];
     
     
   
     // Do any additional setup after loading the view.
-    _AdvertisementArray = [NSMutableArray new];
+   
     //collectionview添加进系统视图
     [self.headerView addSubview:self.collectionView];
     //请求数据
-    [self workOne];
+   
 //    [self workOne];
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headerView;
@@ -102,6 +96,10 @@ static NSString *itemID = @"itemId";
     
 
 
+}
+//在页面将要出现的时候
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
 }
 //在页面将要消失的时候，调用此方法，去掉所有的
 - (void)viewDidDisappear:(BOOL)animated{
@@ -145,11 +143,14 @@ static NSString *itemID = @"itemId";
     _AdvertisementImageView.iDisplayTime = 2;
     _AdvertisementImageView.bWebImage = YES;
     _AdvertisementImageView.delegate = self;
-    NSArray *arr = _AdvertisementArray;
-    [_AdvertisementImageView startAdsWithBlock:arr block:^(NSInteger clickIndex){
-        NSLog(@"%d",(int)clickIndex);
-    }];
-    //collectionview 头部
+    if (self.advertisementArray.count>0) {
+//        NSArray *arr = self.advertisementArray;
+        [_AdvertisementImageView startAdsWithBlock:self.advertisementArray block:^(NSInteger clickIndex){
+            NSLog(@"%d",(int)clickIndex);
+        }];
+
+    }
+        //collectionview 头部
     UILabel *collectionViewSectionLable = [[UILabel alloc] initWithFrame:CGRectMake(10, 210, kWidth-100, 40)];
    collectionViewSectionLable.text = self.collectionViewSectionArray[@"title"];
     UIButton *collectionViewSectionBtn = [[UIButton alloc] initWithFrame:CGRectMake(kWidth - 80, 210, 60, 40)];
@@ -194,7 +195,7 @@ static NSString *itemID = @"itemId";
         if (_refreshing) {
             if (self.collerctionViewArray.count > 0) {
                 [self.collerctionViewArray removeAllObjects];
-                [_AdvertisementArray removeAllObjects];
+                [self.advertisementArray removeAllObjects];
                 [self.introduceImageArray removeAllObjects];
                 [self.introduceLableArray removeAllObjects];
                
@@ -207,14 +208,17 @@ static NSString *itemID = @"itemId";
                 
             }
         }
+       
         for (NSDictionary *dic2 in elements) {
             //请求广告数据
+            
             if ([dic2[@"desc"] isEqualToString:@"广告banner"]) {
                 NSArray *data = dic2[@"data"];
                 NSArray *item = data[0];
                 for (NSDictionary *dic3 in item) {
-                    [_AdvertisementArray addObject:dic3[@"image_url"]];
+                    [self.advertisementArray addObject:dic3[@"image_url"]];
                 }
+                
             }
             //请求出来的数据是NSString类型  但转换为数据却是NSNumber类型
            else if (dic2[@"type"] == [NSNumber numberWithInteger:10]) {
@@ -262,7 +266,7 @@ static NSString *itemID = @"itemId";
         }
         [self.tableView tableViewDidFinishedLoading];
         self.tableView.reachedTheEnd = NO;
-        [self AdvertisementArray];
+       [self AdvertisementArray];
 
         //刷新tableView
         [self.tableView reloadData];
@@ -280,7 +284,10 @@ static NSString *itemID = @"itemId";
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RecommendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewCell" forIndexPath:indexPath];
-    cell.model = self.tableViewArray[indexPath.row];
+   
+         cell.model = self.tableViewArray[indexPath.row];
+    
+   
     return cell;
 }
 
@@ -293,23 +300,23 @@ static NSString *itemID = @"itemId";
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
     return self.nameLableArray.count;
+  
     
-}
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    
-    return 1;
 }
 //collerctionView cell显示内容
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    [cell.introduceImageView sd_setImageWithURL:[NSURL URLWithString:self.introduceImageArray[indexPath.row]] placeholderImage:nil];
-    cell.introduceLable.text = self.introduceLableArray[indexPath.row];
-    cell.introduceLable.numberOfLines = 0;
-    cell.introduceLable.font = [UIFont systemFontOfSize:13];
-    [cell.nameImageView sd_setImageWithURL:[NSURL URLWithString:self.nameImageArray[indexPath.row]] placeholderImage:nil];
-    cell.nameLable.text = self.nameLableArray[indexPath.row];
-    cell.nameLable.numberOfLines = 0;
-    cell.nameLable.font = [UIFont systemFontOfSize:11];
+  
+        [cell.introduceImageView sd_setImageWithURL:[NSURL URLWithString:self.introduceImageArray[indexPath.row]] placeholderImage:nil];
+        cell.introduceLable.text = self.introduceLableArray[indexPath.row];
+        cell.introduceLable.numberOfLines = 0;
+        cell.introduceLable.font = [UIFont systemFontOfSize:13];
+        [cell.nameImageView sd_setImageWithURL:[NSURL URLWithString:self.nameImageArray[indexPath.row]] placeholderImage:nil];
+        cell.nameLable.text = self.nameLableArray[indexPath.row];
+        cell.nameLable.numberOfLines = 0;
+        cell.nameLable.font = [UIFont systemFontOfSize:11];
+
+   
     
     
     return cell;
@@ -330,21 +337,14 @@ static NSString *itemID = @"itemId";
 - (void)selectItemAtIndexPath:(nullable NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UICollectionViewScrollPosition)scrollPosition{
     scrollPosition = UICollectionViewScrollPositionTop;
 }
-#pragma mark     -------------懒加载----------------
-////collectionViewSection头部标题
-//- (NSMutableArray *)collectionViewSectionArray{
-//    if (_collectionViewSectionArray == nil) {
-//        self.collectionViewSectionArray = [NSMutableArray new];
-//    }
-//    return _collectionViewSectionArray;
-//}
-////tableViewSection头部标题
-//- (NSMutableArray *)tableViewSectionArray{
-//    if (_tableViewSectionArray == nil) {
-//        self.tableViewSectionArray = [NSMutableArray new];
-//    }
-//    return _tableViewSectionArray;
-//}
+#pragma mark     -------------懒加载--------------
+//广告轮播数据
+- (NSMutableArray *)advertisementArray{
+    if (_advertisementArray == nil) {
+        self.advertisementArray = [NSMutableArray new];
+    }
+    return _advertisementArray;
+}
 //tableViewArray的懒加载
 - (NSMutableArray *)tableViewArray{
     if (_tableViewArray == nil) {
