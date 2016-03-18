@@ -12,6 +12,7 @@
 #import "JCTagListView.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "SearchTravelViewController.h"
+#import "ProgressHUD.h"
 @interface TravelViewController ()<UIWebViewDelegate, UISearchBarDelegate>
 @property(nonatomic, strong) UIWebView *webView;
 @property(nonatomic, strong) UISearchBar *mySearchBar;
@@ -120,7 +121,7 @@
 
 #pragma mark---UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-   
+    [ProgressHUD show:@"数据正在加载"];
     NSString *urlStr = request.URL.absoluteString;
    
     NSArray *array = [urlStr componentsSeparatedByString:@"/"];
@@ -148,6 +149,9 @@
     return YES;
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [ProgressHUD showSuccess:@"数据已加载完毕"];
+}
 #pragma mark---UISearchBarDelegate
 //搜索栏输入导入时候
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{

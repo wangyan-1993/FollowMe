@@ -124,7 +124,6 @@
     return self.numArray.count;
 }
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-
     UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
        self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -157,7 +156,7 @@ WLZLog(@"%@", five.name);    self.mySearchBar.hidden = YES;
     return size;
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    [self.btn removeFromSuperview];
+    //[self.btn removeFromSuperview];
     [self loadDataWithString:searchBar.text];
 }
 
