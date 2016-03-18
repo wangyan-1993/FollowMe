@@ -39,6 +39,7 @@
     [self.navigationController.navigationBar addSubview:self.mySearchBar];
     [self loadData];
     
+    
 }
 -  (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
