@@ -27,7 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(40, 10, kWidth-40, 40)];
+    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(40, 2, kWidth-50, 40)];
+    self.mySearchBar.layer.cornerRadius = 10;
+    self.mySearchBar.clipsToBounds = YES;
     self.mySearchBar.delegate = self;
     self.mySearchBar.text = self.cityName;
     [self.navigationController.navigationBar addSubview:self.mySearchBar];
@@ -124,7 +126,6 @@
     return self.numArray.count;
 }
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-
     UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
        self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -157,7 +158,7 @@ WLZLog(@"%@", five.name);    self.mySearchBar.hidden = YES;
     return size;
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    [self.btn removeFromSuperview];
+    //[self.btn removeFromSuperview];
     [self loadDataWithString:searchBar.text];
 }
 

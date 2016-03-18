@@ -28,7 +28,7 @@ static NSString *identifier = @"cell";
 @property(nonatomic, strong) UIView *firstView;
 @property(nonatomic, strong) UIView *secondView;
 @property(nonatomic, strong) UIView *thirdView;
-@property(nonatomic, strong) UISearchBar *mySearchBar;
+
 @property(nonatomic, strong) NSMutableArray *listArray;
 
 @property(nonatomic, strong) UITableView *tableView;
@@ -72,18 +72,6 @@ static NSString *identifier = @"cell";
     leftbar.tintColor = [UIColor whiteColor];
     
     
-    
-    //搜索框；
-//    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 10, kWidth, 40)];
-//    self.mySearchBar.delegate = self;
-//    [self.navigationController.navigationBar addSubview:self.mySearchBar];
-//    self.mySearchBar.autocorrectionType = UITextAutocorrectionTypeNo;
-//    self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-//    self.mySearchBar.placeholder = @"搜索目的地";
-//    
-//    [self.navigationController.navigationBar addSubview:self.mySearchBar];
-    
-    
     //SegmentedControl :用到的方法；
     NSArray *segment = [[NSArray alloc] initWithObjects:@"主题",@"日期筛选",@"智能排序", nil];
     _segmented = [[UISegmentedControl alloc] initWithItems:segment];
@@ -123,6 +111,19 @@ static NSString *identifier = @"cell";
 //
 
 //http://api.breadtrip.com/hunter/products/v2/?city_name=%E5%8C%97%E4%BA%AC&sign=8d6cd1ac4402ef780c44b3b629a07af7&start=0
+
+
+//城市接口：http://api.breadtrip.com/hunter/products/v2/metadata/?with_citydata&with_sortdata&city_name=%E5%8C%97%E4%BA%AC
+//点击城市详细接口：http://api.breadtrip.com/hunter/products/more/?city_name=%E8%A5%BF%E5%AE%89&start=0&lat=34.613475705487886&lng=112.41399171556088
+//点击城市详细接口：http://api.breadtrip.com/hunter/products/more/?city_name=%E6%B7%B1%E5%9C%B3&start=0&lat=34.613475705487886&lng=112.41399171556088
+
+
+//搜索图案接口：http://api.breadtrip.com/hunter/products/v2/search/hotkeywords/?city_name=%E5%8C%97%E4%BA%AC
+//搜索点击城市接口：http://api.breadtrip.com/hunter/products/v2/search/?city_name=%E5%8C%97%E4%BA%AC&lat=34.613476&lng=112.413994&q=%E6%91%84%E5%BD%B1
+//搜索点击城市接口：http://api.breadtrip.com/hunter/products/v2/search/?city_name=%E5%8C%97%E4%BA%AC&lat=34.613476&lng=112.413994&q=%E6%B2%B9%E7%94%BB
+
+
+//主页点击原型图片接口：http://api.breadtrip.com/v3/user/2384305001/
 
 -(void)uptataConfig{
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
@@ -199,6 +200,7 @@ static NSString *identifier = @"cell";
     
     
     self.thirdView = [[UIView alloc] initWithFrame:CGRectMake(0, 1/3*kHeight, kWidth, 2/3*kHeight)];
+    //模态视图
     [self presentSemiView:_thirdView];
     
     
@@ -299,7 +301,7 @@ static NSString *identifier = @"cell";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.mySearchBar.hidden = YES;
+   
     self.hidesBottomBarWhenPushed = YES;
     
 }
