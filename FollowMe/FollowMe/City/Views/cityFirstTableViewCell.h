@@ -11,5 +11,6 @@
 @interface cityFirstTableViewCell : UITableViewCell
 
 @property(nonatomic, strong) cityModel *model;
+@property (strong, nonatomic) IBOutlet UIButton *ClassifyButton;
 
 @end

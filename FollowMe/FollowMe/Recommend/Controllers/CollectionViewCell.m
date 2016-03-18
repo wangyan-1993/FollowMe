@@ -20,6 +20,9 @@
 }
 - (void)awakeFromNib {
     // Initialization code
+    self.nameImageView.layer.masksToBounds = YES;
+    //设置为图片宽度的一半
+    self.nameImageView.layer.cornerRadius =  35/2.0f;
 }
 
 @end
