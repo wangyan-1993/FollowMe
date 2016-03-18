@@ -35,15 +35,13 @@
 		7A4F87EE1C9A3B1200183EC8 /* Plus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A4F87ED1C9A3B1200183EC8 /* Plus.plist */; };
 		7A4F87F01C9A3B4A00183EC8 /* Plus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4F87EF1C9A3B4A00183EC8 /* Plus.storyboard */; };
 		7A4F87F41C9A3B7F00183EC8 /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4F87F31C9A3B7F00183EC8 /* Recommend.storyboard */; };
-
+		7A4F87F71C9A444700183EC8 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87F61C9A444700183EC8 /* SearchModel.m */; };
+		7A4F87FA1C9A4D1600183EC8 /* SearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */; };
+		7A4F87FD1C9A9B3E00183EC8 /* FiveTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */; };
 		7A892A3A1C9A43BB00D2D11F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A391C9A43BB00D2D11F /* DetailViewController.m */; };
 		7A892A3D1C9A66BA00D2D11F /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A3C1C9A66BA00D2D11F /* PersonViewController.m */; };
 		7A892A3F1C9AA0DC00D2D11F /* city.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A892A3E1C9AA0DC00D2D11F /* city.storyboard */; };
 		7A892A421C9AA8B300D2D11F /* selectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A411C9AA8B300D2D11F /* selectCityViewController.m */; };
-
-		7A4F87F71C9A444700183EC8 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87F61C9A444700183EC8 /* SearchModel.m */; };
-		7A4F87FA1C9A4D1600183EC8 /* SearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */; };
-		7A4F87FD1C9A9B3E00183EC8 /* FiveTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */; };
 		7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */; };
 		7AB8FCF11C98E40F00D9A121 /* ThirdTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCF01C98E40F00D9A121 /* ThirdTravelViewController.m */; };
 		7AB8FCF41C98E68A00D9A121 /* FourTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCF31C98E68A00D9A121 /* FourTravelViewController.m */; };
@@ -109,6 +107,12 @@
 		7A4F87ED1C9A3B1200183EC8 /* Plus.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Plus.plist; sourceTree = "<group>"; };
 		7A4F87EF1C9A3B4A00183EC8 /* Plus.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plus.storyboard; sourceTree = "<group>"; };
 		7A4F87F31C9A3B7F00183EC8 /* Recommend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
+		7A4F87F51C9A444700183EC8 /* SearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
+		7A4F87F61C9A444700183EC8 /* SearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
+		7A4F87F81C9A4D1600183EC8 /* SearchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCollectionViewCell.h; sourceTree = "<group>"; };
+		7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionViewCell.m; sourceTree = "<group>"; };
+		7A4F87FB1C9A9B3E00183EC8 /* FiveTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveTravelViewController.h; sourceTree = "<group>"; };
+		7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveTravelViewController.m; sourceTree = "<group>"; };
 		7A892A381C9A43BB00D2D11F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7A892A391C9A43BB00D2D11F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7A892A3B1C9A66BA00D2D11F /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
@@ -116,13 +120,6 @@
 		7A892A3E1C9AA0DC00D2D11F /* city.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = city.storyboard; sourceTree = "<group>"; };
 		7A892A401C9AA8B300D2D11F /* selectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectCityViewController.h; sourceTree = "<group>"; };
 		7A892A411C9AA8B300D2D11F /* selectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectCityViewController.m; sourceTree = "<group>"; };
-
-		7A4F87F51C9A444700183EC8 /* SearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
-		7A4F87F61C9A444700183EC8 /* SearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
-		7A4F87F81C9A4D1600183EC8 /* SearchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCollectionViewCell.h; sourceTree = "<group>"; };
-		7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionViewCell.m; sourceTree = "<group>"; };
-		7A4F87FB1C9A9B3E00183EC8 /* FiveTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveTravelViewController.h; sourceTree = "<group>"; };
-		7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveTravelViewController.m; sourceTree = "<group>"; };
 		7AB8FCEC1C98DDD900D9A121 /* SecondTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTravelViewController.h; sourceTree = "<group>"; };
 		7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTravelViewController.m; sourceTree = "<group>"; };
 		7AB8FCEF1C98E40F00D9A121 /* ThirdTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTravelViewController.h; sourceTree = "<group>"; };
@@ -801,6 +798,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FollowMe/Header.pch";
 				INFOPLIST_FILE = FollowMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -818,6 +816,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FollowMe/Header.pch";
 				INFOPLIST_FILE = FollowMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";

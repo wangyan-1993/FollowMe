@@ -32,11 +32,9 @@ self.title = @"介绍";
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     NSString *urlStr = request.URL.absoluteString;
     NSArray *array = [urlStr componentsSeparatedByString:@"/"];
-    NSArray *array2 = [urlStr componentsSeparatedByString:@"&"];
     NSInteger length = array.count;
     NSString *string1 = array[length-2];
     NSString *string2 = array.lastObject;
-    NSString *string3 = array2.lastObject;
     WLZLog(@"%@", request);
     FourTravelViewController *four = [[FourTravelViewController alloc]init];
     switch (navigationType) {
