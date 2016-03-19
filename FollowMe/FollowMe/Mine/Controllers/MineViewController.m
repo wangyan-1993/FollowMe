@@ -8,6 +8,10 @@
 
 #import "MineViewController.h"
 #import "LoginViewController.h"
+#import "EmailLoginViewController.h"
+#import "EmailVerifyViewController.h"
+#import "FindCodeByPhoneViewController.h"
+#import "ResignViewController.h"
 @interface MineViewController ()
 
 @property(nonatomic, strong) UIButton *emailBtn;
@@ -119,9 +123,7 @@
 - (void)weixinlogin{
     
 }
-- (void)resign{
-    
-}
+
 - (void)weibologin{
     
 }
@@ -136,13 +138,48 @@
     [self.navigationController presentViewController:login animated:YES completion:nil];
 }
 - (void)emaillogin{
+    UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
     
+    
+    EmailLoginViewController *emaillogin = [mineStoryBoard instantiateViewControllerWithIdentifier:@"emaillogin"];
+    [self.navigationController presentViewController:emaillogin animated:YES completion:nil];
 }
 
 - (void)forget{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:action1];
+    
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"通过手机号找回" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+        FindCodeByPhoneViewController *findcode = [mineStoryBoard instantiateViewControllerWithIdentifier:@"findbyphone"];
+        [self.navigationController presentViewController:findcode animated:YES completion:nil];
+        
+        
+    }];
+    [alert addAction:action2];
+    
+    
+    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"通过用户名或邮箱找回" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+        
+        
+        EmailVerifyViewController *emailverify = [mineStoryBoard instantiateViewControllerWithIdentifier:@"emailverify"];
+        [self.navigationController presentViewController:emailverify animated:YES completion:nil];
+    }];
+    [alert addAction:action3];
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
-
+- (void)resign{
+    
+    UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+    
+    
+    ResignViewController *resign = [mineStoryBoard instantiateViewControllerWithIdentifier:@"resign"];
+    [self.navigationController presentViewController:resign animated:YES completion:nil];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

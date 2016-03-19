@@ -13,6 +13,11 @@
 		7A0017F81C9935B20033B78F /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0017F71C9935B20033B78F /* Property List.plist */; };
 		7A0017FA1C993AEE0033B78F /* cityFirst2List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0017F91C993AEE0033B78F /* cityFirst2List.plist */; };
 		7A0017FD1C993FB30033B78F /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0017FC1C993FB30033B78F /* cityModel.m */; };
+		7A32E15E1C9D259B0012F871 /* EmailLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A32E15D1C9D259B0012F871 /* EmailLoginViewController.m */; };
+		7A32E1611C9D25BD0012F871 /* EmailVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A32E1601C9D25BD0012F871 /* EmailVerifyViewController.m */; };
+		7A32E1641C9D37B20012F871 /* FindCodeByPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A32E1631C9D37B20012F871 /* FindCodeByPhoneViewController.m */; };
+		7A32E1671C9D38400012F871 /* ResetCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A32E1661C9D38400012F871 /* ResetCodeViewController.m */; };
+		7A32E16A1C9D40AC0012F871 /* ResignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A32E1691C9D40AC0012F871 /* ResignViewController.m */; };
 		7A3B51681C9A3C8C000AA140 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B51671C9A3C8C000AA140 /* RecommendModel.m */; };
 		7A3B516C1C9A3EBF000AA140 /* RecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B516A1C9A3EBF000AA140 /* RecommendTableViewCell.m */; };
 		7A3B516D1C9A3EBF000AA140 /* RecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3B516B1C9A3EBF000AA140 /* RecommendTableViewCell.xib */; };
@@ -74,6 +79,16 @@
 		7A0017FB1C993FB30033B78F /* cityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cityModel.h; sourceTree = "<group>"; };
 		7A0017FC1C993FB30033B78F /* cityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cityModel.m; sourceTree = "<group>"; };
 		7A2B4A731C98177E005B699B /* recommend.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = recommend.plist; path = ../../Table/recommend.plist; sourceTree = "<group>"; };
+		7A32E15C1C9D259B0012F871 /* EmailLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailLoginViewController.h; sourceTree = "<group>"; };
+		7A32E15D1C9D259B0012F871 /* EmailLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailLoginViewController.m; sourceTree = "<group>"; };
+		7A32E15F1C9D25BD0012F871 /* EmailVerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailVerifyViewController.h; sourceTree = "<group>"; };
+		7A32E1601C9D25BD0012F871 /* EmailVerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailVerifyViewController.m; sourceTree = "<group>"; };
+		7A32E1621C9D37B20012F871 /* FindCodeByPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCodeByPhoneViewController.h; sourceTree = "<group>"; };
+		7A32E1631C9D37B20012F871 /* FindCodeByPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCodeByPhoneViewController.m; sourceTree = "<group>"; };
+		7A32E1651C9D38400012F871 /* ResetCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetCodeViewController.h; sourceTree = "<group>"; };
+		7A32E1661C9D38400012F871 /* ResetCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetCodeViewController.m; sourceTree = "<group>"; };
+		7A32E1681C9D40AC0012F871 /* ResignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResignViewController.h; sourceTree = "<group>"; };
+		7A32E1691C9D40AC0012F871 /* ResignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResignViewController.m; sourceTree = "<group>"; };
 		7A3B51661C9A3C8C000AA140 /* RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendModel.h; sourceTree = "<group>"; };
 		7A3B51671C9A3C8C000AA140 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
 		7A3B51691C9A3EBF000AA140 /* RecommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendTableViewCell.h; sourceTree = "<group>"; };
@@ -335,6 +350,16 @@
 				7AB583191C9BB1F4007D21AA /* LoginViewController.m */,
 				7AB5831B1C9BE293007D21AA /* NoCodeLoginViewController.h */,
 				7AB5831C1C9BE293007D21AA /* NoCodeLoginViewController.m */,
+				7A32E15C1C9D259B0012F871 /* EmailLoginViewController.h */,
+				7A32E15D1C9D259B0012F871 /* EmailLoginViewController.m */,
+				7A32E15F1C9D25BD0012F871 /* EmailVerifyViewController.h */,
+				7A32E1601C9D25BD0012F871 /* EmailVerifyViewController.m */,
+				7A32E1621C9D37B20012F871 /* FindCodeByPhoneViewController.h */,
+				7A32E1631C9D37B20012F871 /* FindCodeByPhoneViewController.m */,
+				7A32E1651C9D38400012F871 /* ResetCodeViewController.h */,
+				7A32E1661C9D38400012F871 /* ResetCodeViewController.m */,
+				7A32E1681C9D40AC0012F871 /* ResignViewController.h */,
+				7A32E1691C9D40AC0012F871 /* ResignViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -675,6 +700,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A32E16A1C9D40AC0012F871 /* ResignViewController.m in Sources */,
 				7A4F87FD1C9A9B3E00183EC8 /* FiveTravelViewController.m in Sources */,
 				7AB8FD011C99090800D9A121 /* JCCollectionViewTagFlowLayout.m in Sources */,
 				7AF6D8201C9AB07E004994A3 /* PullingRefreshTableView.m in Sources */,
@@ -684,15 +710,19 @@
 				7AB8FD031C99090800D9A121 /* JCTagListView.m in Sources */,
 				7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */,
 				7A0017EB1C9911C30033B78F /* UIViewController+KNSemiModal.m in Sources */,
+				7A32E15E1C9D259B0012F871 /* EmailLoginViewController.m in Sources */,
 				7A422B171C97EAB800B51C11 /* AppDelegate.m in Sources */,
 				7A4780C81C97F0E200C6E5C2 /* TravelViewController.m in Sources */,
+				7A32E1641C9D37B20012F871 /* FindCodeByPhoneViewController.m in Sources */,
 				7A422B141C97EAB800B51C11 /* main.m in Sources */,
 				7A3B51681C9A3C8C000AA140 /* RecommendModel.m in Sources */,
 				7A4F87E71C9A3AC800183EC8 /* cityFirstTableViewCell.m in Sources */,
+				7A32E1611C9D25BD0012F871 /* EmailVerifyViewController.m in Sources */,
 				7AF6D8251C9AE122004994A3 /* allCollectionViewController.m in Sources */,
 				7A4780C21C97F0C000C6E5C2 /* MineViewController.m in Sources */,
 				7A0017EA1C9911C30033B78F /* README.md in Sources */,
 				7AB583171C9BAB42007D21AA /* DataBaseManager.m in Sources */,
+				7A32E1671C9D38400012F871 /* ResetCodeViewController.m in Sources */,
 				7A4780BC1C97F09100C6E5C2 /* RecommendViewController.m in Sources */,
 				7A4B589A1C99A01900DC4CE1 /* JXBAdPageView.m in Sources */,
 				7A3B516C1C9A3EBF000AA140 /* RecommendTableViewCell.m in Sources */,
