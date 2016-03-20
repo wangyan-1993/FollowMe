@@ -41,6 +41,8 @@
     self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.mySearchBar.placeholder = @"搜索目的地";
     [self.navigationController.navigationBar addSubview:self.mySearchBar];
+    [ProgressHUD show:@"数据正在加载"];
+
     [self loadData];
     
     
@@ -59,7 +61,6 @@
     [manager GET:@"http://api.breadtrip.com/product/search/hot/" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         WLZLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-       
         NSArray *dataArray = responseObject[@"data"];
         self.cityArray = [NSMutableArray new];
         for (NSDictionary *dict in dataArray) {
@@ -140,7 +141,7 @@
 
 #pragma mark---UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    [ProgressHUD show:@"数据正在加载"];
+   
     NSString *urlStr = request.URL.absoluteString;
    
     NSArray *array = [urlStr componentsSeparatedByString:@"/"];

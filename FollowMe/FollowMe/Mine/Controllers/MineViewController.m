@@ -8,6 +8,11 @@
 
 #import "MineViewController.h"
 #import "LoginViewController.h"
+#import "EmailLoginViewController.h"
+#import "EmailVerifyViewController.h"
+#import "FindCodeByPhoneViewController.h"
+#import "ResignViewController.h"
+#import "WeiboSDK.h"
 @interface MineViewController ()
 
 @property(nonatomic, strong) UIButton *emailBtn;
@@ -20,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"我的";
     UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(kWidth*0.2, kHeight*0.13, kWidth*0.58, kHeight*0.08)];
     title.text = @"你好,面粉!";
     title.textAlignment = NSTextAlignmentCenter;
@@ -114,15 +120,25 @@
     
     
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+   
+    self.navigationController.navigationBar.hidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
+}
 
 - (void)weixinlogin{
     
 }
-- (void)resign{
-    
-}
+
 - (void)weibologin{
+        //向新浪发送请求
+        WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+        request.redirectURI = kWeiboRedirectURI;
+        request.scope = @"all";
+    
+        [WeiboSDK sendRequest:request];
+    
     
 }
 - (void)qqlogin{
@@ -133,16 +149,61 @@
     
     
     LoginViewController *login = [mineStoryBoard instantiateViewControllerWithIdentifier:@"phone"];
-    [self.navigationController presentViewController:login animated:YES completion:nil];
+   login.navigationItem.hidesBackButton = YES;
+
+    [self.navigationController pushViewController:login animated:YES];
 }
 - (void)emaillogin{
+    UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
     
+    
+    EmailLoginViewController *emaillogin = [mineStoryBoard instantiateViewControllerWithIdentifier:@"emaillogin"];
+    emaillogin.navigationItem.hidesBackButton = YES;
+
+    [self.navigationController pushViewController:emaillogin animated:YES];
 }
 
 - (void)forget{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:action1];
+    
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"通过手机号找回" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+        FindCodeByPhoneViewController *findcode = [mineStoryBoard instantiateViewControllerWithIdentifier:@"findbyphone"];
+        findcode.navigationItem.hidesBackButton = YES;
+
+        [self.navigationController pushViewController:findcode animated:YES];
+        
+        
+    }];
+    [alert addAction:action2];
+    
+    
+    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"通过用户名或邮箱找回" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+        
+        
+        EmailVerifyViewController *emailverify = [mineStoryBoard instantiateViewControllerWithIdentifier:@"emailverify"];
+        emailverify.navigationItem.hidesBackButton = YES;
+
+        [self.navigationController pushViewController:emailverify animated:YES];
+    }];
+    [alert addAction:action3];
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
+- (void)resign{
+    
+    UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+    
+    
+    ResignViewController *resign = [mineStoryBoard instantiateViewControllerWithIdentifier:@"resign"];
+   resign.navigationItem.hidesBackButton = YES;
 
+    [self.navigationController presentViewController:resign animated:YES completion:nil];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
