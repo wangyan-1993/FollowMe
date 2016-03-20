@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"我的";
     UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(kWidth*0.2, kHeight*0.13, kWidth*0.58, kHeight*0.08)];
     title.text = @"你好,面粉!";
     title.textAlignment = NSTextAlignmentCenter;
@@ -118,7 +119,12 @@
     
     
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+   
+    self.navigationController.navigationBar.hidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
+}
 
 - (void)weixinlogin{
     
@@ -135,14 +141,18 @@
     
     
     LoginViewController *login = [mineStoryBoard instantiateViewControllerWithIdentifier:@"phone"];
-    [self.navigationController presentViewController:login animated:YES completion:nil];
+   login.navigationItem.hidesBackButton = YES;
+
+    [self.navigationController pushViewController:login animated:YES];
 }
 - (void)emaillogin{
     UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
     
     
     EmailLoginViewController *emaillogin = [mineStoryBoard instantiateViewControllerWithIdentifier:@"emaillogin"];
-    [self.navigationController presentViewController:emaillogin animated:YES completion:nil];
+    emaillogin.navigationItem.hidesBackButton = YES;
+
+    [self.navigationController pushViewController:emaillogin animated:YES];
 }
 
 - (void)forget{
@@ -153,7 +163,9 @@
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"通过手机号找回" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
         FindCodeByPhoneViewController *findcode = [mineStoryBoard instantiateViewControllerWithIdentifier:@"findbyphone"];
-        [self.navigationController presentViewController:findcode animated:YES completion:nil];
+        findcode.navigationItem.hidesBackButton = YES;
+
+        [self.navigationController pushViewController:findcode animated:YES];
         
         
     }];
@@ -165,7 +177,9 @@
         
         
         EmailVerifyViewController *emailverify = [mineStoryBoard instantiateViewControllerWithIdentifier:@"emailverify"];
-        [self.navigationController presentViewController:emailverify animated:YES completion:nil];
+        emailverify.navigationItem.hidesBackButton = YES;
+
+        [self.navigationController pushViewController:emailverify animated:YES];
     }];
     [alert addAction:action3];
     [self presentViewController:alert animated:YES completion:nil];
@@ -177,6 +191,8 @@
     
     
     ResignViewController *resign = [mineStoryBoard instantiateViewControllerWithIdentifier:@"resign"];
+   resign.navigationItem.hidesBackButton = YES;
+
     [self.navigationController presentViewController:resign animated:YES completion:nil];
     
 }

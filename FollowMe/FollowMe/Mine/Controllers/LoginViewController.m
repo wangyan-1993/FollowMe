@@ -7,9 +7,13 @@
 //
 
 #import "LoginViewController.h"
-
+#import <BmobSDK/BmobUser.h>
+#import "MineViewController.h"
+#import "AppDelegate.h"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *login;
+@property (weak, nonatomic) IBOutlet UITextField *phonenum;
+@property (weak, nonatomic) IBOutlet UITextField *code;
 
 @end
 
@@ -18,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = YES;
     self.view.backgroundColor = kMainColor;
     self.login.layer.cornerRadius = 20;
     self.login.clipsToBounds = YES;
@@ -26,7 +32,18 @@
     self.login.layer.borderColor = [[UIColor whiteColor]CGColor];
     }
 - (IBAction)backBtn:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)loginAction:(id)sender {
+    [BmobUser loginInbackgroundWithAccount:self.phonenum.text andPassword:self.code.text block:^(BmobUser *user, NSError *error) {
+        if (error) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:[NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alert show];
+        }else{
+            
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

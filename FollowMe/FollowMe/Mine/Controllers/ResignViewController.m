@@ -7,7 +7,8 @@
 //
 
 #import "ResignViewController.h"
-
+#import <BmobSDK/BmobSMS.h>
+#import <BmobSDK/BmobUser.h>
 @interface ResignViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phonenum;
 @property (weak, nonatomic) IBOutlet UITextField *verifycode;
@@ -40,8 +41,34 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)verifyAction:(id)sender {
+    
+    [BmobSMS requestSMSCodeInBackgroundWithPhoneNumber:self.phonenum.text andTemplate:@"" resultBlock:^(int number, NSError *error) {
+        if (error) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:            [NSString stringWithFormat:@"%@", error]
+ delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alert show];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"短信验证码已发送成功,请注意查收" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alert show];
+         }
+    }];
+    
 }
 - (IBAction)loginAction:(id)sender {
+    BmobUser *buser = [[BmobUser alloc] init];
+    buser.mobilePhoneNumber = self.phonenum.text;
+    buser.password = self.logincode.text;
+    
+    [buser signUpOrLoginInbackgroundWithSMSCode:self.verifycode.text block:^(BOOL isSuccessful, NSError *error) {
+        if (error) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:            [NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alert show];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"账号已注册成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alert show];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

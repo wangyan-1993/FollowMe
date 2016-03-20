@@ -12,8 +12,8 @@
 #import "MineViewController.h"
 #import "PlusViewController.h"
 #import "TravelViewController.h"
+#import <BmobSDK/Bmob.h>
 @interface AppDelegate ()<UITabBarControllerDelegate>
-@property(nonatomic, strong) UITabBarController *tabBarVC;
 @end
 
 @implementation AppDelegate
@@ -22,6 +22,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    [Bmob registerWithAppKey:kBmobAppID];
+    
+    
     
     self.tabBarVC = [[UITabBarController alloc]init];
     self.tabBarVC.delegate = self;

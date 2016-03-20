@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ResetCodeViewController : UIViewController
-
+@property(nonatomic, copy) NSString *security;
 @end

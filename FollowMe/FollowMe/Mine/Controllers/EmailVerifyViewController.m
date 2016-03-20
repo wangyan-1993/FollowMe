@@ -21,12 +21,13 @@
     // Do any additional setup after loading the view.
     self.findCode.layer.cornerRadius = 20;
     self.findCode.clipsToBounds = YES;
-    
+    self.navigationController.navigationBar.hidden = YES;self.tabBarController.tabBar.hidden = YES;
     
 }
 - (IBAction)findcodeAction:(id)sender {
 }
 - (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

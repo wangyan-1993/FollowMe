@@ -7,7 +7,7 @@
 //
 
 #import "EmailLoginViewController.h"
-
+#import <BmobSDK/BmobUser.h>
 @interface EmailLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *code;
@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = YES;
+
     self.view.backgroundColor = kMainColor;
     self.login.layer.cornerRadius = 20;
     self.login.clipsToBounds = YES;
@@ -30,9 +33,19 @@
     
 }
 - (IBAction)back:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)loginAction:(id)sender {
+    [BmobUser loginInbackgroundWithAccount:self.username.text andPassword:self.code.text block:^(BmobUser *user, NSError *error) {
+        if (error) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:[NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alert show];
+        }else{
+            
+        }
+    }];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
