@@ -28,7 +28,8 @@
 
     self.getSecurity.layer.cornerRadius = 15;
     self.getSecurity.clipsToBounds = YES;
-    [self.getSecurity setTitleColor:kMainColor forState:UIControlStateNormal];
+    [self.getSecurity setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.getSecurity.backgroundColor = kMainColor;
     self.getcode.layer.cornerRadius = 20;
     self.getcode.clipsToBounds = YES;
 }

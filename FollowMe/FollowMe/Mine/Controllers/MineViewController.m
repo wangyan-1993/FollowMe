@@ -12,6 +12,7 @@
 #import "EmailVerifyViewController.h"
 #import "FindCodeByPhoneViewController.h"
 #import "ResignViewController.h"
+#import "WeiboSDK.h"
 @interface MineViewController ()
 
 @property(nonatomic, strong) UIButton *emailBtn;
@@ -131,6 +132,13 @@
 }
 
 - (void)weibologin{
+        //向新浪发送请求
+        WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+        request.redirectURI = kWeiboRedirectURI;
+        request.scope = @"all";
+    
+        [WeiboSDK sendRequest:request];
+    
     
 }
 - (void)qqlogin{
