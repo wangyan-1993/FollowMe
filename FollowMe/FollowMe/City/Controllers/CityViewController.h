@@ -10,4 +10,8 @@
 
 @interface CityViewController : UIViewController
 
+@property(nonatomic, strong) NSString *selectStr;
+@property(nonatomic, strong) NSString *stringName;
+
+
 @end
