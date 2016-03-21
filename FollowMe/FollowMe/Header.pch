@@ -9,6 +9,8 @@
 #ifndef Header_pch
 #define Header_pch
 #import "UIViewController+Common.h"
+//各种坐标
+#import "UIView+UIView_Extension.h"
 //高德地图张衡appKey
 #define kZhGaodeMapKey @"1d787d888f4887707c04b8ac8415434e"
 //界面宽高宏定义
