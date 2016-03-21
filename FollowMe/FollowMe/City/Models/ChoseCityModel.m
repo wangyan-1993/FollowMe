@@ -13,11 +13,11 @@
 -(instancetype)initWithDicTionary:(NSDictionary *)dic{
     self = [super init];
     if (self) {
-        self.inCityname = dic[@""];
-        self.inhotCityName = dic[@""];
-        self.forCityName = dic[@""];
-        self.forHotName = dic[@""];
-        self.idclasify = dic[@""];
+        self.inCityname = dic[@"name"];
+//        self.inhotCityName = dic[@""];
+//        self.forCityName = dic[@""];
+//        self.forHotName = dic[@""];
+//        self.idclasify = dic[@""];
     }
     
     

@@ -12,8 +12,14 @@
 #import "MineViewController.h"
 #import "PlusViewController.h"
 #import "TravelViewController.h"
-@interface AppDelegate ()<UITabBarControllerDelegate>
+#import <BmobSDK/Bmob.h>
+#import "WeiboSDK.h"
+#import <MapKit/MapKit.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+@interface AppDelegate ()<UITabBarControllerDelegate, WeiboSDKDelegate>
 @property(nonatomic, strong) UITabBarController *tabBarVC;
+
+
 @end
 
 @implementation AppDelegate
@@ -22,6 +28,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+     [AMapLocationServices sharedServices].apiKey = (NSString *)kZhGaodeMapKey;
+    [Bmob registerWithAppKey:kBmobAppID];
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:kWeiboAppKey];
+    
     
     self.tabBarVC = [[UITabBarController alloc]init];
     self.tabBarVC.delegate = self;
@@ -58,6 +69,49 @@
     return YES;
 }
 
+
+
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+
+
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
+    
+}
+
+/**
+ 收到一个来自微博客户端程序的响应
+ 
+ 收到微博的响应后，第三方应用可以通过响应类型、响应的数据和 WBBaseResponse.userInfo 中的数据完成自己的功能
+ @param response 具体的响应对象
+ */
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
+    NSString *accessToken = [(WBAuthorizeResponse *)response accessToken];
+    NSString *uid = [(WBAuthorizeResponse *)response userID];
+    NSDate *expiresDate = [(WBAuthorizeResponse *)response expirationDate];
+    NSLog(@"acessToken:%@",accessToken);
+    NSLog(@"UserId:%@",uid);
+    NSLog(@"expiresDate:%@",expiresDate);
+    NSLog(@"%@", response.userInfo);
+     NSDictionary *dic = @{@"access_token":accessToken,@"uid":uid,@"expirationDate":expiresDate};
+        [BmobUser loginInBackgroundWithAuthorDictionary:dic platform:BmobSNSPlatformSinaWeibo block:^(BmobUser *user, NSError *error) {
+            if (error) {
+                NSLog(@"weibo login error:%@",error);
+            } else if (user){
+                NSLog(@"user objectid is :%@",user.objectId);
+    
+            }
+        }];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -79,5 +133,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
 
 @end

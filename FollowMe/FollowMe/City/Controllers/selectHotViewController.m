@@ -43,8 +43,9 @@
     self.jcTagList.tagStrokeColor = [UIColor colorWithRed:235/255 green:235/255 blue:235/255 alpha:0.5];
     self.jcTagList.layer.cornerRadius = 10.0;
     self.jcTagList.canSelectTags = YES;
+
     [self.jcTagList.tags addObjectsFromArray:@[@"摄影",@"占卜",@"美食",@"达人",@"明信片",@"油画",@"资讯",@"旅行",@"健康",@"约咖啡"]];
-//    [self.jcTagList ];
+
     [self.view addSubview:self.jcTagList];
     
     

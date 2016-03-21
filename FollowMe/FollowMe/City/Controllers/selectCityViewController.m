@@ -143,7 +143,9 @@
     
 //    [self.foreignView addSubview:self.tablevView];
     //自定义collectionView宽度
+
     [self jcCollectionView];
+
     
     //加载数据；
     [self updateSelectCity];

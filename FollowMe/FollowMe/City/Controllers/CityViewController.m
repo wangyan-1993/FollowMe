@@ -18,10 +18,15 @@
 #import "InlandViewController.h"
 #import "ForeignViewController.h"
 
+#import "JRSegmentViewController.h"
+#import "ProgressHUD.h"
+
+
 
 static NSString *identifier = @"cell";
 
 #define huiSE [UIColor colorWithRed:235/255 green:237/255 blue:235/255 alpha:0.5];
+#define master [UIColor colorWithRed:239/255 green:192/255 blue:650/255 alpha:0.6];
 @interface CityViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 
 
@@ -38,9 +43,16 @@ static NSString *identifier = @"cell";
 
 @property(nonatomic, strong) UILabel *clasifyLable;
 
+
 @property(nonatomic, strong) UIButton *clasifyButton;
 
 @property(nonatomic, strong) UIButton *presonButton;
+
+//@property(nonatomic, strong) UIButton *selectButton;
+
+
+
+
 
 
 
@@ -62,23 +74,39 @@ static NSString *identifier = @"cell";
 //导航左侧视图按钮：
     self.selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.selectButton.frame = CGRectMake(0, 0, 80,44);
+
+    
+
     [self.selectButton addTarget:self action:@selector(selectCity) forControlEvents:UIControlEventTouchUpInside];
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
     imageview.image = [UIImage imageNamed:@"yyb_icon_back"];
-    
+
+  
+
     [self.selectButton setImage:imageview.image forState:UIControlStateNormal];
     //调整button图片的位置，四个数字分别指，图片距离button边界位置上下左右的距离；
     [self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(10, self.selectButton.frame.size.width-25, 10, 0)];
     [self.selectButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 10)];
-    [self.selectButton setTitle:@"北京" forState:UIControlStateNormal];
+    if (self.selectStr == nil) {
+        [self.selectButton setTitle:@"北京" forState:UIControlStateNormal];
+    }else{
+        [self.selectButton setTitle:self.stringName forState:UIControlStateNormal];
+    }
+    
 
     [self.navigationController.navigationBar addSubview:self.selectButton];
+
     
 //导航右侧图片显示搜索
     self.presonButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.presonButton.frame = CGRectMake(kWidth - 60, 10, 44,44);
     [self.presonButton addTarget:self action:@selector(presonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.presonButton setImage:[UIImage imageNamed:@"yyb_appdetail_showmore"] forState:UIControlStateNormal];
+
+    
+
+    
+
     //调整button图片的位置，四个数字分别指，图片距离button边界位置上下左右的距离；
 //    [self.clasifyButton setImageEdgeInsets:UIEdgeInsetsMake(0, self.clasifyButton.frame.size.width-25, 0, 0)];
     [self.presonButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 10)];
@@ -95,10 +123,13 @@ static NSString *identifier = @"cell";
     //SegmentedControl :用到的方法；
     NSArray *segment = [[NSArray alloc] initWithObjects:@"主题",@"日期筛选",@"智能排序", nil];
     _segmented = [[UISegmentedControl alloc] initWithItems:segment];
+    _segmented.selectedSegmentIndex = 0;
+    _segmented.tintColor = [UIColor whiteColor];
+    
     
     _segmented.frame = CGRectMake(0, 64, kWidth, 35);
     _segmented.tintColor = [UIColor whiteColor];
-    self.segmented.momentary = YES;
+    self.segmented.momentary = NO;
     [_segmented addTarget:self action:@selector(segmentedAction:) forControlEvents:UIControlEventValueChanged];
     
     [self.view addSubview:_segmented];
@@ -111,6 +142,11 @@ static NSString *identifier = @"cell";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"cityFirstTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
     
+    if (self.stringName == nil) {
+        self.stringName = @"北京";
+    }
+    
+//    WLZLog(@"%@",self.stringName);
     
     //请求数据
     [self uptataConfig];
@@ -146,13 +182,25 @@ static NSString *identifier = @"cell";
 //主页点击原型图片接口：http://api.breadtrip.com/v3/user/2384305001/
 
 -(void)uptataConfig{
+    
+    /*
+     NSString *string = [NSString stringWithFormat:@"%@%@&offset=%d", kListData, self.name, _pageCount * 9];
+     NSString *url = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+     */
+    
+    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/?city_name=%@&lat=34.61342700736265&lng=112.4140811801292&sign=ac6a66157da8fd3fa171fa0091e282ba&start=0",self.stringName];
+    NSString *url = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manger GET:@"http://api.breadtrip.com/hunter/products/v2/?city_name=%E5%8C%97%E4%BA%AC&lat=34.61342700736265&lng=112.4140811801292&sign=ac6a66157da8fd3fa171fa0091e282ba&start=0" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manger GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
         
      
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        [ProgressHUD show:@"正在为您请求数据"];
         NSDictionary *dictio = responseObject;
         
         for (NSDictionary *dic in dictio[@"product_list"]) {
@@ -164,6 +212,8 @@ static NSString *identifier = @"cell";
 
         }
         [self.tableView reloadData];
+        
+        [ProgressHUD showSuccess:@"已成功"];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
      
@@ -270,6 +320,7 @@ static NSString *identifier = @"cell";
 }
 
 #pragma mark---------------导航栏点击方法；
+
 -(void)classAction{
     
     PersonViewController *person = [[PersonViewController alloc] init];
@@ -282,6 +333,7 @@ static NSString *identifier = @"cell";
 //    selectCityViewController *selectVC = [[selectCityViewController alloc] init];
 //    [self.navigationController pushViewController:selectVC animated:YES];
     
+
 //     InlandViewController *firstVC = [[InlandViewController alloc] init];
 //     ForeignViewController *secondVC = [[ForeignViewController alloc] init];
 //     
@@ -294,10 +346,35 @@ static NSString *identifier = @"cell";
 //     [vc setTitles:@[@"热点", @"聚焦"]];
 //     
 //     [self.navigationController pushViewController:vc animated:YES];
+
+     InlandViewController *firstVC = [[InlandViewController alloc] init];
+    //隐藏功能
+    firstVC.navigationItem.hidesBackButton = YES;
+    firstVC.hidesBottomBarWhenPushed = YES;
+    
+     ForeignViewController *secondVC = [[ForeignViewController alloc] init];
+    //隐藏功能
+    secondVC.navigationItem.hidesBackButton = YES;
+    secondVC.hidesBottomBarWhenPushed = YES;
+    
+     JRSegmentViewController *vc = [[JRSegmentViewController alloc] init];
+    vc.navigationItem.hidesBackButton = YES;
+    vc.hidesBottomBarWhenPushed = YES;
+    [vc showBackBtn];
+     vc.segmentBgColor = kMainColor;
+     vc.indicatorViewColor = [UIColor whiteColor];
+     vc.titleColor = [UIColor whiteColor];
+     
+     [vc setViewControllers:@[firstVC, secondVC]];
+     [vc setTitles:@[@"国内", @"国外"]];
+     
+     [self.navigationController pushViewController:vc animated:YES];
+
     
     
  
 }
+
 
 -(void)presonAction{
     
@@ -321,10 +398,11 @@ static NSString *identifier = @"cell";
 
 -(UITableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 105, kWidth, kHeight - 144) style:UITableViewStylePlain];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 99, kWidth, kHeight - 144) style:UITableViewStylePlain];
         self.tableView.rowHeight = 285;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
+        self.tableView.backgroundColor = master;
         [self.view addSubview:self.tableView];
     }
     return _tableView;

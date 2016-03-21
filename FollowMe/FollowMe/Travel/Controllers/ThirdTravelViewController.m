@@ -36,7 +36,7 @@ self.title = @"介绍";
     NSString *string1 = array[length-2];
     NSString *string2 = array.lastObject;
     WLZLog(@"%@", request);
-    WLZLog(@"%ld", navigationType);
+    WLZLog(@"%ld", (long)navigationType);
     FourTravelViewController *four = [[FourTravelViewController alloc]init];
     switch (navigationType) {
         case UIWebViewNavigationTypeLinkClicked:
