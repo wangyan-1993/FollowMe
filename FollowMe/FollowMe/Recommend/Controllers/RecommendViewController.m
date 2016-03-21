@@ -21,6 +21,8 @@
 #import "ProgressHUD.h"
 #import "JCTagListView.h"
 #import "searchViewController.h"
+#import "nearByViewController.h"
+#import "SingleLocaitonAloneViewController.h"
 //全局静态变量
 static NSString *collectionHeader = @"cityHeader";
 static NSString *itemID = @"itemId";
@@ -88,6 +90,8 @@ static NSString *itemID = @"itemId";
         self.nearBtn.frame = CGRectMake(kWidth-90, 0, 90, 44);
         [self.nearBtn setTitle:@"附近" forState:UIControlStateNormal];
         [self.nearBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.nearBtn addTarget:self action:@selector(nearBy) forControlEvents:UIControlEventTouchUpInside];
+    
         [self.navigationController.navigationBar addSubview:self.nearBtn];
   
     
@@ -108,7 +112,7 @@ static NSString *itemID = @"itemId";
     [self.headerView addSubview:self.collectionView];
     //请求数据
    
-//    [self workOne];
+    //[self workOne];
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headerView;
 //注册tableView
@@ -118,18 +122,25 @@ static NSString *itemID = @"itemId";
     [self.view addSubview:self.tableView];
   
 }
+#pragma mark ----  附近的人功能实现--------
+- (void)nearBy{
+    nearByViewController *nearVC = [[nearByViewController alloc] init];
+    self.mySearchBar.hidden = YES;
+    self.nearBtn.hidden = YES;
+    [self.navigationController pushViewController:nearVC animated:YES];
+//    SingleLocaitonAloneViewController *VC = [[SingleLocaitonAloneViewController alloc] init];
+//    [self.navigationController pushViewController:VC animated:YES];
+    
+}
 //在页面将要出现的时候
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
     self.mySearchBar.hidden = NO;
+    self.nearBtn.hidden = NO;
 }
 //在页面将要消失的时候，调用此方法，去掉所有的
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
 
-    [ProgressHUD dismiss];
-}
 #pragma mark -----------搜索栏方法---------
 - (void)addWhiteView{
     
@@ -166,13 +177,13 @@ static NSString *itemID = @"itemId";
     NSArray *array2 = [NSArray arrayWithArray:self.inlandListArray];
     [self.inLandView.tags addObjectsFromArray:array2];
     [self.foreignView setCompletionBlockWithSelected:^(NSInteger index) {
-        WLZLog(@"国外%ld",index);
+        WLZLog(@"国外%ld",(long)index);
         
     }];
     
     
     [self.inLandView setCompletionBlockWithSelected:^(NSInteger index) {
-        WLZLog(@"国内%ld",index);
+        WLZLog(@"国内%ld",(long)index);
     }];
 }
 
@@ -211,7 +222,7 @@ static NSString *itemID = @"itemId";
     [self.histroyView.tags addObject:searchBar.text];
     [self.histroyView.collectionView reloadData];
     [self.histroyView setCompletionBlockWithSelected:^(NSInteger index) {
-        WLZLog(@"%ld",index);
+        WLZLog(@"%ld",(long)index);
     }];
     
 }
