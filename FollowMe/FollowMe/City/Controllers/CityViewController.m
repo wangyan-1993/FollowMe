@@ -14,6 +14,9 @@
 #import "DetailViewController.h"
 #import "PersonViewController.h"
 #import "selectCityViewController.h"
+#import "selectHotViewController.h"
+#import "InlandViewController.h"
+#import "ForeignViewController.h"
 
 
 static NSString *identifier = @"cell";
@@ -34,8 +37,10 @@ static NSString *identifier = @"cell";
 @property(nonatomic, strong) UITableView *tableView;
 
 @property(nonatomic, strong) UILabel *clasifyLable;
+
 @property(nonatomic, strong) UIButton *clasifyButton;
-@property(nonatomic, strong) UIButton *selectButton;
+
+@property(nonatomic, strong) UIButton *presonButton;
 
 
 
@@ -56,18 +61,33 @@ static NSString *identifier = @"cell";
     
 //导航左侧视图按钮：
     self.selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.selectButton.frame = CGRectMake(0, 0, 60,44);
+    self.selectButton.frame = CGRectMake(0, 0, 80,44);
     [self.selectButton addTarget:self action:@selector(selectCity) forControlEvents:UIControlEventTouchUpInside];
+    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    imageview.image = [UIImage imageNamed:@"yyb_icon_back"];
     
-    [self.selectButton setImage:[UIImage imageNamed:@"heart"] forState:UIControlStateNormal];
+    [self.selectButton setImage:imageview.image forState:UIControlStateNormal];
     //调整button图片的位置，四个数字分别指，图片距离button边界位置上下左右的距离；
-    [self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(0, self.selectButton.frame.size.width-25, 0, 0)];
+    [self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(10, self.selectButton.frame.size.width-25, 10, 0)];
     [self.selectButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 10)];
     [self.selectButton setTitle:@"北京" forState:UIControlStateNormal];
 
-//    [self.view addSubview:self.selectButton];
+    [self.navigationController.navigationBar addSubview:self.selectButton];
     
-    UIBarButtonItem *leftbar = [[UIBarButtonItem alloc] initWithCustomView:self.selectButton];
+//导航右侧图片显示搜索
+    self.presonButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.presonButton.frame = CGRectMake(kWidth - 60, 10, 44,44);
+    [self.presonButton addTarget:self action:@selector(presonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.presonButton setImage:[UIImage imageNamed:@"yyb_appdetail_showmore"] forState:UIControlStateNormal];
+    //调整button图片的位置，四个数字分别指，图片距离button边界位置上下左右的距离；
+//    [self.clasifyButton setImageEdgeInsets:UIEdgeInsetsMake(0, self.clasifyButton.frame.size.width-25, 0, 0)];
+    [self.presonButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 10)];
+    [self.navigationController.navigationBar addSubview:self.presonButton];
+    
+    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:self.presonButton];
+    self.navigationItem.rightBarButtonItem = rightBar;
+  
+    UIBarButtonItem *leftbar = [[UIBarButtonItem alloc] initWithCustomView:self.presonButton];
     self.navigationItem.leftBarButtonItem = leftbar;
     leftbar.tintColor = [UIColor whiteColor];
     
@@ -253,18 +273,36 @@ static NSString *identifier = @"cell";
 -(void)classAction{
     
     PersonViewController *person = [[PersonViewController alloc] init];
-    [self.navigationController pushViewController:person animated:YES];
+    [self.navigationController pushViewController:person animated:NO];
 
 }
 
 -(void)selectCity{
     
-    selectCityViewController *selectVC = [[selectCityViewController alloc] init];
-    [self.navigationController pushViewController:selectVC animated:YES];
+//    selectCityViewController *selectVC = [[selectCityViewController alloc] init];
+//    [self.navigationController pushViewController:selectVC animated:YES];
+    
+//     InlandViewController *firstVC = [[InlandViewController alloc] init];
+//     ForeignViewController *secondVC = [[ForeignViewController alloc] init];
+//     
+//     JRSegmentViewController *vc = [[JRSegmentViewController alloc] init];
+//     vc.segmentBgColor = [UIColor colorWithRed:18.0f/255 green:50.0f/255 blue:110.0f/255 alpha:1.0f];
+//     vc.indicatorViewColor = [UIColor whiteColor];
+//     vc.titleColor = [UIColor whiteColor];
+//     
+//     [vc setViewControllers:@[firstVC, secondVC]];
+//     [vc setTitles:@[@"热点", @"聚焦"]];
+//     
+//     [self.navigationController pushViewController:vc animated:YES];
     
     
+ 
+}
+
+-(void)presonAction{
     
-    
+    selectHotViewController *hotCity = [[selectHotViewController alloc] init];
+    [self.navigationController pushViewController:hotCity animated:NO];
     
 }
 
@@ -293,36 +331,40 @@ static NSString *identifier = @"cell";
 }
 
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-   
-    self.hidesBottomBarWhenPushed = YES;
-    
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//   
+//    self.hidesBottomBarWhenPushed = YES;
+//    
+//}
 
--(UILabel *)clasifyLable{
-    if (_clasifyLable == nil) {
-        self.clasifyLable = [[UILabel alloc] init];
-    }
-    return _clasifyLable;
-}
+//-(UILabel *)clasifyLable{
+//    if (_clasifyLable == nil) {
+//        self.clasifyLable = [[UILabel alloc] init];
+//    }
+//    return _clasifyLable;
+//}
 
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.hidesBottomBarWhenPushed = NO;
+    self.selectButton.hidden = YES;
+
+    
 }
 
-//-(void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    self.hidesBottomBarWhenPushed = NO;
-//}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.selectButton.hidden = NO;
+}
+
+
 
 
 

@@ -10,4 +10,7 @@
 
 @interface CityViewController : UIViewController
 
+@property(nonatomic, strong) UIButton *selectButton;
+
+
 @end

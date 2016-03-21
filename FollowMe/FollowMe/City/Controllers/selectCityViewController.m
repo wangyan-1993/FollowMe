@@ -4,12 +4,13 @@
 //
 //  Created by scjy on 16/3/17.
 //  Copyright © 2016年 SCJY. All rights reserved.
-//
+//  rm -rf ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/Alcatraz.xcplugin
 
 #import "selectCityViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "JCTagListView.h"
 #import "ChoseCityModel.h"
+#import "CityViewController.h"
 
 
 @interface selectCityViewController ()<UIScrollViewDelegate,UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -19,6 +20,9 @@
 @property(nonatomic, strong) UIView *foreignView;
 //tableview头部视图；
 @property(nonatomic, strong) UIView *headView;
+@property(nonatomic, strong) UIView *headRightView;
+
+
 @property(nonatomic, strong) UIWindow *window;
 
 //实现滑动的Scrollview
@@ -29,10 +33,16 @@
 @property(nonatomic, strong) UISearchBar *mySearchBar;
 //CPS定位按钮（显示效果）
 @property(nonatomic, strong) UILabel *gpsLable;
-//装载全部城市
+//装载国内全部城市
 @property(nonatomic, strong) NSMutableArray *allCityArray;
+//装载国内热门城市
+@property(nonatomic, strong) NSMutableArray *allHotCityArray;
+//装载国外全部city以及热门city
+@property(nonatomic, strong) NSMutableArray *foreignCiteArray;
+@property(nonatomic, strong) NSMutableArray *foreignHotCityArray;
+
 //@property(nonatomic, strong) NSString 
-//tableview
+//tableview，左右视图
 @property(nonatomic, strong) UITableView *tableViewLeft;
 @property(nonatomic, strong) UITableView *tableViewRight;
 //
@@ -42,6 +52,7 @@
 
 //collectionview自适应宽度；
 @property(nonatomic, strong) JCTagListView *jctageLiseView;
+@property(nonatomic, strong) CityViewController *cityVC;
 
 
 @end
@@ -59,7 +70,7 @@
     //设置scrollview的大小
     self.nationSCView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kHeight*0.25, kWidth*2, kHeight*0.75)];
     //是否可以滑动
-//    self.nationSCView.scrollEnabled = YES;
+    self.nationSCView.scrollEnabled = YES;
     //头部是否不停止
 //    self.nationSCView.scrollsToTop = NO;
    
@@ -73,7 +84,7 @@
     //是否显示水平方向滚动条；
 //    self.nationSCView.showsHorizontalScrollIndicator = NO;
     //设置大小
-    self.nationSCView.contentSize = CGSizeMake(kWidth * 3, kHeight-kHeight/3);
+    self.nationSCView.contentSize = CGSizeMake(kWidth * 2, kHeight-kHeight*3);
     //代理
     self.nationSCView.delegate = self;
     //是否允许自适应大小的缩放；
@@ -85,10 +96,11 @@
     
     self.nationSCView.backgroundColor = [UIColor orangeColor];
     
-   
-
-    [self.nationSCView addSubview:self.tableViewLeft];
-    [self.nationSCView addSubview:self.tableViewRight];
+    
+    [self.inlandView addSubview:self.tableViewLeft];
+    [self.foreignView addSubview:self.tableViewRight];
+    [self.nationSCView addSubview:self.inlandView];
+    [self.nationSCView addSubview:self.foreignView];
     [self.view addSubview:self.nationSCView];
     self.tableViewLeft.tableHeaderView = self.headView;
     
@@ -96,13 +108,7 @@
     
     //传值，热门城市；
     
-    self.jctageLiseView.canSelectTags = YES;
-    self.jctageLiseView.tagCornerRadius = 5.0f;
-    [self.jctageLiseView.tags addObjectsFromArray:@[@"北京",@"上海",@"广州",@"深圳",@"天津" ]];
-    
-    [self.jctageLiseView setCompletionBlockWithSelected:^(NSInteger index) {
-        NSLog(@"______%ld______", (long)index);
-    }];
+  
     
     
     NSArray *array = [NSArray arrayWithObjects:@"国内",@"国外", nil];
@@ -136,10 +142,45 @@
     
     
 //    [self.foreignView addSubview:self.tablevView];
+    //自定义collectionView宽度
+    [self jcCollectionView];
     
     //加载数据；
     [self updateSelectCity];
+    
+    
+//    self.jctageLiseView.canSelectTags = YES;
+//    self.jctageLiseView.tagCornerRadius = 10.0f;
+//    self.jctageLiseView.tagStrokeColor = [UIColor whiteColor];
+//    [self.jctageLiseView.tags addObjectsFromArray:@[@"北京",@"上海",@"广州",@"深圳",@"天津" ]];
+//    [self.jctageLiseView setCompletionBlockWithSelected:^(NSInteger index) {
+//        NSLog(@"______%ld______", (long)index);
+//    }];
 
+}
+
+-(void)jcCollectionView{
+    
+    self.jctageLiseView.canSelectTags = YES;
+    self.jctageLiseView.tagCornerRadius = 15.0f;
+    
+    self.jctageLiseView.tagStrokeColor = [UIColor whiteColor];
+    
+    NSArray *cityArray = [NSArray arrayWithArray:self.allHotCityArray];
+//    NSArray *array = @[@"北京",@"46879652",@"wgtert h",@"wedfg",@"m gvfc"];
+//    WLZLog(@"cityArray === %@",cityArray);
+    [self.jctageLiseView.tags addObjectsFromArray:cityArray];
+     
+//    __block selectCityViewController *weakSelf = self;
+//    [self.jctageLiseView setCompletionBlockWithSelected:^(NSInteger index) {
+//        weakSelf.cityVC = [[CityViewController alloc] init];
+//        
+//        [weakSelf.cityVC.clasifyButton setTitle:weakSelf.allHotCityArray[index] forState:UIControlStateNormal];
+//        
+//        
+//        [weakSelf.navigationController pushViewController:weakSelf.cityVC animated:NO];
+//            }];
+    
 }
 
 -(void)choseAction:(UISegmentedControl *)segment{
@@ -226,9 +267,7 @@
     }
     return 30;
 }
-- (void)one{
-    NSLog(@"hkhkghajsgjudfquqjqfvjqf%@",self.allCityArray);
-}
+
 #pragma mark ------------------加载数据；
 -(void)updateSelectCity{
     
@@ -243,16 +282,22 @@
         NSDictionary *citDac = rootDic[@"city_data"];
         NSDictionary *inlandDic = citDac[@"domestic_city"];
         self.allCityArray = [NSMutableArray new];
+        self.allHotCityArray = [NSMutableArray new];
         for (NSDictionary *inName in inlandDic[@"all_city_list"]) {
 
             [self.allCityArray addObject:inName[@"name"]];
-            
-            //WLZLog(@"self.allCityArray = %@",self.allCityArray)
+
 
         }
+        for (NSString *string in inlandDic[@"hot_city_list"]) {
+            [self.allHotCityArray addObject:string];
+
+            
+        }
+        
+        [self jcCollectionView];
         [self.tableViewLeft reloadData];
         
-        //WLZLog(@"%@",self.allCityArray)
 
         
         
@@ -277,7 +322,7 @@
     
     if (_inlandView == nil) {
         
-        self.inlandView = [[UIView alloc] initWithFrame:CGRectMake(0, -kHeight*0.25,kWidth, kHeight)];
+        self.inlandView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,kWidth, kHeight*3)];
         
         self.inlandView.backgroundColor = [UIColor cyanColor];
    
@@ -288,7 +333,7 @@
 
 -(UIView *)foreignView{
     if (_foreignView == nil) {
-        self.foreignView = [[UIView alloc] initWithFrame:CGRectMake(kWidth, -kHeight*0.25,kWidth, kHeight)];
+        self.foreignView = [[UIView alloc] initWithFrame:CGRectMake(kWidth, 0,kWidth, kHeight)];
         self.foreignView.backgroundColor = [UIColor blueColor];
     }
     return _foreignView;
@@ -297,7 +342,7 @@
 
 -(UIView *)headView{
     if (_headView == nil) {
-        self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, kHeight*0.25, kWidth, kHeight/3)];
+        self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, kHeight*0.4, kWidth, kHeight/3)];
         _gpsLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, kWidth/2, 30)];
         _gpsLable.backgroundColor = [UIColor clearColor];
         _gpsLable.text = @"GPS定位失败";
@@ -342,7 +387,6 @@
 -(UITableView *)tableViewLeft{
     if (_tableViewLeft == nil) {
         self.tableViewLeft = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight*3) style:UITableViewStylePlain];
-        self.tableViewLeft.backgroundColor =kMainColor;
         self.tableViewLeft.delegate = self;
         self.tableViewLeft.dataSource = self;
         self.tableViewLeft.backgroundColor = kMainColor;
@@ -357,7 +401,6 @@
 //        self.tableViewRight.backgroundColor = [UIColor cyanColor];
         self.tableViewRight.delegate = self;
         self.tableViewRight.dataSource = self;
-        
         self.tableViewRight.backgroundColor = kMainColor;
         
     }
@@ -378,16 +421,16 @@
 
 //在视图即将出现的时候，隐藏导航视图控制器；
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.hidden = NO;
-}
-
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-}
+//-(void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    self.navigationController.navigationBar.hidden = NO;
+//}
+//
+//
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    self.navigationController.navigationBar.hidden = YES;
+//}
 
 //-(void)viewDidDisappear:(BOOL)animated{
 //    [super viewDidDisappear:animated];
