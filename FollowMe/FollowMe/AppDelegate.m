@@ -98,6 +98,7 @@
     NSLog(@"acessToken:%@",accessToken);
     NSLog(@"UserId:%@",uid);
     NSLog(@"expiresDate:%@",expiresDate);
+    NSLog(@"%@", response.userInfo);
      NSDictionary *dic = @{@"access_token":accessToken,@"uid":uid,@"expirationDate":expiresDate};
         [BmobUser loginInBackgroundWithAuthorDictionary:dic platform:BmobSNSPlatformSinaWeibo block:^(BmobUser *user, NSError *error) {
             if (error) {
