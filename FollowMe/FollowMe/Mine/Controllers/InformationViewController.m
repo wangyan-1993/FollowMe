@@ -10,6 +10,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BecomeHunterViewController.h"
 #import "SettingsViewController.h"
+#import "UserInfoViewController.h"
 @interface InformationViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
 @end
@@ -64,11 +65,16 @@
     UIImageView *imageviewHeader = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth/3, kWidth/6, kWidth/3, kWidth/3)];
     imageviewHeader.layer.cornerRadius = kWidth/3/2;
     imageviewHeader.clipsToBounds = YES;
+  //  WLZLog(@"%@", self.headerImage);
     [imageviewHeader sd_setImageWithURL:[NSURL URLWithString:self.headerImage] placeholderImage:[UIImage imageNamed:@"123456"]];
     UIButton *headerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     headerBtn.frame = imageviewHeader.frame;
     [headerBtn addTarget:self action:@selector(headerInformation) forControlEvents:UIControlEventTouchUpInside];
-    [imageviewHeader addSubview:headerBtn];
+    
+       // UIImageView默认不允许用户交互，headerBtn不能直接加载到其上面，如果需要把btn加载到它上面，需要打开UIImageView的交互
+    //打开交互     imageView.userInteractionEnabled = YES;
+    
+    [header addSubview:headerBtn];
     [header addSubview:imageviewHeader];
     
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, kWidth/2+10, kWidth, 20)];
@@ -113,11 +119,15 @@
 
 - (void)settingsAction{
     SettingsViewController *settingVC = [[SettingsViewController alloc]init];
+    settingVC.imageStr = self.headerImage;
+    settingVC.username = self.username;
     [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 - (void)headerInformation{
-    
+    UserInfoViewController *userinfo = [[UserInfoViewController alloc]init];
+    userinfo.urlImage = self.headerImage;
+    [self.navigationController pushViewController:userinfo animated:YES];
 }
 - (void)message{
     

@@ -67,6 +67,12 @@
 		7A892A3D1C9A66BA00D2D11F /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A3C1C9A66BA00D2D11F /* PersonViewController.m */; };
 		7A892A3F1C9AA0DC00D2D11F /* city.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A892A3E1C9AA0DC00D2D11F /* city.storyboard */; };
 		7A892A421C9AA8B300D2D11F /* selectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A411C9AA8B300D2D11F /* selectCityViewController.m */; };
+		7A8BD1161CA0EA1900D8ACC1 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8BD1151CA0EA1900D8ACC1 /* TencentOpenAPI.framework */; };
+		7A8BD1181CA0EA5F00D8ACC1 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8BD1171CA0EA5F00D8ACC1 /* libiconv.tbd */; };
+		7A8BD11A1CA0EA9B00D8ACC1 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8BD1191CA0EA9B00D8ACC1 /* libstdc++.tbd */; };
+		7A8BD11C1CA0EB1D00D8ACC1 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A8BD11B1CA0EB1D00D8ACC1 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		7A8BD1201CA15ADC00D8ACC1 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BD11F1CA15ADC00D8ACC1 /* UserInfoViewController.m */; };
+		7A8BD1241CA1726800D8ACC1 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BD1231CA1726800D8ACC1 /* VPImageCropperViewController.m */; };
 		7AAEAB761CA0E48000BC0D30 /* storyDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */; };
 		7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039601C9D3ABC003E32AF /* InlandViewController.m */; };
 		7AB039641C9D3AD3003E32AF /* ForeignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039631C9D3AD3003E32AF /* ForeignViewController.m */; };
@@ -244,6 +250,14 @@
 		7A892A3E1C9AA0DC00D2D11F /* city.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = city.storyboard; sourceTree = "<group>"; };
 		7A892A401C9AA8B300D2D11F /* selectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectCityViewController.h; sourceTree = "<group>"; };
 		7A892A411C9AA8B300D2D11F /* selectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectCityViewController.m; sourceTree = "<group>"; };
+		7A8BD1151CA0EA1900D8ACC1 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		7A8BD1171CA0EA5F00D8ACC1 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		7A8BD1191CA0EA9B00D8ACC1 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		7A8BD11B1CA0EB1D00D8ACC1 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = ../../TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		7A8BD11E1CA15ADC00D8ACC1 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		7A8BD11F1CA15ADC00D8ACC1 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		7A8BD1221CA1726800D8ACC1 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		7A8BD1231CA1726800D8ACC1 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storyDetail.plist; sourceTree = "<group>"; };
 		7AB0395F1C9D3ABC003E32AF /* InlandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlandViewController.h; sourceTree = "<group>"; };
 		7AB039601C9D3ABC003E32AF /* InlandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlandViewController.m; sourceTree = "<group>"; };
@@ -382,6 +396,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A8BD11A1CA0EA9B00D8ACC1 /* libstdc++.tbd in Frameworks */,
+				7A8BD1181CA0EA5F00D8ACC1 /* libiconv.tbd in Frameworks */,
 				7A84D80C1C9FE15C00A76134 /* libc++.tbd in Frameworks */,
 				7A84D80A1C9FE15100A76134 /* libsqlite3.0.tbd in Frameworks */,
 				7A0DC2B71C9E899E006E3569 /* libz.tbd in Frameworks */,
@@ -399,6 +415,7 @@
 				7A0DC2921C9E30EB006E3569 /* SystemConfiguration.framework in Frameworks */,
 				7A0DC2901C9E30DE006E3569 /* CoreTelephony.framework in Frameworks */,
 				7A0DC28E1C9E30D5006E3569 /* CFNetwork.framework in Frameworks */,
+				7A8BD1161CA0EA1900D8ACC1 /* TencentOpenAPI.framework in Frameworks */,
 				7A0DC28C1C9E30CA006E3569 /* MobileCoreServices.framework in Frameworks */,
 				7A0DC28A1C9E30C1006E3569 /* CoreGraphics.framework in Frameworks */,
 				7A0DC2AA1C9E88F2006E3569 /* libWeiboSDK.a in Frameworks */,
@@ -416,6 +433,8 @@
 		09F2B4EEA86412E6958E834E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A8BD1191CA0EA9B00D8ACC1 /* libstdc++.tbd */,
+				7A8BD1171CA0EA5F00D8ACC1 /* libiconv.tbd */,
 				7A84D80B1C9FE15C00A76134 /* libc++.tbd */,
 				7A84D8091C9FE15100A76134 /* libsqlite3.0.tbd */,
 				7A0DC2B61C9E899E006E3569 /* libz.tbd */,
@@ -466,12 +485,15 @@
 				7A84D8051C9FDF6700A76134 /* libWeChatSDK.a */,
 				7A84D8071C9FDF6F00A76134 /* WXApi.h */,
 				7A84D8081C9FDF7400A76134 /* WXApiObject.h */,
+				7A8BD11B1CA0EB1D00D8ACC1 /* TencentOpenApi_IOS_Bundle.bundle */,
+				7A8BD1151CA0EA1900D8ACC1 /* TencentOpenAPI.framework */,
 				7AF40A2B1C9FF76100BBD70F /* 各种坐标 */,
 				7AF409DD1C9FA28200BBD70F /* MJRefresh */,
 				7AC86F431C9F7B8A00AEF853 /* AMapLocationKit.framework */,
 				7AC86F441C9F7B8A00AEF853 /* VOSegmentedControl */,
 				7AB039651C9D3C15003E32AF /* JRSegmentControl */,
 				7A0DC29D1C9E88F2006E3569 /* libWeiboSDK */,
+				7A8BD1211CA1726800D8ACC1 /* VPImageCropper */,
 				7A0DC2831C9E3067006E3569 /* BmobSDK.framework */,
 				7AF6D8151C9AB07E004994A3 /* PullingRefreshTableView */,
 				7AF6D81A1C9AB07E004994A3 /* ProgressHUD */,
@@ -636,6 +658,8 @@
 				7A84D8031C9FD88A00A76134 /* BecomeHunterViewController.m */,
 				7A84D80D1C9FE44A00A76134 /* SettingsViewController.h */,
 				7A84D80E1C9FE44A00A76134 /* SettingsViewController.m */,
+				7A8BD11E1CA15ADC00D8ACC1 /* UserInfoViewController.h */,
+				7A8BD11F1CA15ADC00D8ACC1 /* UserInfoViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -748,6 +772,15 @@
 			);
 			name = "广告轮播";
 			path = "广告轮播demo";
+			sourceTree = "<group>";
+		};
+		7A8BD1211CA1726800D8ACC1 /* VPImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				7A8BD1221CA1726800D8ACC1 /* VPImageCropperViewController.h */,
+				7A8BD1231CA1726800D8ACC1 /* VPImageCropperViewController.m */,
+			);
+			path = VPImageCropper;
 			sourceTree = "<group>";
 		};
 		7AB039651C9D3C15003E32AF /* JRSegmentControl */ = {
@@ -1048,6 +1081,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A8BD11C1CA0EB1D00D8ACC1 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				7AF6D81F1C9AB07E004994A3 /* blueArrowDown.png in Resources */,
 				7AAEAB761CA0E48000BC0D30 /* storyDetail.plist in Resources */,
 				7A4F87EE1C9A3B1200183EC8 /* Plus.plist in Resources */,
@@ -1181,6 +1215,7 @@
 				7AF40A171C9FA28200BBD70F /* MJRefreshStateHeader.m in Sources */,
 				7A4B589A1C99A01900DC4CE1 /* JXBAdPageView.m in Sources */,
 				7AC86F371C9F7B6000AEF853 /* nearByViewController.m in Sources */,
+				7A8BD1241CA1726800D8ACC1 /* VPImageCropperViewController.m in Sources */,
 				7A84D8041C9FD88A00A76134 /* BecomeHunterViewController.m in Sources */,
 				7AB8FD131C99829700D9A121 /* SearchTravelViewController.m in Sources */,
 				7A84D80F1C9FE44A00A76134 /* SettingsViewController.m in Sources */,
@@ -1197,6 +1232,7 @@
 				7AF40A101C9FA28200BBD70F /* MJRefreshAutoNormalFooter.m in Sources */,
 				7AF40A131C9FA28200BBD70F /* MJRefreshBackNormalFooter.m in Sources */,
 				7AB8FCF41C98E68A00D9A121 /* FourTravelViewController.m in Sources */,
+				7A8BD1201CA15ADC00D8ACC1 /* UserInfoViewController.m in Sources */,
 				7A892A421C9AA8B300D2D11F /* selectCityViewController.m in Sources */,
 				7AC86F3D1C9F7B6000AEF853 /* RecommendModel.m in Sources */,
 				7AC86F4F1C9F7B8A00AEF853 /* VOIndicatorAnimation.m in Sources */,
@@ -1335,6 +1371,39 @@
 					"$(PROJECT_DIR)/FollowMe/Table/libWeiboSDK",
 					"$(PROJECT_DIR)/FollowMe/Table",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"SDWebImage\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"z.1.2.5\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"BmobSDK\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-fobjc-arc",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1362,6 +1431,39 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FollowMe/Table/libWeiboSDK",
 					"$(PROJECT_DIR)/FollowMe/Table",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"SDWebImage\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"z.1.2.5\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"BmobSDK\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-fobjc-arc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
