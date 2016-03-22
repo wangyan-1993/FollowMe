@@ -60,6 +60,12 @@
 		7A4F87F71C9A444700183EC8 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87F61C9A444700183EC8 /* SearchModel.m */; };
 		7A4F87FA1C9A4D1600183EC8 /* SearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */; };
 		7A4F87FD1C9A9B3E00183EC8 /* FiveTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */; };
+		7A84D8011C9F9B5300A76134 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A84D8001C9F9B5300A76134 /* InformationViewController.m */; };
+		7A84D8041C9FD88A00A76134 /* BecomeHunterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A84D8031C9FD88A00A76134 /* BecomeHunterViewController.m */; };
+		7A84D8061C9FDF6700A76134 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A84D8051C9FDF6700A76134 /* libWeChatSDK.a */; };
+		7A84D80A1C9FE15100A76134 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A84D8091C9FE15100A76134 /* libsqlite3.0.tbd */; };
+		7A84D80C1C9FE15C00A76134 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A84D80B1C9FE15C00A76134 /* libc++.tbd */; };
+		7A84D80F1C9FE44A00A76134 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A84D80E1C9FE44A00A76134 /* SettingsViewController.m */; };
 		7A892A3A1C9A43BB00D2D11F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A391C9A43BB00D2D11F /* DetailViewController.m */; };
 		7A892A3D1C9A66BA00D2D11F /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A3C1C9A66BA00D2D11F /* PersonViewController.m */; };
 		7A892A3F1C9AA0DC00D2D11F /* city.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A892A3E1C9AA0DC00D2D11F /* city.storyboard */; };
@@ -195,6 +201,17 @@
 		7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionViewCell.m; sourceTree = "<group>"; };
 		7A4F87FB1C9A9B3E00183EC8 /* FiveTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiveTravelViewController.h; sourceTree = "<group>"; };
 		7A4F87FC1C9A9B3E00183EC8 /* FiveTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiveTravelViewController.m; sourceTree = "<group>"; };
+		7A84D7FF1C9F9B5300A76134 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
+		7A84D8001C9F9B5300A76134 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		7A84D8021C9FD88A00A76134 /* BecomeHunterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BecomeHunterViewController.h; sourceTree = "<group>"; };
+		7A84D8031C9FD88A00A76134 /* BecomeHunterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BecomeHunterViewController.m; sourceTree = "<group>"; };
+		7A84D8051C9FDF6700A76134 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		7A84D8071C9FDF6F00A76134 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		7A84D8081C9FDF7400A76134 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		7A84D8091C9FE15100A76134 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7A84D80B1C9FE15C00A76134 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7A84D80D1C9FE44A00A76134 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		7A84D80E1C9FE44A00A76134 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		7A892A381C9A43BB00D2D11F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7A892A391C9A43BB00D2D11F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7A892A3B1C9A66BA00D2D11F /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
@@ -285,12 +302,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A84D80C1C9FE15C00A76134 /* libc++.tbd in Frameworks */,
+				7A84D80A1C9FE15100A76134 /* libsqlite3.0.tbd in Frameworks */,
 				7A0DC2B71C9E899E006E3569 /* libz.tbd in Frameworks */,
 				7A0DC2B51C9E898B006E3569 /* Foundation.framework in Frameworks */,
 				7A0DC2B31C9E897A006E3569 /* UIKit.framework in Frameworks */,
 				7A0DC2B11C9E896F006E3569 /* CoreText.framework in Frameworks */,
 				7A0DC2AF1C9E8954006E3569 /* ImageIO.framework in Frameworks */,
 				7A0DC2AD1C9E8946006E3569 /* QuartzCore.framework in Frameworks */,
+				7A84D8061C9FDF6700A76134 /* libWeChatSDK.a in Frameworks */,
 				7A0DC29C1C9E311D006E3569 /* MediaPlayer.framework in Frameworks */,
 				7A0DC29A1C9E3114006E3569 /* AVFoundation.framework in Frameworks */,
 				7A0DC2981C9E310B006E3569 /* libsqlite3.tbd in Frameworks */,
@@ -316,6 +336,8 @@
 		09F2B4EEA86412E6958E834E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A84D80B1C9FE15C00A76134 /* libc++.tbd */,
+				7A84D8091C9FE15100A76134 /* libsqlite3.0.tbd */,
 				7A0DC2B61C9E899E006E3569 /* libz.tbd */,
 				7A0DC2B41C9E898B006E3569 /* Foundation.framework */,
 				7A0DC2B21C9E897A006E3569 /* UIKit.framework */,
@@ -379,6 +401,9 @@
 		7A2B4A721C981754005B699B /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				7A84D8051C9FDF6700A76134 /* libWeChatSDK.a */,
+				7A84D8071C9FDF6F00A76134 /* WXApi.h */,
+				7A84D8081C9FDF7400A76134 /* WXApiObject.h */,
 				7AC86F431C9F7B8A00AEF853 /* AMapLocationKit.framework */,
 				7AC86F441C9F7B8A00AEF853 /* VOSegmentedControl */,
 				7AB039651C9D3C15003E32AF /* JRSegmentControl */,
@@ -536,6 +561,12 @@
 				7A32E1661C9D38400012F871 /* ResetCodeViewController.m */,
 				7A32E1681C9D40AC0012F871 /* ResignViewController.h */,
 				7A32E1691C9D40AC0012F871 /* ResignViewController.m */,
+				7A84D7FF1C9F9B5300A76134 /* InformationViewController.h */,
+				7A84D8001C9F9B5300A76134 /* InformationViewController.m */,
+				7A84D8021C9FD88A00A76134 /* BecomeHunterViewController.h */,
+				7A84D8031C9FD88A00A76134 /* BecomeHunterViewController.m */,
+				7A84D80D1C9FE44A00A76134 /* SettingsViewController.h */,
+				7A84D80E1C9FE44A00A76134 /* SettingsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -936,6 +967,7 @@
 				7A4780C81C97F0E200C6E5C2 /* TravelViewController.m in Sources */,
 				7A32E1641C9D37B20012F871 /* FindCodeByPhoneViewController.m in Sources */,
 				7AC86F341C9F7B6000AEF853 /* allCollectionViewController.m in Sources */,
+				7A84D8011C9F9B5300A76134 /* InformationViewController.m in Sources */,
 				7A422B141C97EAB800B51C11 /* main.m in Sources */,
 				7AB039641C9D3AD3003E32AF /* ForeignViewController.m in Sources */,
 				7A4F87E71C9A3AC800183EC8 /* cityFirstTableViewCell.m in Sources */,
@@ -953,7 +985,9 @@
 				7A32E1671C9D38400012F871 /* ResetCodeViewController.m in Sources */,
 				7A4B589A1C99A01900DC4CE1 /* JXBAdPageView.m in Sources */,
 				7AC86F371C9F7B6000AEF853 /* nearByViewController.m in Sources */,
+				7A84D8041C9FD88A00A76134 /* BecomeHunterViewController.m in Sources */,
 				7AB8FD131C99829700D9A121 /* SearchTravelViewController.m in Sources */,
+				7A84D80F1C9FE44A00A76134 /* SettingsViewController.m in Sources */,
 				7AC86F3A1C9F7B6000AEF853 /* SingleLocaitonAloneViewController.m in Sources */,
 				7AC86F511C9F7B8A00AEF853 /* VOSegmentedControl.m in Sources */,
 				7AB8FD021C99090800D9A121 /* JCTagCell.m in Sources */,
@@ -1006,7 +1040,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1049,7 +1084,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1074,8 +1110,8 @@
 			baseConfigurationReference = 9CE4DD61D59F51D056051F5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1088,6 +1124,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FollowMe/Table/libWeiboSDK",
+					"$(PROJECT_DIR)/FollowMe/Table",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1101,8 +1138,8 @@
 			baseConfigurationReference = 737A4A8526CBB407BDBC1B85 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1115,6 +1152,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FollowMe/Table/libWeiboSDK",
+					"$(PROJECT_DIR)/FollowMe/Table",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";

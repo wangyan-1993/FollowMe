@@ -79,6 +79,17 @@ static NSString *itemID = @"itemId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   
+
+    
+    
+    
+    
+    
+    
+    
+    
     _page = 1;
     self.navigationController.navigationBar.barTintColor = kMainColor;
     //附近

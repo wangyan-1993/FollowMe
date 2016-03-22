@@ -7,7 +7,7 @@
 //
 
 #import "EmailVerifyViewController.h"
-
+#import <BmobSDK/BmobUser.h>
 @interface EmailVerifyViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UIButton *findCode;
@@ -25,6 +25,8 @@
     
 }
 - (IBAction)findcodeAction:(id)sender {
+    
+    [BmobUser requestPasswordResetInBackgroundWithEmail:self.username.text];
 }
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

@@ -64,7 +64,7 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:            [NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [alert show];
         }else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"账号已注册成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"账号已注册成功,请登录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [alert show];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
