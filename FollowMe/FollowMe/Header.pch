@@ -9,17 +9,20 @@
 #ifndef Header_pch
 #define Header_pch
 #import "UIViewController+Common.h"
-
+//各种坐标
+#import "UIView+UIView_Extension.h"
+//高德地图张衡appKey
+#define kZhGaodeMapKey @"1d787d888f4887707c04b8ac8415434e"
 //界面宽高宏定义
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
 #define kMainColor [UIColor colorWithRed:4/256.0f green:190/256.0f blue:205/256.0f alpha:1]
-
+#define kCollectionColor [UIColor colorWithRed:250/255.f green:246/255.f blue:232/255.f alpha:1.0]
 
 #define kBmobAppID @"0b5e4dc74d6500458d80a220d436ea6c"
 #define kWeiboAppKey @"103514922"
 #define kWeiboRedirectURI @"https://api.weibo.com/oauth2/default.html"
-
+#define kWeixinAppID @"wx212a881dbf79e017"
 //统一输出
 
 #ifdef DEBUG

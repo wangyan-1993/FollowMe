@@ -7,6 +7,7 @@
 //
 
 #import "InlandViewController.h"
+
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "JCTagListView.h"
 #import "CityViewController.h"
@@ -36,6 +37,7 @@
 
 @property(nonatomic, strong) UISearchBar *searchBar;
 
+
 @end
 
 @implementation InlandViewController
@@ -43,6 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
     self.view.backgroundColor = kMainColor;
     
     self.cityVC = [[CityViewController alloc] init];
@@ -252,6 +255,7 @@
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
 }
+
 
 
 - (void)didReceiveMemoryWarning {

@@ -8,6 +8,7 @@
 
 #import "EmailLoginViewController.h"
 #import <BmobSDK/BmobUser.h>
+#import "InformationViewController.h"
 @interface EmailLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *code;
@@ -41,7 +42,9 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:[NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [alert show];
         }else{
-            
+            InformationViewController *info = [[InformationViewController alloc]init];
+            info.username = self.username.text;
+            [self.navigationController pushViewController:info animated:YES];
         }
     }];
     

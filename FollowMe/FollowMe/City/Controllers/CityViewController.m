@@ -21,10 +21,12 @@
 //左右视图
 #import "InlandViewController.h"
 #import "ForeignViewController.h"
-//左右视图滑动
+
+
 #import "JRSegmentViewController.h"
 #import "ProgressHUD.h"
 #import "JCTagListView.h"
+
 
 
 static NSString *identifier = @"cell";
@@ -58,14 +60,23 @@ static NSString *identifier = @"cell";
 @property(nonatomic, strong) UITableView *titleTableView;
 
 @property(nonatomic, strong) UILabel *clasifyLable;
-@property(nonatomic, strong) UIButton *selectButton;
 
 
 @property(nonatomic, strong) UIButton *clasifyButton;
 
 @property(nonatomic, strong) UIButton *presonButton;
 
+
 @property(nonatomic, strong) JCTagListView *tageListView;
+
+//@property(nonatomic, strong) UIButton *selectButton;
+
+
+
+
+
+
+
 
 
 @end
@@ -87,11 +98,15 @@ static NSString *identifier = @"cell";
 //导航左侧视图按钮：
     self.selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.selectButton.frame = CGRectMake(0, 0, 80,44);
+
     
+
     [self.selectButton addTarget:self action:@selector(selectCity) forControlEvents:UIControlEventTouchUpInside];
+
     
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     imageview.image = [UIImage imageNamed:@"back"];
+
     [self.selectButton setImage:imageview.image forState:UIControlStateNormal];
     //调整button图片的位置，四个数字分别指，图片距离button边界位置上下左右的距离；
     [self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(10, self.selectButton.frame.size.width-25, 10, 0)];
@@ -108,13 +123,18 @@ static NSString *identifier = @"cell";
     
 
     [self.navigationController.navigationBar addSubview:self.selectButton];
+
     
 //导航右侧图片显示搜索
     self.presonButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.presonButton.frame = CGRectMake(kWidth - 60, 10, 44,44);
     [self.presonButton addTarget:self action:@selector(presonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.presonButton setImage:[UIImage imageNamed:@"yyb_appdetail_showmore"] forState:UIControlStateNormal];
+
     
+
+    
+
     //调整button图片的位置，四个数字分别指，图片距离button边界位置上下左右的距离；
 //    [self.clasifyButton setImageEdgeInsets:UIEdgeInsetsMake(0, self.clasifyButton.frame.size.width-25, 0, 0)];
     [self.presonButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 10)];
@@ -447,6 +467,20 @@ static NSString *identifier = @"cell";
 //    selectCityViewController *selectVC = [[selectCityViewController alloc] init];
 //    [self.navigationController pushViewController:selectVC animated:YES];
     
+
+//     InlandViewController *firstVC = [[InlandViewController alloc] init];
+//     ForeignViewController *secondVC = [[ForeignViewController alloc] init];
+//     
+//     JRSegmentViewController *vc = [[JRSegmentViewController alloc] init];
+//     vc.segmentBgColor = [UIColor colorWithRed:18.0f/255 green:50.0f/255 blue:110.0f/255 alpha:1.0f];
+//     vc.indicatorViewColor = [UIColor whiteColor];
+//     vc.titleColor = [UIColor whiteColor];
+//     
+//     [vc setViewControllers:@[firstVC, secondVC]];
+//     [vc setTitles:@[@"热点", @"聚焦"]];
+//     
+//     [self.navigationController pushViewController:vc animated:YES];
+
      InlandViewController *firstVC = [[InlandViewController alloc] init];
     //隐藏功能
     firstVC.navigationItem.hidesBackButton = YES;
@@ -469,6 +503,7 @@ static NSString *identifier = @"cell";
      [vc setTitles:@[@"国内", @"国外"]];
      
      [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 

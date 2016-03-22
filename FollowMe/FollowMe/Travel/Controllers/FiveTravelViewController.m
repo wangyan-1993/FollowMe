@@ -27,7 +27,7 @@
     
 }
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    NSLog(@"%ld", navigationType);
+    NSLog(@"%ld", (long)navigationType);
     NSString *urlStr = request.URL.absoluteString;
     NSArray *array = [urlStr componentsSeparatedByString:@"/"];
     NSInteger length = array.count;

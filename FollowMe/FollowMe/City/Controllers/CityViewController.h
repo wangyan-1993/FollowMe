@@ -10,9 +10,16 @@
 #import "ChoseCityModel.h"
 
 @interface CityViewController : UIViewController
+
 @property(nonatomic, strong) ChoseCityModel *model;
+
+
+
+@property(nonatomic, strong) UIButton *selectButton;
+
 @property(nonatomic, strong) NSString *selectStr;
 @property(nonatomic, strong) NSString *stringName;
+
 
 
 @end

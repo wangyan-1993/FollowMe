@@ -9,7 +9,8 @@
 #import "LoginViewController.h"
 #import <BmobSDK/BmobUser.h>
 #import "MineViewController.h"
-#import "AppDelegate.h"
+#import "InformationViewController.h"
+
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *login;
 @property (weak, nonatomic) IBOutlet UITextField *phonenum;
@@ -40,7 +41,9 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:[NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [alert show];
         }else{
-            
+            InformationViewController *info = [[InformationViewController alloc]init];
+            info.username = self.phonenum.text;
+            [self.navigationController pushViewController:info animated:YES];
         }
     }];
     

@@ -13,6 +13,7 @@
 #import "FindCodeByPhoneViewController.h"
 #import "ResignViewController.h"
 #import "WeiboSDK.h"
+#import "WXApi.h"
 @interface MineViewController ()
 
 @property(nonatomic, strong) UIButton *emailBtn;
@@ -128,7 +129,11 @@
 }
 
 - (void)weixinlogin{
-    
+    SendAuthReq* req =[[SendAuthReq alloc]init];
+    req.scope = @"all" ;
+    req.state = @"123" ;
+    //第三方向微信终端发送一个SendAuthReq消息结构
+    [WXApi sendReq:req];
 }
 
 - (void)weibologin{
