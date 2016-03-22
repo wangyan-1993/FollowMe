@@ -7,6 +7,10 @@
 //
 
 #import "ForeignViewController.h"
+
+
+
+
 #import "JCTagListView.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "CityViewController.h"
@@ -21,13 +25,14 @@
 @property(nonatomic, strong) NSMutableArray *overCityArray;
 @property(nonatomic, strong) CityViewController *cityVC;
 
+
 @end
 
 @implementation ForeignViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self showBackBtn];
     
     // Do any additional setup after loading the view.

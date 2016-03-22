@@ -23,6 +23,9 @@
 #import "searchViewController.h"
 #import "nearByViewController.h"
 #import "SingleLocaitonAloneViewController.h"
+#import "allCollectionViewController.h"
+#import "advertisingViewController.h"
+#import "storyDetailsViewController.h"
 //全局静态变量
 static NSString *collectionHeader = @"cityHeader";
 static NSString *itemID = @"itemId";
@@ -39,6 +42,7 @@ static NSString *itemID = @"itemId";
 @property (nonatomic, strong) JXBAdPageView    *AdvertisementImageView;
 //collerctionView属性
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSMutableArray *spot_idArray;
 //collerctionView请求出的数组
 @property (nonatomic, strong) NSMutableArray *collerctionViewArray;
 @property (nonatomic, strong) NSMutableArray *introduceImageArray;
@@ -69,7 +73,8 @@ static NSString *itemID = @"itemId";
 //搜索历史
 @property (nonatomic, strong) JCTagListView *histroyView;
 
-
+//广告轮播图的点击方法
+@property (nonatomic, strong) NSMutableArray *htmlArray;
 @property (nonatomic, strong) NSMutableArray *inlandListArray;
 
 
@@ -114,9 +119,6 @@ static NSString *itemID = @"itemId";
     self.mySearchBar.layer.masksToBounds = YES;
     self.mySearchBar.layer.cornerRadius = 30.0f;
     [self.navigationController.navigationBar addSubview:self.mySearchBar];
-    
-    
-  
     // Do any additional setup after loading the view.
    
     //collectionview添加进系统视图
@@ -136,8 +138,6 @@ static NSString *itemID = @"itemId";
 #pragma mark ----  附近的人功能实现--------
 - (void)nearBy{
     nearByViewController *nearVC = [[nearByViewController alloc] init];
-    self.mySearchBar.hidden = YES;
-    self.nearBtn.hidden = YES;
     [self.navigationController pushViewController:nearVC animated:YES];
 //    SingleLocaitonAloneViewController *VC = [[SingleLocaitonAloneViewController alloc] init];
 //    [self.navigationController pushViewController:VC animated:YES];
@@ -151,7 +151,11 @@ static NSString *itemID = @"itemId";
     self.nearBtn.hidden = NO;
 }
 //在页面将要消失的时候，调用此方法，去掉所有的
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.mySearchBar.hidden = YES;
+    self.nearBtn.hidden = YES;
+}
 #pragma mark -----------搜索栏方法---------
 - (void)addWhiteView{
     
@@ -270,7 +274,6 @@ static NSString *itemID = @"itemId";
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     [self.tableView tableViewDidEndDragging:scrollView];
 }
-
 //请求广告轮播
 - (void)AdvertisementArray{
     //使用SDWebImage
@@ -282,7 +285,11 @@ static NSString *itemID = @"itemId";
     if (self.advertisementArray.count>0) {
 //        NSArray *arr = self.advertisementArray;
         [_AdvertisementImageView startAdsWithBlock:self.advertisementArray block:^(NSInteger clickIndex){
-            NSLog(@"%d",(int)clickIndex);
+            advertisingViewController *adVC = [[advertisingViewController alloc] init];
+            adVC.html = self.htmlArray[clickIndex];
+            [self.navigationController pushViewController:adVC animated:NO];
+           
+//            NSLog(@"%d",(int)clickIndex);
         }];
 
     }
@@ -291,6 +298,7 @@ static NSString *itemID = @"itemId";
    collectionViewSectionLable.text = self.collectionViewSectionArray[@"title"];
     UIButton *collectionViewSectionBtn = [[UIButton alloc] initWithFrame:CGRectMake(kWidth - 80, kHeight*0.305, 60, 40)];
     [collectionViewSectionBtn setTitle:@"全部" forState:UIControlStateNormal];
+    [collectionViewSectionBtn addTarget:self action:@selector(allCollection) forControlEvents:UIControlEventTouchUpInside];
     [collectionViewSectionBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     //tableView头部
     UILabel *tableViewSectionLable = [[UILabel alloc] initWithFrame:CGRectMake(10, kHeight*1.05, kWidth, 40)];
@@ -302,6 +310,12 @@ static NSString *itemID = @"itemId";
     // 添加进系统视图
     [self.headerView addSubview:_AdvertisementImageView];
     
+}
+
+//全部的点击方法
+- (void)allCollection{
+    allCollectionViewController *allVC = [[allCollectionViewController alloc] init];
+    [self.navigationController pushViewController:allVC animated:NO];
 }
 //第三方广告轮播代理
 - (void)setWebImage:(UIImageView *)imgView imgUrl:(NSString *)imgUrl {
@@ -336,9 +350,9 @@ static NSString *itemID = @"itemId";
                 
                 [self.nameImageArray removeAllObjects];
                 [self.nameLableArray removeAllObjects];
-                
+                [self.spot_idArray removeAllObjects];
                 [self.tableViewArray removeAllObjects];
-                
+                [self.htmlArray removeAllObjects];
                 [self.foreignListArray removeAllObjects];
                 [self.inlandListArray removeAllObjects];
                 
@@ -366,6 +380,8 @@ static NSString *itemID = @"itemId";
                 NSArray *item = data[0];
                 for (NSDictionary *dic3 in item) {
                     [self.advertisementArray addObject:dic3[@"image_url"]];
+                    [self.htmlArray addObject:dic3[@"html_url"]];
+                    
                 }
                 
             }
@@ -373,6 +389,9 @@ static NSString *itemID = @"itemId";
            else if (dic2[@"type"] == [NSNumber numberWithInteger:10]) {
                 NSArray *data = dic2[@"data"];
                 for (NSDictionary *dic3 in data) {
+                    [self.spot_idArray addObject:dic3[@"spot_id"]];
+                    
+                    
                     //判断这个key值里面有数据没  没有的话就用下一个key值里的数据
                     if ([dic3[@"index_title"] isEqualToString:@""] ) {
                         [self.introduceLableArray addObject:dic3[@"text"]];
@@ -476,8 +495,9 @@ static NSString *itemID = @"itemId";
 //UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
+    storyDetailsViewController *storyVC = [[storyDetailsViewController alloc] init];
+    storyVC.spot_id = self.spot_idArray[indexPath.row];
+    [self.navigationController pushViewController:storyVC animated:YES];
 }
 //返回这个UICollectionView是否可以被选择
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -488,6 +508,19 @@ static NSString *itemID = @"itemId";
     scrollPosition = UICollectionViewScrollPositionTop;
 }
 #pragma mark     -------------懒加载--------------
+- (NSMutableArray *)spot_idArray{
+    if (_spot_idArray == nil ) {
+        self.spot_idArray = [NSMutableArray new];
+    }
+    return _spot_idArray;
+}
+//html懒加载
+- (NSMutableArray *)htmlArray{
+    if (_htmlArray == nil) {
+        self.htmlArray = [NSMutableArray new];
+    }
+    return _htmlArray;
+}
 - (JCTagListView *)histroyView{
     if (_histroyView == nil) {
         self.histroyView = [[JCTagListView alloc] initWithFrame:CGRectMake(30, 500, kWidth-60, kHeight*0.4)];
