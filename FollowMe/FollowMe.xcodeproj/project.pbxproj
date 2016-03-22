@@ -64,6 +64,7 @@
 		7A892A3D1C9A66BA00D2D11F /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A3C1C9A66BA00D2D11F /* PersonViewController.m */; };
 		7A892A3F1C9AA0DC00D2D11F /* city.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A892A3E1C9AA0DC00D2D11F /* city.storyboard */; };
 		7A892A421C9AA8B300D2D11F /* selectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A411C9AA8B300D2D11F /* selectCityViewController.m */; };
+		7AAEAB761CA0E48000BC0D30 /* storyDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */; };
 		7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039601C9D3ABC003E32AF /* InlandViewController.m */; };
 		7AB039641C9D3AD3003E32AF /* ForeignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039631C9D3AD3003E32AF /* ForeignViewController.m */; };
 		7AB0396A1C9D3C15003E32AF /* JRSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039671C9D3C15003E32AF /* JRSegmentControl.m */; };
@@ -125,7 +126,6 @@
 		7AF40A1C1C9FA28200BBD70F /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF40A091C9FA28200BBD70F /* UIView+MJExtension.m */; };
 		7AF40A221C9FCC4D00BBD70F /* advertisingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF40A211C9FCC4D00BBD70F /* advertisingViewController.m */; };
 		7AF40A251C9FD77500BBD70F /* storyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF40A241C9FD77500BBD70F /* storyDetailsViewController.m */; };
-		7AF40A271C9FE56E00BBD70F /* storyDetails.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AF40A261C9FE56E00BBD70F /* storyDetails.plist */; };
 		7AF40A2A1C9FE70900BBD70F /* storyDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF40A291C9FE70900BBD70F /* storyDetailsView.m */; };
 		7AF40A2E1C9FF76100BBD70F /* UIView+UIView_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF40A2D1C9FF76100BBD70F /* UIView+UIView_Extension.m */; };
 		7AF6D81E1C9AB07E004994A3 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF6D8161C9AB07E004994A3 /* blueArrow.png */; };
@@ -228,6 +228,7 @@
 		7A892A3E1C9AA0DC00D2D11F /* city.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = city.storyboard; sourceTree = "<group>"; };
 		7A892A401C9AA8B300D2D11F /* selectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectCityViewController.h; sourceTree = "<group>"; };
 		7A892A411C9AA8B300D2D11F /* selectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectCityViewController.m; sourceTree = "<group>"; };
+		7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storyDetail.plist; sourceTree = "<group>"; };
 		7AB0395F1C9D3ABC003E32AF /* InlandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlandViewController.h; sourceTree = "<group>"; };
 		7AB039601C9D3ABC003E32AF /* InlandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlandViewController.m; sourceTree = "<group>"; };
 		7AB039621C9D3AD3003E32AF /* ForeignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForeignViewController.h; sourceTree = "<group>"; };
@@ -339,7 +340,6 @@
 		7AF40A211C9FCC4D00BBD70F /* advertisingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = advertisingViewController.m; sourceTree = "<group>"; };
 		7AF40A231C9FD77500BBD70F /* storyDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storyDetailsViewController.h; sourceTree = "<group>"; };
 		7AF40A241C9FD77500BBD70F /* storyDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = storyDetailsViewController.m; sourceTree = "<group>"; };
-		7AF40A261C9FE56E00BBD70F /* storyDetails.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storyDetails.plist; sourceTree = "<group>"; };
 		7AF40A281C9FE70900BBD70F /* storyDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = storyDetailsView.h; path = ../Views/storyDetailsView.h; sourceTree = "<group>"; };
 		7AF40A291C9FE70900BBD70F /* storyDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = storyDetailsView.m; path = ../Views/storyDetailsView.m; sourceTree = "<group>"; };
 		7AF40A2C1C9FF76100BBD70F /* UIView+UIView_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIView_Extension.h"; sourceTree = "<group>"; };
@@ -795,7 +795,7 @@
 				7AC86F291C9F7B6000AEF853 /* nearByModel.m */,
 				7AC86F2A1C9F7B6000AEF853 /* RecommendModel.h */,
 				7AC86F2B1C9F7B6000AEF853 /* RecommendModel.m */,
-				7AF40A261C9FE56E00BBD70F /* storyDetails.plist */,
+				7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1026,8 +1026,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF6D81F1C9AB07E004994A3 /* blueArrowDown.png in Resources */,
+				7AAEAB761CA0E48000BC0D30 /* storyDetail.plist in Resources */,
 				7A4F87EE1C9A3B1200183EC8 /* Plus.plist in Resources */,
-				7AF40A271C9FE56E00BBD70F /* storyDetails.plist in Resources */,
 				7AC86F421C9F7B6000AEF853 /* RecommendTableViewCell.xib in Resources */,
 				7A4F87EC1C9A3AF700183EC8 /* Mine.storyboard in Resources */,
 				7AF6D81E1C9AB07E004994A3 /* blueArrow.png in Resources */,

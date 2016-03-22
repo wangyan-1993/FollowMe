@@ -16,13 +16,17 @@
 @end
 
 @implementation storyDetailsViewController
-
+- (void)loadView{
+    [super loadView];
+    self.storyDetailView = [[storyDetailsView alloc] initWithFrame:self.view.frame];
+    self.view = self.storyDetailView;
+     [self workOne];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self workOne];
-    
-    [self.view addSubview:self.storyDetailView];
+   
+     
     
 }
 - (storyDetailsView *)storyDetailView{
@@ -34,9 +38,8 @@
 - (void)workOne{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:[NSString stringWithFormat:@"%@spot_id=%@&spot_id=%@",kstoryDetails,self.spot_id,self.spot_id] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        WLZLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        WLZLog(@"%@",responseObject);
+        WLZLog(@"%@",responseObject);
         NSDictionary *rootDic = responseObject;
          if (rootDic[@"status"] == [NSNumber numberWithInteger:0]) {
              NSDictionary *dataDic = rootDic[@"data"];

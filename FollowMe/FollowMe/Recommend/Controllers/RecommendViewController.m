@@ -108,9 +108,6 @@ static NSString *itemID = @"itemId";
     self.mySearchBar.layer.masksToBounds = YES;
     self.mySearchBar.layer.cornerRadius = 30.0f;
     [self.navigationController.navigationBar addSubview:self.mySearchBar];
-    
-    
-  
     // Do any additional setup after loading the view.
    
     //collectionview添加进系统视图

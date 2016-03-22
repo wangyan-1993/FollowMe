@@ -11,7 +11,7 @@
 #import "CollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MJRefresh.h"
-
+#import "storyDetailsViewController.h"
 @interface allCollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>{
     NSInteger _start;
 }
@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSMutableArray *nameImageArray;
 @property (nonatomic, strong) NSMutableArray *nameLableArray;
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSMutableArray *spot_idArray;
 @property (nonatomic, assign) BOOL isRefresh;
 @end
 
@@ -30,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"精选故事";
+    self.view.backgroundColor = kCollectionColor;
     //设置导航栏标题颜色
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor] }];
     // Do any additional setup after loading the view.
@@ -76,7 +78,7 @@
                 [self.nameImageArray removeAllObjects];
                 [self.nameLableArray removeAllObjects];
                 [self.collerctionViewArray removeAllObjects];
-                
+                [self.spot_idArray removeAllObjects];
                 
             }
 
@@ -89,6 +91,8 @@
                 }else{
                     [self.introduceLableArray addObject:dic3[@"index_title"]];
                 }
+                //获取属性传值数组
+                [self.spot_idArray addObject:dic3[@"spot_id"]];
                 //判断这个key值里面有数据没  没有的话就用下一个key值里的数据
                 if ([dic3[@"index_cover"] isEqualToString:@""]) {
                     [self.introduceImageArray addObject:dic3[@"cover_image_w640"]];
@@ -134,9 +138,23 @@
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.nameLableArray.count;
-;
+
 }
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    storyDetailsViewController *storyVC = [[storyDetailsViewController alloc] init];
+    storyVC.spot_id = self.spot_idArray[indexPath.row];
+    [self.navigationController pushViewController:storyVC animated:YES];
+}
+#pragma mark spotid_Array   属性传值数组
+- (NSMutableArray *)spot_idArray{
+    if (_spot_idArray == nil) {
+        self.spot_idArray = [NSMutableArray new];
+    }
+    return _spot_idArray;
+}
+
 #pragma mark collection-----懒加载
+
 - (UICollectionView *)collectionView{
     if (_collectionView == nil) {
         //创建一个布局类
