@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface selectHotViewController : UIViewController
+@property(nonatomic, strong) NSString *IDName;
 
 @end

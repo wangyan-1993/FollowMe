@@ -61,14 +61,7 @@
     self.searchBar.layer.cornerRadius = 10.0;
     self.searchBar.clipsToBounds = YES;
     [self.view addSubview:self.searchBar];
-    
-
-    
-    
-    
     self.tableView.tableHeaderView = self.headView;
-    
-    
     [self jcCollectionView];
     [self updateSelectCity];
 }
@@ -84,23 +77,25 @@
         NSDictionary *rootDic = responseObject;
         //取出所有的城市；
         NSDictionary *citDac = rootDic[@"city_data"];
-        
         //读取国内城市；
         NSDictionary *inlandDic = citDac[@"domestic_city"];
         self.allCityArray = [NSMutableArray new];
-//        self.allHotCityArray = [NSMutableArray new];
+        self.allHotCityArray = [NSMutableArray new];
         for (NSDictionary *inName in inlandDic[@"all_city_list"]) {
             [self.allCityArray addObject:inName[@"name"]];
         }
-//        for (NSString *string in inlandDic[@"hot_city_list"]) {
-//            [self.allHotCityArray addObject:string];
+        for (NSString *string in inlandDic[@"hot_city_list"]) {
+            [self.allHotCityArray addObject:string];
+        }
+        
+//        for (NSDictionary *titleDic in rootDic[@"tag_data"]) {
+//            
+//            [ChoseCityModel setValuesForKeysWithDictionary:titleDic];
 //        }
+
         [self jcCollectionView];
         [self.tableView reloadData];
-     
         
-        
-    
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         WLZLog(@"%@",error);
     }];
@@ -118,9 +113,12 @@
     self.jctageLiseView.tagStrokeColor = [UIColor whiteColor];
     
 //    NSArray *cityArray = [NSArray arrayWithArray:self.allHotCityArray];
-        NSArray *array = @[@"北京",@"上海",@"广州",@"深圳",@"重庆",@"成都",@"武汉",@"西安"];
+//        NSArray *array = @[@"北京",@"上海",@"广州",@"深圳",@"重庆",@"成都",@"武汉",@"西安"];
+
     //    WLZLog(@"cityArray === %@",cityArray);
-    [self.jctageLiseView.tags addObjectsFromArray:array];
+    
+    //可变数组传值
+    [self.jctageLiseView.tags addObjectsFromArray:self.allHotCityArray];
     
     
         __block InlandViewController *weakSelf = self;
@@ -128,10 +126,10 @@
             weakSelf.cityVC = [[CityViewController alloc] init];
     
 //            [weakSelf.cityVC.selects setTitle:weakSelf.allHotCityArray[index] forState:UIControlStateNormal];
-//            weakSelf.cityVC.selectStr = array[index];
+            weakSelf.cityVC.stringName = weakSelf.allHotCityArray[index];
             
             
-            weakSelf.cityVC.stringName = weakSelf.allCityArray[index];
+//            weakSelf.cityVC.stringName = weakSelf.allCityArray[index];
             
             [weakSelf.navigationController pushViewController:weakSelf.cityVC animated:NO];
                 }];
@@ -163,12 +161,8 @@
     
     
     self.cityVC.stringName = self.allCityArray[indexPath.row];
+    
     [self.navigationController pushViewController:self.cityVC animated:YES];
-    
-
-    
-    
-    
     
 }
 

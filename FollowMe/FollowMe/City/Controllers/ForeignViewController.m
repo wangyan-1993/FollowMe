@@ -30,6 +30,8 @@
     
     [self showBackBtn];
     
+    self.cityVC = [[CityViewController alloc] init];
+    
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kMainColor;
     self.tableView.tableHeaderView = self.headView;
@@ -68,7 +70,7 @@
         self.overCityArray = [NSMutableArray new];
         for (NSDictionary *overName in overDic[@"all_city_list"]) {
             [self.overCityArray addObject:overName[@"name"]];
-//            WLZLog(@"self.overCityArray = %@",self.overCityArray);
+
         }
         [self.tableView reloadData];
         
@@ -91,9 +93,12 @@
     [self.headView addSubview:self.jctageLiseView];
     __block ForeignViewController *weakSelf = self;
     [self.jctageLiseView setCompletionBlockWithSelected:^(NSInteger index) {
-//        weakSelf.cityVC.selectStr = weakSelf.overCityArray[index];
+
         
         weakSelf.cityVC.stringName = weakSelf.overCityArray[index];
+        
+        
+        [weakSelf.navigationController pushViewController:weakSelf.cityVC animated:YES];
     
     }];
     
