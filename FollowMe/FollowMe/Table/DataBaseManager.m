@@ -64,7 +64,7 @@ static sqlite3 *dataBase = nil;
 //创建数据库表
 - (void)createDataBaseTable{
     //建表语句
-    NSString *sql =[NSString stringWithFormat:@"create table a%@ (city text not null)", self.name];
+    NSString *sql =@"create table City (city text not null)";
     NSLog(@"%@", sql);
     //执行SQL语句
     /*
@@ -98,7 +98,8 @@ static sqlite3 *dataBase = nil;
     //简单的理解为它里边就是sql语句
     sqlite3_stmt *stmt = nil;
     //sql语句
- NSString *sql =[NSString stringWithFormat:@"insert into a%@(city) values(?)", self.name];    /*
+   
+ NSString *sql =@"insert into City(city) values(?)";    /*
      第一个参数      sqlite3 *db  :  数据库
      第二个参数 const char *zSql  ： sql语句
      第三个参数       int nByte   ： 如果nByte小于0，则函数取出zSql中从开始到第一个0终止符的内容；如果nByte不是负的，那么它就是这个函数能从zSql中读取的字节数的最大值。如果nBytes非负，zSql在第一次遇见’/000/或’u000’的时候终止
@@ -126,7 +127,7 @@ static sqlite3 *dataBase = nil;
 - (NSMutableArray *)selectAllCollect{
     [self openDataBase];
     sqlite3_stmt *stmt = nil;
-    NSString *sql = [NSString stringWithFormat:@"select *from a%@", self.name];
+    NSString *sql =@"select *from City";
     int result = sqlite3_prepare_v2(dataBase, [sql UTF8String], -1, &stmt, NULL);
     NSMutableArray *array = nil;
     if (result == SQLITE_OK) {

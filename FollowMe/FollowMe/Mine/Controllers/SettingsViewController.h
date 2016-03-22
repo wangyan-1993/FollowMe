@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsViewController : UIViewController
-
+@property(nonatomic, copy) NSString *imageStr;
+@property(nonatomic, copy) NSString *username;
 @end

@@ -19,6 +19,7 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "InformationViewController.h"
 #import "WXApi.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 @interface AppDelegate ()<UITabBarControllerDelegate, WeiboSDKDelegate, WXApiDelegate>
 @property(nonatomic, strong) UITabBarController *tabBarVC;
 @property(nonatomic, strong) UINavigationController *mineNav;
@@ -78,12 +79,12 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    return [WXApi handleOpenURL:url delegate:self] || [WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self] || [WeiboSDK handleOpenURL:url delegate:self]|| [TencentOAuth HandleOpenURL:url];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return [WXApi handleOpenURL:url delegate:self] ||[WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self] ||[WeiboSDK handleOpenURL:url delegate:self]||[TencentOAuth HandleOpenURL:url];
 }
 #pragma mark---weibo delegate
 
@@ -124,7 +125,7 @@
             info.username = responseObject[@"screen_name"];
             info.headerImage = responseObject[@"avatar_large"];
             info.navigationItem.hidesBackButton = YES;
-
+            self.tabBarVC.selectedIndex = 0;
             [self.mineNav pushViewController:info animated:YES];
         }
     }];
