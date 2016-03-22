@@ -67,8 +67,11 @@
 		7AAEAB761CA0E48000BC0D30 /* storyDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */; };
 		7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039601C9D3ABC003E32AF /* InlandViewController.m */; };
 		7AB039641C9D3AD3003E32AF /* ForeignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039631C9D3AD3003E32AF /* ForeignViewController.m */; };
+
+
 		7AB0396A1C9D3C15003E32AF /* JRSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039671C9D3C15003E32AF /* JRSegmentControl.m */; };
 		7AB0396B1C9D3C15003E32AF /* JRSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039691C9D3C15003E32AF /* JRSegmentViewController.m */; };
+
 		7AB583171C9BAB42007D21AA /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB583161C9BAB42007D21AA /* DataBaseManager.m */; };
 		7AB5831A1C9BB1F4007D21AA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB583191C9BB1F4007D21AA /* LoginViewController.m */; };
 		7AB5831D1C9BE293007D21AA /* NoCodeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB5831C1C9BE293007D21AA /* NoCodeLoginViewController.m */; };
@@ -233,10 +236,12 @@
 		7AB039601C9D3ABC003E32AF /* InlandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlandViewController.m; sourceTree = "<group>"; };
 		7AB039621C9D3AD3003E32AF /* ForeignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForeignViewController.h; sourceTree = "<group>"; };
 		7AB039631C9D3AD3003E32AF /* ForeignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForeignViewController.m; sourceTree = "<group>"; };
+
 		7AB039661C9D3C15003E32AF /* JRSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSegmentControl.h; sourceTree = "<group>"; };
 		7AB039671C9D3C15003E32AF /* JRSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSegmentControl.m; sourceTree = "<group>"; };
 		7AB039681C9D3C15003E32AF /* JRSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSegmentViewController.h; sourceTree = "<group>"; };
 		7AB039691C9D3C15003E32AF /* JRSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSegmentViewController.m; sourceTree = "<group>"; };
+
 		7AB583151C9BAB42007D21AA /* DataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
 		7AB583161C9BAB42007D21AA /* DataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
 		7AB583181C9BB1F4007D21AA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -1133,6 +1138,10 @@
 				7AC86F341C9F7B6000AEF853 /* allCollectionViewController.m in Sources */,
 				7AF40A0F1C9FA28200BBD70F /* MJRefreshAutoGifFooter.m in Sources */,
 				7A422B141C97EAB800B51C11 /* main.m in Sources */,
+
+				7A3B51681C9A3C8C000AA140 /* RecommendModel.m in Sources */,
+
+
 				7AB039641C9D3AD3003E32AF /* ForeignViewController.m in Sources */,
 				7A4F87E71C9A3AC800183EC8 /* cityFirstTableViewCell.m in Sources */,
 				7AF40A191C9FA28200BBD70F /* MJRefreshConst.m in Sources */,
@@ -1161,9 +1170,11 @@
 				7AC86F3A1C9F7B6000AEF853 /* SingleLocaitonAloneViewController.m in Sources */,
 				7AC86F511C9F7B8A00AEF853 /* VOSegmentedControl.m in Sources */,
 				7AB8FD021C99090800D9A121 /* JCTagCell.m in Sources */,
+
 				7AF40A161C9FA28200BBD70F /* MJRefreshNormalHeader.m in Sources */,
 				7AF40A111C9FA28200BBD70F /* MJRefreshAutoStateFooter.m in Sources */,
 				7AF40A0D1C9FA28200BBD70F /* MJRefreshFooter.m in Sources */,
+
 				7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */,
 				7AB5831A1C9BB1F4007D21AA /* LoginViewController.m in Sources */,
 				7AF40A101C9FA28200BBD70F /* MJRefreshAutoNormalFooter.m in Sources */,
