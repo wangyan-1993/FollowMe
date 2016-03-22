@@ -76,6 +76,7 @@
 		7AB5831A1C9BB1F4007D21AA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB583191C9BB1F4007D21AA /* LoginViewController.m */; };
 		7AB5831D1C9BE293007D21AA /* NoCodeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB5831C1C9BE293007D21AA /* NoCodeLoginViewController.m */; };
 		7AB5BD341CA0F4BA0095200C /* ResetCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A32E1661C9D38400012F871 /* ResetCodeViewController.m */; };
+		7AB5BD371CA14D3A0095200C /* ClasifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB5BD361CA14D3A0095200C /* ClasifyModel.m */; };
 		7AB6CA901C9FE33F00F6CA01 /* searchShowList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6CA8F1C9FE33F00F6CA01 /* searchShowList.plist */; };
 		7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */; };
 		7AB8FCF11C98E40F00D9A121 /* ThirdTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FCF01C98E40F00D9A121 /* ThirdTravelViewController.m */; };
@@ -258,6 +259,8 @@
 		7AB583191C9BB1F4007D21AA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7AB5831B1C9BE293007D21AA /* NoCodeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoCodeLoginViewController.h; sourceTree = "<group>"; };
 		7AB5831C1C9BE293007D21AA /* NoCodeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoCodeLoginViewController.m; sourceTree = "<group>"; };
+		7AB5BD351CA14D3A0095200C /* ClasifyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClasifyModel.h; sourceTree = "<group>"; };
+		7AB5BD361CA14D3A0095200C /* ClasifyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClasifyModel.m; sourceTree = "<group>"; };
 		7AB6CA8F1C9FE33F00F6CA01 /* searchShowList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = searchShowList.plist; sourceTree = "<group>"; };
 		7AB8FCEC1C98DDD900D9A121 /* SecondTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTravelViewController.h; sourceTree = "<group>"; };
 		7AB8FCED1C98DDDA00D9A121 /* SecondTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTravelViewController.m; sourceTree = "<group>"; };
@@ -569,6 +572,8 @@
 				7A0017F91C993AEE0033B78F /* cityFirst2List.plist */,
 				7A0017FB1C993FB30033B78F /* cityModel.h */,
 				7A0017FC1C993FB30033B78F /* cityModel.m */,
+				7AB5BD351CA14D3A0095200C /* ClasifyModel.h */,
+				7AB5BD361CA14D3A0095200C /* ClasifyModel.m */,
 				7A21BF1C1C9BC54000E2321F /* ChoseCityModel.h */,
 				7A21BF1D1C9BC54000E2321F /* ChoseCityModel.m */,
 				7A21BF1A1C9BB19800E2321F /* ChoseCityList.plist */,
@@ -1183,6 +1188,7 @@
 				7AC86F511C9F7B8A00AEF853 /* VOSegmentedControl.m in Sources */,
 				7AB8FD021C99090800D9A121 /* JCTagCell.m in Sources */,
 				7AF40A161C9FA28200BBD70F /* MJRefreshNormalHeader.m in Sources */,
+				7AB5BD371CA14D3A0095200C /* ClasifyModel.m in Sources */,
 				7AF40A111C9FA28200BBD70F /* MJRefreshAutoStateFooter.m in Sources */,
 				7AF40A0D1C9FA28200BBD70F /* MJRefreshFooter.m in Sources */,
 				7AB5BD341CA0F4BA0095200C /* ResetCodeViewController.m in Sources */,

@@ -20,6 +20,7 @@
     //http://api.breadtrip.com/v3/user/2384156923/
     
     UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+    //http://web.breadtrip.com/hunter/2384305001/v2/
     NSURL *url = [NSURL URLWithString:@"http://web.breadtrip.com/hunter/2384305001/v2/"];
     [webView loadRequest:[NSURLRequest requestWithURL:url]];
     

@@ -10,5 +10,6 @@
 
 @interface selectHotViewController : UIViewController
 @property(nonatomic, strong) NSString *IDName;
+//@property(nonatomic, strong) NSString *IDcityName;
 
 @end

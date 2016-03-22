@@ -13,6 +13,7 @@
 #import "PersonViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "ProgressHUD.h"
+#import "selectHotViewController.h"
 
 
 static NSString *identifier = @"cell";
@@ -45,7 +46,7 @@ static NSString *identifier = @"cell";
     
     [self showBackBtn];
     
-//    [self uptataConfig];
+    [self uptataConfig];
     
 }
 
@@ -59,8 +60,12 @@ static NSString *identifier = @"cell";
      */
     
     //http://api.breadtrip.com/hunter/products/v2/search/?city_name=%E5%8C%97%E4%BA%AC&lat=34.613544&lng=112.41408&q=%E7%BE%8E%E9%A3%9F
+    
+   
+    
+    
 //    
-    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/search/?city_name=北京&lat=34.613476&lng=112.413994&q=%@",self.strCityName];
+    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/search/?city_name=%@&lat=34.613476&lng=112.413994&q=%@",self.choseCityName,self.strCityName];
     NSString *url = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     
@@ -73,7 +78,6 @@ static NSString *identifier = @"cell";
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [ProgressHUD show:@"正在为您请求数据"];
-//        WLZLog(@"%@",responseObject);
         
         NSDictionary *dictio = responseObject;
         NSDictionary *dataDic = dictio[@"data"];
@@ -128,7 +132,7 @@ static NSString *identifier = @"cell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return kHeight*0.5;
+    return kHeight*0.42;
 }
 
 -(void)classAction{
@@ -152,6 +156,13 @@ static NSString *identifier = @"cell";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.citySearchBar.hidden = YES;
+    
 }
 
 /*

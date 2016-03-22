@@ -11,6 +11,7 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "SelectViewController.h"
 #import "CityViewController.h"
+#import "selectCityViewController.h"
 
 @interface selectHotViewController ()<UISearchBarDelegate>
 
@@ -34,6 +35,9 @@
     
 //    self.view.backgroundColor = [UIColor orangeColor];
     
+
+    
+    
     UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(kWidth/3, kHeight/8, kWidth/3, 44)];
     lable.text = @"热门搜索";
     lable.textAlignment = NSTextAlignmentCenter;
@@ -42,7 +46,7 @@
     
     
     
-    self.jcTagList = [[JCTagListView alloc] initWithFrame:CGRectMake(0, kHeight/5, kWidth*0.7, kHeight/2)];
+    self.jcTagList = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth*0.2, kHeight/5, kWidth*0.6, kHeight/2)];
     self.jcTagList.tagTextColor = [UIColor colorWithRed:235/255 green:235/255 blue:235/255 alpha:0.5];
     self.jcTagList.tagStrokeColor = [UIColor colorWithRed:235/255 green:235/255 blue:235/255 alpha:0.5];
     self.jcTagList.layer.cornerRadius = 10.0;
@@ -59,6 +63,7 @@
         
         SelectViewController *seleCityVC = [[SelectViewController alloc] init];
         seleCityVC.strCityName = weakSelf.jcTagList.tags[index];
+        seleCityVC.choseCityName = weakSelf.IDName;
         
         [weakSelf.navigationController pushViewController:seleCityVC animated:YES];
    
@@ -82,8 +87,7 @@
   
     [self showBackBtn];
     
-    
-//    [self updateConfig];
+    [self updateConfig];
     
 }
 
@@ -98,13 +102,14 @@
 
 -(void)updateConfig{
     
-    self.IDName = self.cityVC.stringName;
     
     
-    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/search/hotkeywords/?city_name=%@sign=d8c4c7cc232d1b05a8b2e1c52b3e0020",self.IDName];
+    //sign=d8c4c7cc232d1b05a8b2e1c52b3e0020
+    
+    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/search/hotkeywords/?city_name=%@",self.IDName];
     NSString *url = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    
+    //http://api.breadtrip.com/hunter/products/v2/search/?city_name=%E5%8C%97%E4%BA%AC&q=%E6%B2%B9%E7%94%BB
     
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
@@ -115,6 +120,7 @@
         self.backCityArray = [NSMutableArray new];
         for (NSDictionary *dict in dic[@"tag_data"]) {
             [self.backCityArray addObject:dict];
+//            NSLog(@"%@",self.backCityArray);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

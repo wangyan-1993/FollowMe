@@ -91,10 +91,10 @@
             [self.allHotCityArray addObject:string];
         }
         
-//        for (NSDictionary *titleDic in rootDic[@"tag_data"]) {
-//            
-//            [ChoseCityModel setValuesForKeysWithDictionary:titleDic];
-//        }
+        for (NSDictionary *titleDic in rootDic[@"tag_data"]) {
+            
+            ChoseCityModel *model = [[ChoseCityModel alloc] initWithDicTionary:titleDic];
+        }
 
         [self jcCollectionView];
         [self.tableView reloadData];
@@ -115,10 +115,7 @@
     self.jctageLiseView.tagTextColor = [UIColor whiteColor];
     self.jctageLiseView.tagStrokeColor = [UIColor whiteColor];
     
-//    NSArray *cityArray = [NSArray arrayWithArray:self.allHotCityArray];
-//        NSArray *array = @[@"北京",@"上海",@"广州",@"深圳",@"重庆",@"成都",@"武汉",@"西安"];
 
-    //    WLZLog(@"cityArray === %@",cityArray);
     
     //可变数组传值
     [self.jctageLiseView.tags addObjectsFromArray:self.allHotCityArray];
@@ -247,13 +244,13 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.tabBarController.tabBar.hidden = YES;
+    self.hidesBottomBarWhenPushed = YES;
     
     
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 

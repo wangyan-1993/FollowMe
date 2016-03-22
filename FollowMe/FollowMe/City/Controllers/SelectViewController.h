@@ -11,5 +11,6 @@
 @interface SelectViewController : UIViewController
 
 @property(nonatomic, strong) NSString *strCityName;
+@property(nonatomic, strong) NSString *choseCityName;
 
 @end

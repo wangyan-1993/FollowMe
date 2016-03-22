@@ -12,6 +12,8 @@
 //#import "UIViewController+KNSemiModal.h"
 
 #import "cityModel.h"
+#import "ClasifyModel.h"
+
 #import "cityFirstTableViewCell.h"
 #import "DetailViewController.h"
 #import "PersonViewController.h"
@@ -26,6 +28,9 @@
 #import "JRSegmentViewController.h"
 #import "ProgressHUD.h"
 #import "JCTagListView.h"
+
+
+#import "ChoseCityModel.h"
 
 
 
@@ -55,6 +60,7 @@ static NSString *identifier = @"cell";
 @property(nonatomic, strong) NSMutableArray *listArray;
 //城市返回数据
 @property(nonatomic, strong) NSMutableArray *backCityArray;
+@property(nonatomic, strong) NSMutableArray *backIdArray;
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) UITableView *titleTableView;
@@ -71,18 +77,12 @@ static NSString *identifier = @"cell";
 
 //@property(nonatomic, strong) UIButton *selectButton;
 
-
-
-
-
-
-
-
-
+//主题活动：
+@property(nonatomic, strong) NSString *clasifyStr;
+@property(nonatomic, strong) NSString *idStr;
+@property(nonatomic, strong) NSString *dataStr;
 @end
-
 @implementation CityViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -90,7 +90,8 @@ static NSString *identifier = @"cell";
     if (self.stringName == nil) {
         self.stringName = @"北京";
     }
-    
+    self.idStr = @"1";
+    self.clasifyStr = @"104";
 //    self.title = @"城市猎人带你玩";
     self.navigationController.navigationItem.title= @"城市猎人带你玩";
     self.navigationController.navigationBar.barTintColor = kMainColor;
@@ -151,7 +152,7 @@ static NSString *identifier = @"cell";
     //SegmentedControl :用到的方法；
     NSArray *segment = [[NSArray alloc] initWithObjects:@"主题",@"日期筛选",@"智能排序", nil];
     _segmented = [[UISegmentedControl alloc] initWithItems:segment];
-    _segmented.selectedSegmentIndex = 0;
+//    _segmented.selectedSegmentIndex = 0;
     _segmented.tintColor = [UIColor whiteColor];
     
     
@@ -181,19 +182,33 @@ static NSString *identifier = @"cell";
     //请求数据：主页面城市数据；
     [self updateCity];
     
-    //返回主页面请求选择数据；
-//    [self backFrrameCity];
     
+    [self backFrrameCity];
     
 }
+
+
+//点击上海，返回主页面主题日期筛选接口：
+//http://api.breadtrip.com/hunter/products/v2/metadata/?city_name=%E5%8C%97%E4%BA%AC&sign=d8c4c7cc232d1b05a8b2e1c52b3e0020
+//重庆：
+//http://api.breadtrip.com/hunter/products/v2/metadata/?city_name=%E9%87%8D%E5%BA%86&sign=82e1194031afb5cb834881a9e1a88aa2
+//主页面显示信息；
+//http://api.breadtrip.com/hunter/products/v2/?city_name=%E5%8C%97%E4%BA%AC&lat=34.61341401561965&lng=112.4141287407534&sign=8d8f4ba7e51d4f3a8440134ac5cbd58f&sorted_id=1&start=0
+//http://api.breadtrip.com/hunter/products/v2/?city_name=%E9%87%8D%E5%BA%86&lat=34.61339564423128&lng=112.4140786252068&sign=bd55703bac6a8494569e982d3bfeed09&sorted_id=1&start=0
+
+
 
 #pragma mark-------------数据加载；
 
 -(void)uptataConfig{
     
-   
+   //&sign=ac6a66157da8fd3fa171fa0091e282ba
     
-    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/?city_name=%@&lat=34.61342700736265&lng=112.4140811801292&sign=ac6a66157da8fd3fa171fa0091e282ba&start=0",self.stringName];
+    NSString *idurl = [NSString stringWithFormat:@"&sorted_id=%@",self.idStr];
+//    NSString *dataUrl = [NSString stringWithFormat:@"&data_list=20%@",self.dataStr];
+    NSString *clasilyScr = [NSString stringWithFormat:@"&tab_list%@",self.clasifyStr];
+    
+    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/?city_name=%@&lat=34.61342700736265&lng=112.4140811801292%@%@&start=0",self.stringName,idurl,clasilyScr];
     NSString *url = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     
@@ -204,6 +219,11 @@ static NSString *identifier = @"cell";
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [ProgressHUD show:@"正在为您请求数据"];
+        
+        if (self.listArray != nil) {
+            [self.listArray removeAllObjects];
+        }
+        
         NSDictionary *dictio = responseObject;
         
         for (NSDictionary *dic in dictio[@"product_list"]) {
@@ -233,13 +253,21 @@ static NSString *identifier = @"cell";
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         self.backCityArray = [NSMutableArray new];
+        self.backIdArray = [NSMutableArray new];
         for (NSDictionary *dict in dic[@"tag_data"]) {
-            [self.backCityArray addObject:dict];
+            
+//            ClasifyModel *model = [[ClasifyModel alloc] initWithDictionary:dict];
+//            [self.backCityArray addObject:model];
+            
+            [self.backCityArray addObject:dict[@"name"]];
+            [self.backIdArray addObject:dict[@"id"]];
+            
+ 
         }
         
         
         
-        [self mainTitle];
+        [self clasifyWays];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
@@ -268,10 +296,41 @@ static NSString *identifier = @"cell";
     }
     
 }
+
+-(void)clasifyWays{
+    
+//    [self clasifyWays];
+    //collection的自定义方法
+    self.tageListView = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth/10, kHeight*0.2, kWidth*0.8, kHeight*0.5)];
+    
+    self.tageListView.layer.cornerRadius = 15.0f;
+    self.tageListView.clipsToBounds = YES;
+    self.tageListView.tagStrokeColor = [UIColor grayColor];
+    self.tageListView.tagTextColor = [UIColor grayColor];
+    
+    [self.tageListView.tags addObjectsFromArray:self.backCityArray];
+    
+    
+    __block CityViewController *weakSelf = self;
+    [self.tageListView setCompletionBlockWithSelected:^(NSInteger index) {
+      
+        weakSelf.idStr = weakSelf.backIdArray[index];
+        [weakSelf.firstView removeFromSuperview];
+        [weakSelf.backView removeFromSuperview];
+        
+       
+        [weakSelf uptataConfig];
+        
+        
+        
+    }];
+
+    
+}
 //主题点击方法
 -(void)mainTitle{
     
-
+    
     [self.window addSubview:self.backView];
     
     self.firstView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kScreenHeight)];
@@ -292,40 +351,35 @@ static NSString *identifier = @"cell";
     [self.firstView addSubview:button];
     
     
-
-
-    //collection的自定义方法
-    self.tageListView = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth/5, kHeight*0.2, kWidth*3/5, kHeight*0.3)];
+    UIButton *enSure = [UIButton buttonWithType:UIButtonTypeCustom];
+    enSure.frame = CGRectMake(20, kHeight-50, kWidth - 40, 44);
+    [enSure setTitle:@"确定" forState:UIControlStateNormal];
+    [enSure addTarget:self action:@selector(Ensure) forControlEvents:UIControlEventTouchUpInside];
+    enSure.layer.cornerRadius = 15.0;
+    enSure.clipsToBounds = YES;
+    enSure.backgroundColor = kMainColor;
+    [self.firstView addSubview:enSure];
     
-    self.tageListView.layer.cornerRadius = 15.0f;
-    self.tageListView.clipsToBounds = YES;
-    self.tageListView.tagStrokeColor = [UIColor grayColor];
-    self.tageListView.tagTextColor = [UIColor grayColor];
-    [self.tageListView.tags addObjectsFromArray:self.backCityArray];
     
+    
+
     [self.firstView addSubview:self.tageListView];
-    
-    
     [UIView animateWithDuration:0.5 animations:^{
         self.backView.alpha  = 0.6;
         self.firstView.frame = CGRectMake(0, kScreenHeight - 500, kScreenWidth, 500);
     }];
     
     
-//    [self presentSemiView:_firstView];
     
 }
 //日期筛选点击方法
-//-(void)dataChose{
-//    
-//    
-//    self.secondView = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 500, [UIScreen mainScreen].bounds.size.width, 500)];
-//    self.secondView.backgroundColor = [UIColor whiteColor];
-//    [self presentSemiView:_segmented];
-//    
-//    
-//    
-//}
+-(void)dataChose{
+    
+    
+    self.secondView = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 500, [UIScreen mainScreen].bounds.size.width, 500)];
+    self.secondView.backgroundColor = [UIColor whiteColor];
+ 
+}
 //排序点击方法
 -(void)orderTitle{
     
@@ -368,7 +422,13 @@ static NSString *identifier = @"cell";
     }];
     
 }
-
+-(void)Ensure{
+    
+    
+    [self.firstView removeFromSuperview];
+    [self.backView removeFromSuperview];
+    
+}
 
 -(void)RemoveThirdViewAction{
     [UIView animateWithDuration:1.0 animations:^{
@@ -400,8 +460,34 @@ static NSString *identifier = @"cell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+
+            switch (indexPath.row) {
+                case 0:
+                    cell.textLabel.text = @"智能排序";
+                    self.idStr = @"1";
+                    break;
+                case 1:
+                    cell.textLabel.text = @"距离最近";
+                    self.idStr = @"2";
+                    break;
+                case 2:
+                    cell.textLabel.text = @"价格最低";
+                    self.idStr = @"5";
+                    break;
+                case 3:
+                    cell.textLabel.text = @"人气最高";
+                    self.idStr = @"3";
+                    break;
+                case 4:
+                    cell.textLabel.text = @"销量最好";
+                    self.idStr = @"4";
+                    break;
+                
+                    
+                default:
+                    break;
+            }
             
-            cell.textLabel.text = @"供您选择";
         }
         
        return cell;
@@ -412,16 +498,52 @@ static NSString *identifier = @"cell";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    cityModel *model = [[cityModel alloc]init];
     
     if (tableView == self.tableView) {
         DetailViewController *detail = [[DetailViewController alloc] init];
+        detail.IDString = model.product_id;
         [self.navigationController pushViewController:detail animated:NO];
     }else{
+        switch (indexPath.row) {
+            case 0:
+                
+                self.idStr = @"1";
+                break;
+            case 1:
+                
+                self.idStr = @"2";
+                break;
+            case 2:
+                
+                self.idStr = @"5";
+                break;
+            case 3:
+                
+                self.idStr = @"3";
+                break;
+            case 4:
+               
+                self.idStr = @"4";
+                break;
+                
+                
+            default:
+                break;
+        }
+
         
-//        [self.thirdView removeFromSuperview];
-//        [self.backView removeFromSuperview];
-//        [self.listArray removeAllObjects];
-//        [self.tableView reloadData];
+        
+        [self.thirdView removeFromSuperview];
+        [self.backView removeFromSuperview];
+        
+        if (self.listArray != nil) {
+            [self.listArray removeAllObjects];
+        }
+        
+     
+        
+        [self uptataConfig];
         
     }
     
@@ -464,22 +586,6 @@ static NSString *identifier = @"cell";
 
 -(void)selectCity{
     
-//    selectCityViewController *selectVC = [[selectCityViewController alloc] init];
-//    [self.navigationController pushViewController:selectVC animated:YES];
-    
-
-//     InlandViewController *firstVC = [[InlandViewController alloc] init];
-//     ForeignViewController *secondVC = [[ForeignViewController alloc] init];
-//     
-//     JRSegmentViewController *vc = [[JRSegmentViewController alloc] init];
-//     vc.segmentBgColor = [UIColor colorWithRed:18.0f/255 green:50.0f/255 blue:110.0f/255 alpha:1.0f];
-//     vc.indicatorViewColor = [UIColor whiteColor];
-//     vc.titleColor = [UIColor whiteColor];
-//     
-//     [vc setViewControllers:@[firstVC, secondVC]];
-//     [vc setTitles:@[@"热点", @"聚焦"]];
-//     
-//     [self.navigationController pushViewController:vc animated:YES];
 
      InlandViewController *firstVC = [[InlandViewController alloc] init];
     //隐藏功能
@@ -510,6 +616,7 @@ static NSString *identifier = @"cell";
 -(void)presonAction{
     
     selectHotViewController *hotCity = [[selectHotViewController alloc] init];
+    hotCity.IDName = self.stringName;
     
     [self.navigationController pushViewController:hotCity animated:NO];
     

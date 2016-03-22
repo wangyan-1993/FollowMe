@@ -159,4 +159,14 @@
     [self.scrollView setContentOffset:CGPointMake(X, 0) animated:YES];
 }
 
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.hidesBottomBarWhenPushed = NO;
+    
+    
+    
+}
+
 @end
