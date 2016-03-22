@@ -43,13 +43,6 @@
 
 @implementation cityFirstTableViewCell
 
-//- (IBAction)mainButtion:(id)sender {
-//    
-//    PersonViewController *person = [[PersonViewController alloc] init];
-//    [];
-//    
-
-
 
 
 - (void)awakeFromNib {

@@ -10,16 +10,18 @@
 
 @implementation ChoseCityModel
 
+//- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+//    
+//}
+
 -(instancetype)initWithDicTionary:(NSDictionary *)dic{
     self = [super init];
     if (self) {
-        self.inCityname = dic[@"name"];
-//        self.inhotCityName = dic[@""];
-//        self.forCityName = dic[@""];
-//        self.forHotName = dic[@""];
-//        self.idclasify = dic[@""];
+        self.name = dic[@"name"];
+        self.idStr = dic[@"id"];
+
     }
-    
+
     
     return self;
     
