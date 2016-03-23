@@ -64,14 +64,13 @@
 		7A892A3D1C9A66BA00D2D11F /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A3C1C9A66BA00D2D11F /* PersonViewController.m */; };
 		7A892A3F1C9AA0DC00D2D11F /* city.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A892A3E1C9AA0DC00D2D11F /* city.storyboard */; };
 		7A892A421C9AA8B300D2D11F /* selectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A892A411C9AA8B300D2D11F /* selectCityViewController.m */; };
-		7AAEAB761CA0E48000BC0D30 /* storyDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */; };
+		7AAEAB781CA1215300BC0D30 /* storyDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AAEAB771CA1215300BC0D30 /* storyDetail.plist */; };
+		7AAEAB7C1CA1498300BC0D30 /* storyDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAEAB7A1CA1498300BC0D30 /* storyDetailTableViewCell.m */; };
+		7AAEAB7D1CA1498300BC0D30 /* storyDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAEAB7B1CA1498300BC0D30 /* storyDetailTableViewCell.xib */; };
 		7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039601C9D3ABC003E32AF /* InlandViewController.m */; };
 		7AB039641C9D3AD3003E32AF /* ForeignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039631C9D3AD3003E32AF /* ForeignViewController.m */; };
-
-
 		7AB0396A1C9D3C15003E32AF /* JRSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039671C9D3C15003E32AF /* JRSegmentControl.m */; };
 		7AB0396B1C9D3C15003E32AF /* JRSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039691C9D3C15003E32AF /* JRSegmentViewController.m */; };
-
 		7AB583171C9BAB42007D21AA /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB583161C9BAB42007D21AA /* DataBaseManager.m */; };
 		7AB5831A1C9BB1F4007D21AA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB583191C9BB1F4007D21AA /* LoginViewController.m */; };
 		7AB5831D1C9BE293007D21AA /* NoCodeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB5831C1C9BE293007D21AA /* NoCodeLoginViewController.m */; };
@@ -231,17 +230,18 @@
 		7A892A3E1C9AA0DC00D2D11F /* city.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = city.storyboard; sourceTree = "<group>"; };
 		7A892A401C9AA8B300D2D11F /* selectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectCityViewController.h; sourceTree = "<group>"; };
 		7A892A411C9AA8B300D2D11F /* selectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectCityViewController.m; sourceTree = "<group>"; };
-		7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storyDetail.plist; sourceTree = "<group>"; };
+		7AAEAB771CA1215300BC0D30 /* storyDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storyDetail.plist; sourceTree = "<group>"; };
+		7AAEAB791CA1498300BC0D30 /* storyDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storyDetailTableViewCell.h; sourceTree = "<group>"; };
+		7AAEAB7A1CA1498300BC0D30 /* storyDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = storyDetailTableViewCell.m; sourceTree = "<group>"; };
+		7AAEAB7B1CA1498300BC0D30 /* storyDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = storyDetailTableViewCell.xib; sourceTree = "<group>"; };
 		7AB0395F1C9D3ABC003E32AF /* InlandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlandViewController.h; sourceTree = "<group>"; };
 		7AB039601C9D3ABC003E32AF /* InlandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlandViewController.m; sourceTree = "<group>"; };
 		7AB039621C9D3AD3003E32AF /* ForeignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForeignViewController.h; sourceTree = "<group>"; };
 		7AB039631C9D3AD3003E32AF /* ForeignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForeignViewController.m; sourceTree = "<group>"; };
-
 		7AB039661C9D3C15003E32AF /* JRSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSegmentControl.h; sourceTree = "<group>"; };
 		7AB039671C9D3C15003E32AF /* JRSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSegmentControl.m; sourceTree = "<group>"; };
 		7AB039681C9D3C15003E32AF /* JRSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSegmentViewController.h; sourceTree = "<group>"; };
 		7AB039691C9D3C15003E32AF /* JRSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSegmentViewController.m; sourceTree = "<group>"; };
-
 		7AB583151C9BAB42007D21AA /* DataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
 		7AB583161C9BAB42007D21AA /* DataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
 		7AB583181C9BB1F4007D21AA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -800,7 +800,7 @@
 				7AC86F291C9F7B6000AEF853 /* nearByModel.m */,
 				7AC86F2A1C9F7B6000AEF853 /* RecommendModel.h */,
 				7AC86F2B1C9F7B6000AEF853 /* RecommendModel.m */,
-				7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */,
+				7AAEAB771CA1215300BC0D30 /* storyDetail.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -818,6 +818,9 @@
 				7AC86F311C9F7B6000AEF853 /* RecommendTableViewCell.h */,
 				7AC86F321C9F7B6000AEF853 /* RecommendTableViewCell.m */,
 				7AC86F331C9F7B6000AEF853 /* RecommendTableViewCell.xib */,
+				7AAEAB791CA1498300BC0D30 /* storyDetailTableViewCell.h */,
+				7AAEAB7A1CA1498300BC0D30 /* storyDetailTableViewCell.m */,
+				7AAEAB7B1CA1498300BC0D30 /* storyDetailTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1031,7 +1034,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF6D81F1C9AB07E004994A3 /* blueArrowDown.png in Resources */,
-				7AAEAB761CA0E48000BC0D30 /* storyDetail.plist in Resources */,
+				7AAEAB781CA1215300BC0D30 /* storyDetail.plist in Resources */,
 				7A4F87EE1C9A3B1200183EC8 /* Plus.plist in Resources */,
 				7AC86F421C9F7B6000AEF853 /* RecommendTableViewCell.xib in Resources */,
 				7A4F87EC1C9A3AF700183EC8 /* Mine.storyboard in Resources */,
@@ -1042,6 +1045,7 @@
 				7AC86F401C9F7B6000AEF853 /* Recommend.storyboard in Resources */,
 				7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */,
 				7A4F87EA1C9A3AE100183EC8 /* Mine.plist in Resources */,
+				7AAEAB7D1CA1498300BC0D30 /* storyDetailTableViewCell.xib in Resources */,
 				7A4F87E81C9A3AC800183EC8 /* cityFirstTableViewCell.xib in Resources */,
 				7AB8FD151C999C2000D9A121 /* search.plist in Resources */,
 				7A0DC2AB1C9E88F2006E3569 /* WeiboSDK.bundle in Resources */,
@@ -1138,10 +1142,6 @@
 				7AC86F341C9F7B6000AEF853 /* allCollectionViewController.m in Sources */,
 				7AF40A0F1C9FA28200BBD70F /* MJRefreshAutoGifFooter.m in Sources */,
 				7A422B141C97EAB800B51C11 /* main.m in Sources */,
-
-				7A3B51681C9A3C8C000AA140 /* RecommendModel.m in Sources */,
-
-
 				7AB039641C9D3AD3003E32AF /* ForeignViewController.m in Sources */,
 				7A4F87E71C9A3AC800183EC8 /* cityFirstTableViewCell.m in Sources */,
 				7AF40A191C9FA28200BBD70F /* MJRefreshConst.m in Sources */,
@@ -1163,6 +1163,7 @@
 				7AC86F501C9F7B8A00AEF853 /* VOSegment.m in Sources */,
 				7A32E1671C9D38400012F871 /* ResetCodeViewController.m in Sources */,
 				7AF40A0C1C9FA28200BBD70F /* MJRefreshComponent.m in Sources */,
+				7AAEAB7C1CA1498300BC0D30 /* storyDetailTableViewCell.m in Sources */,
 				7AF40A171C9FA28200BBD70F /* MJRefreshStateHeader.m in Sources */,
 				7A4B589A1C99A01900DC4CE1 /* JXBAdPageView.m in Sources */,
 				7AC86F371C9F7B6000AEF853 /* nearByViewController.m in Sources */,
@@ -1170,11 +1171,9 @@
 				7AC86F3A1C9F7B6000AEF853 /* SingleLocaitonAloneViewController.m in Sources */,
 				7AC86F511C9F7B8A00AEF853 /* VOSegmentedControl.m in Sources */,
 				7AB8FD021C99090800D9A121 /* JCTagCell.m in Sources */,
-
 				7AF40A161C9FA28200BBD70F /* MJRefreshNormalHeader.m in Sources */,
 				7AF40A111C9FA28200BBD70F /* MJRefreshAutoStateFooter.m in Sources */,
 				7AF40A0D1C9FA28200BBD70F /* MJRefreshFooter.m in Sources */,
-
 				7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */,
 				7AB5831A1C9BB1F4007D21AA /* LoginViewController.m in Sources */,
 				7AF40A101C9FA28200BBD70F /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -1254,6 +1253,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1290,6 +1290,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

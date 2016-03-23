@@ -10,28 +10,36 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "storyDetailsView.h"
-@interface storyDetailsViewController ()
-@property (nonatomic, strong) storyDetailsView *storyDetailView;
+#import "storyDetailTableViewCell.h"
+@interface storyDetailsViewController ()@property (nonatomic, strong) storyDetailsView *storyDetailView;
+
 
 @end
 
 @implementation storyDetailsViewController
-- (void)loadView{
-    [super loadView];
-    self.storyDetailView = [[storyDetailsView alloc] initWithFrame:self.view.frame];
-    self.view = self.storyDetailView;
-     [self workOne];
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   
-     
+    self.title = @"故事详情";
+    [self workOne];
+    self.storyDetailView.owner = self;
+    self.view = self.storyDetailView;
+
+    
+ 
+    
     
 }
 - (storyDetailsView *)storyDetailView{
     if (_storyDetailView == nil) {
-        self.storyDetailView = [[storyDetailsView alloc] initWithFrame:self.view.frame];
+        self.storyDetailView = [[storyDetailsView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
     }
     return _storyDetailView;
 }
@@ -39,7 +47,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:[NSString stringWithFormat:@"%@spot_id=%@&spot_id=%@",kstoryDetails,self.spot_id,self.spot_id] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        WLZLog(@"%@",responseObject);
+        //WLZLog(@"%@",responseObject);
         NSDictionary *rootDic = responseObject;
          if (rootDic[@"status"] == [NSNumber numberWithInteger:0]) {
              NSDictionary *dataDic = rootDic[@"data"];
@@ -49,6 +57,9 @@
         WLZLog(@"%@",error);
     }];
 }
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

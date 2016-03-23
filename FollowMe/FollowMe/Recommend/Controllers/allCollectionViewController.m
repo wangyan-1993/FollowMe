@@ -134,6 +134,7 @@
     cell.nameLable.text = self.nameLableArray[indexPath.row];
     cell.nameLable.numberOfLines = 0;
     cell.nameLable.font = [UIFont systemFontOfSize:11];
+    cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

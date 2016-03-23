@@ -86,15 +86,10 @@ static NSString *itemID = @"itemId";
     [super viewDidLoad];
     _page = 1;
     self.navigationController.navigationBar.barTintColor = kMainColor;
-    //附近
-   
-//    UIBarButtonItem *right = [[UIBarButtonItem a
-//                              ] initWithBarButtonSystemItem: target:<#(nullable id)#> action:<#(nullable SEL)#>]
-//    
-    
+      
         self.nearBtn.frame = CGRectMake(kWidth-90, 0, 90, 44);
         [self.nearBtn setTitle:@"附近" forState:UIControlStateNormal];
-        [self.nearBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [self.nearBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.nearBtn addTarget:self action:@selector(nearBy) forControlEvents:UIControlEventTouchUpInside];
     
         [self.navigationController.navigationBar addSubview:self.nearBtn];

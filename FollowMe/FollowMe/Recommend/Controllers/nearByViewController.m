@@ -36,7 +36,17 @@
     [self netWork];
     [self.view addSubview:self.tableView];
     [self.tableView launchRefreshing];
-    
+    //添加轻扫手势
+    //向左滑动
+    UISwipeGestureRecognizer *recognizer;
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFromleft:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self.tableView addGestureRecognizer:recognizer];
+    //向右滑动
+    UISwipeGestureRecognizer *recognizer1;
+    recognizer1 = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFromright:)];
+    [recognizer1 setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [self.tableView addGestureRecognizer:recognizer1];
  
     
     
@@ -192,6 +202,22 @@
         default:
             break;
     }
+}
+//添加向右滑动的轻扫手势
+- (void)handleSwipeFromleft:(UISwipeGestureRecognizer *)recoginer {
+    if (recoginer.direction == UISwipeGestureRecognizerDirectionLeft) {
+      
+            self.segment.selectedSegmentIndex = self.segment.selectedSegmentIndex + 1;
+
+    }    [self segmentCtrlValuechange:self.segment];
+}
+//添加向左滑动的轻扫手势
+- (void)handleSwipeFromright:(UISwipeGestureRecognizer *)recoginer {
+    if (recoginer.direction == UISwipeGestureRecognizerDirectionRight) {
+        
+        self.segment.selectedSegmentIndex = self.segment.selectedSegmentIndex - 1;
+        
+    }    [self segmentCtrlValuechange:self.segment];
 }
 #pragma mark  ------ tableView的懒加载------
 - (PullingRefreshTableView *)tableView{
