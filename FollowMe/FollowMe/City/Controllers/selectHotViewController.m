@@ -9,12 +9,17 @@
 #import "selectHotViewController.h"
 #import "JCTagListView.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
-#import "JCTagListView.h"
+#import "SelectViewController.h"
+#import "CityViewController.h"
+#import "selectCityViewController.h"
 
 @interface selectHotViewController ()<UISearchBarDelegate>
 
 @property(nonatomic, strong) JCTagListView *jcTagList;
 @property(nonatomic, strong) UISearchBar *citySearchBar;
+@property(nonatomic, strong) NSMutableArray *backCityArray;
+
+@property(nonatomic, strong) CityViewController *cityVC;
 
 @end
 
@@ -30,6 +35,9 @@
     
 //    self.view.backgroundColor = [UIColor orangeColor];
     
+
+    
+    
     UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(kWidth/3, kHeight/8, kWidth/3, 44)];
     lable.text = @"热门搜索";
     lable.textAlignment = NSTextAlignmentCenter;
@@ -38,30 +46,35 @@
     
     
     
-    self.jcTagList = [[JCTagListView alloc] initWithFrame:CGRectMake(0, kHeight/5, kWidth, kHeight/2)];
+    self.jcTagList = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth*0.2, kHeight/5, kWidth*0.6, kHeight/2)];
     self.jcTagList.tagTextColor = [UIColor colorWithRed:235/255 green:235/255 blue:235/255 alpha:0.5];
     self.jcTagList.tagStrokeColor = [UIColor colorWithRed:235/255 green:235/255 blue:235/255 alpha:0.5];
     self.jcTagList.layer.cornerRadius = 10.0;
     self.jcTagList.canSelectTags = YES;
 
     [self.jcTagList.tags addObjectsFromArray:@[@"摄影",@"占卜",@"美食",@"达人",@"明信片",@"油画",@"资讯",@"旅行",@"健康",@"约咖啡"]];
+    
+//    [self.jcTagList.tags addObject:self.backCityArray];
+    
+    __block selectHotViewController *weakSelf = self;
+    [self.jcTagList setCompletionBlockWithSelected:^(NSInteger index) {
+        
+        weakSelf.citySearchBar.text = weakSelf.jcTagList.tags[index];
+        
+        SelectViewController *seleCityVC = [[SelectViewController alloc] init];
+        seleCityVC.strCityName = weakSelf.jcTagList.tags[index];
+        seleCityVC.choseCityName = weakSelf.IDName;
+        
+        [weakSelf.navigationController pushViewController:seleCityVC animated:YES];
+   
+    }];
 
     [self.view addSubview:self.jcTagList];
     
     
     
-//    //搜索框：
-//    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 100, kWidth, 40)];
-//    self.mySearchBar.delegate = self;
-//    //    [self.navigationController.navigationBar addSubview:self.mySearchBar];
-//    self.mySearchBar.autocorrectionType = UITextAutocorrectionTypeNo;
-//    self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-//    self.mySearchBar.backgroundColor = kMainColor;
-//    self.mySearchBar.placeholder = @"搜索城市名或者拼音";
-//    //    self.mySearchBar.layer.cornerRadius = 10;
-//    self.mySearchBar.clipsToBounds = YES;
-//    
-//    [self.view addSubview:self.mySearchBar];
+    //搜索框：
+
     
     self.citySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(kWidth/6, 5, kWidth - kWidth/6 - 5, 40)];
     self.citySearchBar.delegate = self;
@@ -74,13 +87,14 @@
   
     [self showBackBtn];
     
-    
-//    [self updateConfig];
+    [self updateConfig];
     
 }
 
 
 -(void)backNext{
+    
+    
     [self.navigationController popoverPresentationController];
     
     
@@ -88,12 +102,26 @@
 
 -(void)updateConfig{
     
+    
+    
+    //sign=d8c4c7cc232d1b05a8b2e1c52b3e0020
+    
+    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/search/hotkeywords/?city_name=%@",self.IDName];
+    NSString *url = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    //http://api.breadtrip.com/hunter/products/v2/search/?city_name=%E5%8C%97%E4%BA%AC&q=%E6%B2%B9%E7%94%BB
+    
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manger GET:@"http://api.breadtrip.com/hunter/products/v2/search/hotkeywords/?city_name=%E5%8C%97%E4%BA%AC&sign=d8c4c7cc232d1b05a8b2e1c52b3e0020" parameters:self progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manger GET:url parameters:self progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        WLZLog(@"%@",responseObject);
+        NSDictionary *dic = responseObject;
+        self.backCityArray = [NSMutableArray new];
+        for (NSDictionary *dict in dic[@"tag_data"]) {
+            [self.backCityArray addObject:dict];
+//            NSLog(@"%@",self.backCityArray);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];

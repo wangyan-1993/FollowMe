@@ -14,12 +14,13 @@
 #import "TravelViewController.h"
 #import <BmobSDK/Bmob.h>
 #import "WeiboSDK.h"
-#import <MapKit/MapKit.h>
-#import <AMapLocationKit/AMapLocationKit.h>
-@interface AppDelegate ()<UITabBarControllerDelegate, WeiboSDKDelegate>
+#import <AFNetworking/AFHTTPSessionManager.h>
+#import "InformationViewController.h"
+#import "WXApi.h"
+#import <TencentOpenAPI/TencentOAuth.h>
+@interface AppDelegate ()<UITabBarControllerDelegate, WeiboSDKDelegate, WXApiDelegate>
 @property(nonatomic, strong) UITabBarController *tabBarVC;
-
-
+@property(nonatomic, strong) UINavigationController *mineNav;
 @end
 
 @implementation AppDelegate
@@ -28,11 +29,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-     [AMapLocationServices sharedServices].apiKey = (NSString *)kZhGaodeMapKey;
+    
+    
+    
     [Bmob registerWithAppKey:kBmobAppID];
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kWeiboAppKey];
-    
+    [WXApi registerApp:kWeixinAppID];
     
     self.tabBarVC = [[UITabBarController alloc]init];
     self.tabBarVC.delegate = self;
@@ -46,19 +49,20 @@
     cityNav.tabBarItem.title = @"城市猎人";
    
     TravelViewController *travelVC = [[TravelViewController alloc]init];
+    
     UINavigationController *travelNav = [[UINavigationController alloc]initWithRootViewController:travelVC];
     travelNav.tabBarItem.image = [UIImage imageNamed:@"23-bird"];
     travelNav.tabBarItem.title = @"自由行";
     MineViewController *mine = [[MineViewController alloc]init];
-    UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mine];
-    mineNav.tabBarItem.image = [UIImage imageNamed:@"53-house"];
-    mineNav.tabBarItem.title = @"我的";
+    self.mineNav = [[UINavigationController alloc]initWithRootViewController:mine];
+    self.mineNav.tabBarItem.image = [UIImage imageNamed:@"53-house"];
+    self.mineNav.tabBarItem.title = @"我的";
     PlusViewController *plusVC = [[PlusViewController alloc]init];
     UINavigationController *plusNav = [[UINavigationController alloc]initWithRootViewController:plusVC];
     plusNav.tabBarItem.image = [UIImage imageNamed:@"10-medical"];
     
     plusNav.tabBarItem.title = @"记录";
-    self.tabBarVC.viewControllers = @[recommendNav, cityNav, plusNav, travelNav, mineNav];
+    self.tabBarVC.viewControllers = @[recommendNav, cityNav, plusNav, travelNav, self.mineNav];
     self.tabBarVC.tabBar.tintColor = [UIColor whiteColor];
     self.tabBarVC.tabBar.barTintColor = kMainColor;
     self.window.rootViewController = self.tabBarVC;
@@ -74,14 +78,14 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    return [WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self] || [WeiboSDK handleOpenURL:url delegate:self]|| [TencentOAuth HandleOpenURL:url];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return [WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self] ||[WeiboSDK handleOpenURL:url delegate:self]||[TencentOAuth HandleOpenURL:url];
 }
-
+#pragma mark---weibo delegate
 
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
     
@@ -97,19 +101,69 @@
     NSString *accessToken = [(WBAuthorizeResponse *)response accessToken];
     NSString *uid = [(WBAuthorizeResponse *)response userID];
     NSDate *expiresDate = [(WBAuthorizeResponse *)response expirationDate];
+    
     NSLog(@"acessToken:%@",accessToken);
     NSLog(@"UserId:%@",uid);
     NSLog(@"expiresDate:%@",expiresDate);
     NSLog(@"%@", response.userInfo);
-     NSDictionary *dic = @{@"access_token":accessToken,@"uid":uid,@"expirationDate":expiresDate};
-        [BmobUser loginInBackgroundWithAuthorDictionary:dic platform:BmobSNSPlatformSinaWeibo block:^(BmobUser *user, NSError *error) {
-            if (error) {
-                NSLog(@"weibo login error:%@",error);
-            } else if (user){
-                NSLog(@"user objectid is :%@",user.objectId);
+    if (!(accessToken == nil)) {
+    NSDictionary *dic=@{@"access_token":accessToken,@"uid":uid,@"expirationDate":expiresDate};
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     
-            }
-        }];
+    [manager GET:[NSString stringWithFormat:@"https://api.weibo.com/2/users/show.json?access_token=%@&uid=%@",response.userInfo[@"refresh_token"],uid] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    WLZLog(@"%@", downloadProgress);
+     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    WLZLog(@"%@", responseObject);
+    [BmobUser loginInBackgroundWithAuthorDictionary:dic platform:BmobSNSPlatformSinaWeibo block:^(BmobUser *user, NSError *error) {
+        if (error) {
+            NSLog(@"weibo login error:%@",error);
+        } else if (user){
+            NSLog(@"user objectid is :%@",user.objectId);
+            InformationViewController *info = [[InformationViewController alloc]init];
+            info.username = responseObject[@"screen_name"];
+            info.headerImage = responseObject[@"avatar_large"];
+            info.navigationItem.hidesBackButton = YES;
+            self.tabBarVC.selectedIndex = 0;
+            [self.mineNav pushViewController:info animated:YES];
+        }
+    }];
+
+} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    WLZLog(@"%@", error);
+
+}];
+    
+    }
+
+}
+
+#pragma mark---weixin delegate
+-(void) onReq:(BaseReq*)req{
+    
+}
+
+
+
+/*! @brief 发送一个sendReq后，收到微信的回应
+ *
+ * 收到一个来自微信的处理结果。调用一次sendReq后会收到onResp。
+ * 可能收到的处理结果有SendMessageToWXResp、SendAuthResp等。
+ * @param resp具体的回应内容，是自动释放的
+ */
+-(void) onResp:(BaseResp*)resp{
+   
+}
+
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    UIViewController *tbSelectedController = tabBarController.selectedViewController;
+    
+    if ([tbSelectedController isEqual:viewController]) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

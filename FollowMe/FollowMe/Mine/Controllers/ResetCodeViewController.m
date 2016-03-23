@@ -34,7 +34,7 @@
 - (IBAction)sureAction:(id)sender {
     [BmobUser resetPasswordInbackgroundWithSMSCode:self.security andNewPassword:self.code.text block:^(BOOL isSuccessful, NSError *error) {
         if (isSuccessful) {
-            NSLog(@"%@",@"重置密码成功");
+           // NSLog(@"%@",@"重置密码成功");
             [self.navigationController popToRootViewControllerAnimated:YES];
 
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"密码已修改成功,请重新登录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];

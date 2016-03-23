@@ -13,10 +13,19 @@
 #import "FindCodeByPhoneViewController.h"
 #import "ResignViewController.h"
 #import "WeiboSDK.h"
-@interface MineViewController ()
+#import "WXApi.h"
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/TencentOAuthObject.h>
+#import <TencentOpenAPI/TencentApiInterface.h>
+#import <BmobSDK/BmobUser.h>
+#import "InformationViewController.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
+
+@interface MineViewController ()<TencentLoginDelegate, TencentSessionDelegate>
 
 @property(nonatomic, strong) UIButton *emailBtn;
 @property(nonatomic, strong) UIButton *phoneBtn;
+@property(nonatomic, strong)TencentOAuth *tencentOAuth;
 
 @end
 
@@ -116,7 +125,8 @@
 
     [self.view addSubview:btn5];
 
-    
+    self.tencentOAuth=[[TencentOAuth alloc]initWithAppId:kQQAppID andDelegate:self];
+ self.tencentOAuth.redirectURI = @"www.qq.com";
     
     
 }
@@ -128,7 +138,11 @@
 }
 
 - (void)weixinlogin{
-    
+    SendAuthReq* req =[[SendAuthReq alloc]init];
+    req.scope = @"all" ;
+    req.state = @"123" ;
+    //第三方向微信终端发送一个SendAuthReq消息结构
+    [WXApi sendReq:req];
 }
 
 - (void)weibologin{
@@ -142,8 +156,30 @@
     
 }
 - (void)qqlogin{
+    NSArray* permissions = [NSArray arrayWithObjects:
+                            kOPEN_PERMISSION_GET_USER_INFO,
+                            kOPEN_PERMISSION_GET_SIMPLE_USER_INFO,
+                            kOPEN_PERMISSION_ADD_ALBUM,
+                            kOPEN_PERMISSION_ADD_ONE_BLOG,
+                            kOPEN_PERMISSION_ADD_SHARE,
+                            kOPEN_PERMISSION_ADD_TOPIC,
+                            kOPEN_PERMISSION_CHECK_PAGE_FANS,
+                            kOPEN_PERMISSION_GET_INFO,
+                            kOPEN_PERMISSION_GET_OTHER_INFO,
+                            kOPEN_PERMISSION_LIST_ALBUM,
+                            kOPEN_PERMISSION_UPLOAD_PIC,
+                            kOPEN_PERMISSION_GET_VIP_INFO,
+                            kOPEN_PERMISSION_GET_VIP_RICH_INFO,
+                            nil];
     
+    
+[self.tencentOAuth authorize:permissions inSafari:NO];
+  
+   
+
 }
+
+
 - (void)phonelogin{
     UIStoryboard *mineStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
     
@@ -204,6 +240,79 @@
     [self.navigationController presentViewController:resign animated:YES completion:nil];
     
 }
+
+
+
+#pragma mark---腾讯代理
+- (void)tencentDidLogin{
+    
+if (self.tencentOAuth.accessToken && 0 != [self.tencentOAuth.accessToken length])
+{
+        
+        WLZLog(@"登陆成功");
+        NSDictionary *responseDictionary = @{@"access_token": self.tencentOAuth.accessToken,@"uid":self.tencentOAuth.openId,@"expirationDate":self.tencentOAuth.expirationDate};
+        WLZLog(@"%@", self.tencentOAuth.passData);
+        AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+        manager.responseSerializer.acceptableContentTypes=[NSSet setWithObject:@"text/html"];
+        
+        [manager GET:[NSString stringWithFormat:@"https://graph.qq.com/user/get_user_info?access_token=%@&oauth_consumer_key=%@&openid=%@",self.tencentOAuth.accessToken,self.tencentOAuth.appId,self.tencentOAuth.openId] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            NSLog(@"%lld",downloadProgress.totalUnitCount);
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"%@",responseObject);
+            [BmobUser loginInBackgroundWithAuthorDictionary:responseDictionary platform:BmobSNSPlatformQQ block:^(BmobUser *user, NSError *error) {
+                if (user) {
+                    
+                    InformationViewController *info = [[InformationViewController alloc]init];
+                    info.username = responseObject[@"nickname"];
+                    info.headerImage = responseObject[@"figureurl_qq_2"];
+                    [self.navigationController pushViewController:info animated:NO];
+                }else{
+                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"用户登录失败" delegate:self cancelButtonTitle:@"我知道了" otherButtonTitles: nil];
+                    [alert show];
+                }
+            }];
+         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"%@",error);
+        }];
+}
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"用户登录失败" delegate:self cancelButtonTitle:@"我知道了" otherButtonTitles: nil];
+        [alert show];
+  
+    }
+    
+    
+    
+}
+
+/**
+ * 登录失败后的回调
+ * \param cancelled 代表用户是否主动退出登录
+ */
+- (void)tencentDidNotLogin:(BOOL)cancelled{
+    if (cancelled)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"您已取消登录" delegate:self cancelButtonTitle:@"我知道了" otherButtonTitles: nil];
+        [alert show];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"登录失败" delegate:self cancelButtonTitle:@"我知道了" otherButtonTitles: nil];
+        [alert show];
+    }
+}
+
+/**
+ * 登录时网络有问题的回调
+ */
+- (void)tencentDidNotNetWork{
+    
+}
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

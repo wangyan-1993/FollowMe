@@ -22,7 +22,10 @@
 #define kBmobAppID @"0b5e4dc74d6500458d80a220d436ea6c"
 #define kWeiboAppKey @"103514922"
 #define kWeiboRedirectURI @"https://api.weibo.com/oauth2/default.html"
+#define kWeixinAppID @"wx212a881dbf79e017"
 
+#define kQQAppID @"1105273408"
+#define kQQAppKey @"g03RMmiI0kU4Cirk"
 //统一输出
 
 #ifdef DEBUG

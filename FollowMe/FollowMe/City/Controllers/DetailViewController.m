@@ -18,10 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.hidesBottomBarWhenPushed = YES;
+    NSString *strUrl = [NSString stringWithFormat:@"http://web.breadtrip.com/hunter/product/%@/?bts=app_tab",self.IDString];
 
     self.webView = [[UIWebView alloc] initWithFrame:self.view.frame];
-    NSURL *url = [NSURL URLWithString:@"http://web.breadtrip.com/hunter/product/11971/?bts=app_tab"];
+    NSURL *url = [NSURL URLWithString:strUrl];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     [self.view addSubview:self.webView];
     

@@ -17,8 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //http://api.breadtrip.com/v3/user/2384156923/
     
     UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+    //http://web.breadtrip.com/hunter/2384305001/v2/
     NSURL *url = [NSURL URLWithString:@"http://web.breadtrip.com/hunter/2384305001/v2/"];
     [webView loadRequest:[NSURLRequest requestWithURL:url]];
     
@@ -29,14 +31,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

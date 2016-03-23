@@ -14,28 +14,38 @@
 #import "nearByModel.h"
 #import "ProgressHUD.h"
 #import "AppDelegate.h"
-
-@interface nearByViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate>{
+#import <AMapLocationKit/AMapLocationKit.h>
+@interface nearByViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,AMapLocationManagerDelegate>{
     NSString *kNearBy;
     NSInteger _pagecount;
+    //经纬度
+    CGFloat _lat;
+    CGFloat _lon;
 }
 @property (nonatomic, strong) VOSegmentedControl *segment;
 @property (nonatomic, strong) PullingRefreshTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *allArray;
 @property (nonatomic, assign) BOOL refreash;
+@property (nonatomic, strong) AMapLocationManager *manger;
 @end
 
 @implementation nearByViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=0&count=20&latitude=34.612575&longitude=112.42039799999998";
+    
+    [self mapLocation];
+
+    
+    
+    kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=0&count=20";
+    //&latitude=34.612575&longitude=112.42039799999998
     _pagecount = 0;
     [self.view addSubview:self.segment];
     self.title = @"我的附近";
     [self netWork];
     [self.view addSubview:self.tableView];
-    [self.tableView launchRefreshing];
+//    [self.tableView launchRefreshing];
     //添加轻扫手势
     //向左滑动
     UISwipeGestureRecognizer *recognizer;
@@ -48,15 +58,49 @@
     [recognizer1 setDirection:(UISwipeGestureRecognizerDirectionRight)];
     [self.tableView addGestureRecognizer:recognizer1];
  
-    
+    [self.tableView launchRefreshing];
     
    
 }
+- (void)mapLocation{
+    [AMapLocationServices sharedServices].apiKey = (NSString *)kZhGaodeMapKey;
+    
+    self.manger = [[AMapLocationManager alloc] init];
+    
+    // 带逆地理信息的单次定位（返回坐标和地址信息）
+    [self.manger setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    //   定位超时时间，可修改，最小2s
+    self.manger.locationTimeout = 3;
+    //   逆地理请求超时时间，可修改，最小2s
+    self.manger.reGeocodeTimeout = 3;
+    // 带逆地理（返回坐标和地址信息） YES改为NO,将不会返回地理信息
+    [self.manger requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
+        if (error) {
+            WLZLog(@"locError:{%ld - %@}",(long)error,error.localizedDescription);
+            if (error.code == AMapLocationErrorLocateFailed) {
+                return ;
+            }
+        }
+        WLZLog(@"location:{lat:%.20f; lon:%f; accuracy:%.10f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
+        _lat = location.coordinate.latitude;
+        _lon = location.coordinate.longitude;
+        if (regeocode)
+        {
+            NSLog(@"reGeocode:%@", regeocode);
+        }    }];
+    
+    
 
+}
+//- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location{
+//    WLZLog(@"location:{lat:%.20f; lon:%f; accuracy:%.10f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
+//}
 #pragma mark -----网络请求------
 - (void)netWork{
+    [self mapLocation];
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
-    [manger GET:[NSString stringWithFormat:@"%@&start=%ld",kNearBy,(long)_pagecount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manger GET:[NSString stringWithFormat:@"%@&start=%ld&latitude=%.15f&longitude=%.15f",kNearBy,(long)_pagecount,_lat,_lon] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        WLZLog(@"")
 //        WLZLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (_pagecount == 0) {
@@ -104,7 +148,7 @@
     [ProgressHUD show:@"正在刷新，请稍候"];
     _pagecount = 0;
     self.refreash = YES;
-    
+    [self mapLocation];
     [self performSelector:@selector(netWork) withObject:nil afterDelay:1.0];
 }
 //上拉加载
@@ -166,35 +210,35 @@
             _pagecount = 0;
 
             [self.allArray removeAllObjects];
-            kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=11&start=0&count=20&latitude=34.612591&longitude=112.42038000000002";
+            kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=11&count=20";
             [self netWork];
             [self.tableView reloadData];
             break;
         case 2:
             _pagecount = 0;
             [self.allArray removeAllObjects];
-            kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=10&start=0&count=20&latitude=34.612591&longitude=112.42038000000002";
+            kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=10&count=20";
              [self netWork];
             [self.tableView reloadData];
             break;
         case 3:
             _pagecount = 0;
             [self.allArray removeAllObjects];
-            kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=5&start=0&count=20&latitude=34.612591&longitude=112.42038000000002";
+            kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=5&count=20";
              [self netWork];
             [self.tableView reloadData];
             break;
         case 4:
             _pagecount = 0;
             [self.allArray removeAllObjects];
-            kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=21&start=0&count=20&latitude=34.612591&longitude=112.42038000000002";
+            kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=21&count=20";
              [self netWork];
             [self.tableView reloadData];
             break;
         case 5:
             _pagecount = 0;
             [self.allArray removeAllObjects];
-            kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=6&start=0&count=20&latitude=34.612591&longitude=112.42038000000002";
+            kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=6&count=20";
              [self netWork];
             [self.tableView reloadData];
             break;

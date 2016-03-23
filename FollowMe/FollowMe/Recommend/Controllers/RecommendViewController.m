@@ -22,7 +22,6 @@
 #import "JCTagListView.h"
 #import "searchViewController.h"
 #import "nearByViewController.h"
-#import "SingleLocaitonAloneViewController.h"
 #import "allCollectionViewController.h"
 #import "advertisingViewController.h"
 #import "storyDetailsViewController.h"
@@ -84,6 +83,17 @@ static NSString *itemID = @"itemId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   
+
+    
+    
+    
+    
+    
+    
+    
+    
     _page = 1;
     self.navigationController.navigationBar.barTintColor = kMainColor;
       

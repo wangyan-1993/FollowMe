@@ -9,6 +9,7 @@
 #import "NoCodeLoginViewController.h"
 #import <BmobSDK/BmobUser.h>
 #import <BmobSDK/BmobSMS.h>
+#import "InformationViewController.h"
 @interface NoCodeLoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *get;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
@@ -64,7 +65,9 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:[NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [alert show];
         }else{
-            
+            InformationViewController *info = [[InformationViewController alloc]init];
+            info.username = self.phonenum.text;
+            [self.navigationController pushViewController:info animated:YES];
         }
 
     }];
