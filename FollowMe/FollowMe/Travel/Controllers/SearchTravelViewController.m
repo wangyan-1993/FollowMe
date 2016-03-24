@@ -128,12 +128,12 @@
 }
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     CollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
-    
-    [reusableView.btn setTitle:self.titleArray[indexPath.section] forState:UIControlStateNormal];
+    NSLog(@"section = %ld row = %ld", indexPath.section, indexPath.row);
+    [reusableView.btn setTitle:[NSString stringWithFormat:@"%@>>>", self.titleArray[indexPath.section]] forState:UIControlStateNormal];
     reusableView.btn.tag = indexPath.section;
     [reusableView.btn addTarget:self action:@selector(openMore:) forControlEvents:UIControlEventTouchUpInside];
    
-       return reusableView;
+    return reusableView;
 
 }
 - (void)openMore:(UIButton *)btn{

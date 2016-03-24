@@ -123,6 +123,8 @@
 		7AEDB5DA1CA37E1100F2E45D /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDB5D91CA37E1100F2E45D /* CollectionReusableView.m */; };
 		7AEDB5DF1CA3896600F2E45D /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDB5DC1CA3896600F2E45D /* UsernameViewController.m */; };
 		7AEDB5E01CA3896600F2E45D /* SettingCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDB5DE1CA3896600F2E45D /* SettingCodeViewController.m */; };
+		7AEDB60C1CA3CC4700F2E45D /* UserPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDB60B1CA3CC4700F2E45D /* UserPhoneViewController.m */; };
+		7AEDB60F1CA3CC5F00F2E45D /* UserEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDB60E1CA3CC5F00F2E45D /* UserEmailViewController.m */; };
 		7AF40A0A1C9FA28200BBD70F /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF409E01C9FA28200BBD70F /* MJRefreshAutoFooter.m */; };
 		7AF40A0B1C9FA28200BBD70F /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF409E21C9FA28200BBD70F /* MJRefreshBackFooter.m */; };
 		7AF40A0C1C9FA28200BBD70F /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF409E41C9FA28200BBD70F /* MJRefreshComponent.m */; };
@@ -345,6 +347,10 @@
 		7AEDB5DC1CA3896600F2E45D /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
 		7AEDB5DD1CA3896600F2E45D /* SettingCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCodeViewController.h; sourceTree = "<group>"; };
 		7AEDB5DE1CA3896600F2E45D /* SettingCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCodeViewController.m; sourceTree = "<group>"; };
+		7AEDB60A1CA3CC4700F2E45D /* UserPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPhoneViewController.h; sourceTree = "<group>"; };
+		7AEDB60B1CA3CC4700F2E45D /* UserPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPhoneViewController.m; sourceTree = "<group>"; };
+		7AEDB60D1CA3CC5F00F2E45D /* UserEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEmailViewController.h; sourceTree = "<group>"; };
+		7AEDB60E1CA3CC5F00F2E45D /* UserEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEmailViewController.m; sourceTree = "<group>"; };
 		7AF409DF1C9FA28200BBD70F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		7AF409E01C9FA28200BBD70F /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		7AF409E11C9FA28200BBD70F /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -669,12 +675,16 @@
 				7A84D8031C9FD88A00A76134 /* BecomeHunterViewController.m */,
 				7A84D80D1C9FE44A00A76134 /* SettingsViewController.h */,
 				7A84D80E1C9FE44A00A76134 /* SettingsViewController.m */,
+				7AEDB5DD1CA3896600F2E45D /* SettingCodeViewController.h */,
+				7AEDB5DE1CA3896600F2E45D /* SettingCodeViewController.m */,
 				7A8BD11E1CA15ADC00D8ACC1 /* UserInfoViewController.h */,
 				7A8BD11F1CA15ADC00D8ACC1 /* UserInfoViewController.m */,
 				7AEDB5DB1CA3896600F2E45D /* UsernameViewController.h */,
 				7AEDB5DC1CA3896600F2E45D /* UsernameViewController.m */,
-				7AEDB5DD1CA3896600F2E45D /* SettingCodeViewController.h */,
-				7AEDB5DE1CA3896600F2E45D /* SettingCodeViewController.m */,
+				7AEDB60A1CA3CC4700F2E45D /* UserPhoneViewController.h */,
+				7AEDB60B1CA3CC4700F2E45D /* UserPhoneViewController.m */,
+				7AEDB60D1CA3CC5F00F2E45D /* UserEmailViewController.h */,
+				7AEDB60E1CA3CC5F00F2E45D /* UserEmailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1244,6 +1254,7 @@
 				7AC86F511C9F7B8A00AEF853 /* VOSegmentedControl.m in Sources */,
 				7AB8FD021C99090800D9A121 /* JCTagCell.m in Sources */,
 				7AF40A161C9FA28200BBD70F /* MJRefreshNormalHeader.m in Sources */,
+				7AEDB60C1CA3CC4700F2E45D /* UserPhoneViewController.m in Sources */,
 				7AB5BD371CA14D3A0095200C /* ClasifyModel.m in Sources */,
 				7AF40A111C9FA28200BBD70F /* MJRefreshAutoStateFooter.m in Sources */,
 				7AF40A0D1C9FA28200BBD70F /* MJRefreshFooter.m in Sources */,
@@ -1262,6 +1273,7 @@
 				7A4F87FA1C9A4D1600183EC8 /* SearchCollectionViewCell.m in Sources */,
 				7AF40A2A1C9FE70900BBD70F /* storyDetailsView.m in Sources */,
 				7AF40A141C9FA28200BBD70F /* MJRefreshBackStateFooter.m in Sources */,
+				7AEDB60F1CA3CC5F00F2E45D /* UserEmailViewController.m in Sources */,
 				7A4780C51C97F0CF00C6E5C2 /* PlusViewController.m in Sources */,
 				7AB8FCF11C98E40F00D9A121 /* ThirdTravelViewController.m in Sources */,
 				7A4780BF1C97F0AD00C6E5C2 /* CityViewController.m in Sources */,

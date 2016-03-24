@@ -65,6 +65,7 @@ static sqlite3 *dataBase = nil;
 - (void)createDataBaseTable{
     //建表语句
     NSString *sql =@"create table City (city text not null)";
+    
     NSLog(@"%@", sql);
     //执行SQL语句
     /*

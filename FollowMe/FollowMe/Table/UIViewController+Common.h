@@ -11,4 +11,6 @@
 @interface UIViewController (Common)
 //导航栏添加返回按钮
 - (void)showBackBtn;
+- (void)shoeRightBtn;
+- (void)collectionAction;
 @end

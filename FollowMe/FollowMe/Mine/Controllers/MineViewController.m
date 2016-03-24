@@ -265,6 +265,7 @@ if (self.tencentOAuth.accessToken && 0 != [self.tencentOAuth.accessToken length]
                     InformationViewController *info = [[InformationViewController alloc]init];
                     info.username = responseObject[@"nickname"];
                     info.headerImage = responseObject[@"figureurl_qq_2"];
+                    self.tabBarController.selectedIndex = 0;
                     [self.navigationController pushViewController:info animated:NO];
                 }else{
                     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"用户登录失败" delegate:self cancelButtonTitle:@"我知道了" otherButtonTitles: nil];
@@ -310,7 +311,9 @@ if (self.tencentOAuth.accessToken && 0 != [self.tencentOAuth.accessToken length]
     
 }
 
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view resignFirstResponder];
+}
 
 
 - (void)didReceiveMemoryWarning {

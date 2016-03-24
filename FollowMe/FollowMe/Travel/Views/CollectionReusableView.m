@@ -12,9 +12,11 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        //251225211
+      
         self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btn.frame = self.frame;
-
+        self.btn.frame = CGRectMake(0, 0, kWidth, 50);
+        [self.btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self addSubview:self.btn];
     }
     return self;

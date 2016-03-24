@@ -24,20 +24,40 @@
     [self showBackBtn];
     self.usernametext.text = self.username;
     self.view.backgroundColor = kMainColor;
-    UIButton *collectionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [collectionBtn setTitle:@"保存" forState:UIControlStateNormal];
-    [collectionBtn addTarget:self action:@selector(collectionAction) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *right = [[UIBarButtonItem alloc]initWithCustomView:collectionBtn];
-    self.navigationItem.rightBarButtonItem = right;
+//    UIButton *collectionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    collectionBtn.frame = CGRectMake(0, 0, 60, 44);
+//    [collectionBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [collectionBtn setTitle:@"保存" forState:UIControlStateNormal];
+//    [collectionBtn addTarget:self action:@selector(collectionAction) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *right = [[UIBarButtonItem alloc]initWithCustomView:collectionBtn];
+//    self.navigationItem.rightBarButtonItem = right;
+    [self shoeRightBtn];
+    [self.usernametext resignFirstResponder];
+    
+    
+
     
 }
 - (void)collectionAction{
-    if ([self.newcode isEqual:self.secondNewcode] ) {
+    //if ([self.newcode isEqual:self.secondNewcode] ) {
         BmobUser *user = [BmobUser getCurrentUser];
-        [user setPassword:self.newcode.text];
-    }
+      //  [user setPassword:self.newcode.text];
+    
+    [user updateCurrentUserPasswordWithOldPassword:@"" newPassword:self.newcode.text block:^(BOOL isSuccessful, NSError *error) {
+        if (isSuccessful) {
+            WLZLog(@"success");
+        }
+    }];
+    
+    
+    //}
     
   }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view resignFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

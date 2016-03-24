@@ -11,6 +11,9 @@
 #import "BecomeHunterViewController.h"
 #import "SettingsViewController.h"
 #import "UserInfoViewController.h"
+#import <BmobSDK/BmobUser.h>
+#import <BmobSDK/BmobObject.h>
+#import <BmobSDK/BmobQuery.h>
 @interface InformationViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
 @end
@@ -29,6 +32,20 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
     self.tabBarController.tabBar.hidden = NO;
+BmobQuery *query = [BmobQuery queryWithClassName:@"UserInfo"];
+
+[query getObjectInBackgroundWithId:[BmobUser getCurrentUser].username block:^(BmobObject *object, NSError *error) {
+    if (object) {
+        NSString *name = [object valueForKey:@"name"];
+        self.username = name;
+        [self.tableView reloadData];
+    }else{
+        WLZLog(@"%@", error);
+    }
+}];
+
+
+
 
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

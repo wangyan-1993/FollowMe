@@ -11,7 +11,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UserInfoViewController.h"
 #import "SettingCodeViewController.h"
-@interface SettingsViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface SettingsViewController ()<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate>
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSArray *allArray;
 @end
@@ -27,7 +27,10 @@
     self.view.backgroundColor = kMainColor;
     [self showBackBtn];
     [self addRightBtn];
-    self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"推送通知设置",@"连接社交网络",@"清除缓存",@"关于我们",@"喜欢我吗？给个评分吧",@"意见反馈"]];
+    SDImageCache *cache = [SDImageCache sharedImageCache];
+    NSInteger cacheSize = [cache getSize];
+    NSString *cacheStr = [NSString stringWithFormat:@"清除缓存(%.2fM)", (CGFloat)cacheSize / 1024 / 1024];
+    self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"推送通知设置",@"连接社交网络",cacheStr,@"关于我们",@"喜欢我吗？给个评分吧",@"意见反馈"]];
     [self.view addSubview:self.tableView];
 
 }
@@ -80,6 +83,8 @@
     }
     
     if (indexPath.section == 1) {
+        
+        //修改账户密码
         if (indexPath.row == 1) {
             UIStoryboard *main = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
             SettingCodeViewController *setcode = [main instantiateViewControllerWithIdentifier:@"settingcode"];
@@ -87,6 +92,21 @@
             [self.navigationController pushViewController:setcode animated:YES];
             
         }
+        //清除缓存
+        if (indexPath.row == 4) {
+            SDImageCache *cache = [SDImageCache sharedImageCache];
+            [cache clearDisk];
+            self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"推送通知设置",@"连接社交网络",@"清除缓存",@"关于我们",@"喜欢我吗？给个评分吧",@"意见反馈"]];
+            [self.tableView reloadData];
+
+        }
+        //关于我们
+        if (indexPath.row == 5) {
+            NSString *str = @"itms-apps://itunes.apple.com";
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+
+        }
+        
     }
 }
 

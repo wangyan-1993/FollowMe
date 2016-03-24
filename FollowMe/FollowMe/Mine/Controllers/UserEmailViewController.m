@@ -1,43 +1,41 @@
 //
-//  EmailVerifyViewController.m
+//  UserEmailViewController.m
 //  FollowMe
 //
-//  Created by SCJY on 16/3/19.
+//  Created by SCJY on 16/3/24.
 //  Copyright © 2016年 SCJY. All rights reserved.
 //
 
-#import "EmailVerifyViewController.h"
+#import "UserEmailViewController.h"
 #import <BmobSDK/BmobUser.h>
-@interface EmailVerifyViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *username;
-@property (weak, nonatomic) IBOutlet UIButton *findCode;
+@interface UserEmailViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *emailText;
 
 @end
 
-@implementation EmailVerifyViewController
+@implementation UserEmailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.findCode.layer.cornerRadius = 20;
-    self.findCode.clipsToBounds = YES;
-    self.navigationController.navigationBar.hidden = YES;self.tabBarController.tabBar.hidden = YES;
-    
+    [self shoeRightBtn];
+    [self showBackBtn];
+    self.title = @"绑定邮箱";
+    self.view.backgroundColor = [UIColor colorWithRed:252/256.0f green:244/256.0f blue:230/256.0f alpha:1.0];
 }
-- (IBAction)findcodeAction:(id)sender {
-    
-    [BmobUser requestPasswordResetInBackgroundWithEmail:self.username.text];
-}
-- (IBAction)back:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (void)collectionAction{
+    BmobUser *user = [BmobUser getCurrentUser];
+    //应用开启了邮箱验证功能
+    if ([user objectForKey:@"emailVerified"]) {
+        //用户没验证过邮箱
+        if (![[user objectForKey:@"emailVerified"] boolValue]) {
+            [user verifyEmailInBackgroundWithEmailAddress:self.emailText.text];
+        }
+    }
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view resignFirstResponder];
 }
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
