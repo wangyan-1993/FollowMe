@@ -93,6 +93,9 @@
     //查询数据库里的所有元素
     NSArray *array =[NSArray arrayWithArray:[dbManager selectAllCollect]];
     //显示搜索记录
+    if (self.searchList.tags.count > 0) {
+        [self.searchList.tags removeAllObjects];
+    }
     [self.searchList.tags addObjectsFromArray:array];
     
 //小标签的点击方法
@@ -131,7 +134,7 @@
     }];
   [self.searchList setCompletionBlockWithSelected:^(NSInteger index) {
       SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
-      search.cityName = weakself.cityArray[index];
+      search.cityName = [dbManager selectAllCollect][index];
       weakself.mySearchBar.hidden = YES;
       [weakself.navigationController pushViewController:search animated:YES];
 

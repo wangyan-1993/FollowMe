@@ -12,7 +12,7 @@
 #import "SearchCollectionViewCell.h"
 #import "ThirdTravelViewController.h"
 #import "FiveTravelViewController.h"
-
+#import "CollectionReusableView.h"
 @interface SearchTravelViewController ()<UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property(nonatomic, strong) UISearchBar *mySearchBar;
 @property(nonatomic, strong) NSMutableArray *numArray;
@@ -87,6 +87,7 @@
             [self.urlArray addObject:url];
             [self.titleArray addObject:title];
         }
+        WLZLog(@"%@", self.titleArray);
 
         [self.collectionView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -126,16 +127,12 @@
     return self.numArray.count;
 }
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
-       self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    CollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
     
-    WLZLog(@"%@", self.btn);
-    self.btn.frame = CGRectMake(0, 0, kWidth, 50);
-    [self.btn setTitle:self.titleArray[indexPath.section] forState:UIControlStateNormal];
-    NSLog(@"%@", self.btn.titleLabel.text);
-    self.btn.tag = indexPath.section;
-    [self.btn addTarget:self action:@selector(openMore:) forControlEvents:UIControlEventTouchUpInside];
-    [reusableView addSubview:self.btn];
+    [reusableView.btn setTitle:self.titleArray[indexPath.section] forState:UIControlStateNormal];
+    reusableView.btn.tag = indexPath.section;
+    [reusableView.btn addTarget:self action:@selector(openMore:) forControlEvents:UIControlEventTouchUpInside];
+   
        return reusableView;
 
 }
@@ -217,7 +214,7 @@ WLZLog(@"%@", five.name);    self.mySearchBar.hidden = YES;
         //注册item类型，要用自定义的collectionViewCell
         [self.collectionView registerClass:[SearchCollectionViewCell class] forCellWithReuseIdentifier:@"city"];
         //注册区头
-        [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
+        [self.collectionView registerClass:[CollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
 
     }
     return _collectionView;

@@ -28,6 +28,8 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
+
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 20;
@@ -71,7 +73,7 @@
     headerBtn.frame = imageviewHeader.frame;
     [headerBtn addTarget:self action:@selector(headerInformation) forControlEvents:UIControlEventTouchUpInside];
     
-       // UIImageView默认不允许用户交互，headerBtn不能直接加载到其上面，如果需要把btn加载到它上面，需要打开UIImageView的交互
+    // UIImageView默认不允许用户交互，headerBtn不能直接加载到其上面，如果需要把btn加载到它上面，需要打开UIImageView的交互
     //打开交互     imageView.userInteractionEnabled = YES;
     
     [header addSubview:headerBtn];

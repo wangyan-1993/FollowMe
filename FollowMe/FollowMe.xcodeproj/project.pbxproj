@@ -119,6 +119,9 @@
 		7AC86F531C9F82AB00AEF853 /* allCollection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AC86F521C9F82AB00AEF853 /* allCollection.plist */; };
 		7AC86F551C9F832900AEF853 /* recommend.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AC86F541C9F832900AEF853 /* recommend.plist */; };
 		7AD0837A1C9FCB4200D321AA /* CityBackList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AD083791C9FCB4200D321AA /* CityBackList.plist */; };
+		7AEDB5DA1CA37E1100F2E45D /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDB5D91CA37E1100F2E45D /* CollectionReusableView.m */; };
+		7AEDB5DF1CA3896600F2E45D /* UsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDB5DC1CA3896600F2E45D /* UsernameViewController.m */; };
+		7AEDB5E01CA3896600F2E45D /* SettingCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDB5DE1CA3896600F2E45D /* SettingCodeViewController.m */; };
 		7AF40A0A1C9FA28200BBD70F /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF409E01C9FA28200BBD70F /* MJRefreshAutoFooter.m */; };
 		7AF40A0B1C9FA28200BBD70F /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF409E21C9FA28200BBD70F /* MJRefreshBackFooter.m */; };
 		7AF40A0C1C9FA28200BBD70F /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF409E41C9FA28200BBD70F /* MJRefreshComponent.m */; };
@@ -334,6 +337,12 @@
 		7AC86F521C9F82AB00AEF853 /* allCollection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = allCollection.plist; sourceTree = "<group>"; };
 		7AC86F541C9F832900AEF853 /* recommend.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = recommend.plist; sourceTree = "<group>"; };
 		7AD083791C9FCB4200D321AA /* CityBackList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CityBackList.plist; sourceTree = "<group>"; };
+		7AEDB5D81CA37E1100F2E45D /* CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionReusableView.h; sourceTree = "<group>"; };
+		7AEDB5D91CA37E1100F2E45D /* CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionReusableView.m; sourceTree = "<group>"; };
+		7AEDB5DB1CA3896600F2E45D /* UsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsernameViewController.h; sourceTree = "<group>"; };
+		7AEDB5DC1CA3896600F2E45D /* UsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameViewController.m; sourceTree = "<group>"; };
+		7AEDB5DD1CA3896600F2E45D /* SettingCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCodeViewController.h; sourceTree = "<group>"; };
+		7AEDB5DE1CA3896600F2E45D /* SettingCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCodeViewController.m; sourceTree = "<group>"; };
 		7AF409DF1C9FA28200BBD70F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		7AF409E01C9FA28200BBD70F /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		7AF409E11C9FA28200BBD70F /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -660,6 +669,10 @@
 				7A84D80E1C9FE44A00A76134 /* SettingsViewController.m */,
 				7A8BD11E1CA15ADC00D8ACC1 /* UserInfoViewController.h */,
 				7A8BD11F1CA15ADC00D8ACC1 /* UserInfoViewController.m */,
+				7AEDB5DB1CA3896600F2E45D /* UsernameViewController.h */,
+				7AEDB5DC1CA3896600F2E45D /* UsernameViewController.m */,
+				7AEDB5DD1CA3896600F2E45D /* SettingCodeViewController.h */,
+				7AEDB5DE1CA3896600F2E45D /* SettingCodeViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -760,6 +773,8 @@
 			children = (
 				7A4F87F81C9A4D1600183EC8 /* SearchCollectionViewCell.h */,
 				7A4F87F91C9A4D1600183EC8 /* SearchCollectionViewCell.m */,
+				7AEDB5D81CA37E1100F2E45D /* CollectionReusableView.h */,
+				7AEDB5D91CA37E1100F2E45D /* CollectionReusableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1190,7 +1205,9 @@
 				7A4780C81C97F0E200C6E5C2 /* TravelViewController.m in Sources */,
 				7A32E1641C9D37B20012F871 /* FindCodeByPhoneViewController.m in Sources */,
 				7AC86F341C9F7B6000AEF853 /* allCollectionViewController.m in Sources */,
+				7AEDB5E01CA3896600F2E45D /* SettingCodeViewController.m in Sources */,
 				7A84D8011C9F9B5300A76134 /* InformationViewController.m in Sources */,
+				7AEDB5DF1CA3896600F2E45D /* UsernameViewController.m in Sources */,
 				7AF40A0F1C9FA28200BBD70F /* MJRefreshAutoGifFooter.m in Sources */,
 				7A422B141C97EAB800B51C11 /* main.m in Sources */,
 				7AB039641C9D3AD3003E32AF /* ForeignViewController.m in Sources */,
@@ -1233,6 +1250,7 @@
 				7AF40A131C9FA28200BBD70F /* MJRefreshBackNormalFooter.m in Sources */,
 				7AB8FCF41C98E68A00D9A121 /* FourTravelViewController.m in Sources */,
 				7A8BD1201CA15ADC00D8ACC1 /* UserInfoViewController.m in Sources */,
+				7AEDB5DA1CA37E1100F2E45D /* CollectionReusableView.m in Sources */,
 				7A892A421C9AA8B300D2D11F /* selectCityViewController.m in Sources */,
 				7AC86F3D1C9F7B6000AEF853 /* RecommendModel.m in Sources */,
 				7AC86F4F1C9F7B8A00AEF853 /* VOIndicatorAnimation.m in Sources */,
@@ -1355,8 +1373,8 @@
 			baseConfigurationReference = 9CE4DD61D59F51D056051F5E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1416,8 +1434,8 @@
 			baseConfigurationReference = 737A4A8526CBB407BDBC1B85 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1209997913@qq.com (7988MHQ68L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

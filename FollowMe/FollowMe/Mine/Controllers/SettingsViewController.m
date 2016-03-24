@@ -10,6 +10,7 @@
 #import <BmobSDK/BmobUser.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UserInfoViewController.h"
+#import "SettingCodeViewController.h"
 @interface SettingsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSArray *allArray;
@@ -76,6 +77,16 @@
         UserInfoViewController *userinfo = [[UserInfoViewController alloc]init];
         userinfo.urlImage = self.imageStr;
         [self.navigationController pushViewController:userinfo animated:YES];
+    }
+    
+    if (indexPath.section == 1) {
+        if (indexPath.row == 1) {
+            UIStoryboard *main = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+            SettingCodeViewController *setcode = [main instantiateViewControllerWithIdentifier:@"settingcode"];
+            setcode.username = self.username;
+            [self.navigationController pushViewController:setcode animated:YES];
+            
+        }
     }
 }
 

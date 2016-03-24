@@ -110,9 +110,9 @@
     if (!(accessToken == nil)) {
     NSDictionary *dic=@{@"access_token":accessToken,@"uid":uid,@"expirationDate":expiresDate};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    
-    [manager GET:[NSString stringWithFormat:@"https://api.weibo.com/2/users/show.json?access_token=%@&uid=%@",response.userInfo[@"refresh_token"],uid] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    manager.responseSerializer.acceptableContentTypes =
+        [NSSet setWithObjects:@"application/json",@"charset=UTF-8", nil];
+    [manager GET:[NSString stringWithFormat:@"https://api.weibo.com/2/users/show.json?access_token=%@&uid=%@&appkey=%@",accessToken,uid, kWeiboAppKey] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     WLZLog(@"%@", downloadProgress);
      } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
     WLZLog(@"%@", responseObject);
@@ -132,8 +132,7 @@
 
 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     WLZLog(@"%@", error);
-
-}];
+              NSLog(@"%@",[[NSString alloc] initWithData:error.userInfo[@"com.alamofire.serialization.response.error.data"] encoding:NSUTF8StringEncoding]);}];
     
     }
 
