@@ -73,7 +73,9 @@
 		7A8BD11C1CA0EB1D00D8ACC1 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A8BD11B1CA0EB1D00D8ACC1 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		7A8BD1201CA15ADC00D8ACC1 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BD11F1CA15ADC00D8ACC1 /* UserInfoViewController.m */; };
 		7A8BD1241CA1726800D8ACC1 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BD1231CA1726800D8ACC1 /* VPImageCropperViewController.m */; };
-		7AAEAB761CA0E48000BC0D30 /* storyDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */; };
+		7AAEAB781CA1215300BC0D30 /* storyDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AAEAB771CA1215300BC0D30 /* storyDetail.plist */; };
+		7AAEAB7C1CA1498300BC0D30 /* storyDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAEAB7A1CA1498300BC0D30 /* storyDetailTableViewCell.m */; };
+		7AAEAB7D1CA1498300BC0D30 /* storyDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAEAB7B1CA1498300BC0D30 /* storyDetailTableViewCell.xib */; };
 		7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039601C9D3ABC003E32AF /* InlandViewController.m */; };
 		7AB039641C9D3AD3003E32AF /* ForeignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039631C9D3AD3003E32AF /* ForeignViewController.m */; };
 		7AB0396A1C9D3C15003E32AF /* JRSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB039671C9D3C15003E32AF /* JRSegmentControl.m */; };
@@ -102,7 +104,6 @@
 		7AC86F371C9F7B6000AEF853 /* nearByViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC86F1F1C9F7B6000AEF853 /* nearByViewController.m */; };
 		7AC86F381C9F7B6000AEF853 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC86F211C9F7B6000AEF853 /* RecommendViewController.m */; };
 		7AC86F391C9F7B6000AEF853 /* searchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC86F231C9F7B6000AEF853 /* searchViewController.m */; };
-		7AC86F3A1C9F7B6000AEF853 /* SingleLocaitonAloneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC86F251C9F7B6000AEF853 /* SingleLocaitonAloneViewController.m */; };
 		7AC86F3B1C9F7B6000AEF853 /* nearBy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AC86F271C9F7B6000AEF853 /* nearBy.plist */; };
 		7AC86F3C1C9F7B6000AEF853 /* nearByModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC86F291C9F7B6000AEF853 /* nearByModel.m */; };
 		7AC86F3D1C9F7B6000AEF853 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC86F2B1C9F7B6000AEF853 /* RecommendModel.m */; };
@@ -261,7 +262,10 @@
 		7A8BD11F1CA15ADC00D8ACC1 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		7A8BD1221CA1726800D8ACC1 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
 		7A8BD1231CA1726800D8ACC1 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
-		7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storyDetail.plist; sourceTree = "<group>"; };
+		7AAEAB771CA1215300BC0D30 /* storyDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storyDetail.plist; sourceTree = "<group>"; };
+		7AAEAB791CA1498300BC0D30 /* storyDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storyDetailTableViewCell.h; sourceTree = "<group>"; };
+		7AAEAB7A1CA1498300BC0D30 /* storyDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = storyDetailTableViewCell.m; sourceTree = "<group>"; };
+		7AAEAB7B1CA1498300BC0D30 /* storyDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = storyDetailTableViewCell.xib; sourceTree = "<group>"; };
 		7AB0395F1C9D3ABC003E32AF /* InlandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlandViewController.h; sourceTree = "<group>"; };
 		7AB039601C9D3ABC003E32AF /* InlandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlandViewController.m; sourceTree = "<group>"; };
 		7AB039621C9D3AD3003E32AF /* ForeignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForeignViewController.h; sourceTree = "<group>"; };
@@ -311,8 +315,6 @@
 		7AC86F211C9F7B6000AEF853 /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		7AC86F221C9F7B6000AEF853 /* searchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchViewController.h; sourceTree = "<group>"; };
 		7AC86F231C9F7B6000AEF853 /* searchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchViewController.m; sourceTree = "<group>"; };
-		7AC86F241C9F7B6000AEF853 /* SingleLocaitonAloneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLocaitonAloneViewController.h; sourceTree = "<group>"; };
-		7AC86F251C9F7B6000AEF853 /* SingleLocaitonAloneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLocaitonAloneViewController.m; sourceTree = "<group>"; };
 		7AC86F271C9F7B6000AEF853 /* nearBy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = nearBy.plist; sourceTree = "<group>"; };
 		7AC86F281C9F7B6000AEF853 /* nearByModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nearByModel.h; sourceTree = "<group>"; };
 		7AC86F291C9F7B6000AEF853 /* nearByModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nearByModel.m; sourceTree = "<group>"; };
@@ -844,8 +846,6 @@
 				7AC86F211C9F7B6000AEF853 /* RecommendViewController.m */,
 				7AC86F221C9F7B6000AEF853 /* searchViewController.h */,
 				7AC86F231C9F7B6000AEF853 /* searchViewController.m */,
-				7AC86F241C9F7B6000AEF853 /* SingleLocaitonAloneViewController.h */,
-				7AC86F251C9F7B6000AEF853 /* SingleLocaitonAloneViewController.m */,
 				7AF40A201C9FCC4D00BBD70F /* advertisingViewController.h */,
 				7AF40A211C9FCC4D00BBD70F /* advertisingViewController.m */,
 				7AF40A231C9FD77500BBD70F /* storyDetailsViewController.h */,
@@ -866,7 +866,7 @@
 				7AC86F291C9F7B6000AEF853 /* nearByModel.m */,
 				7AC86F2A1C9F7B6000AEF853 /* RecommendModel.h */,
 				7AC86F2B1C9F7B6000AEF853 /* RecommendModel.m */,
-				7AAEAB751CA0E48000BC0D30 /* storyDetail.plist */,
+				7AAEAB771CA1215300BC0D30 /* storyDetail.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -884,6 +884,9 @@
 				7AC86F311C9F7B6000AEF853 /* RecommendTableViewCell.h */,
 				7AC86F321C9F7B6000AEF853 /* RecommendTableViewCell.m */,
 				7AC86F331C9F7B6000AEF853 /* RecommendTableViewCell.xib */,
+				7AAEAB791CA1498300BC0D30 /* storyDetailTableViewCell.h */,
+				7AAEAB7A1CA1498300BC0D30 /* storyDetailTableViewCell.m */,
+				7AAEAB7B1CA1498300BC0D30 /* storyDetailTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1098,7 +1101,7 @@
 			files = (
 				7A8BD11C1CA0EB1D00D8ACC1 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				7AF6D81F1C9AB07E004994A3 /* blueArrowDown.png in Resources */,
-				7AAEAB761CA0E48000BC0D30 /* storyDetail.plist in Resources */,
+				7AAEAB781CA1215300BC0D30 /* storyDetail.plist in Resources */,
 				7A4F87EE1C9A3B1200183EC8 /* Plus.plist in Resources */,
 				7AD0837A1C9FCB4200D321AA /* CityBackList.plist in Resources */,
 				7AC86F421C9F7B6000AEF853 /* RecommendTableViewCell.xib in Resources */,
@@ -1111,6 +1114,7 @@
 				7AC86F401C9F7B6000AEF853 /* Recommend.storyboard in Resources */,
 				7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */,
 				7A4F87EA1C9A3AE100183EC8 /* Mine.plist in Resources */,
+				7AAEAB7D1CA1498300BC0D30 /* storyDetailTableViewCell.xib in Resources */,
 				7A4F87E81C9A3AC800183EC8 /* cityFirstTableViewCell.xib in Resources */,
 				7AB8FD151C999C2000D9A121 /* search.plist in Resources */,
 				7A0DC2AB1C9E88F2006E3569 /* WeiboSDK.bundle in Resources */,
@@ -1229,6 +1233,7 @@
 				7AF40A0B1C9FA28200BBD70F /* MJRefreshBackFooter.m in Sources */,
 				7AC86F501C9F7B8A00AEF853 /* VOSegment.m in Sources */,
 				7AF40A0C1C9FA28200BBD70F /* MJRefreshComponent.m in Sources */,
+				7AAEAB7C1CA1498300BC0D30 /* storyDetailTableViewCell.m in Sources */,
 				7AF40A171C9FA28200BBD70F /* MJRefreshStateHeader.m in Sources */,
 				7A4B589A1C99A01900DC4CE1 /* JXBAdPageView.m in Sources */,
 				7AC86F371C9F7B6000AEF853 /* nearByViewController.m in Sources */,
@@ -1236,7 +1241,6 @@
 				7A84D8041C9FD88A00A76134 /* BecomeHunterViewController.m in Sources */,
 				7AB8FD131C99829700D9A121 /* SearchTravelViewController.m in Sources */,
 				7A84D80F1C9FE44A00A76134 /* SettingsViewController.m in Sources */,
-				7AC86F3A1C9F7B6000AEF853 /* SingleLocaitonAloneViewController.m in Sources */,
 				7AC86F511C9F7B8A00AEF853 /* VOSegmentedControl.m in Sources */,
 				7AB8FD021C99090800D9A121 /* JCTagCell.m in Sources */,
 				7AF40A161C9FA28200BBD70F /* MJRefreshNormalHeader.m in Sources */,
@@ -1326,6 +1330,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1363,6 +1368,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

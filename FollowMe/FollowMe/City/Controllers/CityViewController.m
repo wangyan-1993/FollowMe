@@ -464,23 +464,18 @@ static NSString *identifier = @"cell";
             switch (indexPath.row) {
                 case 0:
                     cell.textLabel.text = @"智能排序";
-                    self.idStr = @"1";
                     break;
                 case 1:
                     cell.textLabel.text = @"距离最近";
-                    self.idStr = @"2";
                     break;
                 case 2:
                     cell.textLabel.text = @"价格最低";
-                    self.idStr = @"5";
                     break;
                 case 3:
                     cell.textLabel.text = @"人气最高";
-                    self.idStr = @"3";
                     break;
                 case 4:
                     cell.textLabel.text = @"销量最好";
-                    self.idStr = @"4";
                     break;
                 
                     
@@ -498,11 +493,14 @@ static NSString *identifier = @"cell";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    cityModel *model = [[cityModel alloc]init];
+    cityModel *model = self.listArray[indexPath.row];
     
     if (tableView == self.tableView) {
         DetailViewController *detail = [[DetailViewController alloc] init];
         detail.IDString = model.product_id;
+        self.hidesBottomBarWhenPushed = YES;
+
+        
         [self.navigationController pushViewController:detail animated:NO];
     }else{
         switch (indexPath.row) {
@@ -546,11 +544,7 @@ static NSString *identifier = @"cell";
         [self uptataConfig];
         
     }
-    
-
-    
-    
-    
+ 
     
 }
 

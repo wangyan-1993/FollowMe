@@ -11,5 +11,6 @@
 @interface storyDetailsView : UIView
 @property(nonatomic, strong) NSDictionary *dataDic;
 #pragma mark -------------------- 根据文字最大显示宽高贺文字内容返回高度
+@property (nonatomic,strong) UIViewController *owner;
 - (CGFloat)getTextHeightWithText:(NSString *)text WithBigiestSize:(CGSize)bigSize fontText:(CGFloat)font;
 @end

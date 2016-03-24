@@ -14,8 +14,6 @@
 #import "TravelViewController.h"
 #import <BmobSDK/Bmob.h>
 #import "WeiboSDK.h"
-#import <MapKit/MapKit.h>
-#import <AMapLocationKit/AMapLocationKit.h>
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "InformationViewController.h"
 #import "WXApi.h"
@@ -23,7 +21,6 @@
 @interface AppDelegate ()<UITabBarControllerDelegate, WeiboSDKDelegate, WXApiDelegate>
 @property(nonatomic, strong) UITabBarController *tabBarVC;
 @property(nonatomic, strong) UINavigationController *mineNav;
-
 @end
 
 @implementation AppDelegate
@@ -32,7 +29,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-     [AMapLocationServices sharedServices].apiKey = (NSString *)kZhGaodeMapKey;
+    
+    
+    
     [Bmob registerWithAppKey:kBmobAppID];
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kWeiboAppKey];
