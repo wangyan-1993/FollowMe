@@ -32,19 +32,6 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
     self.tabBarController.tabBar.hidden = NO;
-BmobQuery *query = [BmobQuery queryWithClassName:@"UserInfo"];
-
-[query getObjectInBackgroundWithId:[BmobUser getCurrentUser].username block:^(BmobObject *object, NSError *error) {
-    if (object) {
-        NSString *name = [object valueForKey:@"name"];
-        self.username = name;
-        [self.tableView reloadData];
-    }else{
-        WLZLog(@"%@", error);
-    }
-}];
-
-
 
 
 }

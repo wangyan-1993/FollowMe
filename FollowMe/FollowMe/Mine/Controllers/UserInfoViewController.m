@@ -14,6 +14,8 @@
 #import "UsernameViewController.h"
 #import "UserPhoneViewController.h"
 #import "UserEmailViewController.h"
+#import "UserSignatureViewController.h"
+#import "UserTableViewCell.h"
 #define ORIGINAL_MAX_WIDTH 640.0f
 
 
@@ -40,8 +42,13 @@
 }
 
 - (void)change:(NSNotification *)notification{
-   // self.array = [NSMutableArray arrayWithArray:self.allArray];
-    [self.array replaceObjectAtIndex:1 withObject:[notification userInfo][@"name"]];
+    if ([notification userInfo][@"name"] != nil) {
+        [self.array replaceObjectAtIndex:1 withObject:[notification userInfo][@"name"]];
+
+    }
+    if ([notification userInfo][@"personal"] != nil) {
+        [self.array replaceObjectAtIndex:7 withObject:[notification userInfo][@"personal"]];
+    }
     [self.tableView reloadData];
 }
 
@@ -72,17 +79,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *str = @"cell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:str];
+    UserTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:str];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
+        cell = [[UserTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
     }
     if (indexPath.row == 0) {
         [cell addSubview:self.portraitImageView];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = self.array[indexPath.row];
-    return cell;
+    cell.label1.text = self.allArray[indexPath.row];
+    cell.label.text = self.array[indexPath.row];
+       return cell;
 }
 
 #pragma mark------UITableViewDelegate
@@ -104,7 +112,10 @@
         [self.navigationController pushViewController:useremail animated:YES];
     }
     
-    
+    if (indexPath.row == 7) {
+        UserSignatureViewController *signature = [[UserSignatureViewController alloc]init];
+        [self.navigationController pushViewController:signature animated:YES];
+    }
     
     
 }
@@ -363,7 +374,7 @@
 
 - (NSMutableArray *)array{
     if (_array == nil) {
-        self.array = [NSMutableArray arrayWithArray:self.allArray];
+        self.array = [NSMutableArray arrayWithArray:@[@"",@"未设置",@"未设置",@"未设置",@"未设置",@"未设置",@"未设置",@"未设置"]];
     }
     return _array;
 }
