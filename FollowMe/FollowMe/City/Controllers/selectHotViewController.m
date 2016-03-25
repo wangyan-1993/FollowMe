@@ -46,13 +46,13 @@
     
     
     
-    self.jcTagList = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth*0.2, kHeight/5, kWidth*0.6, kHeight/2)];
+    self.jcTagList = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth*0.1, kHeight/5, kWidth*0.8, kHeight/2)];
     self.jcTagList.tagTextColor = [UIColor colorWithRed:235/255 green:235/255 blue:235/255 alpha:0.5];
     self.jcTagList.tagStrokeColor = [UIColor colorWithRed:235/255 green:235/255 blue:235/255 alpha:0.5];
     self.jcTagList.layer.cornerRadius = 10.0;
     self.jcTagList.canSelectTags = YES;
 
-    [self.jcTagList.tags addObjectsFromArray:@[@"摄影",@"占卜",@"美食",@"达人",@"明信片",@"油画",@"资讯",@"旅行",@"健康",@"约咖啡"]];
+    [self.jcTagList.tags addObjectsFromArray:@[@"摄影",@"占卜",@"美食",@"达人",@"手绘",@"明信片",@"油画",@"资讯",@"旅行",@"健康",@"约咖啡"]];
     
 //    [self.jcTagList.tags addObject:self.backCityArray];
     
@@ -75,7 +75,6 @@
     
     //搜索框：
 
-    
     self.citySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(kWidth/6, 5, kWidth - kWidth/6 - 5, 40)];
     self.citySearchBar.delegate = self;
     self.citySearchBar.autocorrectionType = UITextAutocorrectionTypeNo;

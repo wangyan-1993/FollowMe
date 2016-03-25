@@ -32,10 +32,7 @@
 
 @implementation CALayer (Additions)
 
-- (void)setBorderColorFromUIColor:(UIColor *)color
-{
-    self.borderColor = color.CGColor;
-}
+
 
 @end
 
@@ -73,10 +70,7 @@
 
 -(void)setModel:(cityModel *)model{
     
-    
     [self.title_page sd_setImageWithURL:[NSURL URLWithString:model.title_page]];
-    
-    
 //    self.title.text = model.tab_list[1];
     self.address.text = [NSString stringWithFormat:@"%@•%@",model.address,model.distance];
     self.like_count.text = [NSString stringWithFormat:@"%@人喜欢",model.like_count];

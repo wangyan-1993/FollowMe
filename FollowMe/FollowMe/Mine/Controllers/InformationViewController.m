@@ -4,16 +4,20 @@
 //
 //  Created by SCJY on 16/3/21.
 //  Copyright © 2016年 SCJY. All rights reserved.
-//
+
+
 
 #import "InformationViewController.h"
+
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BecomeHunterViewController.h"
 #import "SettingsViewController.h"
 #import "UserInfoViewController.h"
+
 #import <BmobSDK/BmobUser.h>
 #import <BmobSDK/BmobObject.h>
 #import <BmobSDK/BmobQuery.h>
+
 @interface InformationViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
 @end
@@ -27,6 +31,8 @@
     [self addheaderView];
     self.navigationController.navigationBar.hidden = YES;
     self.tabBarController.tabBar.hidden = NO;
+    
+
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -38,6 +44,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 20;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *str = @"123";
@@ -115,6 +122,7 @@
     [moneyBtn addTarget:self action:@selector(moneyAction) forControlEvents:UIControlEventTouchUpInside];
     [header addSubview:moneyBtn];
     self.tableView.tableHeaderView = header;
+    
 }
 
 

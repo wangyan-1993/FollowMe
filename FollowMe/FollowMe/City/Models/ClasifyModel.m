@@ -12,8 +12,18 @@
 -(instancetype)initWithDictionary:(NSDictionary *)dic{
     self = [super init];
     if (self) {
-        self.StrId = dic[@"id"];
-        self.StrName = dic[@"name"];
+        self.Cover = dic[@"cover"];
+        self.avatar = dic[@"avatar_l"];
+        self.followers_count = dic[@"followings_count"];
+        self.fanceCount = dic[@"followers_count"];
+        self.orderName = dic[@"name"];
+        self.liker = dic[@"profession"];
+        self.userDesc = dic[@"user_desc"];
+        self.oderAddress = dic[@"location_name"];
+        self.goodSay = (long)dic[@"goodcomment_rate"];
+        self.receiveSay = (long)dic[@"receive_rate"];
+        self.replySay = (long)dic[@"reply_rate"];
+
     }
     
     
