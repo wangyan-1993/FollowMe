@@ -96,6 +96,9 @@
         [self.searchList.tags removeAllObjects];
     }
     //显示搜索记录
+    if (self.searchList.tags.count > 0) {
+        [self.searchList.tags removeAllObjects];
+    }
     [self.searchList.tags addObjectsFromArray:array];
     
 //小标签的点击方法

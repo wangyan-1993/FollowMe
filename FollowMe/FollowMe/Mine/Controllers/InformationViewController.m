@@ -14,6 +14,10 @@
 #import "SettingsViewController.h"
 #import "UserInfoViewController.h"
 
+#import <BmobSDK/BmobUser.h>
+#import <BmobSDK/BmobObject.h>
+#import <BmobSDK/BmobQuery.h>
+
 @interface InformationViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
 @end
@@ -33,6 +37,22 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
+BmobQuery *query = [BmobQuery queryWithClassName:@"UserInfo"];
+
+[query getObjectInBackgroundWithId:[BmobUser getCurrentUser].username block:^(BmobObject *object, NSError *error) {
+    if (object) {
+        NSString *name = [object valueForKey:@"name"];
+        self.username = name;
+        [self.tableView reloadData];
+    }else{
+        WLZLog(@"%@", error);
+    }
+}];
+
+
+
+
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 20;
@@ -77,7 +97,7 @@
     headerBtn.frame = imageviewHeader.frame;
     [headerBtn addTarget:self action:@selector(headerInformation) forControlEvents:UIControlEventTouchUpInside];
     
-       // UIImageView默认不允许用户交互，headerBtn不能直接加载到其上面，如果需要把btn加载到它上面，需要打开UIImageView的交互
+    // UIImageView默认不允许用户交互，headerBtn不能直接加载到其上面，如果需要把btn加载到它上面，需要打开UIImageView的交互
     //打开交互     imageView.userInteractionEnabled = YES;
     
     [header addSubview:headerBtn];

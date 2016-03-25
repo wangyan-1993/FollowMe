@@ -14,8 +14,6 @@
 #import "TravelViewController.h"
 #import <BmobSDK/Bmob.h>
 #import "WeiboSDK.h"
-#import <MapKit/MapKit.h>
-#import <AMapLocationKit/AMapLocationKit.h>
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "InformationViewController.h"
 #import "WXApi.h"
@@ -23,7 +21,6 @@
 @interface AppDelegate ()<UITabBarControllerDelegate, WeiboSDKDelegate, WXApiDelegate>
 @property(nonatomic, strong) UITabBarController *tabBarVC;
 @property(nonatomic, strong) UINavigationController *mineNav;
-
 @end
 
 @implementation AppDelegate
@@ -32,7 +29,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-     [AMapLocationServices sharedServices].apiKey = (NSString *)kZhGaodeMapKey;
+    
+    
+    
     [Bmob registerWithAppKey:kBmobAppID];
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kWeiboAppKey];
@@ -110,9 +109,9 @@
     if (!(accessToken == nil)) {
     NSDictionary *dic=@{@"access_token":accessToken,@"uid":uid,@"expirationDate":expiresDate};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    
-    [manager GET:[NSString stringWithFormat:@"https://api.weibo.com/2/users/show.json?access_token=%@&uid=%@",response.userInfo[@"refresh_token"],uid] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    manager.responseSerializer.acceptableContentTypes =
+        [NSSet setWithObjects:@"application/json",@"charset=UTF-8", nil];
+    [manager GET:[NSString stringWithFormat:@"https://api.weibo.com/2/users/show.json?access_token=%@&uid=%@&appkey=%@",accessToken,uid, kWeiboAppKey] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     WLZLog(@"%@", downloadProgress);
      } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
     WLZLog(@"%@", responseObject);
@@ -132,8 +131,7 @@
 
 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     WLZLog(@"%@", error);
-
-}];
+              NSLog(@"%@",[[NSString alloc] initWithData:error.userInfo[@"com.alamofire.serialization.response.error.data"] encoding:NSUTF8StringEncoding]);}];
     
     }
 

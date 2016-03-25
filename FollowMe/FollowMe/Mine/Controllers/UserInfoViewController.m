@@ -11,6 +11,9 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UsernameViewController.h"
+#import "UserPhoneViewController.h"
+#import "UserEmailViewController.h"
 #define ORIGINAL_MAX_WIDTH 640.0f
 
 
@@ -18,7 +21,7 @@
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSArray *allArray;
 @property (nonatomic, strong) UIImageView *portraitImageView;
-
+@property(nonatomic, strong) NSMutableArray *array;
 
 @end
 
@@ -33,8 +36,22 @@
     self.allArray = @[@"头像",@"用户名",@"手机号码",@"邮箱",@"地区",@"性别",@"生日",@"个性签名"];
     [self.view addSubview:self.tableView];
     [self loadPortrait];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(change:) name:@"change" object:nil];
 }
 
+- (void)change:(NSNotification *)notification{
+   // self.array = [NSMutableArray arrayWithArray:self.allArray];
+    [self.array replaceObjectAtIndex:1 withObject:[notification userInfo][@"name"]];
+    [self.tableView reloadData];
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
 - (void)loadPortrait {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
@@ -49,7 +66,7 @@
 #pragma mark------UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.allArray.count;
+    return self.array.count;
 }
 
 
@@ -64,15 +81,32 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = self.allArray[indexPath.row];
+    cell.textLabel.text = self.array[indexPath.row];
     return cell;
 }
 
 #pragma mark------UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
     if (indexPath.row == 0) {
         [self pickImage];
     }
+    if (indexPath.row == 1) {
+        UsernameViewController *username = [main instantiateViewControllerWithIdentifier:@"username"];
+        [self.navigationController pushViewController:username animated:YES];
+    }
+    if (indexPath.row == 2) {
+        UserPhoneViewController *userphone = [main instantiateViewControllerWithIdentifier:@"userphone"];
+        [self.navigationController pushViewController:userphone animated:YES];
+    }
+    if (indexPath.row == 3) {
+        UserEmailViewController *useremail = [main instantiateViewControllerWithIdentifier:@"username"];
+        [self.navigationController pushViewController:useremail animated:YES];
+    }
+    
+    
+    
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -327,7 +361,12 @@
 }
 
 
-
+- (NSMutableArray *)array{
+    if (_array == nil) {
+        self.array = [NSMutableArray arrayWithArray:self.allArray];
+    }
+    return _array;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

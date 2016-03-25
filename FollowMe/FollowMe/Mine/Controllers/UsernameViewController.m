@@ -1,43 +1,45 @@
 //
-//  EmailVerifyViewController.m
+//  UsernameViewController.m
 //  FollowMe
 //
-//  Created by SCJY on 16/3/19.
+//  Created by SCJY on 16/3/23.
 //  Copyright © 2016年 SCJY. All rights reserved.
 //
 
-#import "EmailVerifyViewController.h"
+#import "UsernameViewController.h"
 #import <BmobSDK/BmobUser.h>
-@interface EmailVerifyViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *username;
-@property (weak, nonatomic) IBOutlet UIButton *findCode;
+#import <BmobSDK/BmobObject.h>
+@interface UsernameViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+
+@property (weak, nonatomic) IBOutlet UITextField *newusername;
+@property (weak, nonatomic) IBOutlet UITextField *currentusername;
+
 
 @end
 
-@implementation EmailVerifyViewController
+@implementation UsernameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.findCode.layer.cornerRadius = 20;
-    self.findCode.clipsToBounds = YES;
-    self.navigationController.navigationBar.hidden = YES;self.tabBarController.tabBar.hidden = YES;
+    [self showBackBtn];
+    self.title = @"修改用户名";
+    [self shoeRightBtn];
+    [self.currentusername resignFirstResponder];
+    self.view.backgroundColor = [UIColor colorWithRed:252/256.0f green:244/256.0f blue:230/256.0f alpha:1.0];
+
     
 }
-- (IBAction)findcodeAction:(id)sender {
+- (void)collectionAction{
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"change" object:nil userInfo:@{@"name":self.newusername.text}];
     
-    [BmobUser requestPasswordResetInBackgroundWithEmail:self.username.text];
+    
 }
-- (IBAction)back:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view resignFirstResponder];
 }
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
