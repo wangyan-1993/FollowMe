@@ -22,6 +22,8 @@
 @property(nonatomic, copy) NSDictionary *user;
 @property(nonatomic, copy) NSString *title_page;
 @property(nonatomic, copy) NSString *title;
+
+@property(nonatomic, copy) NSString *sold_count;
 //@property(nonatomic, copy) NSString *
 
 

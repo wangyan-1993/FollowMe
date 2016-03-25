@@ -92,6 +92,9 @@
     [self.cityList.tags addObjectsFromArray:ayyay1];
     //查询数据库里的所有元素
     NSArray *array =[NSArray arrayWithArray:[dbManager selectAllCollect]];
+    if (self.searchList.tags.count > 0) {
+        [self.searchList.tags removeAllObjects];
+    }
     //显示搜索记录
     [self.searchList.tags addObjectsFromArray:array];
     
@@ -131,10 +134,9 @@
     }];
   [self.searchList setCompletionBlockWithSelected:^(NSInteger index) {
       SearchTravelViewController *search = [[SearchTravelViewController alloc]init];
-      search.cityName = weakself.cityArray[index];
+      search.cityName = [dbManager selectAllCollect][index];
       weakself.mySearchBar.hidden = YES;
       [weakself.navigationController pushViewController:search animated:YES];
-
   }];
     
 }

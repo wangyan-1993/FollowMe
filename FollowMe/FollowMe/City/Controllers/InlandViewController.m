@@ -91,10 +91,10 @@
             [self.allHotCityArray addObject:string];
         }
         
-        for (NSDictionary *titleDic in rootDic[@"tag_data"]) {
-            
-            ChoseCityModel *model = [[ChoseCityModel alloc] initWithDicTionary:titleDic];
-        }
+//        for (NSDictionary *titleDic in rootDic[@"tag_data"]) {
+//            
+//            ChoseCityModel *model = [[ChoseCityModel alloc] initWithDicTionary:titleDic];
+//        }
 
         [self jcCollectionView];
         [self.tableView reloadData];

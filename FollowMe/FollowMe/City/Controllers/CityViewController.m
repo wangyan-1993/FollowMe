@@ -12,7 +12,7 @@
 //#import "UIViewController+KNSemiModal.h"
 
 #import "cityModel.h"
-#import "ClasifyModel.h"
+
 
 #import "cityFirstTableViewCell.h"
 #import "DetailViewController.h"
@@ -28,9 +28,12 @@
 #import "JRSegmentViewController.h"
 #import "ProgressHUD.h"
 #import "JCTagListView.h"
-
+#import "InformationViewController.h"
 
 #import "ChoseCityModel.h"
+
+#import "LDCalendarView.h"
+#import "NSDate+extend.h"
 
 
 
@@ -77,6 +80,13 @@ static NSString *identifier = @"cell";
 
 //@property(nonatomic, strong) UIButton *selectButton;
 
+//日历控件
+@property (nonatomic, strong)LDCalendarView    *calendarView;//日历控件
+@property (nonatomic, strong)NSMutableArray *seletedDays;//选择的日期
+@property (nonatomic, copy)NSString *showStr;
+
+
+
 //主题活动：
 @property(nonatomic, strong) NSString *clasifyStr;
 @property(nonatomic, strong) NSString *idStr;
@@ -92,6 +102,7 @@ static NSString *identifier = @"cell";
     }
     self.idStr = @"1";
     self.clasifyStr = @"104";
+//    self.dataStr = @"1";
 //    self.title = @"城市猎人带你玩";
     self.navigationController.navigationItem.title= @"城市猎人带你玩";
     self.navigationController.navigationBar.barTintColor = kMainColor;
@@ -205,10 +216,10 @@ static NSString *identifier = @"cell";
    //&sign=ac6a66157da8fd3fa171fa0091e282ba
     
     NSString *idurl = [NSString stringWithFormat:@"&sorted_id=%@",self.idStr];
-//    NSString *dataUrl = [NSString stringWithFormat:@"&data_list=20%@",self.dataStr];
+    NSString *dataUrl = [NSString stringWithFormat:@"&data_list=20%@",self.dataStr];
     NSString *clasilyScr = [NSString stringWithFormat:@"&tab_list%@",self.clasifyStr];
     
-    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/?city_name=%@&lat=34.61342700736265&lng=112.4140811801292%@%@&start=0",self.stringName,idurl,clasilyScr];
+    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/?city_name=%@&lat=34.61342700736265&lng=112.4140811801292%@%@%@&start=0",self.stringName,idurl,clasilyScr,dataUrl];
     NSString *url = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     
@@ -255,18 +266,10 @@ static NSString *identifier = @"cell";
         self.backCityArray = [NSMutableArray new];
         self.backIdArray = [NSMutableArray new];
         for (NSDictionary *dict in dic[@"tag_data"]) {
-            
-//            ClasifyModel *model = [[ClasifyModel alloc] initWithDictionary:dict];
-//            [self.backCityArray addObject:model];
-            
             [self.backCityArray addObject:dict[@"name"]];
             [self.backIdArray addObject:dict[@"id"]];
-            
- 
         }
-        
-        
-        
+
         [self clasifyWays];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -285,7 +288,7 @@ static NSString *identifier = @"cell";
 
             break;
         case 1:
-//            [self dataChose];
+            [self dataChose];
             break;
         case 2:
             [self orderTitle];
@@ -301,7 +304,8 @@ static NSString *identifier = @"cell";
     
 //    [self clasifyWays];
     //collection的自定义方法
-    self.tageListView = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth/10, kHeight*0.2, kWidth*0.8, kHeight*0.5)];
+    self.tageListView = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth/10, kHeight*0.1, kWidth*0.8, kHeight*0.5)];
+    self.tageListView.backgroundColor = [UIColor redColor];
     
     self.tageListView.layer.cornerRadius = 15.0f;
     self.tageListView.clipsToBounds = YES;
@@ -330,7 +334,6 @@ static NSString *identifier = @"cell";
 //主题点击方法
 -(void)mainTitle{
     
-    
     [self.window addSubview:self.backView];
     
     self.firstView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kScreenHeight)];
@@ -352,7 +355,7 @@ static NSString *identifier = @"cell";
     
     
     UIButton *enSure = [UIButton buttonWithType:UIButtonTypeCustom];
-    enSure.frame = CGRectMake(20, kHeight-50, kWidth - 40, 44);
+    enSure.frame = CGRectMake(20, kHeight-220, kWidth - 40, 44);
     [enSure setTitle:@"确定" forState:UIControlStateNormal];
     [enSure addTarget:self action:@selector(Ensure) forControlEvents:UIControlEventTouchUpInside];
     enSure.layer.cornerRadius = 15.0;
@@ -372,14 +375,74 @@ static NSString *identifier = @"cell";
     
     
 }
+
+- (NSString *)showStr {
+    
+    NSMutableString *str = [NSMutableString string];
+    
+    [str appendString:@""];
+    //从小到大排序
+    [self.seletedDays sortUsingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
+        return [obj1 compare:obj2];
+    }];
+    
+    for (NSNumber *interval in self.seletedDays) {
+        NSString *partStr = [NSDate stringWithTimestamp:interval.doubleValue/1000.0 format:@"yy-MM-dd"];
+        [str appendFormat:@"%@ ",partStr];
+    }
+    return [str copy];
+    
+}
+
+-(void)calanderAction{
+    
+    if (!_calendarView) {
+        _calendarView = [[LDCalendarView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)];
+        [self.secondView addSubview:_calendarView];
+        
+        __weak typeof(self) weakSelf = self;
+        _calendarView.complete = ^(NSArray *result) {
+            if (result) {
+                weakSelf.seletedDays = [result mutableCopy];
+                //                NSLog(@"%@",weakSelf.showStr);
+                weakSelf.dataStr = weakSelf.showStr;
+                
+            }
+        };
+    }
+    [self.calendarView show];
+    self.calendarView.defaultDates = _seletedDays;
+    
+}
+
 //日期筛选点击方法
 -(void)dataChose{
-    
-    
-    self.secondView = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 500, [UIScreen mainScreen].bounds.size.width, 500)];
+    [self.window addSubview:self.backView];
+    self.secondView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kScreenHeight)];
     self.secondView.backgroundColor = [UIColor whiteColor];
- 
+    [self.window addSubview:self.secondView];
+
+    [self calanderAction];
+    
+    
+    UIButton *enSure = [UIButton buttonWithType:UIButtonTypeCustom];
+    enSure.frame = CGRectMake(20, kHeight-220, kWidth - 40, 44);
+    [enSure setTitle:@"确定" forState:UIControlStateNormal];
+    [enSure addTarget:self action:@selector(EnsureSecond) forControlEvents:UIControlEventTouchUpInside];
+    enSure.layer.cornerRadius = 15.0;
+    enSure.clipsToBounds = YES;
+    enSure.backgroundColor = kMainColor;
+    [self.secondView addSubview:enSure];
+    
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.backView.alpha  = 0.6;
+        self.secondView.frame = CGRectMake(0, kScreenHeight - 500, kScreenWidth, 500);
+    }];
 }
+
+
+
 //排序点击方法
 -(void)orderTitle{
     
@@ -403,10 +466,7 @@ static NSString *identifier = @"cell";
     
     [self.thirdView addSubview:button];
     [self.thirdView addSubview:self.titleTableView];
-    
-    
-    
-    
+ 
     [UIView animateWithDuration:0.5 animations:^{
         self.backView.alpha  = 0.6;
         self.thirdView.frame = CGRectMake(0, kScreenHeight - 500, kScreenWidth, 500);
@@ -423,11 +483,27 @@ static NSString *identifier = @"cell";
     
 }
 -(void)Ensure{
-    
-    
+    [UIView animateWithDuration:1.0 animations:^{
+
     [self.firstView removeFromSuperview];
     [self.backView removeFromSuperview];
+    }];
+}
+
+-(void)EnsureSecond{
     
+    [self calanderAction];
+    [UIView animateWithDuration:1.0 animations:^{
+        [self.calendarView removeFromSuperview];
+        [self.secondView removeFromSuperview];
+        [self.backView removeFromSuperview];
+        
+    }];
+    if (self.listArray != nil) {
+        [self.listArray removeAllObjects];
+    }
+    [self uptataConfig];
+  
 }
 
 -(void)RemoveThirdViewAction{
@@ -460,6 +536,7 @@ static NSString *identifier = @"cell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
             switch (indexPath.row) {
                 case 0:
@@ -572,6 +649,9 @@ static NSString *identifier = @"cell";
 #pragma mark---------------导航栏点击方法；
 
 -(void)classAction{
+    
+//        InformationViewController *inforMation = [[InformationViewController alloc] init];
+//        [self.navigationController pushViewController:inforMation animated:YES];
     
     PersonViewController *person = [[PersonViewController alloc] init];
     [self.navigationController pushViewController:person animated:NO];

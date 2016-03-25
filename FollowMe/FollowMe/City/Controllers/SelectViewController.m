@@ -14,6 +14,7 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "ProgressHUD.h"
 #import "selectHotViewController.h"
+#import "InformationViewController.h"
 
 
 static NSString *identifier = @"cell";
@@ -39,7 +40,9 @@ static NSString *identifier = @"cell";
     self.citySearchBar.placeholder = @"请搜索关键字,地点,分类";
     self.citySearchBar.layer.cornerRadius = 10.0;
     self.citySearchBar.clipsToBounds = YES;
+    self.citySearchBar.placeholder = self.strCityName;
     [self.navigationController.navigationBar addSubview:self.citySearchBar];
+//    [self.view addSubview:self.citySearchBar];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"cityFirstTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
     
@@ -136,7 +139,6 @@ static NSString *identifier = @"cell";
 }
 
 -(void)classAction{
-    
     PersonViewController *person = [[PersonViewController alloc] init];
     [self.navigationController pushViewController:person animated:NO];
     
@@ -161,8 +163,13 @@ static NSString *identifier = @"cell";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.citySearchBar.hidden = YES;
+    self.citySearchBar.hidden = NO;
     
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.citySearchBar.hidden = YES;
 }
 
 /*

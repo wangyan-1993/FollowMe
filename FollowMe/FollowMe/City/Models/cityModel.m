@@ -27,6 +27,8 @@
         self.like_count = dic[@"like_count"];
         self.title_page = dic[@"title_page"];
         self.title = dic[@"title"];
+        self.sold_count = dic[@"sold_count"];
+        
     }
 
     return self;
