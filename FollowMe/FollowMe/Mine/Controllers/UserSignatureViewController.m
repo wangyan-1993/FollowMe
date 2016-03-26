@@ -29,7 +29,8 @@
 }
 - (void)collectionAction{
     [[NSNotificationCenter defaultCenter]postNotificationName:@"change" object:nil userInfo:@{@"personal": self.textField.text}];
-   
+    [self.navigationController popViewControllerAnimated:YES];
+
     
 
 }

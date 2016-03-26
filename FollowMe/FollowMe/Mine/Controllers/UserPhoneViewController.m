@@ -41,6 +41,7 @@
             [buser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
                 if (isSuccessful) {
                     NSLog(@"%@",buser);
+                    [self.navigationController popViewControllerAnimated:YES];
                 } else {
                     NSLog(@"%@",error);
                 }

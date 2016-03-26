@@ -27,8 +27,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     [self.view addSubview:self.tableView];
-    [self addheaderView];
+    BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        for (BmobObject *obj in array) {
+            if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+            {
+                self.username = [obj objectForKey:@"name"];
+                 [self addheaderView];
+                [self.tableView reloadData];
+            }
+        }
+    }];
+
+//    [self addheaderView];
     self.navigationController.navigationBar.hidden = YES;
     self.tabBarController.tabBar.hidden = NO;
     
@@ -92,6 +105,7 @@
     
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, kWidth/2+10, kWidth, 20)];
     label.textAlignment = NSTextAlignmentCenter;
+   
     label.text = self.username;
     label.textColor = [UIColor whiteColor];
     [header addSubview:label];
@@ -134,6 +148,17 @@
 - (void)settingsAction{
     SettingsViewController *settingVC = [[SettingsViewController alloc]init];
     settingVC.imageStr = self.headerImage;
+//    BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+//        for (BmobObject *obj in array) {
+//            if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+//            {
+//                self.username = [obj objectForKey:@"name"];
+//                [self.tableView reloadData];
+//            }
+//        }
+//    }];
+
     settingVC.username = self.username;
     [self.navigationController pushViewController:settingVC animated:YES];
 }

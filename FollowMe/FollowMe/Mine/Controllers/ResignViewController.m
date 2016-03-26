@@ -9,6 +9,7 @@
 #import "ResignViewController.h"
 #import <BmobSDK/BmobSMS.h>
 #import <BmobSDK/BmobUser.h>
+#import <BmobSDK/BmobQuery.h>
 @interface ResignViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phonenum;
 @property (weak, nonatomic) IBOutlet UITextField *verifycode;
@@ -61,9 +62,21 @@
     
     [buser signUpOrLoginInbackgroundWithSMSCode:self.verifycode.text block:^(BOOL isSuccessful, NSError *error) {
         if (error) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:            [NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:[NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [alert show];
         }else{
+            BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+                for (BmobObject *obj in array) {
+                    if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+                    {
+                        return ;
+                    }
+                }
+                BmobObject *object = [BmobObject objectWithClassName:@"info"];
+                [object setObject:[BmobUser getCurrentUser].username forKey:@"user"];
+                [object saveInBackground];
+            }];
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"账号已注册成功,请登录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [alert show];
             [self dismissViewControllerAnimated:YES completion:nil];

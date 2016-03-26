@@ -8,6 +8,8 @@
 
 #import "SettingsViewController.h"
 #import <BmobSDK/BmobUser.h>
+#import <BmobSDK/BmobQuery.h>
+#import <BmobSDK/BmobObject.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UserInfoViewController.h"
 #import "SettingCodeViewController.h"
@@ -30,8 +32,20 @@
     SDImageCache *cache = [SDImageCache sharedImageCache];
     NSInteger cacheSize = [cache getSize];
     NSString *cacheStr = [NSString stringWithFormat:@"清除缓存(%.2fM)", (CGFloat)cacheSize / 1024 / 1024];
+    
+   
     self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"推送通知设置",@"连接社交网络",cacheStr,@"关于我们",@"喜欢我吗？给个评分吧",@"意见反馈"]];
     [self.view addSubview:self.tableView];
+    BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        for (BmobObject *obj in array) {
+            if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+            {
+                self.username = [obj objectForKey:@"name"];
+                [self.tableView reloadData];
+            }
+        }
+    }];
 
 }
 - (void)addRightBtn{
@@ -79,6 +93,8 @@
     if (indexPath.section== 0) {
         UserInfoViewController *userinfo = [[UserInfoViewController alloc]init];
         userinfo.urlImage = self.imageStr;
+        userinfo.username = self.username;
+        WLZLog(@"%@", userinfo.username);
         [self.navigationController pushViewController:userinfo animated:YES];
     }
     

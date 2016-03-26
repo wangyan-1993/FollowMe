@@ -10,6 +10,8 @@
 #import <BmobSDK/BmobUser.h>
 #import <BmobSDK/BmobSMS.h>
 #import "InformationViewController.h"
+#import <BmobSDK/BmobObject.h>
+#import <BmobSDK/BmobQuery.h>
 @interface NoCodeLoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *get;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
@@ -65,9 +67,24 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:[NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [alert show];
         }else{
+
             InformationViewController *info = [[InformationViewController alloc]init];
             info.username = self.phonenum.text;
             [self.navigationController pushViewController:info animated:YES];
+            BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+                for (BmobObject *obj in array) {
+                    if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+                    {
+                        return ;
+                    }
+                }
+                BmobObject *object = [BmobObject objectWithClassName:@"info"];
+                [object setObject:[BmobUser getCurrentUser].username forKey:@"user"];
+                [object saveInBackground];
+
+            }];
+            
         }
 
     }];

@@ -18,9 +18,10 @@
 #import <TencentOpenAPI/TencentOAuthObject.h>
 #import <TencentOpenAPI/TencentApiInterface.h>
 #import <BmobSDK/BmobUser.h>
+#import <BmobSDK/BmobObject.h>
 #import "InformationViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
-
+#import <BmobSDK/BmobQuery.h>
 @interface MineViewController ()<TencentLoginDelegate, TencentSessionDelegate>
 
 @property(nonatomic, strong) UIButton *emailBtn;
@@ -259,6 +260,13 @@ if (self.tencentOAuth.accessToken && 0 != [self.tencentOAuth.accessToken length]
             NSLog(@"%lld",downloadProgress.totalUnitCount);
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"%@",responseObject);
+           
+            
+            
+            
+           
+            
+            
             [BmobUser loginInBackgroundWithAuthorDictionary:responseDictionary platform:BmobSNSPlatformQQ block:^(BmobUser *user, NSError *error) {
                 if (user) {
                     
@@ -272,7 +280,25 @@ if (self.tencentOAuth.accessToken && 0 != [self.tencentOAuth.accessToken length]
                     [alert show];
                 }
             }];
-         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+                for (BmobObject *obj in array) {
+                    if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]]) {
+                        return ;
+                    }
+                }
+                
+                BmobObject *object = [BmobObject objectWithClassName:@"info"];
+                [object setObject:[BmobUser getCurrentUser].username forKey:@"user"];
+                [object setObject:responseObject[@"nickname"] forKey:@"name"];
+                [object setObject:responseObject[@"city"] forKey:@"city"];
+                [object setObject:responseObject[@"year"] forKey:@"year"];
+                [object setObject:responseObject[@"figureurl_qq_2"] forKey:@"image"];
+                [object setObject:responseObject[@"gender"] forKey:@"gender"];
+                [object saveInBackground];
+                
+            }];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             NSLog(@"%@",error);
         }];
 }

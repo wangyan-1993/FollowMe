@@ -10,7 +10,8 @@
 #import <BmobSDK/BmobUser.h>
 #import "MineViewController.h"
 #import "InformationViewController.h"
-
+#import <BmobSDK/BmobObject.h>
+#import <BmobSDK/BmobQuery.h>
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *login;
 @property (weak, nonatomic) IBOutlet UITextField *phonenum;
@@ -44,6 +45,19 @@
             InformationViewController *info = [[InformationViewController alloc]init];
             info.username = self.phonenum.text;
             [self.navigationController pushViewController:info animated:YES];
+            BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+                for (BmobObject *obj in array) {
+                    if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+                    {
+                        return ;
+                    }
+                }
+                BmobObject *object = [BmobObject objectWithClassName:@"info"];
+                [object setObject:[BmobUser getCurrentUser].username forKey:@"user"];
+                [object saveInBackground];
+            }];
+         
         }
     }];
     

@@ -34,7 +34,8 @@
 - (void)collectionAction{
     [[NSNotificationCenter defaultCenter]postNotificationName:@"change" object:nil userInfo:@{@"name":self.newusername.text}];
     
-    
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
