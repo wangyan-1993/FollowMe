@@ -1525,7 +1525,7 @@
 					"\"SystemConfiguration\"",
 					"-fobjc-arc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1586,7 +1586,7 @@
 					"\"SystemConfiguration\"",
 					"-fobjc-arc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
