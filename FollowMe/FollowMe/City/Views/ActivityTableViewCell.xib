@@ -22,7 +22,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="盘点大学最遗憾的事：没能好好学习，没能完成梦想" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zak-b3-hbn">
-                        <rect key="frame" x="8" y="180" width="359" height="40"/>
+                        <rect key="frame" x="8" y="180" width="359" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="bEx-v8-UvX"/>
                         </constraints>
@@ -31,7 +31,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE3-ef-XiI">
-                        <rect key="frame" x="8" y="219" width="284" height="20"/>
+                        <rect key="frame" x="8" y="219" width="277" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="7bd-uw-Lz4"/>
                         </constraints>

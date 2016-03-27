@@ -27,6 +27,10 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.DidCount.layer.cornerRadius = 10.0;
+    self.DidCount.clipsToBounds = YES;
+    
+    
 }
 
 -(void)setModel:(cityModel *)model{

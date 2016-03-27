@@ -16,9 +16,9 @@
 @property(nonatomic, copy) NSString *view_count;
 @property(nonatomic, copy) NSString *total_comments_count;
 @property(nonatomic, copy) NSString *cover_image_default;
-@property(nonatomic, assign) NSInteger date_added;
+@property(nonatomic, assign) NSString *date_added;
 @property(nonatomic, copy) NSString *date_complete;
-@property(nonatomic, assign) NSInteger spot_count;
+@property(nonatomic, assign) NSString* spot_count;
 
 //- (void)setValue:(id)value forUndefinedKey:(NSString *)key;
 @end

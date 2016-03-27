@@ -21,6 +21,7 @@
 @implementation OtherSayingTableViewCell
 
 -(void)setModel:(otherModel *)model{
+    
     self.saying.text = model.comment_public;
     [self.titleImage sd_setImageWithURL:[NSURL URLWithString:model.client_avatar]];
     self.timeLable.text = model.datetime_formatted;

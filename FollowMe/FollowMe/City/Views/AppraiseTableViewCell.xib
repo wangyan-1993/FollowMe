@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="猎人评分" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkB-OJ-1l9">
-                        <rect key="frame" x="142" y="8" width="77" height="21"/>
+                        <rect key="frame" x="149" y="8" width="77" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -38,9 +38,6 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1P-HF-BGE">
-                        <rect key="frame" x="41" y="68" width="44" height="44"/>
-                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fZM-Yv-Uzp">
                         <rect key="frame" x="157" y="68" width="44" height="44"/>
                     </imageView>
@@ -65,6 +62,9 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1P-HF-BGE">
+                        <rect key="frame" x="41" y="68" width="44" height="44"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -75,7 +75,7 @@
                 <outlet property="ReplaView" destination="8iD-XF-83t" id="1as-lY-TzT"/>
                 <outlet property="goodLb" destination="mQm-nb-1oG" id="TEd-qO-38M"/>
             </connections>
-            <point key="canvasLocation" x="350.5" y="319.5"/>
+            <point key="canvasLocation" x="574.5" y="331.5"/>
         </tableViewCell>
     </objects>
 </document>

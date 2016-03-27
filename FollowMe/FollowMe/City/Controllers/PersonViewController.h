@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PersonViewController : UIViewController
+@property(nonatomic, strong) NSNumber *personId;
 
 @end

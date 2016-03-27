@@ -532,7 +532,10 @@ static NSString *identifier = @"cell";
         
         cell.model = self.listArray[indexPath.row];
         
-        [cell.ClassifyButton addTarget:self action:@selector(classAction) forControlEvents:UIControlEventTouchUpInside];
+//        cityModel *Cmodel = self.listArray[indexPath.row];
+        
+        [cell.ClassifyButton addTarget:self action:@selector(classAction:event:) forControlEvents:UIControlEventTouchUpInside];
+//        cell.ClassifyButton.tag = (long)Cmodel.user[@"id"];
         
         return cell;
     }else{
@@ -635,10 +638,7 @@ static NSString *identifier = @"cell";
     }else{
         return 5;
     }
-    
-    
-    
-//    return 10;
+
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -652,12 +652,18 @@ static NSString *identifier = @"cell";
 
 #pragma mark---------------导航栏点击方法；
 
--(void)classAction{
+-(void)classAction:(UIButton *)button event:(UIEvent *)event{
     
-//        InformationViewController *inforMation = [[InformationViewController alloc] init];
-//        [self.navigationController pushViewController:inforMation animated:YES];
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint point = [touch locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    cityModel *Cmodel = self.listArray[indexPath.row];
+
+    
     
     PersonViewController *person = [[PersonViewController alloc] init];
+    
+    person.personId = Cmodel.user[@"id"];
     [self.navigationController pushViewController:person animated:NO];
 
 }

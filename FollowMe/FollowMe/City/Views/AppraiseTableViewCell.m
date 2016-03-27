@@ -79,30 +79,30 @@
 
 -(void)setModel:(ClasifyModel *)model{
     
-    self.goodLb.text = [NSString stringWithFormat:@"%ld%%",(long)model.goodSay];
-    if (model.goodSay > 80) {
-        [self.GoodImage sd_setImageWithURL:[NSURL URLWithString:@"hun_smile"]];
+    self.goodLb.text = [NSString stringWithFormat:@"%@%%",model.goodSay];
+    if ([model.goodSay integerValue] > 80) {
+        self.GoodImage.image = [UIImage imageNamed:@"hun_smile"];
 
     }else{
-        [self.GoodImage sd_setImageWithURL:[NSURL URLWithString:@"hun_ok"]];
+        self.GoodImage.image = [UIImage imageNamed:@"hun_ok"];
 
     }
-    self.RemoveLb.text = [NSString stringWithFormat:@"%ld%%",(long)model.receiveSay];
-    if (model.receiveSay > 80) {
-        [self.ReceiveImage sd_setImageWithURL:[NSURL URLWithString:@"hun_smile"]];
+    self.RemoveLb.text = [NSString stringWithFormat:@"%@%%",model.receiveSay];
+    if ([model.receiveSay integerValue] > 80) {
+        self.ReceiveImage.image = [UIImage imageNamed:@"hun_smile"];
         
     }else{
-        [self.ReceiveImage sd_setImageWithURL:[NSURL URLWithString:@"hun_ok"]];
+        self.ReceiveImage.image = [UIImage imageNamed:@"hun_ok"];
         
     }
     
-    self.ReblyLb.text = [NSString stringWithFormat:@"%ld%%",(long)model.replySay];
+    self.ReblyLb.text = [NSString stringWithFormat:@"%@%%",model.replySay];
     
-    if (model.replySay > 80) {
-        [self.ReplaView sd_setImageWithURL:[NSURL URLWithString:@"hun_smile"]];
+    if ([model.replySay integerValue] > 80) {
+        self.ReplaView.image = [UIImage imageNamed:@"hun_smile"];
         
     }else{
-        [self.ReplaView sd_setImageWithURL:[NSURL URLWithString:@"hun_ok"]];
+        self.ReplaView.image = [UIImage imageNamed:@"hun_ok"];
         
     }
  

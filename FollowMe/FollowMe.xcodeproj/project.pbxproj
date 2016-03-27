@@ -107,6 +107,10 @@
 		7A5EF2F11CA4BF5A0004BEA1 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EF2BC1CA4BF5A0004BEA1 /* VPImageCropperViewController.m */; };
 		7A5EF2F21CA4BF5A0004BEA1 /* UIView+UIView_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EF2C11CA4BF5A0004BEA1 /* UIView+UIView_Extension.m */; };
 		7A5EF2F31CA4BF5A0004BEA1 /* JXBAdPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EF2C41CA4BF5A0004BEA1 /* JXBAdPageView.m */; };
+		7A5EF3091CA540A40004BEA1 /* OtherSayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EF3081CA540A40004BEA1 /* OtherSayingViewController.m */; };
+		7A5EF30C1CA540B40004BEA1 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EF30B1CA540B40004BEA1 /* StoryViewController.m */; };
+		7A5EF30E1CA55C700004BEA1 /* OtherList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A5EF30D1CA55C700004BEA1 /* OtherList.plist */; };
+		7A5EF3101CA55EDC0004BEA1 /* StoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A5EF30F1CA55EDC0004BEA1 /* StoryList.plist */; };
 		7A6FAFCE1CA3830D00770481 /* AppraiseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6FAFCC1CA3830D00770481 /* AppraiseTableViewCell.m */; };
 		7A6FAFCF1CA3830D00770481 /* AppraiseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6FAFCD1CA3830D00770481 /* AppraiseTableViewCell.xib */; };
 		7A6FAFD31CA391A500770481 /* storyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6FAFD11CA391A500770481 /* storyTableViewCell.m */; };
@@ -144,6 +148,7 @@
 		7AB8FD0A1C99406F00D9A121 /* travel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AB8FD091C99406F00D9A121 /* travel.plist */; };
 		7AB8FD131C99829700D9A121 /* SearchTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8FD121C99829700D9A121 /* SearchTravelViewController.m */; };
 		7AB8FD151C999C2000D9A121 /* search.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AB8FD141C999C2000D9A121 /* search.plist */; };
+		7ABB63CD1CA615AC00B333FD /* Story1List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ABB63CC1CA615AC00B333FD /* Story1List.plist */; };
 		7AC3380A1C9FA7A200284AA1 /* SelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC338091C9FA7A200284AA1 /* SelectViewController.m */; };
 		7AC86F341C9F7B6000AEF853 /* allCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC86F1A1C9F7B6000AEF853 /* allCollectionViewController.m */; };
 		7AC86F351C9F7B6000AEF853 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC86F1C1C9F7B6000AEF853 /* CollectionViewCell.m */; };
@@ -347,6 +352,12 @@
 		7A5EF2C11CA4BF5A0004BEA1 /* UIView+UIView_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIView_Extension.m"; sourceTree = "<group>"; };
 		7A5EF2C31CA4BF5A0004BEA1 /* JXBAdPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBAdPageView.h; sourceTree = "<group>"; };
 		7A5EF2C41CA4BF5A0004BEA1 /* JXBAdPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXBAdPageView.m; sourceTree = "<group>"; };
+		7A5EF3071CA540A40004BEA1 /* OtherSayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherSayingViewController.h; sourceTree = "<group>"; };
+		7A5EF3081CA540A40004BEA1 /* OtherSayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherSayingViewController.m; sourceTree = "<group>"; };
+		7A5EF30A1CA540B40004BEA1 /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
+		7A5EF30B1CA540B40004BEA1 /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
+		7A5EF30D1CA55C700004BEA1 /* OtherList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = OtherList.plist; sourceTree = "<group>"; };
+		7A5EF30F1CA55EDC0004BEA1 /* StoryList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StoryList.plist; sourceTree = "<group>"; };
 		7A6FAFCB1CA3830D00770481 /* AppraiseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppraiseTableViewCell.h; sourceTree = "<group>"; };
 		7A6FAFCC1CA3830D00770481 /* AppraiseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppraiseTableViewCell.m; sourceTree = "<group>"; };
 		7A6FAFCD1CA3830D00770481 /* AppraiseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppraiseTableViewCell.xib; sourceTree = "<group>"; };
@@ -406,6 +417,7 @@
 		7AB8FD111C99829700D9A121 /* SearchTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTravelViewController.h; sourceTree = "<group>"; };
 		7AB8FD121C99829700D9A121 /* SearchTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTravelViewController.m; sourceTree = "<group>"; };
 		7AB8FD141C999C2000D9A121 /* search.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = search.plist; sourceTree = "<group>"; };
+		7ABB63CC1CA615AC00B333FD /* Story1List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Story1List.plist; sourceTree = "<group>"; };
 		7AC338081C9FA7A200284AA1 /* SelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectViewController.h; sourceTree = "<group>"; };
 		7AC338091C9FA7A200284AA1 /* SelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectViewController.m; sourceTree = "<group>"; };
 		7AC86F191C9F7B6000AEF853 /* allCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = allCollectionViewController.h; sourceTree = "<group>"; };
@@ -603,6 +615,10 @@
 				7A892A391C9A43BB00D2D11F /* DetailViewController.m */,
 				7A892A3B1C9A66BA00D2D11F /* PersonViewController.h */,
 				7A892A3C1C9A66BA00D2D11F /* PersonViewController.m */,
+				7A5EF3071CA540A40004BEA1 /* OtherSayingViewController.h */,
+				7A5EF3081CA540A40004BEA1 /* OtherSayingViewController.m */,
+				7A5EF30A1CA540B40004BEA1 /* StoryViewController.h */,
+				7A5EF30B1CA540B40004BEA1 /* StoryViewController.m */,
 				7A892A401C9AA8B300D2D11F /* selectCityViewController.h */,
 				7A892A411C9AA8B300D2D11F /* selectCityViewController.m */,
 				7AB0395F1C9D3ABC003E32AF /* InlandViewController.h */,
@@ -634,6 +650,9 @@
 				7AD083791C9FCB4200D321AA /* CityBackList.plist */,
 				7AB6CA8F1C9FE33F00F6CA01 /* searchShowList.plist */,
 				7A03C01F1CA2857800BCFB92 /* PersonList.plist */,
+				7A5EF30D1CA55C700004BEA1 /* OtherList.plist */,
+				7A5EF30F1CA55EDC0004BEA1 /* StoryList.plist */,
+				7ABB63CC1CA615AC00B333FD /* Story1List.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1214,8 +1233,10 @@
 				7A4F87EE1C9A3B1200183EC8 /* Plus.plist in Resources */,
 				7AD0837A1C9FCB4200D321AA /* CityBackList.plist in Resources */,
 				7AC86F421C9F7B6000AEF853 /* RecommendTableViewCell.xib in Resources */,
+				7ABB63CD1CA615AC00B333FD /* Story1List.plist in Resources */,
 				7A6FAFD41CA391A500770481 /* storyTableViewCell.xib in Resources */,
 				7A33AD171CA7905F006929DE /* PushConfig.plist in Resources */,
+				7A5EF30E1CA55C700004BEA1 /* OtherList.plist in Resources */,
 				7A4F87EC1C9A3AF700183EC8 /* Mine.storyboard in Resources */,
 				7AB8FD0A1C99406F00D9A121 /* travel.plist in Resources */,
 				7AB6CA901C9FE33F00F6CA01 /* searchShowList.plist in Resources */,
@@ -1236,6 +1257,7 @@
 				7A6FB0051CA3D1D000770481 /* OtherSayingTableViewCell.xib in Resources */,
 				7AC86F3F1C9F7B6000AEF853 /* nearByTableViewCell.xib in Resources */,
 				7A0017FA1C993AEE0033B78F /* cityFirst2List.plist in Resources */,
+				7A5EF3101CA55EDC0004BEA1 /* StoryList.plist in Resources */,
 				7A4F87F01C9A3B4A00183EC8 /* Plus.storyboard in Resources */,
 				7AC86F531C9F82AB00AEF853 /* allCollection.plist in Resources */,
 				7A21BF1B1C9BB19800E2321F /* ChoseCityList.plist in Resources */,
@@ -1340,6 +1362,7 @@
 				7AC86F391C9F7B6000AEF853 /* searchViewController.m in Sources */,
 				7A4780C21C97F0C000C6E5C2 /* MineViewController.m in Sources */,
 				7AC86F381C9F7B6000AEF853 /* RecommendViewController.m in Sources */,
+				7A5EF3091CA540A40004BEA1 /* OtherSayingViewController.m in Sources */,
 				7AC86F351C9F7B6000AEF853 /* CollectionViewCell.m in Sources */,
 				7A5EF2D71CA4BF5A0004BEA1 /* MJRefreshHeader.m in Sources */,
 				7AAEAB7C1CA1498300BC0D30 /* storyDetailTableViewCell.m in Sources */,
@@ -1363,6 +1386,7 @@
 				7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */,
 				7A5EF2E51CA4BF5A0004BEA1 /* UIView+MJExtension.m in Sources */,
 				7A5EF2F11CA4BF5A0004BEA1 /* VPImageCropperViewController.m in Sources */,
+				7A5EF30C1CA540B40004BEA1 /* StoryViewController.m in Sources */,
 				7AB5831A1C9BB1F4007D21AA /* LoginViewController.m in Sources */,
 				7AB8FCF41C98E68A00D9A121 /* FourTravelViewController.m in Sources */,
 				7A8BD1201CA15ADC00D8ACC1 /* UserInfoViewController.m in Sources */,
