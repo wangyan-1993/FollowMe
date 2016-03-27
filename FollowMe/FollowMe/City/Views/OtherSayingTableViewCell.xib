@@ -16,7 +16,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2v-L7-weX">
                         <rect key="frame" x="0.0" y="0.0" width="319" height="141"/>
-                        <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <string key="text">做项目的时候，有点问题就需要好长时间去解决，这样也培养了自学能力，去查询各种问题和解决方案。通过这个独立的项目，熟练了基础知识，还有新的知识，对工程的运行调试操作也更加上手。以前解析网络数据不是很通，现在也能独立解决。通过练习会更加熟练项目的流程，以及各个细节的实现。无论大小的功能，都需要提前的构思和充足的准备，努力做更好！</string>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -27,12 +27,27 @@
                         <color key="backgroundColor" red="0.59683675700000005" green="0.43075284089999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="前天 15:02" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkb-NB-wrG">
-                        <rect key="frame" x="302" y="154" width="74" height="21"/>
-                        <color key="backgroundColor" red="0.73087849650000003" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="248" y="154" width="128" height="21"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cityhunter_comment_hunter_start_small_select" translatesAutoresizingMaskIntoConstraints="NO" id="oQq-7l-UV4">
+                        <rect key="frame" x="16" y="149" width="26" height="18"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cityhunter_comment_hunter_start_small_select" translatesAutoresizingMaskIntoConstraints="NO" id="HMV-U1-srr">
+                        <rect key="frame" x="50" y="149" width="26" height="18"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cityhunter_comment_hunter_start_small_select" translatesAutoresizingMaskIntoConstraints="NO" id="IJ7-t0-wMH">
+                        <rect key="frame" x="118" y="149" width="25" height="18"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cityhunter_comment_hunter_start_small_select" translatesAutoresizingMaskIntoConstraints="NO" id="T5c-hc-0Wh">
+                        <rect key="frame" x="84" y="149" width="26" height="18"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cityhunter_comment_hunter_start_small_select" translatesAutoresizingMaskIntoConstraints="NO" id="RvD-5Z-eX8">
+                        <rect key="frame" x="151" y="149" width="25" height="18"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -40,7 +55,10 @@
                 <outlet property="timeLable" destination="pkb-NB-wrG" id="BV1-Jv-piG"/>
                 <outlet property="titleImage" destination="aGh-RE-zF2" id="jFN-sb-RZI"/>
             </connections>
-            <point key="canvasLocation" x="573" y="463"/>
+            <point key="canvasLocation" x="582" y="458"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="cityhunter_comment_hunter_start_small_select" width="24" height="22"/>
+    </resources>
 </document>

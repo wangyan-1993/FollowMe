@@ -26,7 +26,9 @@
     UIBarButtonItem *right = [[UIBarButtonItem alloc]initWithCustomView:collectionBtn];
     self.navigationItem.rightBarButtonItem = right;
 }
-
+-(void)collectionAction{
+    
+}
 - (void)backBtnAction{
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -20,9 +20,9 @@
         self.liker = dic[@"profession"];
         self.userDesc = dic[@"user_desc"];
         self.oderAddress = dic[@"location_name"];
-        self.goodSay = (long)dic[@"goodcomment_rate"];
-        self.receiveSay = (long)dic[@"receive_rate"];
-        self.replySay = (long)dic[@"reply_rate"];
+        self.goodSay = dic[@"goodcomment_rate"];
+        self.receiveSay = dic[@"receive_rate"];
+        self.replySay = dic[@"reply_rate"];
 
     }
     

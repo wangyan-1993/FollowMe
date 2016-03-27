@@ -28,12 +28,12 @@
 @property(nonatomic, strong) NSString *userDesc;
 
 //好评率
-@property(nonatomic, assign) NSInteger goodSay;
+@property(nonatomic, assign) NSString *goodSay;
 //接单率
-@property(nonatomic, assign) NSInteger receiveSay;
+@property(nonatomic, assign) NSString * receiveSay;
 
 //回复率；
-@property(nonatomic, assign) NSInteger replySay;
+@property(nonatomic, assign) NSString* replySay;
 
 /*
  评价：

@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface otherModel : NSObject
+
 @property(nonatomic,copy) NSString *comment_public;
 @property(nonatomic, copy) NSString *client_avatar;
 @property(nonatomic, copy) NSString *datetime_formatted;
+@property(nonatomic, copy) NSString *client_id;
+
 
 @end

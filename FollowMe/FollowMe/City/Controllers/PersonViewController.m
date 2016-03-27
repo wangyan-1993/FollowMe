@@ -22,6 +22,10 @@
 #import "OtherSayingTableViewCell.h"
 #import "ActivityTableViewCell.h"
 #import "otherModel.h"
+#import "cityModel.h"
+#import "DetailViewController.h"
+#import "OtherSayingViewController.h"
+#import "StoryViewController.h"
 //注册cell使用到的静态变量；
 static NSString *Inentifier = @"Identifier";
 static NSString *storyID = @"ourStory";
@@ -38,6 +42,7 @@ static NSString *Activity = @"ActivityID";
 @property(nonatomic, strong) NSMutableArray *AppraiseArray;
 @property(nonatomic, strong) NSMutableArray *storyArray;
 @property(nonatomic, strong) NSMutableArray *otherSayArray;
+@property(nonatomic, strong) NSMutableArray *activityArray;
 
 @end
 
@@ -45,7 +50,7 @@ static NSString *Activity = @"ActivityID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self updataConfig];
+    [self updataConfig];
 
     
     
@@ -62,6 +67,7 @@ static NSString *Activity = @"ActivityID";
     [self.tableView registerNib:[UINib nibWithNibName:@"ActivityTableViewCell" bundle:nil] forCellReuseIdentifier:Activity];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"storyTableViewCell" bundle:nil] forCellReuseIdentifier:storyID];
+    
     
     
    
@@ -92,10 +98,24 @@ static NSString *Activity = @"ActivityID";
 
 #pragma mark--------------------数据加载
 -(void)updataConfig{
+    //http://api.breadtrip.com/v3/user/2383951943/
+    //http://api.breadtrip.com/v3/user/2384280157/
+    //http://api.breadtrip.com/v3/user/2384281324/
+    //http://api.breadtrip.com/v3/user/2384326441/
+    //http://api.breadtrip.com/v3/user/2384275218/
+    
+//    WLZLog(@"%ld",self.personId);
+    
+    NSString *urlStr= [NSString stringWithFormat:@"http://api.breadtrip.com/v3/user/%@/",self.personId];
+    
+//    WLZLog(@"%@",[NSString stringWithFormat:@"%lu", self.nameID]);
+    WLZLog(@"%@",urlStr);
+    //
     
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manger GET:@"http://api.breadtrip.com/v3/user/2384097265/" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+//    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [manger GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        WLZLog(@"%@",responseObject);
@@ -106,27 +126,32 @@ static NSString *Activity = @"ActivityID";
         //头部视图以及第一个分区
         NSDictionary *user = data[@"user_info"];
         self.headView.dic = user;
-//                AppraiseTableViewCell *appre = [[AppraiseTableViewCell alloc] init];
-//                appre.dic = user;
-//                ClasifyModel *model = [[ClasifyModel alloc]initWithDictionary:user];
-//                [self.AppraiseArray addObject:model];
+                ClasifyModel *model = [[ClasifyModel alloc]initWithDictionary:user];
+                [self.AppraiseArray addObject:model];
 
         
-        //评论，第二个分区
+        //评论，第二个分区 OK
         NSDictionary *client_comments = data[@"client_comments"];
         for (NSDictionary *clientDic in client_comments[@"data"]) {
             otherModel *model = [[otherModel alloc] init];
             [model setValuesForKeysWithDictionary:clientDic];
             [self.otherSayArray addObject:model];
         }
-        
-//        游记故事集，第三个分区
+        //活动三区
+        NSDictionary *products= data[@"products"];
+        for (NSDictionary *produDic in products[@"data"]) {
+            cityModel *model = [[cityModel alloc] initWithCity:produDic];
+            [self.activityArray addObject:model];
+            
+        }
+
+//        游记故事集，第四个分区
         NSDictionary *trips = data[@"trips"];
         for (NSDictionary *dict in trips[@"data"]) {
             
             storyMdel *modelStory = [[storyMdel alloc] init];
             [modelStory setValuesForKeysWithDictionary:dict];
-            
+        
             [self.storyArray addObject:modelStory];
             
         }
@@ -147,13 +172,14 @@ static NSString *Activity = @"ActivityID";
     if (section == 0) {
         return 1;
     }else if (section == 1){
-//        return self.storyArray.count;
-        return 3;
+        return self.otherSayArray.count;
+//        return 3;
         
     }else if (section == 2){
-        return 3;
+        return self.activityArray.count;
+//        return 3;
     }else if (section == 3){
-        return 3;
+        return self.storyArray.count;
     }
     else{
         return 3;
@@ -165,28 +191,39 @@ static NSString *Activity = @"ActivityID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *str = @"123";
     if (indexPath.section == 0) {
-      
-
         AppraiseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Inentifier forIndexPath:indexPath];
         
-//        cell.model = self.AppraiseArray[indexPath.row];
+        if (self.AppraiseArray.count > indexPath.row) {
+            
+            cell.model = self.AppraiseArray[indexPath.row];
 
+        }
         return cell;
     }else if (indexPath.section == 1){
         OtherSayingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:otherID forIndexPath:indexPath];
-//        cell.model = self.otherSayArray[indexPath.row];
+        if (self.otherSayArray.count > indexPath.row) {
+            cell.model = self.otherSayArray[indexPath.row];
+
+        }
+        
         
         return cell;
         
     }else if (indexPath.section == 2){
         ActivityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Activity forIndexPath:indexPath];
+        if (self.activityArray.count > indexPath.row ) {
+            cell.model = self.activityArray[indexPath.row];
+        }
         
         return cell;
         
     }
     else if (indexPath.section == 3){
         storyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:storyID forIndexPath:indexPath];
-//        cell.model = self.storyArray[indexPath.row];
+        if (self.storyArray.count > indexPath.row) {
+            cell.model = self.storyArray[indexPath.row];
+
+        }
         
         return cell;
     }else{
@@ -209,6 +246,20 @@ static NSString *Activity = @"ActivityID";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
+    if (indexPath.section == 2) {
+        
+        cityModel *model = self.activityArray[indexPath.row];
+        
+        DetailViewController *detail = [[DetailViewController alloc] init];
+        
+        detail.hidesBottomBarWhenPushed = YES;
+        
+        detail.IDString = model.product_id;
+        [self.navigationController pushViewController:detail animated:NO];
+        
+        
+    }
+
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -227,6 +278,75 @@ static NSString *Activity = @"ActivityID";
 
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    
+    if (section == 1 && self.otherSayArray.count != 0) {
+        UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 30)];
+        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(kWidth/3, 0, kWidth/3, 30);
+        [button setTitle:@"查看更多" forState:UIControlStateNormal];
+        button.layer.borderWidth = 1.0f;
+        button.layer.borderColor = [[UIColor blackColor] CGColor];
+        
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(ActionOtherSayingFoot:event:) forControlEvents:UIControlEventTouchUpInside];
+        
+        button.layer.cornerRadius = 10.0;
+        button.clipsToBounds = YES;
+        [footView addSubview:button];
+     
+        return footView;
+    }else if(section == 3 && self.storyArray.count != 0){
+        UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 30)];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(kWidth/3, 0, kWidth/3, 30);
+        [button setTitle:@"查看更多" forState:UIControlStateNormal];
+        button.layer.borderWidth = 1.0f;
+        button.layer.borderColor = [[UIColor blackColor] CGColor];
+        
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(ActionStoryFoot:event:) forControlEvents:UIControlEventTouchUpInside];
+        
+        button.layer.cornerRadius = 10.0;
+        button.clipsToBounds = YES;
+        [footView addSubview:button];
+        return footView;
+        
+    }else
+        return nil;
+    
+    
+}
+-(void)ActionOtherSayingFoot:(UIButton *)button event:(UIEvent*)event{
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint point = [touch locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    otherModel *model = self.otherSayArray[indexPath.row];
+    
+    OtherSayingViewController *otherVC = [[OtherSayingViewController alloc] init];
+    otherVC.otherString = model.client_id;
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:otherVC animated:NO];
+    
+    
+    
+}
+-(void)ActionStoryFoot:(UIButton *)button event:(UIEvent*)event{
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint point = [touch locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    
+    StoryViewController *storyVC = [[StoryViewController alloc] init];
+    storyMdel *model = self.storyArray[indexPath.row];
+    storyVC.storyString = model.id;
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:storyVC animated:NO];
+ 
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     if (section ==1 || section == 3) {
         return 30;
@@ -237,7 +357,7 @@ static NSString *Activity = @"ActivityID";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    if (section == 2 || section == 3 || section == 4) {
+    if (section == 2||section == 2 || section == 3 || section == 4) {
         return 30;
     }else
         return 0;
@@ -307,6 +427,13 @@ static NSString *Activity = @"ActivityID";
         
     }
     return _otherSayArray;
+}
+
+-(NSMutableArray *)activityArray{
+    if (_activityArray == nil) {
+        self.activityArray = [NSMutableArray new];
+    }
+    return _activityArray;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
