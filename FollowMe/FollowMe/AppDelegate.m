@@ -128,10 +128,29 @@
             [self.mineNav pushViewController:info animated:YES];
         }
     }];
+         BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+         [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+             for (BmobObject *obj in array) {
+                 if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]]) {
+                     return ;
+                 }
+             }
+             
+             BmobObject *object = [BmobObject objectWithClassName:@"info"];
+             [object setObject:[BmobUser getCurrentUser].username forKey:@"user"];
+             [object setObject:responseObject[@"name"] forKey:@"name"];
+             [object setObject:responseObject[@"location"] forKey:@"city"];
+             [object setObject:responseObject[@"avatar_hd"] forKey:@"image"];
+             [object saveInBackground];
+             
+         }];
+
+         
 
 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-    WLZLog(@"%@", error);
-              NSLog(@"%@",[[NSString alloc] initWithData:error.userInfo[@"com.alamofire.serialization.response.error.data"] encoding:NSUTF8StringEncoding]);}];
+//    WLZLog(@"%@", error);
+//              NSLog(@"%@",[[NSString alloc] initWithData:error.userInfo[@"com.alamofire.serialization.response.error.data"] encoding:NSUTF8StringEncoding]);
+}];
     
     }
 

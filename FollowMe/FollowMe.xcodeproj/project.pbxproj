@@ -13,6 +13,8 @@
 		7A0017FD1C993FB30033B78F /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0017FC1C993FB30033B78F /* cityModel.m */; };
 		7A03C0201CA2857800BCFB92 /* PersonList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A03C01F1CA2857800BCFB92 /* PersonList.plist */; };
 		7A03C0231CA28B8700BCFB92 /* personHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A03C0221CA28B8700BCFB92 /* personHeadView.m */; };
+		7A0AD8721CA4C1F4009AEBC8 /* UserSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0AD8711CA4C1F4009AEBC8 /* UserSignatureViewController.m */; };
+		7A0AD8881CA4D2FA009AEBC8 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0AD8871CA4D2FA009AEBC8 /* UserTableViewCell.m */; };
 		7A0DC2861C9E30A8006E3569 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0DC2851C9E30A8006E3569 /* CoreLocation.framework */; };
 		7A0DC2881C9E30B5006E3569 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0DC2871C9E30B5006E3569 /* Security.framework */; };
 		7A0DC28A1C9E30C1006E3569 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0DC2891C9E30C1006E3569 /* CoreGraphics.framework */; };
@@ -181,6 +183,10 @@
 		7A03C01F1CA2857800BCFB92 /* PersonList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PersonList.plist; sourceTree = "<group>"; };
 		7A03C0211CA28B8700BCFB92 /* personHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = personHeadView.h; sourceTree = "<group>"; };
 		7A03C0221CA28B8700BCFB92 /* personHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personHeadView.m; sourceTree = "<group>"; };
+		7A0AD8701CA4C1F4009AEBC8 /* UserSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSignatureViewController.h; sourceTree = "<group>"; };
+		7A0AD8711CA4C1F4009AEBC8 /* UserSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSignatureViewController.m; sourceTree = "<group>"; };
+		7A0AD8861CA4D2FA009AEBC8 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
+		7A0AD8871CA4D2FA009AEBC8 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
 		7A0DC2851C9E30A8006E3569 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7A0DC2871C9E30B5006E3569 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7A0DC2891C9E30C1006E3569 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -543,7 +549,6 @@
 		7A422B111C97EAB700B51C11 /* FollowMe */ = {
 			isa = PBXGroup;
 			children = (
-				7A5EF2531CA4BF5A0004BEA1 /* Table */,
 				7A422B151C97EAB800B51C11 /* AppDelegate.h */,
 				7A422B161C97EAB800B51C11 /* AppDelegate.m */,
 				7A4780D91C980CAA00C6E5C2 /* Header.pch */,
@@ -552,6 +557,7 @@
 				7A4780AA1C97EEBB00C6E5C2 /* Mine */,
 				7A4780AE1C97EEBB00C6E5C2 /* Plus */,
 				7A4780A91C97EEBB00C6E5C2 /* Library */,
+				7A5EF2531CA4BF5A0004BEA1 /* Table */,
 				7A4780B61C97EEBB00C6E5C2 /* Travel */,
 				7A422B1A1C97EAB800B51C11 /* LaunchScreen.storyboard */,
 				7A422B181C97EAB800B51C11 /* Assets.xcassets */,
@@ -708,6 +714,8 @@
 				7AEDB60B1CA3CC4700F2E45D /* UserPhoneViewController.m */,
 				7AEDB60D1CA3CC5F00F2E45D /* UserEmailViewController.h */,
 				7AEDB60E1CA3CC5F00F2E45D /* UserEmailViewController.m */,
+				7A0AD8701CA4C1F4009AEBC8 /* UserSignatureViewController.h */,
+				7A0AD8711CA4C1F4009AEBC8 /* UserSignatureViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -724,6 +732,8 @@
 			isa = PBXGroup;
 			children = (
 				7A4F87EB1C9A3AF700183EC8 /* Mine.storyboard */,
+				7A0AD8861CA4D2FA009AEBC8 /* UserTableViewCell.h */,
+				7A0AD8871CA4D2FA009AEBC8 /* UserTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1316,6 +1326,7 @@
 				7A32E1611C9D25BD0012F871 /* EmailVerifyViewController.m in Sources */,
 				7A6FB00F1CA4159600770481 /* otherModel.m in Sources */,
 				7AF40A251C9FD77500BBD70F /* storyDetailsViewController.m in Sources */,
+				7A0AD8721CA4C1F4009AEBC8 /* UserSignatureViewController.m in Sources */,
 				7A5EF2D41CA4BF5A0004BEA1 /* MJRefreshBackFooter.m in Sources */,
 				7A5EF2EA1CA4BF5A0004BEA1 /* PullingRefreshTableView.m in Sources */,
 				7A21BF211C9BD44900E2321F /* selectHotViewController.m in Sources */,
@@ -1380,6 +1391,7 @@
 				7A5EF2CD1CA4BF5A0004BEA1 /* JRSegmentViewController.m in Sources */,
 				7A5EF2DA1CA4BF5A0004BEA1 /* MJRefreshAutoStateFooter.m in Sources */,
 				7AC86F411C9F7B6000AEF853 /* RecommendTableViewCell.m in Sources */,
+				7A0AD8881CA4D2FA009AEBC8 /* UserTableViewCell.m in Sources */,
 				7A892A3D1C9A66BA00D2D11F /* PersonViewController.m in Sources */,
 				7A5EF2C81CA4BF5A0004BEA1 /* JCCollectionViewTagFlowLayout.m in Sources */,
 			);
@@ -1537,7 +1549,7 @@
 					"\"SystemConfiguration\"",
 					"-fobjc-arc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1598,7 +1610,7 @@
 					"\"SystemConfiguration\"",
 					"-fobjc-arc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMe;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.FollowMee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

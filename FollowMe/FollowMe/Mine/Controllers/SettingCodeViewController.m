@@ -24,13 +24,6 @@
     [self showBackBtn];
     self.usernametext.text = self.username;
     self.view.backgroundColor = kMainColor;
-//    UIButton *collectionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    collectionBtn.frame = CGRectMake(0, 0, 60, 44);
-//    [collectionBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [collectionBtn setTitle:@"保存" forState:UIControlStateNormal];
-//    [collectionBtn addTarget:self action:@selector(collectionAction) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *right = [[UIBarButtonItem alloc]initWithCustomView:collectionBtn];
-//    self.navigationItem.rightBarButtonItem = right;
     [self shoeRightBtn];
     [self.usernametext resignFirstResponder];
     

@@ -1,45 +1,38 @@
 //
-//  UsernameViewController.m
+//  UserSignatureViewController.m
 //  FollowMe
 //
-//  Created by SCJY on 16/3/23.
+//  Created by SCJY on 16/3/25.
 //  Copyright © 2016年 SCJY. All rights reserved.
 //
 
-#import "UsernameViewController.h"
-#import <BmobSDK/BmobUser.h>
-#import <BmobSDK/BmobObject.h>
-@interface UsernameViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+#import "UserSignatureViewController.h"
 
-@property (weak, nonatomic) IBOutlet UITextField *newusername;
-@property (weak, nonatomic) IBOutlet UITextField *currentusername;
-
-
+@interface UserSignatureViewController ()
+@property(nonatomic, strong) UITextField *textField;
 @end
 
-@implementation UsernameViewController
+@implementation UserSignatureViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self showBackBtn];
-    self.title = @"修改用户名";
+    self.title = @"个性签名";
     [self shoeRightBtn];
-    [self.currentusername resignFirstResponder];
+    [self showBackBtn];
     self.view.backgroundColor = [UIColor colorWithRed:252/256.0f green:244/256.0f blue:230/256.0f alpha:1.0];
 
+    self.textField = [[UITextField alloc]initWithFrame:CGRectMake(5, 100, kWidth-10, 50)];
+    self.textField.placeholder = @"请输入个性签名";
+    [self.view addSubview:self.textField];
     
 }
 - (void)collectionAction{
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"change" object:nil userInfo:@{@"name":self.newusername.text}];
-    
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"change" object:nil userInfo:@{@"personal": self.textField.text}];
     [self.navigationController popViewControllerAnimated:YES];
 
-}
+    
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.view resignFirstResponder];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

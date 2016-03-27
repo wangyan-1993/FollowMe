@@ -14,6 +14,11 @@
 #import "UsernameViewController.h"
 #import "UserPhoneViewController.h"
 #import "UserEmailViewController.h"
+#import "UserSignatureViewController.h"
+#import "UserTableViewCell.h"
+#import <BmobSDK/BmobUser.h>
+#import <BmobSDK/BmobQuery.h>
+#import <BmobSDK/BmobObject.h>
 #define ORIGINAL_MAX_WIDTH 640.0f
 
 
@@ -22,7 +27,7 @@
 @property(nonatomic, strong) NSArray *allArray;
 @property (nonatomic, strong) UIImageView *portraitImageView;
 @property(nonatomic, strong) NSMutableArray *array;
-
+@property(nonatomic, copy) NSString *birthday;
 @end
 
 @implementation UserInfoViewController
@@ -34,14 +39,59 @@
     [self showBackBtn];
     self.navigationController.navigationBar.barTintColor = kMainColor;
     self.allArray = @[@"头像",@"用户名",@"手机号码",@"邮箱",@"地区",@"性别",@"生日",@"个性签名"];
+    WLZLog(@"%@", self.username);
+
     [self.view addSubview:self.tableView];
     [self loadPortrait];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(change:) name:@"change" object:nil];
-}
+    [self changeArray];
+    self.navigationController.navigationBar.hidden = NO;
 
+}
+- (void)changeArray{
+    BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        for (BmobObject *obj in array) {
+            if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+            {
+                if ([obj objectForKey:@"name"]) {
+                    [self.array replaceObjectAtIndex:1 withObject:[obj objectForKey:@"name"]];
+                }
+
+                
+                if ([obj objectForKey:@"city"]) {
+                    [self.array replaceObjectAtIndex:4 withObject:[obj objectForKey:@"city"]];
+                }
+                if ([obj objectForKey:@"gender"]) {
+                    [self.array replaceObjectAtIndex:5 withObject:[obj objectForKey:@"gender"]];
+                }
+                if ([obj objectForKey:@"year"]) {
+                    [self.array replaceObjectAtIndex:6 withObject:[obj objectForKey:@"year"]];
+                }
+                 [self.tableView reloadData];
+            }
+        }
+    }];
+    
+    if ([BmobUser getCurrentUser].mobilePhoneNumber) {
+        WLZLog(@"%@", [BmobUser getCurrentUser].mobilePhoneNumber);
+        [self.array replaceObjectAtIndex:2 withObject:[BmobUser getCurrentUser].mobilePhoneNumber];
+    }
+    
+    if ([BmobUser getCurrentUser].email) {
+        [self.array replaceObjectAtIndex:3 withObject:[BmobUser getCurrentUser].email];
+    }
+    [self.tableView reloadData];
+
+}
 - (void)change:(NSNotification *)notification{
-   // self.array = [NSMutableArray arrayWithArray:self.allArray];
-    [self.array replaceObjectAtIndex:1 withObject:[notification userInfo][@"name"]];
+    if ([notification userInfo][@"name"] != nil) {
+        [self.array replaceObjectAtIndex:1 withObject:[notification userInfo][@"name"]];
+
+    }
+    if ([notification userInfo][@"personal"] != nil) {
+        [self.array replaceObjectAtIndex:7 withObject:[notification userInfo][@"personal"]];
+    }
     [self.tableView reloadData];
 }
 
@@ -51,6 +101,24 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    
+    BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+[query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+    for (BmobObject *obj in array) {
+        if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+        {
+            [obj setObject:self.array[1] forKey:@"name"];
+            [obj setObject:self.array[4] forKey:@"city"];
+            [obj setObject:self.array[6] forKey:@"year"];
+            [obj setObject:self.array[7] forKey:@"signature"];
+            [obj setObject:self.array[5] forKey:@"gender"];
+            [obj updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                WLZLog(@"%@", error);
+            }];
+        }
+    }
+}];
+    
 }
 - (void)loadPortrait {
     __weak __typeof(self) weakSelf = self;
@@ -72,17 +140,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *str = @"cell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:str];
+    UserTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:str];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
+        cell = [[UserTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
     }
     if (indexPath.row == 0) {
         [cell addSubview:self.portraitImageView];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = self.array[indexPath.row];
-    return cell;
+    cell.label1.text = self.allArray[indexPath.row];
+    cell.label.text = self.array[indexPath.row];
+       return cell;
 }
 
 #pragma mark------UITableViewDelegate
@@ -100,11 +169,78 @@
         [self.navigationController pushViewController:userphone animated:YES];
     }
     if (indexPath.row == 3) {
-        UserEmailViewController *useremail = [main instantiateViewControllerWithIdentifier:@"username"];
+        UserEmailViewController *useremail = [main instantiateViewControllerWithIdentifier:@"useremail"];
         [self.navigationController pushViewController:useremail animated:YES];
     }
+    if (indexPath.row == 4) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"所在地区" message:@"格式:北京" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:action1];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = @"请输入所在地";
+            
+        }];
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            WLZLog(@"%@", alert.textFields[0].text);
+            [self.array replaceObjectAtIndex:4 withObject:alert.textFields[0].text];
+            
+            [self.tableView reloadData];
+            
+        }];
+        [alert addAction:action2];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
+    if (indexPath.row == 5) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:action1];
+        
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"男" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.array replaceObjectAtIndex:5 withObject:@"男"];
+            [self.tableView reloadData];
+
+        }];
+        [alert addAction:action2];
+        UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"女" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.array replaceObjectAtIndex:5 withObject:@"女"];
+            [self.tableView reloadData];
+
+        }];
+        [alert addAction:action3];
+        [self presentViewController:alert animated:YES completion:nil];
+
+
+    }
     
+    if (indexPath.row == 6) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"个人生日" message:@"格式:xxxx.xx.xx" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:action1];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = @"请输入年龄";
+            //self.birthday = textField.text;
+            WLZLog(@"%@", self.birthday);
+
+        }];
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            WLZLog(@"%@", alert.textFields[0].text);
+            [self.array replaceObjectAtIndex:6 withObject:alert.textFields[0].text];
+            
+            [self.tableView reloadData];
+            
+        }];
+        [alert addAction:action2];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
     
+    if (indexPath.row == 7) {
+        UserSignatureViewController *signature = [[UserSignatureViewController alloc]init];
+        [self.navigationController pushViewController:signature animated:YES];
+    }
     
     
 }
@@ -130,6 +266,25 @@
     }
     return _allArray;
 }
+
+- (NSMutableArray *)array{
+    if (_array == nil) {
+        
+        BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            for (BmobObject *obj in array) {
+                if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]]) {
+                    WLZLog(@"%@", [obj objectForKey:@"name"]);
+                    self.username = [obj objectForKey:@"name"];
+                }
+            }
+        }];
+        WLZLog(@"%@", self.username);
+       self.array = [NSMutableArray arrayWithArray:@[@"",@"未设置",@"未设置",@"未设置",@"未设置",@"未设置",@"未设置",@"未设置"]];
+    }
+    return _array;
+}
+
 
 #pragma mark---------------选取照片的方法
 - (void)pickImage{
@@ -202,6 +357,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:^() {
         UIImage *portraitImg = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        WLZLog(@"%@", portraitImg);
         portraitImg = [self imageByScalingToMaxSize:portraitImg];
         // present the cropper view controller
         VPImageCropperViewController *imgCropperVC = [[VPImageCropperViewController alloc] initWithImage:portraitImg cropFrame:CGRectMake(0, 100.0f, self.view.frame.size.width, self.view.frame.size.width) limitScaleRatio:3.0];
@@ -361,12 +517,6 @@
 }
 
 
-- (NSMutableArray *)array{
-    if (_array == nil) {
-        self.array = [NSMutableArray arrayWithArray:self.allArray];
-    }
-    return _array;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -26,12 +26,14 @@
 - (void)collectionAction{
     BmobUser *user = [BmobUser getCurrentUser];
     //应用开启了邮箱验证功能
-    if ([user objectForKey:@"emailVerified"]) {
-        //用户没验证过邮箱
-        if (![[user objectForKey:@"emailVerified"] boolValue]) {
+//    if ([user objectForKey:@"emailVerified"]) {
+//        //用户没验证过邮箱
+//        if (![[user objectForKey:@"emailVerified"] boolValue]) {
             [user verifyEmailInBackgroundWithEmailAddress:self.emailText.text];
-        }
-    }
+            [self.navigationController popViewControllerAnimated:YES];
+
+//        }
+//    }
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view resignFirstResponder];

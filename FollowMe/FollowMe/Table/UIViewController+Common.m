@@ -32,5 +32,7 @@
 - (void)backBtnAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
+- (void)collectionAction{
+    
+}
 @end

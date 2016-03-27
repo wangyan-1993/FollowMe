@@ -10,4 +10,5 @@
 
 @interface UserInfoViewController : UIViewController
 @property(nonatomic, copy) NSString *urlImage;
+@property(nonatomic, copy) NSString *username;
 @end
