@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OLR-n2-kJi">
     <dependencies>
         <deployment identifier="iOS"/>
@@ -522,6 +521,14 @@
                                     <action selector="back:" destination="HLV-15-JRr" eventType="touchUpInside" id="5h4-cY-Gwm"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请填写邮箱号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K8C-E6-gh1">
+                                <rect key="frame" x="48" y="73" width="278" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="zI8-NZ-v4t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -537,16 +544,19 @@
                             <constraint firstItem="ZB0-yy-TZS" firstAttribute="leading" secondItem="LPN-9J-KjH" secondAttribute="leadingMargin" constant="36" id="GOV-zc-PdG"/>
                             <constraint firstItem="HYI-3N-KVk" firstAttribute="leading" secondItem="LPN-9J-KjH" secondAttribute="leadingMargin" constant="36" id="JZf-by-a2F"/>
                             <constraint firstItem="BJh-DS-5Pu" firstAttribute="leading" secondItem="LPN-9J-KjH" secondAttribute="leadingMargin" constant="36" id="MSH-Pr-MXd"/>
+                            <constraint firstItem="K8C-E6-gh1" firstAttribute="top" secondItem="XxK-Vg-HAh" secondAttribute="bottom" constant="53" id="NYZ-bD-Rzz"/>
                             <constraint firstItem="dcf-5L-bMT" firstAttribute="centerX" secondItem="LPN-9J-KjH" secondAttribute="centerX" id="PB6-Tq-jTF"/>
                             <constraint firstItem="mhH-3s-05b" firstAttribute="leading" secondItem="LPN-9J-KjH" secondAttribute="leadingMargin" id="PJk-fc-e18"/>
                             <constraint firstItem="jBz-1U-AzF" firstAttribute="leading" secondItem="LPN-9J-KjH" secondAttribute="leadingMargin" constant="36" id="WJz-97-EoB"/>
                             <constraint firstItem="ccs-hC-Mpm" firstAttribute="leading" secondItem="LPN-9J-KjH" secondAttribute="leadingMargin" constant="36" id="XOq-kH-ZzX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5WC-Yo-1Ce" secondAttribute="trailing" constant="37" id="YCM-ZL-HWe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K8C-E6-gh1" secondAttribute="trailing" constant="33" id="Zdc-yM-8Dj"/>
                             <constraint firstItem="bue-ZH-hvk" firstAttribute="leading" secondItem="LPN-9J-KjH" secondAttribute="leadingMargin" constant="36" id="aty-ls-u8H"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bue-ZH-hvk" secondAttribute="trailing" constant="37" id="bcd-K8-dej"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZB0-yy-TZS" secondAttribute="trailing" constant="37" id="dZ9-0p-Tax"/>
                             <constraint firstItem="ZB0-yy-TZS" firstAttribute="top" secondItem="ccs-hC-Mpm" secondAttribute="bottom" constant="8" id="gs6-c8-AYY"/>
                             <constraint firstItem="bue-ZH-hvk" firstAttribute="top" secondItem="HYI-3N-KVk" secondAttribute="bottom" constant="8" id="nrY-Xp-l3j"/>
+                            <constraint firstItem="K8C-E6-gh1" firstAttribute="leading" secondItem="LPN-9J-KjH" secondAttribute="leadingMargin" constant="32" id="rUh-kW-aBh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qhW-hc-0SX" secondAttribute="trailing" constant="46" id="vMj-Kb-QV2"/>
                             <constraint firstItem="5WC-Yo-1Ce" firstAttribute="leading" secondItem="LPN-9J-KjH" secondAttribute="leadingMargin" constant="36" id="vcz-c9-HjV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ccs-hC-Mpm" secondAttribute="trailing" constant="37" id="wdl-Xt-MYI"/>
@@ -556,6 +566,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="emailTextField" destination="K8C-E6-gh1" id="1f2-N6-16g"/>
                         <outlet property="loginBtn" destination="dcf-5L-bMT" id="mu2-EG-7Fd"/>
                         <outlet property="logincode" destination="bue-ZH-hvk" id="xyV-zG-gGr"/>
                         <outlet property="phonenum" destination="ccs-hC-Mpm" id="msf-6x-4jg"/>
@@ -909,7 +920,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再次输入新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bK6-nE-rwt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="旧密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bK6-nE-rwt">
                                 <rect key="frame" x="6" y="137" width="363" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jyN-ix-YaI"/>
@@ -1114,30 +1125,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="当前用户名" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tM8-fq-pHN">
-                                <rect key="frame" x="0.0" y="74" width="375" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="当前用户名" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tM8-fq-pHN">
+                                <rect key="frame" x="6" y="74" width="363" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QAe-65-nfx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新的用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ki-44-WMF">
-                                <rect key="frame" x="0.0" y="112" width="375" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新的用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ki-44-WMF">
+                                <rect key="frame" x="6" y="112" width="363" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="B7N-fV-i2O"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="提示:用户名30天内只能修改一次" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCc-uW-ECX">
-                                <rect key="frame" x="0.0" y="179" width="375" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提示:用户名30天内只能修改一次" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCc-uW-ECX">
+                                <rect key="frame" x="86" y="179" width="204" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="ulW-FN-r3C"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.44796043634414673" green="0.41435915231704712" blue="0.084571771323680878" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用户名" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ko8-GE-a9v">
-                                <rect key="frame" x="276" y="74" width="90" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ko8-GE-a9v">
+                                <rect key="frame" x="279" y="74" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PX7-Bl-QIq"/>
+                                    <constraint firstAttribute="width" constant="90" id="cU6-Ph-0BJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DCc-uW-ECX" firstAttribute="centerX" secondItem="LxP-zA-ESZ" secondAttribute="centerX" id="1uG-kb-jlO"/>
+                            <constraint firstItem="tM8-fq-pHN" firstAttribute="top" secondItem="T4o-Cf-3Qf" secondAttribute="bottom" constant="54" id="4yG-bs-ZVQ"/>
+                            <constraint firstItem="4Ki-44-WMF" firstAttribute="leading" secondItem="LxP-zA-ESZ" secondAttribute="leadingMargin" constant="-10" id="9ow-ZU-gdV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tM8-fq-pHN" secondAttribute="trailing" constant="-10" id="IUD-zF-ssX"/>
+                            <constraint firstItem="DCc-uW-ECX" firstAttribute="top" secondItem="4Ki-44-WMF" secondAttribute="bottom" constant="37" id="Mfy-cj-rYP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ko8-GE-a9v" secondAttribute="trailing" constant="-10" id="UZD-hp-Sbb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Ki-44-WMF" secondAttribute="trailing" constant="-10" id="ZSU-z7-iKb"/>
+                            <constraint firstItem="4Ki-44-WMF" firstAttribute="top" secondItem="Ko8-GE-a9v" secondAttribute="bottom" constant="8" id="cH4-TM-sZ9"/>
+                            <constraint firstItem="Ko8-GE-a9v" firstAttribute="top" secondItem="T4o-Cf-3Qf" secondAttribute="bottom" constant="54" id="dDk-bZ-lzr"/>
+                            <constraint firstItem="tM8-fq-pHN" firstAttribute="leading" secondItem="LxP-zA-ESZ" secondAttribute="leadingMargin" constant="-10" id="zVs-vw-jXm"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

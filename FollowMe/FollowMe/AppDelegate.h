@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+static BOOL isProduct = YES;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

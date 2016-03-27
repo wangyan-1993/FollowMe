@@ -96,7 +96,7 @@ static NSString *identifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = kMainColor;
     if (self.stringName == nil) {
         self.stringName = @"北京";
     }
@@ -104,7 +104,7 @@ static NSString *identifier = @"cell";
     self.clasifyStr = @"104";
 //    self.dataStr = @"1";
 //    self.title = @"城市猎人带你玩";
-    self.navigationController.navigationItem.title= @"城市猎人带你玩";
+    self.navigationItem.title= @"城市猎人带你玩";
     self.navigationController.navigationBar.barTintColor = kMainColor;
     
 //导航左侧视图按钮：
@@ -198,7 +198,11 @@ static NSString *identifier = @"cell";
     
 }
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+   self.selectButton.hidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
+}
 //点击上海，返回主页面主题日期筛选接口：
 //http://api.breadtrip.com/hunter/products/v2/metadata/?city_name=%E5%8C%97%E4%BA%AC&sign=d8c4c7cc232d1b05a8b2e1c52b3e0020
 //重庆：
@@ -305,7 +309,7 @@ static NSString *identifier = @"cell";
 //    [self clasifyWays];
     //collection的自定义方法
     self.tageListView = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth/10, kHeight*0.1, kWidth*0.8, kHeight*0.5)];
-    self.tageListView.backgroundColor = [UIColor redColor];
+    self.tageListView.backgroundColor = [UIColor whiteColor];
     
     self.tageListView.layer.cornerRadius = 15.0f;
     self.tageListView.clipsToBounds = YES;
@@ -715,7 +719,7 @@ static NSString *identifier = @"cell";
         self.tableView.rowHeight = 285;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        self.tableView.backgroundColor = master;
+        self.tableView.backgroundColor = kMainColor;
         [self.view addSubview:self.tableView];
     }
     return _tableView;
@@ -780,10 +784,7 @@ static NSString *identifier = @"cell";
     
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.selectButton.hidden = NO;
-}
+
 
 
 

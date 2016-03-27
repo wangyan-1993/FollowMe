@@ -26,6 +26,12 @@
 
 #define kQQAppID @"1105273408"
 #define kQQAppKey @"g03RMmiI0kU4Cirk"
+
+
+#define kJPushAppKey @"917d9941bbad4f6b07bdbbe7"
+#define kJPushChannel @"App Store"
+
+
 //统一输出
 
 #ifdef DEBUG

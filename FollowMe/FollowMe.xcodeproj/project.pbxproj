@@ -40,6 +40,9 @@
 		7A32E1611C9D25BD0012F871 /* EmailVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A32E1601C9D25BD0012F871 /* EmailVerifyViewController.m */; };
 		7A32E1641C9D37B20012F871 /* FindCodeByPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A32E1631C9D37B20012F871 /* FindCodeByPhoneViewController.m */; };
 		7A32E16A1C9D40AC0012F871 /* ResignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A32E1691C9D40AC0012F871 /* ResignViewController.m */; };
+		7A33AD131CA78F75006929DE /* jpush-ios-2.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A33AD111CA78F75006929DE /* jpush-ios-2.1.0.a */; };
+		7A33AD151CA78FD1006929DE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A33AD141CA78FD1006929DE /* CoreFoundation.framework */; };
+		7A33AD171CA7905F006929DE /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A33AD161CA7905F006929DE /* PushConfig.plist */; };
 		7A422B141C97EAB800B51C11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A422B131C97EAB800B51C11 /* main.m */; };
 		7A422B171C97EAB800B51C11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A422B161C97EAB800B51C11 /* AppDelegate.m */; };
 		7A422B191C97EAB800B51C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A422B181C97EAB800B51C11 /* Assets.xcassets */; };
@@ -215,6 +218,10 @@
 		7A32E1661C9D38400012F871 /* ResetCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetCodeViewController.m; sourceTree = "<group>"; };
 		7A32E1681C9D40AC0012F871 /* ResignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResignViewController.h; sourceTree = "<group>"; };
 		7A32E1691C9D40AC0012F871 /* ResignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResignViewController.m; sourceTree = "<group>"; };
+		7A33AD111CA78F75006929DE /* jpush-ios-2.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.0.a"; sourceTree = "<group>"; };
+		7A33AD121CA78F75006929DE /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		7A33AD141CA78FD1006929DE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		7A33AD161CA7905F006929DE /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
 		7A422B0F1C97EAB700B51C11 /* FollowMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A422B131C97EAB800B51C11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A422B151C97EAB800B51C11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -452,6 +459,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A0DC2B31C9E897A006E3569 /* UIKit.framework in Frameworks */,
+				7A33AD151CA78FD1006929DE /* CoreFoundation.framework in Frameworks */,
 				7A8BD11A1CA0EA9B00D8ACC1 /* libstdc++.tbd in Frameworks */,
 				7A8BD1181CA0EA5F00D8ACC1 /* libiconv.tbd in Frameworks */,
 				7A84D80C1C9FE15C00A76134 /* libc++.tbd in Frameworks */,
@@ -460,10 +469,10 @@
 				7A5EF2EB1CA4BF5A0004BEA1 /* TencentOpenAPI.framework in Frameworks */,
 				7A0DC2B71C9E899E006E3569 /* libz.tbd in Frameworks */,
 				7A0DC2B51C9E898B006E3569 /* Foundation.framework in Frameworks */,
-				7A0DC2B31C9E897A006E3569 /* UIKit.framework in Frameworks */,
 				7A0DC2B11C9E896F006E3569 /* CoreText.framework in Frameworks */,
 				7A0DC2AF1C9E8954006E3569 /* ImageIO.framework in Frameworks */,
 				7A0DC2AD1C9E8946006E3569 /* QuartzCore.framework in Frameworks */,
+				7A33AD131CA78F75006929DE /* jpush-ios-2.1.0.a in Frameworks */,
 				7A0DC29C1C9E311D006E3569 /* MediaPlayer.framework in Frameworks */,
 				7A0DC29A1C9E3114006E3569 /* AVFoundation.framework in Frameworks */,
 				7A5EF2D11CA4BF5A0004BEA1 /* libWeiboSDK.a in Frameworks */,
@@ -489,6 +498,7 @@
 		09F2B4EEA86412E6958E834E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A33AD141CA78FD1006929DE /* CoreFoundation.framework */,
 				7A8BD1191CA0EA9B00D8ACC1 /* libstdc++.tbd */,
 				7A8BD1171CA0EA5F00D8ACC1 /* libiconv.tbd */,
 				7A84D80B1C9FE15C00A76134 /* libc++.tbd */,
@@ -514,6 +524,15 @@
 				C6BB71441200E7E1032CFB63 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A33AD101CA78F75006929DE /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				7A33AD111CA78F75006929DE /* jpush-ios-2.1.0.a */,
+				7A33AD121CA78F75006929DE /* JPUSHService.h */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 		7A422B061C97EAB700B51C11 = {
@@ -808,6 +827,7 @@
 		7A5EF2531CA4BF5A0004BEA1 /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				7A33AD101CA78F75006929DE /* lib */,
 				7A5EF2541CA4BF5A0004BEA1 /* AMapLocationKit.framework */,
 				7A5EF2551CA4BF5A0004BEA1 /* BmobSDK.framework */,
 				7A5EF2561CA4BF5A0004BEA1 /* cellSearch */,
@@ -829,6 +849,7 @@
 				7A5EF2BE1CA4BF5A0004BEA1 /* WXApiObject.h */,
 				7A5EF2BF1CA4BF5A0004BEA1 /* 各种坐标 */,
 				7A5EF2C21CA4BF5A0004BEA1 /* 广告轮播demo */,
+				7A33AD161CA7905F006929DE /* PushConfig.plist */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -1153,7 +1174,12 @@
 				TargetAttributes = {
 					7A422B0E1C97EAB700B51C11 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = HNSLUR37K3;
+						DevelopmentTeam = CCQ5LLLX4L;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1189,6 +1215,7 @@
 				7AD0837A1C9FCB4200D321AA /* CityBackList.plist in Resources */,
 				7AC86F421C9F7B6000AEF853 /* RecommendTableViewCell.xib in Resources */,
 				7A6FAFD41CA391A500770481 /* storyTableViewCell.xib in Resources */,
+				7A33AD171CA7905F006929DE /* PushConfig.plist in Resources */,
 				7A4F87EC1C9A3AF700183EC8 /* Mine.storyboard in Resources */,
 				7AB8FD0A1C99406F00D9A121 /* travel.plist in Resources */,
 				7AB6CA901C9FE33F00F6CA01 /* searchShowList.plist in Resources */,
@@ -1491,6 +1518,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FollowMe/Table/libWeiboSDK",
 					"$(PROJECT_DIR)/FollowMe/Table",
+					"$(PROJECT_DIR)/FollowMe/Table/lib",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1552,6 +1580,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FollowMe/Table/libWeiboSDK",
 					"$(PROJECT_DIR)/FollowMe/Table",
+					"$(PROJECT_DIR)/FollowMe/Table/lib",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
