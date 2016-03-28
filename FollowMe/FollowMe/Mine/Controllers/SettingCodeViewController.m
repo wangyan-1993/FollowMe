@@ -32,18 +32,14 @@
     
 }
 - (void)collectionAction{
-    //if ([self.newcode isEqual:self.secondNewcode] ) {
-        BmobUser *user = [BmobUser getCurrentUser];
-      //  [user setPassword:self.newcode.text];
+    BmobUser *user = [BmobUser getCurrentUser];
     
-    [user updateCurrentUserPasswordWithOldPassword:@"" newPassword:self.newcode.text block:^(BOOL isSuccessful, NSError *error) {
+    [user updateCurrentUserPasswordWithOldPassword:self.secondNewcode.text newPassword:self.newcode.text block:^(BOOL isSuccessful, NSError *error) {
         if (isSuccessful) {
             WLZLog(@"success");
         }
     }];
     
-    
-    //}
     
   }
 

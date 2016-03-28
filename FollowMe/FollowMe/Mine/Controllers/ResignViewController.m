@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *logincode;
 @property (weak, nonatomic) IBOutlet UIButton *verifyBtn;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 
 @end
 
@@ -59,7 +60,7 @@
     BmobUser *buser = [[BmobUser alloc] init];
     buser.mobilePhoneNumber = self.phonenum.text;
     buser.password = self.logincode.text;
-    
+    buser.email = self.emailTextField.text;
     [buser signUpOrLoginInbackgroundWithSMSCode:self.verifycode.text block:^(BOOL isSuccessful, NSError *error) {
         if (error) {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误提示" message:[NSString stringWithFormat:@"%@", error]delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];

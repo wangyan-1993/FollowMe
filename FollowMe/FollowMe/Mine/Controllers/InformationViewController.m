@@ -51,6 +51,18 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
     self.tabBarController.tabBar.hidden = NO;
+    BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        for (BmobObject *obj in array) {
+            if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+            {
+                self.username = [obj objectForKey:@"name"];
+
+                [self addheaderView];
+                [self.tableView reloadData];
+            }
+        }
+    }];
 
 
 }
@@ -77,11 +89,6 @@
     black.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0
  alpha:0.3];
     [header addSubview:black];
-    UIButton *hunterBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    hunterBtn.frame = CGRectMake(10, 20, 100, 20);
-    [hunterBtn setTitle:@"成为猎人" forState:UIControlStateNormal];
-    [hunterBtn addTarget:self action:@selector(becomeHunter) forControlEvents:UIControlEventTouchUpInside];
-    [header addSubview:hunterBtn];
     
     UIButton *settingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     settingBtn.frame = CGRectMake(kWidth-50, 15, 30, 30);
@@ -92,7 +99,9 @@
     imageviewHeader.layer.cornerRadius = kWidth/3/2;
     imageviewHeader.clipsToBounds = YES;
   //  WLZLog(@"%@", self.headerImage);
-    [imageviewHeader sd_setImageWithURL:[NSURL URLWithString:self.headerImage] placeholderImage:[UIImage imageNamed:@"123456"]];
+        [imageviewHeader sd_setImageWithURL:[NSURL URLWithString:self.headerImage] placeholderImage:[UIImage imageNamed:@"123456"]];
+        
+    
     UIButton *headerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     headerBtn.frame = imageviewHeader.frame;
     [headerBtn addTarget:self action:@selector(headerInformation) forControlEvents:UIControlEventTouchUpInside];
@@ -131,7 +140,7 @@
     [header addSubview:orderBtn];
     
     UIButton *moneyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    moneyBtn.frame = CGRectMake(kWidth/2-100, kWidth/2 + kWidth/5, 200, 20);
+    moneyBtn.frame = CGRectMake(kWidth/2-100, kWidth/2 + 75, 200, 20);
     [moneyBtn setTitle:@"👛 我的钱包 >" forState:UIControlStateNormal];
     [moneyBtn addTarget:self action:@selector(moneyAction) forControlEvents:UIControlEventTouchUpInside];
     [header addSubview:moneyBtn];
@@ -140,25 +149,14 @@
 }
 
 
-- (void)becomeHunter{
-    BecomeHunterViewController *become = [[BecomeHunterViewController alloc]init];
-    [self.navigationController pushViewController:become animated:YES];
-}
+//- (void)becomeHunter{
+//    BecomeHunterViewController *become = [[BecomeHunterViewController alloc]init];
+//    [self.navigationController pushViewController:become animated:YES];
+//}
 
 - (void)settingsAction{
     SettingsViewController *settingVC = [[SettingsViewController alloc]init];
     settingVC.imageStr = self.headerImage;
-//    BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-//        for (BmobObject *obj in array) {
-//            if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
-//            {
-//                self.username = [obj objectForKey:@"name"];
-//                [self.tableView reloadData];
-//            }
-//        }
-//    }];
-
     settingVC.username = self.username;
     [self.navigationController pushViewController:settingVC animated:YES];
 }

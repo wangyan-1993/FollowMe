@@ -30,6 +30,8 @@
 //        //用户没验证过邮箱
 //        if (![[user objectForKey:@"emailVerified"] boolValue]) {
             [user verifyEmailInBackgroundWithEmailAddress:self.emailText.text];
+            [BmobUser getCurrentUser].email = self.emailText.text;
+            
             [self.navigationController popViewControllerAnimated:YES];
 
 //        }
