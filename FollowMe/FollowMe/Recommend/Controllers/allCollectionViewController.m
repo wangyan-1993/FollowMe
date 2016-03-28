@@ -30,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     self.title = @"精选故事";
     self.view.backgroundColor = kCollectionColor;
     //设置导航栏标题颜色
@@ -59,9 +60,7 @@
     //网络请求
     [self workOne];
     [self.view addSubview:self.collectionView];
-    
-}
-
+   }
 - (void)workOne{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:[NSString stringWithFormat:@"%@start=%ld",kAllCollection,(long)_start] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {

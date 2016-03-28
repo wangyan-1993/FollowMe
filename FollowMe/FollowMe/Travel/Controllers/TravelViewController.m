@@ -42,8 +42,11 @@
     self.mySearchBar.placeholder = @"搜索目的地";
     [self.navigationController.navigationBar addSubview:self.mySearchBar];
     [ProgressHUD show:@"数据正在加载"];
-
-    [self loadData];
+    @autoreleasepool {
+        
+        [NSThread detachNewThreadSelector:@selector(loadData) toTarget:self withObject:nil];
+    }
+   // [self loadData];
     
     
 }
@@ -179,6 +182,10 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error{
+    if (error.code == NSURLErrorCancelled) {
+       
+        return ;  //忽略这个错误。
+    }
     [ProgressHUD showError:[NSString stringWithFormat:@"%@", error]];
 }
 
