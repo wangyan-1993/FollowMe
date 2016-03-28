@@ -269,7 +269,9 @@ if (self.tencentOAuth.accessToken && 0 != [self.tencentOAuth.accessToken length]
             
             [BmobUser loginInBackgroundWithAuthorDictionary:responseDictionary platform:BmobSNSPlatformQQ block:^(BmobUser *user, NSError *error) {
                 if (user) {
-                    
+                    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+                    [userDef setValue:@"qq" forKey:@"switch2"];
+
                     InformationViewController *info = [[InformationViewController alloc]init];
                     info.username = responseObject[@"nickname"];
                     info.headerImage = responseObject[@"figureurl_qq_2"];

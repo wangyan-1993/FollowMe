@@ -26,16 +26,19 @@
 - (void)collectionAction{
     BmobUser *user = [BmobUser getCurrentUser];
     //应用开启了邮箱验证功能
-//    if ([user objectForKey:@"emailVerified"]) {
-//        //用户没验证过邮箱
-//        if (![[user objectForKey:@"emailVerified"] boolValue]) {
+    if ([user objectForKey:@"emailVerified"]) {
+        //用户没验证过邮箱
+        if (![[user objectForKey:@"emailVerified"] boolValue]) {
             [user verifyEmailInBackgroundWithEmailAddress:self.emailText.text];
             [BmobUser getCurrentUser].email = self.emailText.text;
             
             [self.navigationController popViewControllerAnimated:YES];
 
-//        }
-//    }
+        }
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"您没有开启邮箱验证,不能进行此操作,谢谢!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [alert show];
+    }
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view resignFirstResponder];

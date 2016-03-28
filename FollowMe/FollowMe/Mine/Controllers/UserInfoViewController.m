@@ -173,7 +173,7 @@
         [self.navigationController pushViewController:useremail animated:YES];
     }
     if (indexPath.row == 4) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"所在地区" message:@"格式:北京" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"所在地区" message:@"建议格式:北京" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:action1];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -215,7 +215,7 @@
     }
     
     if (indexPath.row == 6) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"个人生日" message:@"格式:xxxx.xx.xx" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"个人生日" message:@"建议格式:xxxx.xx.xx" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:action1];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {

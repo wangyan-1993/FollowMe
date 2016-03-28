@@ -94,19 +94,7 @@ static NSString *itemID = @"itemId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-    _ppp = 0;
+     _ppp = 0;
     self.navigationController.navigationBar.barTintColor = kMainColor;
     self.nearBtn.frame = CGRectMake(kWidth-90, 0, 90, 44);
     [self.nearBtn setTitle:@"附近" forState:UIControlStateNormal];
@@ -170,7 +158,6 @@ static NSString *itemID = @"itemId";
     _ppp = 0;
     nearByViewController *nearVC = [[nearByViewController alloc] init];
     [self.navigationController pushViewController:nearVC animated:YES];
-
     
 }
 //在页面将要出现的时候

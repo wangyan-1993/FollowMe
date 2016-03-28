@@ -95,12 +95,12 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    return [WXApi handleOpenURL:url delegate:self] || [WeiboSDK handleOpenURL:url delegate:self]|| [TencentOAuth HandleOpenURL:url];
+    return  [WeiboSDK handleOpenURL:url delegate:self]|| [TencentOAuth HandleOpenURL:url]||[WXApi handleOpenURL:url delegate:self] ;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return [WXApi handleOpenURL:url delegate:self] ||[WeiboSDK handleOpenURL:url delegate:self]||[TencentOAuth HandleOpenURL:url];
+    return [WeiboSDK handleOpenURL:url delegate:self]||[TencentOAuth HandleOpenURL:url]||[WXApi handleOpenURL:url delegate:self] ;
 }
 #pragma mark---weibo delegate
 
@@ -116,6 +116,9 @@
  */
 - (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
     NSString *accessToken = [(WBAuthorizeResponse *)response accessToken];
+    if (accessToken) {
+        self.wbtoken = accessToken;
+    }
     NSString *uid = [(WBAuthorizeResponse *)response userID];
     NSDate *expiresDate = [(WBAuthorizeResponse *)response expirationDate];
     
@@ -136,6 +139,8 @@
         if (error) {
             NSLog(@"weibo login error:%@",error);
         } else if (user){
+             NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+            [userDef setValue:@"weibo" forKey:@"switch1"];
             NSLog(@"user objectid is :%@",user.objectId);
             InformationViewController *info = [[InformationViewController alloc]init];
             info.username = responseObject[@"screen_name"];

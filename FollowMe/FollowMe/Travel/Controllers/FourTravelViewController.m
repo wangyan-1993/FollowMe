@@ -27,11 +27,19 @@
     
 
 }
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('hotel-bottom diff')[0].style.display = 'none'"];
+    
+}
+
 - (UIWebView *)webView{
     if (_webView == nil) {
         self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
         self.webView.delegate = self;
-        
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, kHeight-40, kWidth, 50)];
+        view.backgroundColor = [UIColor whiteColor];
+        [self.webView addSubview:view];
+
     }
     return _webView;
 }

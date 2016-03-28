@@ -15,6 +15,8 @@
 #import "SettingCodeViewController.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "LinkViewController.h"
+static NSString *cacheStr;
 @interface SettingsViewController ()<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSArray *allArray;
@@ -29,17 +31,18 @@
     self.navigationController.navigationBar.hidden = NO;
     self.tabBarController.tabBar.hidden = YES;
     self.title = @"设置";
-    self.view.backgroundColor = kMainColor;
+    //self.view.backgroundColor = kMainColor;
+    self.navigationController.navigationBar.barTintColor = kMainColor;
     [self showBackBtn];
     [self addRightBtn];
     SDImageCache *cache = [SDImageCache sharedImageCache];
     NSInteger cacheSize = [cache getSize];
-    NSString *cacheStr = [NSString stringWithFormat:@"清除缓存(%.2fM)", (CGFloat)cacheSize / 1024 / 1024];
+    cacheStr = [NSString stringWithFormat:@"清除缓存(%.2fM)", (CGFloat)cacheSize / 1024 / 1024];
   
     
 
-   
-    self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"连接社交网络",cacheStr,@"喜欢我吗？给个评分吧",@"意见反馈"]];
+    [self.view addSubview:self.tableView];
+//    self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"连接社交网络",cacheStr,@"喜欢我吗？给个评分吧",@"意见反馈"]];
     
     BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
@@ -47,13 +50,38 @@
             if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
             {
                 self.username = [obj objectForKey:@"name"];
-
-                 [self.view addSubview:self.tableView];
+                self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"连接社交网络",cacheStr,@"喜欢我吗？给个评分吧",@"意见反馈"]];
+                [self.tableView reloadData];
+                
             }
         }
     }];
-
+    
+    
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        for (BmobObject *obj in array) {
+            if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+            {
+                self.username = [obj objectForKey:@"name"];
+                self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"连接社交网络",cacheStr,@"喜欢我吗？给个评分吧",@"意见反馈"]];
+                [self.tableView reloadData];
+                
+            }
+        }
+    }];
+    
+}
+- (void)logout{
+    [BmobUser logout];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void)addRightBtn{
     UIButton *right = [UIButton buttonWithType:UIButtonTypeCustom];
     right.frame = CGRectMake(0, 0, 44, 44);
@@ -63,16 +91,6 @@
     UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc]initWithCustomView:right];
     self.navigationItem.rightBarButtonItem = rightBarBtn;
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
-
-}
-- (void)logout{
-    [BmobUser logout];
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -89,27 +107,13 @@
     }
     if (indexPath.section == 0) {
         
-            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:self.imageStr] placeholderImage:[UIImage imageNamed:@"123456"]];
+        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:self.imageStr] placeholderImage:[UIImage imageNamed:@"123456"]];
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2;
         cell.imageView.clipsToBounds = YES;
-        BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-            for (BmobObject *obj in array) {
-                if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
-                {
-                    self.username = [obj objectForKey:@"name"];
-                    
-                   // [self.tableView reloadData];
-                }
-            }
-        }];
 
-        cell.textLabel.text = self.username;
-    }else{
-        cell.textLabel.text = self.allArray[indexPath.section][indexPath.row];
- 
     }
+    cell.textLabel.text = self.allArray[indexPath.section][indexPath.row];  
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
@@ -141,7 +145,9 @@
         }
         //添加社交网络
         if (indexPath.row == 2) {
-            
+             UIStoryboard *main = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+            LinkViewController *link = [main instantiateViewControllerWithIdentifier:@"link"];
+            [self.navigationController pushViewController:link animated:YES];
         }
         
         //清除缓存
@@ -273,7 +279,7 @@
 
 - (UITableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, kWidth, kHeight)];
+        self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 15, kWidth, kHeight)];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
     }
