@@ -24,6 +24,17 @@ static NSString *identiffier = @"identifier";
 //http://api.breadtrip.com/hunter/hunter/2383951943/comments/?start=10
 //http://api.breadtrip.com/hunter/hunter/2383951943/comments/?start=20
 
+
+/*
+ 
+ http://api.breadtrip.com/v3/user/2383951943/
+ http://api.breadtrip.com/hunter/hunter/2383951943/comments/?start=0
+ http://api.breadtrip.com/v3/user/2383951943/trips/?start=0
+ 
+ 
+ */
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -40,11 +51,13 @@ static NSString *identiffier = @"identifier";
     
     //http://api.breadtrip.com/v3/user/2383951943/trips/?start=0
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
+    
+    NSString *storyURL = [NSString stringWithFormat:@"http://api.breadtrip.com/v3/user/%@/trips/?start=0",@"2383951943"];
+    NSLog(@"storyURL%@",storyURL);
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manger GET:[NSString stringWithFormat:@"http://api.breadtrip.com/v3/user/%@/trips/?start=0",self.storyString] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manger GET:storyURL parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        WLZLog(@"%@",responseObject);
         NSDictionary *Root = responseObject;
         NSDictionary *data = Root[@"data"];
         NSDictionary *trips = data[@"trips"];

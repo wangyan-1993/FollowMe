@@ -107,7 +107,7 @@
 
 -(void)jcCollectionView{
     //初始化
-    self.jctageLiseView = [[JCTagListView alloc] initWithFrame:CGRectMake(0, kHeight*0.13, kWidth, kWidth/3)];
+    self.jctageLiseView = [[JCTagListView alloc] initWithFrame:CGRectMake(0, kWidth *0.25, kWidth, kWidth/3)];
     //边框颜色
     self.jctageLiseView.canSelectTags = YES;
     self.jctageLiseView.tagCornerRadius = 15.0f;
@@ -125,11 +125,8 @@
         [self.jctageLiseView setCompletionBlockWithSelected:^(NSInteger index) {
             weakSelf.cityVC = [[CityViewController alloc] init];
     
-//            [weakSelf.cityVC.selects setTitle:weakSelf.allHotCityArray[index] forState:UIControlStateNormal];
             weakSelf.cityVC.stringName = weakSelf.allHotCityArray[index];
             
-            
-//            weakSelf.cityVC.stringName = weakSelf.allCityArray[index];
             
             [weakSelf.navigationController pushViewController:weakSelf.cityVC animated:NO];
                 }];

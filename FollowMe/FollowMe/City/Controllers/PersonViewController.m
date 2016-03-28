@@ -44,6 +44,10 @@ static NSString *Activity = @"ActivityID";
 @property(nonatomic, strong) NSMutableArray *otherSayArray;
 @property(nonatomic, strong) NSMutableArray *activityArray;
 
+@property(nonatomic, copy) NSString *otherCountStr;
+@property(nonatomic, copy) NSString *storyCountStr;
+
+
 @end
 
 @implementation PersonViewController
@@ -52,10 +56,6 @@ static NSString *Activity = @"ActivityID";
     [super viewDidLoad];
     [self updataConfig];
 
-    
-    
-//    [self.showView addSubview:self.headView];
-    
     self.tableView.tableHeaderView = self.headView;
     
     [self.view addSubview:self.tableView];
@@ -67,58 +67,19 @@ static NSString *Activity = @"ActivityID";
     [self.tableView registerNib:[UINib nibWithNibName:@"ActivityTableViewCell" bundle:nil] forCellReuseIdentifier:Activity];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"storyTableViewCell" bundle:nil] forCellReuseIdentifier:storyID];
-    
-    
-    
-   
-    
+ 
 }
-
-/*
-//和有趣的人做有趣的事：
- http://api.breadtrip.com/v3/user/2383951943/
- 
- 李建华
- http://api.breadtrip.com/v3/user/2384321953/
- 
- 星盘组：
- http://api.breadtrip.com/v3/user/2384163720/
- 
- 文慧；
- http://api.breadtrip.com/v3/user/2384097265/
- 
- 我爱亮晶晶
- http://api.breadtrip.com/v3/user/2384097265/
- 
- http://api.breadtrip.com/destination/place/1/US/
- 
- api.breadtrip.com/v3/user/2384097265/
- 
- */
 
 #pragma mark--------------------数据加载
 -(void)updataConfig{
-    //http://api.breadtrip.com/v3/user/2383951943/
-    //http://api.breadtrip.com/v3/user/2384280157/
-    //http://api.breadtrip.com/v3/user/2384281324/
-    //http://api.breadtrip.com/v3/user/2384326441/
-    //http://api.breadtrip.com/v3/user/2384275218/
-    
-//    WLZLog(@"%ld",self.personId);
-    
     NSString *urlStr= [NSString stringWithFormat:@"http://api.breadtrip.com/v3/user/%@/",self.personId];
-    
-//    WLZLog(@"%@",[NSString stringWithFormat:@"%lu", self.nameID]);
-    WLZLog(@"%@",urlStr);
-    //
-    
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-//    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+
     [manger GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        WLZLog(@"%@",responseObject);
+
 
         NSDictionary *root = responseObject;
         NSDictionary *data = root[@"data"];
@@ -132,6 +93,7 @@ static NSString *Activity = @"ActivityID";
         
         //评论，第二个分区 OK
         NSDictionary *client_comments = data[@"client_comments"];
+        self.otherCountStr = client_comments[@"total_count"];
         for (NSDictionary *clientDic in client_comments[@"data"]) {
             otherModel *model = [[otherModel alloc] init];
             [model setValuesForKeysWithDictionary:clientDic];
@@ -147,6 +109,7 @@ static NSString *Activity = @"ActivityID";
 
 //        游记故事集，第四个分区
         NSDictionary *trips = data[@"trips"];
+        self.storyCountStr = trips[@"total_count"];
         for (NSDictionary *dict in trips[@"data"]) {
             
             storyMdel *modelStory = [[storyMdel alloc] init];
@@ -270,7 +233,7 @@ static NSString *Activity = @"ActivityID";
     }else if (indexPath.section == 2){
         return kHeight*0.4;
     }else if (indexPath.section == 3){
-        return kHeight*0.3;
+        return kHeight*0.5;
     }
     else{
        return 50;
@@ -280,7 +243,7 @@ static NSString *Activity = @"ActivityID";
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     
-    if (section == 1 && self.otherSayArray.count != 0) {
+    if (section == 1 && [self.otherCountStr integerValue] > 3) {
         UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 30)];
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -297,7 +260,7 @@ static NSString *Activity = @"ActivityID";
         [footView addSubview:button];
      
         return footView;
-    }else if(section == 3 && self.storyArray.count != 0){
+    }else if(section == 3 && [self.storyCountStr integerValue] > 3){
         UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 30)];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(kWidth/3, 0, kWidth/3, 30);
@@ -311,6 +274,7 @@ static NSString *Activity = @"ActivityID";
         button.layer.cornerRadius = 10.0;
         button.clipsToBounds = YES;
         [footView addSubview:button];
+        
         return footView;
         
     }else
@@ -323,15 +287,15 @@ static NSString *Activity = @"ActivityID";
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint point = [touch locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    
     otherModel *model = self.otherSayArray[indexPath.row];
     
     OtherSayingViewController *otherVC = [[OtherSayingViewController alloc] init];
-    otherVC.otherString = model.client_id;
+    otherVC.otherString = model.hunter_id;
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:otherVC animated:NO];
     
-    
-    
+ 
 }
 -(void)ActionStoryFoot:(UIButton *)button event:(UIEvent*)event{
     

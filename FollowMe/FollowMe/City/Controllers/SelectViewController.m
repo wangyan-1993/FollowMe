@@ -104,20 +104,13 @@ static NSString *identifier = @"cell";
 #pragma mark ---------------tableView Delagate DataScore
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    
-        
+ 
         cityFirstTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
         
         cell.model = self.listArray[indexPath.row];
         [cell.ClassifyButton addTarget:self action:@selector(classAction) forControlEvents:UIControlEventTouchUpInside];
     
         return cell;
-    
-    
-    
-    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -130,7 +123,7 @@ static NSString *identifier = @"cell";
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return self.listArray.count;
-//        return 10;
+
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
