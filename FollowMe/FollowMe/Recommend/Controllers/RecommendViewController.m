@@ -9,9 +9,10 @@
 #import "RecommendViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "originalViewController.h"
 //广告轮播第三方
 #import "JXBAdPageView.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "specialViewController.h"
 #import "CollectionViewCell.h"
 #import "RecommendTableViewCell.h"
 #import "RecommendModel.h"
@@ -25,17 +26,22 @@
 #import "allCollectionViewController.h"
 #import "advertisingViewController.h"
 #import "storyDetailsViewController.h"
+#import "searchForWorldViewController.h"
+#import <UIKit/UIKit.h>
 //全局静态变量
+//http://api.breadtrip.com/trips/2387343240/waypoints/
+//http://api.breadtrip.com/v2/new_trip/?trip_id=2387101809
 static NSString *collectionHeader = @"cityHeader";
 static NSString *itemID = @"itemId";
 //广告轮播代理（JXBAdPageViewDelegate）
-@interface RecommendViewController ()<JXBAdPageViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,UISearchBarDelegate,UITextFieldDelegate,UISearchBarDelegate>{
-    //广告轮播数据数组
-    NSInteger _page;
+@interface RecommendViewController ()<JXBAdPageViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,UITextFieldDelegate,UISearchBarDelegate>{
     //上拉加载的时候
     NSString *_next_start;
-
+    NSInteger tagId;
+    //控制导航栏
+    NSInteger _ppp;
 }
+@property (nonatomic, strong)NSMutableArray *elementsArr;
 @property (nonatomic, strong) NSMutableArray *advertisementArray;
 //广告轮播图
 @property (nonatomic, strong) JXBAdPageView    *AdvertisementImageView;
@@ -43,7 +49,6 @@ static NSString *itemID = @"itemId";
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *spot_idArray;
 //collerctionView请求出的数组
-@property (nonatomic, strong) NSMutableArray *collerctionViewArray;
 @property (nonatomic, strong) NSMutableArray *introduceImageArray;
 @property (nonatomic, strong) NSMutableArray *introduceLableArray;
 @property (nonatomic, strong) NSMutableArray *nameImageArray;
@@ -71,12 +76,18 @@ static NSString *itemID = @"itemId";
 @property (nonatomic, strong) UIButton *nearBtn;
 //搜索历史
 @property (nonatomic, strong) JCTagListView *histroyView;
-
+//国外搜索id
+@property (nonatomic, strong) NSMutableArray *foreignsearchId;
+//国内搜索id
+@property (nonatomic, strong) NSMutableArray *inlandId;
+//搜索框取消按钮
+@property (nonatomic, strong) UIButton *cancelBtn;
 //广告轮播图的点击方法
 @property (nonatomic, strong) NSMutableArray *htmlArray;
 @property (nonatomic, strong) NSMutableArray *inlandListArray;
-
-
+@property (nonatomic, strong) NSMutableArray *typeForeignArray;
+@property (nonatomic, strong) NSMutableArray *typeInLandArray;
+@property (nonatomic, strong) NSMutableArray *id12Array;
 @end
 
 @implementation RecommendViewController
@@ -95,47 +106,71 @@ static NSString *itemID = @"itemId";
     
     
     
-    _page = 1;
+    _ppp = 0;
     self.navigationController.navigationBar.barTintColor = kMainColor;
-      
-        self.nearBtn.frame = CGRectMake(kWidth-90, 0, 90, 44);
-        [self.nearBtn setTitle:@"附近" forState:UIControlStateNormal];
-        [self.nearBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.nearBtn.frame = CGRectMake(kWidth-90, 0, 90, 44);
+    [self.nearBtn setTitle:@"附近" forState:UIControlStateNormal];
+    [self.nearBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.nearBtn addTarget:self action:@selector(nearBy) forControlEvents:UIControlEventTouchUpInside];
-    
-        [self.navigationController.navigationBar addSubview:self.nearBtn];
+    [self.navigationController.navigationBar addSubview:self.nearBtn];
   
     
  //搜索框
     self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10, 7, kWidth-80, 30)];
     self.mySearchBar.delegate = self;
-    self.mySearchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.mySearchBar.placeholder = @"搜索目的地、游记、故事集、用户";
     self.mySearchBar.layer.masksToBounds = YES;
-    self.mySearchBar.layer.cornerRadius = 30.0f;
+    self.mySearchBar.backgroundColor = [UIColor clearColor];
     [self.navigationController.navigationBar addSubview:self.mySearchBar];
-    // Do any additional setup after loading the view.
-   
     //collectionview添加进系统视图
-    [self.headerView addSubview:self.collectionView];
-    //请求数据
-   
-    //[self workOne];
-    [self.view addSubview:self.tableView];
+    
+    
+    
     self.tableView.tableHeaderView = self.headerView;
+    
+    
+    
+    
 //注册tableView
     [self.tableView registerNib:[UINib nibWithNibName:@"RecommendTableViewCell" bundle:nil] forCellReuseIdentifier:@"tableViewCell"];
     _next_start = nil;
     [self.tableView launchRefreshing];
     [self.view addSubview:self.tableView];
+    //添加轻拍手势  回收键盘
+    UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
+    tapGr.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapGr];
+    [self NSTreadtableView];
+    [self NSTreadcollectionView];
   
 }
+- (void)NSTreadcollectionView{
+    [NSThread detachNewThreadSelector:@selector(opencollectionView) toTarget:self withObject:nil];
+}
+- (void)opencollectionView{
+    [self.headerView addSubview:self.collectionView];
+    
+}
+- (void)NSTreadtableView{
+    [NSThread detachNewThreadSelector:@selector(openTableView) toTarget:self withObject:nil];
+}
+- (void)openTableView{
+    [self.view addSubview:self.tableView];
+
+}
+
+#pragma mark     回收键盘
+-(void)viewTapped:(UITapGestureRecognizer*)tapGr
+{
+    [self.mySearchBar resignFirstResponder];
+}
+
 #pragma mark ----  附近的人功能实现--------
 - (void)nearBy{
+    _ppp = 0;
     nearByViewController *nearVC = [[nearByViewController alloc] init];
     [self.navigationController pushViewController:nearVC animated:YES];
-//    SingleLocaitonAloneViewController *VC = [[SingleLocaitonAloneViewController alloc] init];
-//    [self.navigationController pushViewController:VC animated:YES];
+
     
 }
 //在页面将要出现的时候
@@ -143,21 +178,34 @@ static NSString *itemID = @"itemId";
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
     self.mySearchBar.hidden = NO;
-    self.nearBtn.hidden = NO;
+//    self.cancelBtn.hidden = NO;
+//    self.nearBtn.hidden = NO;
+    if (_ppp == 0) {
+        self.nearBtn.hidden = NO;
+        self.cancelBtn.hidden = YES;
+        
+    }else{
+        self.cancelBtn.hidden = NO;
+        self.nearBtn.hidden = YES;
+        
+    }
+   
+    
 }
 //在页面将要消失的时候，调用此方法，去掉所有的
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.mySearchBar.hidden = YES;
     self.nearBtn.hidden = YES;
+    self.cancelBtn.hidden = YES;
 }
 #pragma mark -----------搜索栏方法---------
 - (void)addWhiteView{
     
     
-    UILabel *lable1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 90, kWidth, 20)];
+    UILabel *lable1 = [[UILabel alloc] initWithFrame:CGRectMake(100, 90, kWidth-200, 20)];
     lable1.text = @"国外热门目的地";
-    UILabel *lable2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 320 , kWidth, 20)];
+    UILabel *lable2 = [[UILabel alloc] initWithFrame:CGRectMake(100, 320 , kWidth-200, 20)];
     lable2.text = @"国内热门目的地";
   
     
@@ -167,8 +215,19 @@ static NSString *itemID = @"itemId";
 
      lable1.textAlignment = NSTextAlignmentCenter;
     lable2.textAlignment = NSTextAlignmentCenter;
+    UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelBtn setTitle:@"删除搜索历史" forState:UIControlStateNormal];
+    [cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    cancelBtn.frame = CGRectMake(kWidth/2+20, 475, kWidth/2-20, 20);
+    [cancelBtn addTarget:self action:@selector(cancelHistory) forControlEvents:UIControlEventTouchUpInside];
+    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+    cancelBtn.titleLabel.highlighted = YES;
+    cancelBtn.titleLabel.enabled = NO;
     
     
+    
+    
+    [self.searchView addSubview:cancelBtn];
     [self.searchView addSubview:lable3];
     [self.searchView addSubview:lable1];
     [self.searchView addSubview:lable2];
@@ -183,42 +242,76 @@ static NSString *itemID = @"itemId";
     //边框颜色
 //    self.inLandView.tagStrokeColor = [UIColor redColor];
     NSArray *ayyay1 = [NSArray arrayWithArray:self.foreignListArray];
+
     [self.foreignView.tags addObjectsFromArray:ayyay1];
     NSArray *array2 = [NSArray arrayWithArray:self.inlandListArray];
     [self.inLandView.tags addObjectsFromArray:array2];
+    __block RecommendViewController *weakself = self;
     [self.foreignView setCompletionBlockWithSelected:^(NSInteger index) {
-        WLZLog(@"国外%ld",(long)index);
+//        WLZLog(@"国外%ld",(long)index);
+       
+
+        weakself.mySearchBar.text = weakself.foreignListArray[index];
+        searchViewController *seaVC = [[searchViewController alloc] init];
+        seaVC.type = weakself.typeForeignArray[index];
+        seaVC.userId = weakself.foreignsearchId[index];
+        [weakself.navigationController pushViewController:seaVC animated:YES];
         
     }];
     
     
     [self.inLandView setCompletionBlockWithSelected:^(NSInteger index) {
         WLZLog(@"国内%ld",(long)index);
+        weakself.mySearchBar.text = weakself.inlandListArray[index];
+        searchViewController *seaVC = [[searchViewController alloc] init];
+        seaVC.type = weakself.typeInLandArray[index];
+        seaVC.userId = weakself.inlandId[index];
+        [weakself.navigationController pushViewController:seaVC animated:YES];
+        
     }];
+    
+    
+    
+}
+/**
+ *  删除搜索历史
+ */
+- (void)cancelHistory{
+    [self.histroyView.tags removeAllObjects];
+    [self.histroyView.collectionView reloadData];
+
 }
 
 
-    
-
 //搜索栏输入导入时候
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
-
+    _ppp = 1;
     self.nearBtn.hidden = YES;
+      self.cancelBtn.hidden = NO;
+    self.cancelBtn.frame = CGRectMake(kWidth-90, 0, 90, 44);
+    
+    [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [self.cancelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.cancelBtn addTarget:self action:@selector(cancelView) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.navigationController.navigationBar addSubview:self.cancelBtn];
   
 
     [self addWhiteView];
-    [self.mySearchBar setShowsCancelButton:YES animated:YES];
+    [self.mySearchBar setShowsCancelButton:NO animated:YES];
     [UIView animateWithDuration:1 animations:^{
         self.searchView.frame = self.view.frame;
     }];
     return YES;
 }
 //取消按钮的点击方法
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+- (void)cancelView{
+    _ppp = 0;
     self.nearBtn.hidden = NO;
-   
-    [searchBar resignFirstResponder];
-    [searchBar setShowsCancelButton:NO animated:YES];
+    self.cancelBtn.hidden = YES;
+
+    [self.mySearchBar resignFirstResponder];
+    [self.mySearchBar setShowsCancelButton:NO animated:YES];
     [UIView animateWithDuration:0.6 animations:^{
         self.searchView.frame = CGRectMake(0, -kHeight, kWidth, kHeight);
     }];
@@ -227,6 +320,8 @@ static NSString *itemID = @"itemId";
 }
 //搜索按钮的点击方法
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+//    self.cancelBtn.hidden = YES;
+    _ppp = 1;
     self.histroyView.canSelectTags = YES;
     self.histroyView.tagCornerRadius = 10.0f;
     [self.histroyView.tags addObject:searchBar.text];
@@ -234,6 +329,33 @@ static NSString *itemID = @"itemId";
     [self.histroyView setCompletionBlockWithSelected:^(NSInteger index) {
         WLZLog(@"%ld",(long)index);
     }];
+    NSString *encodingString = [searchBar.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    __weak RecommendViewController *weakself = self;
+    [self.histroyView setCompletionBlockWithSelected:^(NSInteger index) {
+        searchBar.text = weakself.histroyView.tags[index];
+        searchForWorldViewController *seaVC = [[searchForWorldViewController alloc] init];
+        seaVC.text = weakself.histroyView.tags[index];
+        seaVC.keyId = encodingString;
+        [weakself.navigationController pushViewController:seaVC animated:YES];
+        
+    }];
+
+
+    /*
+     1.url编码
+     
+     ios中http请求遇到汉字的时候，需要转化成UTF-8，用到的方法是：
+     
+     NSString * encodingString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+     
+     */
+    
+    searchForWorldViewController *worldVC = [[searchForWorldViewController alloc] init];
+    worldVC.text = searchBar.text;
+    worldVC.keyId = encodingString;
+    [self.navigationController pushViewController:worldVC animated:YES];
+    
+    
     
 }
 //点击空白回收键盘
@@ -270,6 +392,12 @@ static NSString *itemID = @"itemId";
     [self.tableView tableViewDidEndDragging:scrollView];
 }
 //请求广告轮播
+
+- (void)NSThreadAdvertisement{
+    [NSThread detachNewThreadSelector:@selector(AdvertisementArray) toTarget:self withObject:nil];
+}
+
+
 - (void)AdvertisementArray{
     //使用SDWebImage
     _AdvertisementImageView = [[JXBAdPageView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight*0.3)];
@@ -329,20 +457,22 @@ static NSString *itemID = @"itemId";
        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [ProgressHUD showSuccess:@"请求成功"];
+//        WLZLog(@"%@",responseObject);
         NSDictionary *dic = responseObject;
         //请求主要数据data
         NSDictionary *dic1 = dic[@"data"];
         //请求首页数据
+        
         NSArray *elements = dic1[@"elements"];
         _next_start = dic1[@"next_start"];
         NSArray *searchArray = dic1[@"search_data"];
         if (_refreshing) {
-            if (self.collerctionViewArray.count > 0) {
-                [self.collerctionViewArray removeAllObjects];
+            if (self.advertisementArray.count > 0) {
                 [self.advertisementArray removeAllObjects];
                 [self.introduceImageArray removeAllObjects];
                 [self.introduceLableArray removeAllObjects];
-                
+                [self.elementsArr removeAllObjects];
+                [self.id12Array removeAllObjects];
                 [self.nameImageArray removeAllObjects];
                 [self.nameLableArray removeAllObjects];
                 [self.spot_idArray removeAllObjects];
@@ -350,18 +480,23 @@ static NSString *itemID = @"itemId";
                 [self.htmlArray removeAllObjects];
                 [self.foreignListArray removeAllObjects];
                 [self.inlandListArray removeAllObjects];
-                
+                [self.foreignsearchId removeAllObjects];
+                [self.inlandId removeAllObjects];
             }
         }
         for (NSDictionary *dicSearch in searchArray) {
             if ([dicSearch[@"title"]isEqualToString:@"国外热门目的地"]) {
                 for (NSDictionary *dicForeign  in dicSearch[@"elements"]) {
                     [self.foreignListArray addObject:dicForeign[@"name"]];
+                    [self.foreignsearchId addObject:dicForeign[@"id"]];
+                    [self.typeForeignArray addObject:dicForeign[@"type"]];
                 }
             }
             if ([dicSearch[@"title"]isEqualToString:@"国内热门目的地"]) {
                 for (NSDictionary *dicInland  in dicSearch[@"elements"]) {
                     [self.inlandListArray addObject:dicInland[@"name"]];
+                     [self.inlandId addObject:dicInland[@"id"]];
+                     [self.typeInLandArray addObject:dicInland[@"type"]];
                 }
 
             }
@@ -369,7 +504,7 @@ static NSString *itemID = @"itemId";
         }
       for (NSDictionary *dic2 in elements) {
             //请求广告数据
-            
+          
             if ([dic2[@"desc"] isEqualToString:@"广告banner"]) {
                 NSArray *data = dic2[@"data"];
                 NSArray *item = data[0];
@@ -403,16 +538,15 @@ static NSString *itemID = @"itemId";
                     [self.nameLableArray addObject:user[@"name"]];
                     [self.nameImageArray addObject:user[@"avatar_s"]];
                 }
-                [self.collerctionViewArray addObject:self.introduceImageArray];
-                [self.collerctionViewArray addObject:self.introduceLableArray];
-                [self.collerctionViewArray addObject:self.nameImageArray];
-                [self.collerctionViewArray addObject:self.nameLableArray];
+               
                 
             }
           else if (dic2[@"type"] == [NSNumber numberWithInteger:4]||[dic2[@"desc"] isEqualToString:@"热门游记"]) {
+              [self.elementsArr addObject:dic2[@"type"]];
               NSArray *data = dic2[@"data"];
               for (NSDictionary *dic4 in data) {
                   RecommendModel *model = [[RecommendModel alloc] initWithDictionary:dic4];
+                  [self.id12Array addObject:dic4[@"id"]];
                   [self.tableViewArray addObject:model];
               }
             }
@@ -426,12 +560,13 @@ static NSString *itemID = @"itemId";
               self.tableViewSectionArray = data[0];
 
           }
+
         }
         [self.tableView tableViewDidFinishedLoading];
         self.tableView.reachedTheEnd = NO;
-       [self AdvertisementArray];
+       [self NSThreadAdvertisement];
         [self addWhiteView];
-
+        
         //刷新tableView
         [self.tableView reloadData];
        //刷新collectionview
@@ -440,7 +575,7 @@ static NSString *itemID = @"itemId";
         [ProgressHUD showError:@"请求失败"];
         
     }];
-    
+//    WLZLog(@"刷新网络请求");
 }
 #pragma mark ----------------UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -456,6 +591,22 @@ static NSString *itemID = @"itemId";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *str = self.id12Array[indexPath.row];
+           if (self.elementsArr[indexPath.row] == [NSNumber numberWithInteger:12]) {
+            originalViewController *orVC = [[originalViewController alloc] init];
+            
+               orVC.userId = str;
+            [self.navigationController pushViewController:orVC animated:YES];
+        }
+        else if (self.elementsArr[indexPath.row] == [NSNumber numberWithInteger:4]) {
+            specialViewController *specialVC = [[specialViewController alloc] init];
+           
+            specialVC.userId = str;
+            [self.navigationController pushViewController:specialVC animated:YES];
+        
+        
+    }
+    
     
 }
 
@@ -503,6 +654,52 @@ static NSString *itemID = @"itemId";
     scrollPosition = UICollectionViewScrollPositionTop;
 }
 #pragma mark     -------------懒加载--------------
+
+- (NSMutableArray *)id12Array{
+    if (_id12Array == nil) {
+        self.id12Array = [NSMutableArray new];
+    }
+    return _id12Array;
+}
+- (NSMutableArray *)elementsArr{
+    if (_elementsArr == nil) {
+        self.elementsArr = [NSMutableArray new];
+    }
+    return _elementsArr;
+}
+- (NSMutableArray *)typeForeignArray{
+    if (_typeForeignArray == nil) {
+        self.typeForeignArray = [NSMutableArray new];
+    }
+    return _typeForeignArray;
+}
+- (NSMutableArray *)typeInLandArray{
+    if (_typeInLandArray == nil) {
+        self.typeInLandArray = [NSMutableArray new];
+    }
+    return _typeInLandArray;
+}
+//取消按钮
+- (UIButton *)cancelBtn{
+    if (_cancelBtn == nil) {
+        self.cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    }
+    return _cancelBtn;
+}
+//搜索id
+- (NSMutableArray *)foreignsearchId{
+    if (_foreignsearchId == nil) {
+        self.foreignsearchId = [NSMutableArray new];
+    }
+    return _foreignsearchId;
+}
+//国内
+- (NSMutableArray *)inlandId{
+    if (_inlandId == nil) {
+        self.inlandId = [NSMutableArray new];
+    }
+    return _inlandId;
+}
 - (NSMutableArray *)spot_idArray{
     if (_spot_idArray == nil ) {
         self.spot_idArray = [NSMutableArray new];
@@ -533,6 +730,7 @@ static NSString *itemID = @"itemId";
 - (JCTagListView *)foreignView{
     if (_foreignView == nil) {
         self.foreignView = [[JCTagListView alloc] initWithFrame:CGRectMake(30, 120, kWidth-60, kHeight*0.4)];
+        self.foreignView.tag = 1;
         [self.searchView addSubview:self.foreignView];
     }
     return _foreignView;
@@ -540,6 +738,7 @@ static NSString *itemID = @"itemId";
 - (JCTagListView *)inLandView{
     if (_inLandView == nil ) {
         self.inLandView = [[JCTagListView alloc] initWithFrame:CGRectMake(30, 350, kWidth-60, kHeight*0.4)];
+        self.foreignView.tag = 2;
         [self.searchView addSubview:self.inLandView];
     }
     return _inLandView;
@@ -586,7 +785,7 @@ static NSString *itemID = @"itemId";
 //tableView的懒加载
 - (UITableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight+44) pullingDelegate:self];
+        self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight-108) pullingDelegate:self];
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
         self.tableView.rowHeight = 250;
@@ -631,12 +830,6 @@ static NSString *itemID = @"itemId";
 
 
 //collerctionViewArray数组懒加载
-- (NSMutableArray *)collerctionViewArray{
-    if (_collerctionViewArray == nil) {
-        self.collerctionViewArray = [NSMutableArray new];
-    }
-    return _collerctionViewArray;
-}
 //
 - (NSMutableArray *)introduceImageArray{
     if (_introduceImageArray == nil) {

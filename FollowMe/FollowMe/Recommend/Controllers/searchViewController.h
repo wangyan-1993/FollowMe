@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface searchViewController : UIViewController
-
+@property (nonatomic, retain) NSString *userId;
+@property (nonatomic, retain) NSString *type;
 @end

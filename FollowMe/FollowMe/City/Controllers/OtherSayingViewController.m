@@ -40,11 +40,14 @@ static NSString *identiffier = @"identifier";
     
     //http://api.breadtrip.com/v3/user/2383951943/trips/?start=0
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
-    NSLog(@"%@",self.otherString);
+    NSLog(@"self.otherString = %@",self.otherString);
+    NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/hunter/%@/comments/?start=0",self.otherString];
+    NSLog(@"self.otherString = %@",self.otherString);
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manger GET:[NSString stringWithFormat:@"http://api.breadtrip.com/hunter/hunter/2383951943/comments/?start=0"] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manger GET:urlStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
         
         NSDictionary *dict = responseObject;
         NSDictionary *data = dict[@"data"];

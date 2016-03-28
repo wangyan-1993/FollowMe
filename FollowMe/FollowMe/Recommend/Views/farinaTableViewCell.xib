@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="farinaTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="123456" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-gJ-YZv">
+                        <rect key="frame" x="8" y="8" width="43" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="43" id="Tox-Oi-CJx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAm-64-5Kd">
+                        <rect key="frame" x="59" y="8" width="284" height="43"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="topMargin" secondItem="FAm-64-5Kd" secondAttribute="top" id="Jwo-5r-fRX"/>
+                    <constraint firstItem="FAm-64-5Kd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="51" id="OMR-Dl-5ji"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="FAm-64-5Kd" secondAttribute="bottom" id="b0o-dH-bDj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="FAm-64-5Kd" secondAttribute="trailing" constant="24" id="hcm-TC-oPl"/>
+                    <constraint firstAttribute="topMargin" secondItem="cDN-gJ-YZv" secondAttribute="top" id="l5s-1D-GiA"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="cDN-gJ-YZv" secondAttribute="leading" id="sJK-u4-rqF"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="cDN-gJ-YZv" secondAttribute="bottom" id="wVz-t0-elx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="image" destination="cDN-gJ-YZv" id="LF9-So-dp3"/>
+                <outlet property="name" destination="FAm-64-5Kd" id="8bT-5F-SZ7"/>
+            </connections>
+            <point key="canvasLocation" x="278.5" y="314"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="123456" width="1346" height="1346"/>
+    </resources>
+</document>

@@ -13,7 +13,7 @@
 @property(nonatomic,copy) NSString *comment_public;
 @property(nonatomic, copy) NSString *client_avatar;
 @property(nonatomic, copy) NSString *datetime_formatted;
-@property(nonatomic, copy) NSString *client_id;
+@property(nonatomic, copy) NSString *hunter_id;
 
 
 @end

@@ -36,16 +36,20 @@
     
     [self mapLocation];
 
-    
+
     
     kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=0&count=20";
-    //&latitude=34.612575&longitude=112.42039799999998
+    //在模拟器上运行
+//    _lat=34.612575;
+//    _lon=112.42039799999998;
+    
+    
     _pagecount = 0;
     [self.view addSubview:self.segment];
     self.title = @"我的附近";
-    [self netWork];
+   // [self netWork];
     [self.view addSubview:self.tableView];
-//    [self.tableView launchRefreshing];
+    //[self.tableView launchRefreshing];
     //添加轻扫手势
     //向左滑动
     UISwipeGestureRecognizer *recognizer;
@@ -63,15 +67,14 @@
    
 }
 - (void)mapLocation{
-    [AMapLocationServices sharedServices].apiKey = (NSString *)kZhGaodeMapKey;
-    
+  [AMapLocationServices sharedServices].apiKey = (NSString *)kZhGaodeMapKey;
     self.manger = [[AMapLocationManager alloc] init];
     
     // 带逆地理信息的单次定位（返回坐标和地址信息）
     [self.manger setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
     //   定位超时时间，可修改，最小2s
     self.manger.locationTimeout = 3;
-    //   逆地理请求超时时间，可修改，最小2s
+    //    //   逆地理请求超时时间，可修改，最小2s
     self.manger.reGeocodeTimeout = 3;
     // 带逆地理（返回坐标和地址信息） YES改为NO,将不会返回地理信息
     [self.manger requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
@@ -82,19 +85,19 @@
             }
         }
         WLZLog(@"location:{lat:%.20f; lon:%f; accuracy:%.10f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
+        //在真机
         _lat = location.coordinate.latitude;
         _lon = location.coordinate.longitude;
         if (regeocode)
         {
             NSLog(@"reGeocode:%@", regeocode);
-        }    }];
-    
+        }
+    }];
+
     
 
 }
-//- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location{
-//    WLZLog(@"location:{lat:%.20f; lon:%f; accuracy:%.10f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
-//}
+
 #pragma mark -----网络请求------
 - (void)netWork{
     [self mapLocation];
@@ -201,10 +204,11 @@
         case 0:
             _pagecount = 0;
             [self.allArray removeAllObjects];
+             kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=0&count=20";
             [self netWork];
             [self.tableView reloadData];
-
-            self.refreash = YES;
+           
+//            self.refreash = YES;
             break;
         case 1:
             _pagecount = 0;
