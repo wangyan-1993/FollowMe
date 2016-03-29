@@ -978,7 +978,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="s3Y-fW-Wea"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -994,7 +993,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="I1T-3n-mTO"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1081,6 +1079,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OXI-Gr-82V"/>
                                 </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>

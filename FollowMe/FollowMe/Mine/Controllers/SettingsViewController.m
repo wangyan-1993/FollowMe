@@ -50,7 +50,7 @@ static NSString *cacheStr;
             if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
             {
                 self.username = [obj objectForKey:@"name"];
-                self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"连接社交网络",cacheStr,@"喜欢我吗？给个评分吧",@"意见反馈"]];
+                self.allArray = @[@[@"个人基本信息"],@[@"添加朋友",@"修改账户密码",@"连接社交网络",cacheStr,@"喜欢我吗？给个评分吧",@"意见反馈"]];
                 [self.tableView reloadData];
                 
             }
@@ -63,18 +63,6 @@ static NSString *cacheStr;
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        for (BmobObject *obj in array) {
-            if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
-            {
-                self.username = [obj objectForKey:@"name"];
-                self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"连接社交网络",cacheStr,@"喜欢我吗？给个评分吧",@"意见反馈"]];
-                [self.tableView reloadData];
-                
-            }
-        }
-    }];
     
 }
 - (void)logout{
@@ -105,15 +93,15 @@ static NSString *cacheStr;
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
     }
-    if (indexPath.section == 0) {
-        
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:self.imageStr] placeholderImage:[UIImage imageNamed:@"123456"]];
-        
-        cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2;
-        cell.imageView.clipsToBounds = YES;
-
-    }
-    cell.textLabel.text = self.allArray[indexPath.section][indexPath.row];  
+//    if (indexPath.section == 0) {
+//        
+////        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:self.imageStr] placeholderImage:[UIImage imageNamed:@"123456"]];
+//        
+////        cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2;
+////        cell.imageView.clipsToBounds = YES;
+//
+//    }
+    cell.textLabel.text = self.allArray[indexPath.section][indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;

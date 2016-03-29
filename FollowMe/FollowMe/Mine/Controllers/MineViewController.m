@@ -42,20 +42,20 @@
     title.font = [UIFont systemFontOfSize:36];
     title.textColor = [UIColor whiteColor];
     [self.view addSubview:title];
-    UIImageView *image1 = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth*0.132, kHeight*0.27, kWidth*0.16, kWidth*0.16)];
-    image1.image = [UIImage imageNamed:@"weixin"];
-    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn1.frame = CGRectMake(kWidth*0.112, kHeight*0.27, kWidth*0.2, kWidth*0.24);
-    [btn1 setTitle:@"微信登陆" forState:UIControlStateNormal];
-    btn1.titleLabel.font = [UIFont systemFontOfSize:15];
-    btn1.titleEdgeInsets = UIEdgeInsetsMake(kWidth*0.16, 0, 0, 0);
-    [btn1 addTarget:self action:@selector(weixinlogin) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn1];
-    [self.view addSubview:image1];
-    UIImageView *image2 = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth*0.43, kHeight*0.27, kWidth*0.16, kWidth*0.16)];
+//    UIImageView *image1 = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth*0.132, kHeight*0.27, kWidth*0.16, kWidth*0.16)];
+//    image1.image = [UIImage imageNamed:@"weixin"];
+//    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    btn1.frame = CGRectMake(kWidth*0.112, kHeight*0.27, kWidth*0.2, kWidth*0.24);
+//    [btn1 setTitle:@"微信登陆" forState:UIControlStateNormal];
+//    btn1.titleLabel.font = [UIFont systemFontOfSize:15];
+//    btn1.titleEdgeInsets = UIEdgeInsetsMake(kWidth*0.16, 0, 0, 0);
+//    [btn1 addTarget:self action:@selector(weixinlogin) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:btn1];
+//    [self.view addSubview:image1];
+    UIImageView *image2 = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth*0.27, kHeight*0.27, kWidth*0.16, kWidth*0.16)];
     image2.image = [UIImage imageNamed:@"weibo"];
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn2.frame = CGRectMake(kWidth*0.41, kHeight*0.27, kWidth*0.2, kWidth*0.24);
+    btn2.frame = CGRectMake(kWidth*0.25, kHeight*0.27, kWidth*0.2, kWidth*0.24);
     [btn2 setTitle:@"微博登陆" forState:UIControlStateNormal];
     btn2.titleLabel.font = [UIFont systemFontOfSize:15];
     btn2.titleEdgeInsets = UIEdgeInsetsMake(kWidth*0.16, 0, 0, 0);
@@ -63,10 +63,10 @@
 
     [self.view addSubview:btn2];
     [self.view addSubview:image2];
-    UIImageView *image3 = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth*0.76, kHeight*0.27, kWidth*0.16, kWidth*0.16)];
+    UIImageView *image3 = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth*0.61, kHeight*0.27, kWidth*0.16, kWidth*0.16)];
     image3.image = [UIImage imageNamed:@"qq"];
     UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn3.frame = CGRectMake(kWidth*0.74, kHeight*0.27, kWidth*0.2, kWidth*0.24);
+    btn3.frame = CGRectMake(kWidth*0.59, kHeight*0.27, kWidth*0.2, kWidth*0.24);
     [btn3 setTitle:@"QQ登陆" forState:UIControlStateNormal];
     btn3.titleLabel.font = [UIFont systemFontOfSize:15];
     btn3.titleEdgeInsets = UIEdgeInsetsMake(kWidth*0.16, 0, 0, 0);
@@ -75,7 +75,7 @@
     [self.view addSubview:btn3];
     [self.view addSubview:image3];
     if (kWidth < 375) {
-        btn1.titleLabel.font = [UIFont systemFontOfSize:13];
+        //btn1.titleLabel.font = [UIFont systemFontOfSize:13];
         btn2.titleLabel.font = [UIFont systemFontOfSize:13];
 
         btn3.titleLabel.font = [UIFont systemFontOfSize:13];
