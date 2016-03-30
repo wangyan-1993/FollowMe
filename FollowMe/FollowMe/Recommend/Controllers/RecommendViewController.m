@@ -93,8 +93,11 @@ static NSString *cellIdentifier = @"tableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     _ppp = 0;
     _next_start = nil;
+
+
     self.navigationController.navigationBar.barTintColor = kMainColor;
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headerView;

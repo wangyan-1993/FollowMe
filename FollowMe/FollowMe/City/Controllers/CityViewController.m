@@ -400,8 +400,8 @@ static NSString *identifier = @"cell";
 
 -(void)calanderAction{
     
-    if (!_calendarView) {
-        _calendarView = [[LDCalendarView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)];
+
+        _calendarView = [[LDCalendarView alloc] initWithFrame:CGRectMake(0, -100, SCREEN_WIDTH,SCREEN_HEIGHT)];
         [self.secondView addSubview:_calendarView];
         
         __weak typeof(self) weakSelf = self;
@@ -413,7 +413,7 @@ static NSString *identifier = @"cell";
                 
             }
         };
-    }
+
     [self.calendarView show];
     self.calendarView.defaultDates = _seletedDays;
     
@@ -430,7 +430,7 @@ static NSString *identifier = @"cell";
     
     
     UIButton *enSure = [UIButton buttonWithType:UIButtonTypeCustom];
-    enSure.frame = CGRectMake(20, kHeight-220, kWidth - 40, 44);
+    enSure.frame = CGRectMake(20, kHeight-320, kWidth - 40, 44);
     [enSure setTitle:@"确定" forState:UIControlStateNormal];
     [enSure addTarget:self action:@selector(EnsureSecond) forControlEvents:UIControlEventTouchUpInside];
     enSure.layer.cornerRadius = 15.0;
@@ -441,7 +441,7 @@ static NSString *identifier = @"cell";
     
     [UIView animateWithDuration:0.5 animations:^{
         self.backView.alpha  = 0.6;
-        self.secondView.frame = CGRectMake(0, kScreenHeight - 500, kScreenWidth, 500);
+        self.secondView.frame = CGRectMake(0, kHeight-500, kScreenWidth, 500);
     }];
 }
 

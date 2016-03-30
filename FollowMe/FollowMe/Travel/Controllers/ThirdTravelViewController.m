@@ -19,15 +19,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSURL *url = [[NSURL alloc]initWithString:self.urlString];
+    WLZLog(@"%@",url);
     self.navigationController.navigationBar.barTintColor = kMainColor;
 self.title = @"介绍";
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     [self showBackBtn];
 
     [self.view addSubview:self.webView];
-
+   
 
 }
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('hotel-bottom')[0].style.display = 'none'"];
+
+}
+
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     NSString *urlStr = request.URL.absoluteString;
@@ -127,7 +133,9 @@ self.title = @"介绍";
     if (_webView == nil) {
         self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
         self.webView.delegate = self;
-        
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, kHeight-50, kWidth, 50)];
+        view.backgroundColor = [UIColor whiteColor];
+        [self.webView addSubview:view];
     }
     return _webView;
 }

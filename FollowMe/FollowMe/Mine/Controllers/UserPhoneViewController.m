@@ -37,15 +37,28 @@
             //修改绑定手机
             BmobUser *buser = [BmobUser getCurrentUser];
             buser.mobilePhoneNumber = self.userphone.text;
+            
             [buser setObject:[NSNumber numberWithBool:YES] forKey:@"mobilePhoneNumberVerified"];
             [buser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
                 if (isSuccessful) {
                     NSLog(@"%@",buser);
                     [self.navigationController popViewControllerAnimated:YES];
                 } else {
-                    NSLog(@"%@",error);
+                
+               
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"%@", error] preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:action1];
+            UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self.navigationController popViewControllerAnimated:YES];
+                
+            }];
+            [alert addAction:action2];
+            [self presentViewController:alert animated:YES completion:nil];
+
                 }
             }];
+            
             
         } else {
             NSLog(@"%@",error);

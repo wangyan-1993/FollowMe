@@ -33,6 +33,7 @@
 		7A0DC2B31C9E897A006E3569 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0DC2B21C9E897A006E3569 /* UIKit.framework */; };
 		7A0DC2B51C9E898B006E3569 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0DC2B41C9E898B006E3569 /* Foundation.framework */; };
 		7A0DC2B71C9E899E006E3569 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0DC2B61C9E899E006E3569 /* libz.tbd */; };
+		7A152DBB1CA9476A00060A25 /* LinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A152DBA1CA9476A00060A25 /* LinkViewController.m */; };
 		7A21BF1B1C9BB19800E2321F /* ChoseCityList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A21BF1A1C9BB19800E2321F /* ChoseCityList.plist */; };
 		7A21BF1E1C9BC54000E2321F /* ChoseCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A21BF1D1C9BC54000E2321F /* ChoseCityModel.m */; };
 		7A21BF211C9BD44900E2321F /* selectHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A21BF201C9BD44900E2321F /* selectHotViewController.m */; };
@@ -242,6 +243,8 @@
 		7A0DC2B21C9E897A006E3569 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7A0DC2B41C9E898B006E3569 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7A0DC2B61C9E899E006E3569 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		7A152DB91CA9476A00060A25 /* LinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkViewController.h; sourceTree = "<group>"; };
+		7A152DBA1CA9476A00060A25 /* LinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkViewController.m; sourceTree = "<group>"; };
 		7A21BF1A1C9BB19800E2321F /* ChoseCityList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChoseCityList.plist; sourceTree = "<group>"; };
 		7A21BF1C1C9BC54000E2321F /* ChoseCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoseCityModel.h; sourceTree = "<group>"; };
 		7A21BF1D1C9BC54000E2321F /* ChoseCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoseCityModel.m; sourceTree = "<group>"; };
@@ -936,6 +939,8 @@
 				7A84D80E1C9FE44A00A76134 /* SettingsViewController.m */,
 				7AEDB5DD1CA3896600F2E45D /* SettingCodeViewController.h */,
 				7AEDB5DE1CA3896600F2E45D /* SettingCodeViewController.m */,
+				7A152DB91CA9476A00060A25 /* LinkViewController.h */,
+				7A152DBA1CA9476A00060A25 /* LinkViewController.m */,
 				7A8BD11E1CA15ADC00D8ACC1 /* UserInfoViewController.h */,
 				7A8BD11F1CA15ADC00D8ACC1 /* UserInfoViewController.m */,
 				7AEDB5DB1CA3896600F2E45D /* UsernameViewController.h */,
@@ -1560,6 +1565,7 @@
 				7A3E98441CA8D155007B3A74 /* storyDetailsView.m in Sources */,
 				7A5EF2E01CA4BF5A0004BEA1 /* MJRefreshStateHeader.m in Sources */,
 				7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */,
+				7A152DBB1CA9476A00060A25 /* LinkViewController.m in Sources */,
 				7A5EF2E51CA4BF5A0004BEA1 /* UIView+MJExtension.m in Sources */,
 				7A5EF2F11CA4BF5A0004BEA1 /* VPImageCropperViewController.m in Sources */,
 				7A5EF30C1CA540B40004BEA1 /* StoryViewController.m in Sources */,

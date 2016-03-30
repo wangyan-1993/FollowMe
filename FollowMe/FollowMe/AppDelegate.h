@@ -14,5 +14,6 @@ static BOOL isProduct = YES;
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *wbtoken;
 
+
 @end
 

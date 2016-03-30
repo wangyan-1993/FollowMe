@@ -912,18 +912,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHT-4l-2Wr">
-                                <rect key="frame" x="6" y="107" width="363" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="旧密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bK6-nE-rwt">
+                                <rect key="frame" x="6" y="153" width="363" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dMF-mt-KIA"/>
+                                    <constraint firstAttribute="height" constant="30" id="jyN-ix-YaI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="旧密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bK6-nE-rwt">
-                                <rect key="frame" x="6" y="137" width="363" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHT-4l-2Wr">
+                                <rect key="frame" x="6" y="115" width="363" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="jyN-ix-YaI"/>
+                                    <constraint firstAttribute="height" constant="30" id="dMF-mt-KIA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -978,7 +978,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="s3Y-fW-Wea"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -994,7 +993,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="I1T-3n-mTO"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1081,6 +1079,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OXI-Gr-82V"/>
                                 </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1112,6 +1111,119 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KF2-u8-WgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5112.5" y="1104.5"/>
+        </scene>
+        <!--Link View Controller-->
+        <scene sceneID="Y9S-jJ-ggn">
+            <objects>
+                <viewController storyboardIdentifier="link" id="iEK-p2-j9a" customClass="LinkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3kf-jF-egh"/>
+                        <viewControllerLayoutGuide type="bottom" id="aaR-Wg-GQF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oRy-sP-DXe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k6s-71-XaO">
+                                <rect key="frame" x="-4" y="83" width="383" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="VhN-BL-Iaf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PVr-it-HPR">
+                                <rect key="frame" x="-4" y="134" width="383" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="tFo-ye-Zl6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博账号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7M-mr-qko">
+                                <rect key="frame" x="131" y="96" width="112" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="eXu-b7-z6g"/>
+                                    <constraint firstAttribute="height" constant="26" id="ewP-AT-7wL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3aO-xQ-3c1">
+                                <rect key="frame" x="276" y="91" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="Kft-JF-5eT"/>
+                                    <constraint firstAttribute="height" constant="31" id="MGK-Rt-hB0"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="weiboAction:" destination="iEK-p2-j9a" eventType="valueChanged" id="ZrF-82-mSO"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ账号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0a-cz-O29">
+                                <rect key="frame" x="131" y="144" width="112" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="LRv-yd-9Uz"/>
+                                    <constraint firstAttribute="height" constant="26" id="qsl-1i-uGd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u4p-5Z-hoD">
+                                <rect key="frame" x="276" y="141" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="QB8-bC-DSs"/>
+                                    <constraint firstAttribute="height" constant="31" id="iJu-g6-F3E"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="QQAction:" destination="iEK-p2-j9a" eventType="valueChanged" id="Scc-Nv-b1C"/>
+                                </connections>
+                            </switch>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qq" translatesAutoresizingMaskIntoConstraints="NO" id="xec-PI-TKf">
+                                <rect key="frame" x="52" y="137" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RWc-wU-L0e"/>
+                                    <constraint firstAttribute="width" constant="40" id="kTc-qD-1Tw"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="weibo" translatesAutoresizingMaskIntoConstraints="NO" id="W0L-ax-GWX">
+                                <rect key="frame" x="52" y="87" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="C14-zh-T09"/>
+                                    <constraint firstAttribute="width" constant="40" id="enz-u7-2Oa"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3aO-xQ-3c1" firstAttribute="leading" secondItem="e7M-mr-qko" secondAttribute="trailing" constant="33" id="27E-68-fAe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PVr-it-HPR" secondAttribute="trailing" constant="-20" id="7z2-hQ-d4K"/>
+                            <constraint firstItem="PVr-it-HPR" firstAttribute="leading" secondItem="oRy-sP-DXe" secondAttribute="leadingMargin" constant="-20" id="9Hj-SU-SrQ"/>
+                            <constraint firstItem="e7M-mr-qko" firstAttribute="leading" secondItem="W0L-ax-GWX" secondAttribute="trailing" constant="39" id="Arv-WV-p1e"/>
+                            <constraint firstItem="xec-PI-TKf" firstAttribute="top" secondItem="W0L-ax-GWX" secondAttribute="bottom" constant="8" id="Au1-Da-qGd"/>
+                            <constraint firstItem="d0a-cz-O29" firstAttribute="centerX" secondItem="oRy-sP-DXe" secondAttribute="centerX" id="GOl-0D-m9Z"/>
+                            <constraint firstItem="e7M-mr-qko" firstAttribute="centerX" secondItem="oRy-sP-DXe" secondAttribute="centerX" id="S8w-vA-5j8"/>
+                            <constraint firstItem="W0L-ax-GWX" firstAttribute="top" secondItem="3kf-jF-egh" secondAttribute="bottom" constant="69" id="TUg-tp-MlJ"/>
+                            <constraint firstItem="3aO-xQ-3c1" firstAttribute="top" secondItem="3kf-jF-egh" secondAttribute="bottom" constant="71" id="WzX-wM-Xhv"/>
+                            <constraint firstItem="PVr-it-HPR" firstAttribute="top" secondItem="k6s-71-XaO" secondAttribute="bottom" constant="5" id="Zpd-Uz-nzA"/>
+                            <constraint firstItem="d0a-cz-O29" firstAttribute="leading" secondItem="xec-PI-TKf" secondAttribute="trailing" constant="39" id="arC-JX-gdH"/>
+                            <constraint firstItem="k6s-71-XaO" firstAttribute="leading" secondItem="oRy-sP-DXe" secondAttribute="leadingMargin" constant="-20" id="dVg-3P-Sr9"/>
+                            <constraint firstItem="u4p-5Z-hoD" firstAttribute="leading" secondItem="d0a-cz-O29" secondAttribute="trailing" constant="33" id="ejC-2f-tL1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k6s-71-XaO" secondAttribute="trailing" constant="-20" id="gJk-3j-2u7"/>
+                            <constraint firstItem="k6s-71-XaO" firstAttribute="top" secondItem="3kf-jF-egh" secondAttribute="bottom" constant="63" id="ghz-OF-JXg"/>
+                            <constraint firstItem="u4p-5Z-hoD" firstAttribute="top" secondItem="3aO-xQ-3c1" secondAttribute="bottom" constant="19" id="ixR-l0-a7r"/>
+                            <constraint firstItem="d0a-cz-O29" firstAttribute="top" secondItem="e7M-mr-qko" secondAttribute="bottom" constant="22" id="qfq-sn-2ev"/>
+                            <constraint firstItem="e7M-mr-qko" firstAttribute="top" secondItem="3kf-jF-egh" secondAttribute="bottom" constant="76" id="v13-vs-ggR"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="QQSwitch" destination="u4p-5Z-hoD" id="OoZ-TC-7Yb"/>
+                        <outlet property="image1" destination="k6s-71-XaO" id="vWu-I1-f4O"/>
+                        <outlet property="image2" destination="PVr-it-HPR" id="aBB-h1-LhH"/>
+                        <outlet property="weiboSwitch" destination="3aO-xQ-3c1" id="kEg-Lp-AZE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ul-OZ-byi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4623.5" y="399.5"/>
         </scene>
         <!--Username View Controller-->
         <scene sceneID="GrV-Ee-6ct">
@@ -1189,6 +1301,8 @@
     </scenes>
     <resources>
         <image name="blackback" width="60" height="60"/>
+        <image name="qq" width="56" height="56"/>
+        <image name="weibo" width="512" height="512"/>
         <image name="weibosdkback" width="45" height="45"/>
     </resources>
 </document>
