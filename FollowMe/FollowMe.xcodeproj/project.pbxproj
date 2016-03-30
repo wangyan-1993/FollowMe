@@ -164,6 +164,11 @@
 		7A6FB0091CA3DC3600770481 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6FB0071CA3DC3600770481 /* ActivityTableViewCell.m */; };
 		7A6FB00A1CA3DC3600770481 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6FB0081CA3DC3600770481 /* ActivityTableViewCell.xib */; };
 		7A6FB00F1CA4159600770481 /* otherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6FB00E1CA4159600770481 /* otherModel.m */; };
+		7A8279DE1CAA5D9000403131 /* RRCustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8279D71CAA5D9000403131 /* RRCustomScrollView.m */; };
+		7A8279DF1CAA5D9000403131 /* RRMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8279D91CAA5D9000403131 /* RRMessageModel.m */; };
+		7A8279E01CAA5D9000403131 /* RRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8279DB1CAA5D9000403131 /* RRSendMessageViewController.m */; };
+		7A8279E11CAA5D9000403131 /* UICollectionViewCellPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8279DD1CAA5D9000403131 /* UICollectionViewCellPhoto.m */; };
+		7A8279E31CAA60DA00403131 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8279E21CAA60DA00403131 /* AssetsLibrary.framework */; };
 		7A84D8011C9F9B5300A76134 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A84D8001C9F9B5300A76134 /* InformationViewController.m */; };
 		7A84D8041C9FD88A00A76134 /* BecomeHunterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A84D8031C9FD88A00A76134 /* BecomeHunterViewController.m */; };
 		7A84D80A1C9FE15100A76134 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A84D8091C9FE15100A76134 /* libsqlite3.0.tbd */; };
@@ -464,6 +469,15 @@
 		7A6FB0081CA3DC3600770481 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		7A6FB00D1CA4159600770481 /* otherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherModel.h; sourceTree = "<group>"; };
 		7A6FB00E1CA4159600770481 /* otherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherModel.m; sourceTree = "<group>"; };
+		7A8279D61CAA5D9000403131 /* RRCustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRCustomScrollView.h; sourceTree = "<group>"; };
+		7A8279D71CAA5D9000403131 /* RRCustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRCustomScrollView.m; sourceTree = "<group>"; };
+		7A8279D81CAA5D9000403131 /* RRMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMessageModel.h; sourceTree = "<group>"; };
+		7A8279D91CAA5D9000403131 /* RRMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageModel.m; sourceTree = "<group>"; };
+		7A8279DA1CAA5D9000403131 /* RRSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSendMessageViewController.h; sourceTree = "<group>"; };
+		7A8279DB1CAA5D9000403131 /* RRSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSendMessageViewController.m; sourceTree = "<group>"; };
+		7A8279DC1CAA5D9000403131 /* UICollectionViewCellPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewCellPhoto.h; sourceTree = "<group>"; };
+		7A8279DD1CAA5D9000403131 /* UICollectionViewCellPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewCellPhoto.m; sourceTree = "<group>"; };
+		7A8279E21CAA60DA00403131 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		7A84D7FF1C9F9B5300A76134 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		7A84D8001C9F9B5300A76134 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
 		7A84D8021C9FD88A00A76134 /* BecomeHunterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BecomeHunterViewController.h; sourceTree = "<group>"; };
@@ -526,6 +540,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A8279E31CAA60DA00403131 /* AssetsLibrary.framework in Frameworks */,
 				7A0DC2B31C9E897A006E3569 /* UIKit.framework in Frameworks */,
 				7A33AD151CA78FD1006929DE /* CoreFoundation.framework in Frameworks */,
 				7A8BD11A1CA0EA9B00D8ACC1 /* libstdc++.tbd in Frameworks */,
@@ -565,6 +580,7 @@
 		09F2B4EEA86412E6958E834E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A8279E21CAA60DA00403131 /* AssetsLibrary.framework */,
 				7A33AD141CA78FD1006929DE /* CoreFoundation.framework */,
 				7A8BD1191CA0EA9B00D8ACC1 /* libstdc++.tbd */,
 				7A8BD1171CA0EA5F00D8ACC1 /* libiconv.tbd */,
@@ -1001,6 +1017,7 @@
 		7A5EF2531CA4BF5A0004BEA1 /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				7A8279D51CAA5D9000403131 /* Message */,
 				7A33AD101CA78F75006929DE /* lib */,
 				7A5EF2541CA4BF5A0004BEA1 /* AMapLocationKit.framework */,
 				7A5EF2551CA4BF5A0004BEA1 /* BmobSDK.framework */,
@@ -1239,6 +1256,21 @@
 			path = "广告轮播demo";
 			sourceTree = "<group>";
 		};
+		7A8279D51CAA5D9000403131 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				7A8279D61CAA5D9000403131 /* RRCustomScrollView.h */,
+				7A8279D71CAA5D9000403131 /* RRCustomScrollView.m */,
+				7A8279D81CAA5D9000403131 /* RRMessageModel.h */,
+				7A8279D91CAA5D9000403131 /* RRMessageModel.m */,
+				7A8279DA1CAA5D9000403131 /* RRSendMessageViewController.h */,
+				7A8279DB1CAA5D9000403131 /* RRSendMessageViewController.m */,
+				7A8279DC1CAA5D9000403131 /* UICollectionViewCellPhoto.h */,
+				7A8279DD1CAA5D9000403131 /* UICollectionViewCellPhoto.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		EF18E5F6C389E731AE4CF69C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1427,6 +1459,7 @@
 				7A3E982B1CA8D155007B3A74 /* destination.m in Sources */,
 				7A892A3A1C9A43BB00D2D11F /* DetailViewController.m in Sources */,
 				7AB8FCEE1C98DDDA00D9A121 /* SecondTravelViewController.m in Sources */,
+				7A8279DF1CAA5D9000403131 /* RRMessageModel.m in Sources */,
 				7A5EF2D81CA4BF5A0004BEA1 /* MJRefreshAutoGifFooter.m in Sources */,
 				7A6FB0091CA3DC3600770481 /* ActivityTableViewCell.m in Sources */,
 				7A32E15E1C9D259B0012F871 /* EmailLoginViewController.m in Sources */,
@@ -1484,6 +1517,7 @@
 				7A3E98221CA8D155007B3A74 /* originalViewController.m in Sources */,
 				7A3E98381CA8D155007B3A74 /* correlationStoryTableViewCell.m in Sources */,
 				7A5EF2EC1CA4BF5A0004BEA1 /* UIViewController+Common.m in Sources */,
+				7A8279DE1CAA5D9000403131 /* RRCustomScrollView.m in Sources */,
 				7A3E98441CA8D155007B3A74 /* storyDetailsView.m in Sources */,
 				7A5EF2E01CA4BF5A0004BEA1 /* MJRefreshStateHeader.m in Sources */,
 				7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */,
@@ -1502,6 +1536,7 @@
 				7A5EF2D51CA4BF5A0004BEA1 /* MJRefreshComponent.m in Sources */,
 				7A5EF2DC1CA4BF5A0004BEA1 /* MJRefreshBackNormalFooter.m in Sources */,
 				7A3E98341CA8D155007B3A74 /* specialModel.m in Sources */,
+				7A8279E11CAA5D9000403131 /* UICollectionViewCellPhoto.m in Sources */,
 				7A5EF2CF1CA4BF5A0004BEA1 /* NSDate+extend.m in Sources */,
 				7A3E982C1CA8D155007B3A74 /* farina.m in Sources */,
 				7AEDB60F1CA3CC5F00F2E45D /* UserEmailViewController.m in Sources */,
@@ -1522,6 +1557,7 @@
 				7A4F87F71C9A444700183EC8 /* SearchModel.m in Sources */,
 				7AB5831D1C9BE293007D21AA /* NoCodeLoginViewController.m in Sources */,
 				7A0017FD1C993FB30033B78F /* cityModel.m in Sources */,
+				7A8279E01CAA5D9000403131 /* RRSendMessageViewController.m in Sources */,
 				7A5EF2ED1CA4BF5A0004BEA1 /* VOContentLayer.m in Sources */,
 				7A5EF2E41CA4BF5A0004BEA1 /* UIScrollView+MJRefresh.m in Sources */,
 				7A5EF2D31CA4BF5A0004BEA1 /* MJRefreshAutoFooter.m in Sources */,
