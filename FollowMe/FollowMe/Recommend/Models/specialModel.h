@@ -11,6 +11,9 @@
 @interface specialModel : NSObject
 @property (nonatomic, retain) NSString *photo_1600;
 @property (nonatomic, retain) NSString *text;
-
+@property (nonatomic, retain) NSString *local_time;
+@property (nonatomic, retain) NSString *poi_name;
+@property (nonatomic, assign) NSString *imageWidth;
+@property (nonatomic, assign) NSString *imageHeight;
 - (instancetype)initWithDictionary:(NSDictionary *)rowdic;
 @end
