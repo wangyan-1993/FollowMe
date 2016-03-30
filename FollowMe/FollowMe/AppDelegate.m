@@ -19,14 +19,15 @@
 #import "WXApi.h"
 #import <TencentOpenAPI/TencentOAuth.h>
 #import "JPUSHService.h"
-
-@interface AppDelegate ()<UITabBarControllerDelegate, WeiboSDKDelegate, WXApiDelegate>
+#import <TencentOpenAPI/TencentApiInterface.h>
+@interface AppDelegate ()<UITabBarControllerDelegate, WeiboSDKDelegate, WXApiDelegate,TencentApiInterfaceDelegate,WBHttpRequestDelegate>
 @property(nonatomic, strong) UITabBarController *tabBarVC;
 @property(nonatomic, strong) UINavigationController *mineNav;
-
+@property (nonatomic, strong) TencentOAuth *tencentOAuth;
 @end
 
 @implementation AppDelegate
+@synthesize wbtoken;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -48,7 +49,7 @@
     
     [JPUSHService setupWithOption:launchOptions appKey:kJPushAppKey channel:kJPushChannel apsForProduction:isProduct];
     
-    
+//   self.tencentOAuth = [[TencentOAuth alloc]initWithAppId:kQQAppID andDelegate:nil];
     [Bmob registerWithAppKey:kBmobAppID];
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kWeiboAppKey];
@@ -95,6 +96,8 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
+    
+    
     return [WXApi handleOpenURL:url delegate:self] || [WeiboSDK handleOpenURL:url delegate:self]|| [TencentOAuth HandleOpenURL:url];
 }
 
@@ -105,7 +108,8 @@
 #pragma mark---weibo delegate
 
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
-    
+    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"user1"];
 }
 
 /**
@@ -170,13 +174,15 @@
 }];
     
     }
+    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"user1"];
 
 }
 
 #pragma mark---weixin delegate
--(void) onReq:(BaseReq*)req{
-    
-}
+//-(void) onReq:(BaseReq*)req{
+//    
+//}
 
 
 
@@ -186,9 +192,9 @@
  * 可能收到的处理结果有SendMessageToWXResp、SendAuthResp等。
  * @param resp具体的回应内容，是自动释放的
  */
--(void) onResp:(BaseResp*)resp{
-   
-}
+//-(void) onResp:(BaseResp*)resp{
+//   
+//}
 
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{

@@ -11,7 +11,7 @@
 #import "specialTableViewCell.h"
 #import "specialModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-@interface specialViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface specialViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 //头部
 @property (nonatomic, strong) UIView *headView;
@@ -30,17 +30,40 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    WLZLog(@"%@",self.userId);
+    self.tabBarController.tabBar.hidden = YES;
     [self workOne];
     [self.view addSubview:self.tableView];
-    self.tableView.tableHeaderView = self.headView;
+//    [self.tableView registerClass:[specialTableViewCell class] forCellReuseIdentifier:@"cell"];
+    self.view.backgroundColor = kCollectionColor;
+
 }
 
 - (void)headWay{
-    UIImageView *headImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight*0.25)];
+    //得到图片的路径
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"follow" ofType:@"gif"];
+    //将图片转为NSData
+    NSData *gifData = [NSData dataWithContentsOfFile:path];
+    //创建一个webView，添加到界面
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 64)];
+    [self.view addSubview:webView];
+    //自动调整尺寸
+    webView.scalesPageToFit = YES;
+    //禁止滚动
+    webView.scrollView.scrollEnabled = NO;
+    //设置透明效果
+    webView.backgroundColor = [UIColor clearColor];
+    webView.opaque = 0;
+    //加载数据
+    [webView loadData:gifData MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+    [self.headView addSubview:webView];
+    
+    
+    
+    UIImageView *headImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight*0.25)];
     headImage.backgroundColor = [UIColor blackColor];
     [headImage sd_setImageWithURL:[NSURL URLWithString:self.headImage] placeholderImage:nil];
     
-    UIImageView *userImage = [[UIImageView alloc] initWithFrame:CGRectMake(kWidth/2-25, kHeight*0.25-25, 50, 50)];
+    UIImageView *userImage = [[UIImageView alloc] initWithFrame:CGRectMake(kWidth/2-25, kHeight*0.25-25+64, 50, 50)];
     userImage.backgroundColor = [UIColor orangeColor];
     userImage.layer.masksToBounds = YES;
     userImage.layer.cornerRadius = 25.f;
@@ -48,14 +71,14 @@
     userImage.layer.borderColor = [UIColor whiteColor].CGColor;
     [userImage sd_setImageWithURL:[NSURL URLWithString:self.userImage] placeholderImage:nil];
     
-    UILabel *Namelable = [[UILabel alloc] initWithFrame:CGRectMake(0, kHeight*0.25+25, kWidth, 50)];
+    UILabel *Namelable = [[UILabel alloc] initWithFrame:CGRectMake(0, kHeight*0.25+25+64, kWidth, 50)];
     Namelable.text = self.userName;
     Namelable.enabled = NO;
     Namelable.highlighted = YES;
     Namelable.font = [UIFont systemFontOfSize:13];
     Namelable.textAlignment = NSTextAlignmentCenter;
     
-    UILabel *introduceLable = [[UILabel alloc] initWithFrame:CGRectMake(70, kHeight*0.25+75, kWidth-140, kHeight*0.25-90)];
+    UILabel *introduceLable = [[UILabel alloc] initWithFrame:CGRectMake(70, kHeight*0.25+75+64, kWidth-140, kHeight*0.25-90)];
     introduceLable.font = [UIFont fontWithName:@"Helvetica-Bold" size:21];
     introduceLable.text = self.introduce;
     introduceLable.numberOfLines = 0;
@@ -65,6 +88,7 @@
     [self.headView addSubview:Namelable];
     [self.headView addSubview:headImage];
     [self.headView addSubview:userImage];
+    self.tableView.tableHeaderView = self.headView;
 }
 
 - (void)workOne{
@@ -87,10 +111,15 @@
             [self.daysArray addObject:dic];
             [self.sectionArray addObject:dic[@"waypoints"]];
         NSArray *wayArray = dic[@"waypoints"];
+        
+            NSMutableArray *group = [NSMutableArray new];
         for (NSDictionary *dic1 in wayArray) {
-                specialModel *model = [[specialModel alloc] initWithDictionary:dic1];
-                [self.tableViewArray addObject:model];
+
+            specialModel *model = [[specialModel alloc] initWithDictionary:dic1];
+            [group addObject:model];
+        
             }
+            [self.tableViewArray addObject:group];
         }
         
         [self.tableView reloadData];
@@ -102,12 +131,13 @@
     
 }
 
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//    NSString *str1 = self.daysArray[section][@"date"];
-//    NSString *str2 = self.daysArray[section][@"day"];
-//    NSString *str = [NSString stringWithFormat:@"第%@天  %@",str2,str1];
-//    return str;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSMutableArray *group = self.tableViewArray[indexPath.section];
+    specialModel *model = group[indexPath.row];
+    CGFloat cellHeight = [specialTableViewCell getCellHeightWithModel:model];
+    return cellHeight;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 26.0;
 }
@@ -141,7 +171,19 @@
     return self.sectionArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    specialTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    //取消cell的重用机制
+    static NSString *cellid = @"cellid";
+    specialTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[specialTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    specialTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    if (self.tableViewArray > 0) {
+        NSMutableArray *group = self.tableViewArray[indexPath.section];
+        cell.model = group[indexPath.row];
+    }
+    
     
     
     return cell;
@@ -152,8 +194,9 @@
 }
 - (UIView *)headView{
     if (_headView == nil) {
-        self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight*0.5)];
+        self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight*0.5+64)];
 //        self.headView.backgroundColor = [UIColor cyanColor];
+        self.headView.backgroundColor = kCollectionColor;
         
     }
     return _headView;
@@ -164,7 +207,10 @@
                           initWithFrame:CGRectMake(0, 0, kWidth, kHeight)style:UITableViewStylePlain];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        [self.tableView registerClass:[specialTableViewCell class] forCellReuseIdentifier:@"cell"];
+//        self.tableView.rowHeight = 375;
+        self.tableView.backgroundColor = kCollectionColor;
+
+
         
     }
     return _tableView;

@@ -14,7 +14,26 @@
 - (instancetype)initWithDictionary:(NSDictionary *)rowdic{
     self = [super init];
     if (self) {
+        if (rowdic[@"photo"]!=nil) {
+            self.photo_1600 = rowdic[@"photo"];
+            if ([rowdic[@"photo_info"]isEqual:[NSNull null]]) {
+            }else{
+                NSDictionary *dic2 = rowdic[@"photo_info"];
+                self.imageWidth = dic2[@"w"];
+                self.imageHeight = dic2[@"h"];
+                
+                
+            }
+        }
+        self.text = rowdic[@"text"];
+        self.local_time = rowdic[@"local_time"];
+        if (![rowdic[@"poi"] isEqual:[NSNull null]]) {
+            NSDictionary *dic = rowdic[@"poi"];
+            self.poi_name = dic[@"name"];
+
+       }
         
+       
     }
     return self;
 }

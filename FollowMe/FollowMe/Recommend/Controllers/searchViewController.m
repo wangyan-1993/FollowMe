@@ -33,7 +33,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
     //隐藏下方导航
     self.tabBarController.tabBar.hidden = YES;
 //    WLZLog(@"%@",self.type);
