@@ -87,9 +87,7 @@
 #pragma mark---数据库
     //************************创建数据库，
     DataBaseManager *dbManager = [DataBaseManager shareInatance];
-    //并传入所建数据库的名字！！！！！！！！！！！！！！！！必须传名字
-    //dbManager.name = @"city";
-    
+        
     
     NSArray *ayyay1 = [NSArray arrayWithArray:self.cityArray];
     [self.cityList.tags addObjectsFromArray:ayyay1];

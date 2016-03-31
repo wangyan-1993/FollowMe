@@ -111,18 +111,24 @@
             }else{
                 //进行处理
             }
-            if (imageArray) {
-                [allArray addObject:imageArray];
-            }else{
-                [allArray addObject:@[@"http://file.bmob.cn/M03/05/18/oYYBAFb6hRuAIYwqAABd6nKUys06100.da"]];
-            }
+//            if (imageArray) {
+//                [allArray addObject:imageArray];
+//            }else{
+//                [allArray addObject:@[@"http://file.bmob.cn/M03/05/18/oYYBAFb6hRuAIYwqAABd6nKUys06100.da"]];
+//            }
 
         }];
     }
-    if ([string isEqualToString:@""]) {
+    if (imageArray != nil) {
+        [allArray addObject:imageArray];
+    }else{
+        [allArray addObject:@[@"http://file.bmob.cn/M03/05/18/oYYBAFb6hRuAIYwqAABd6nKUys06100.da"]];
+    }
+
+    if (![string isEqualToString:@""]) {
         [titleArray addObject:string];
     }else{
-        [titleArray addObject:@[@"记录生活点滴"]];
+        [titleArray addObject:@"记录生活点滴"];
     }
     WLZLog(@"%@", titleArray);
     [user setObject:titleArray forKey:@"titlwArray"];

@@ -8,7 +8,7 @@
 
 #import "SecondTravelViewController.h"
 #import "ThirdTravelViewController.h"
-
+#import "ProgressHUD.h"
 @interface SecondTravelViewController ()<UIWebViewDelegate>
 @property(nonatomic, strong) UIWebView *webView;
 @end
@@ -27,7 +27,7 @@ self.title = @"更多";
  
 }
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    
+    [ProgressHUD show:@"数据正在加载，请稍后"];
     NSString *urlStr = request.URL.absoluteString;
     NSArray *array = [urlStr componentsSeparatedByString:@"/"];
     NSInteger length = array.count;
@@ -43,6 +43,12 @@ self.title = @"更多";
     
     
     return YES;
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [ProgressHUD showSuccess:@"数据已加载完毕"];
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [ProgressHUD showError:[NSString stringWithFormat:@"%@", error]];
 }
 - (UIWebView *)webView{
     if (_webView == nil) {

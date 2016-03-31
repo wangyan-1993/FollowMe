@@ -40,6 +40,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view resignFirstResponder];
+    [self.newusername resignFirstResponder];
+    [self.currentusername resignFirstResponder];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

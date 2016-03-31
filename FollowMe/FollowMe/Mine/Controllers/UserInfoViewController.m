@@ -68,6 +68,10 @@
                 if ([obj objectForKey:@"year"]) {
                     [self.array replaceObjectAtIndex:6 withObject:[obj objectForKey:@"year"]];
                 }
+                if ([obj objectForKey:@"signature"]) {
+                    [self.array replaceObjectAtIndex:7 withObject:[obj objectForKey:@"signature"]];
+                }
+
                  [self.tableView reloadData];
             }
         }

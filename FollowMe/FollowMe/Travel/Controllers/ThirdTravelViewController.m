@@ -8,6 +8,7 @@
 
 #import "ThirdTravelViewController.h"
 #import "FourTravelViewController.h"
+#import "ProgressHUD.h"
 @interface ThirdTravelViewController ()<UIWebViewDelegate>
 @property(nonatomic, strong) UIWebView *webView;
 
@@ -30,12 +31,14 @@ self.title = @"介绍";
 
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [ProgressHUD showSuccess:@"数据已加载完毕"];
     [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('hotel-bottom')[0].style.display = 'none'"];
 
 }
 
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    [ProgressHUD show:@"数据正在加载"];
     NSString *urlStr = request.URL.absoluteString;
     NSArray *array = [urlStr componentsSeparatedByString:@"/"];
     NSInteger length = array.count;

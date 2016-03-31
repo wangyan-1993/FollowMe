@@ -8,6 +8,7 @@
 
 #import "FiveTravelViewController.h"
 #import "ThirdTravelViewController.h"
+#import "ProgressHUD.h"
 @interface FiveTravelViewController ()<UIWebViewDelegate>
 @property(nonatomic, strong) UIWebView *webView;
 @end
@@ -27,6 +28,7 @@
     
 }
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    [ProgressHUD show:@"数据正在加载"];
     NSLog(@"%ld", (long)navigationType);
     NSString *urlStr = request.URL.absoluteString;
     NSArray *array = [urlStr componentsSeparatedByString:@"/"];
@@ -41,6 +43,9 @@
     
     
     return YES;
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [ProgressHUD showSuccess:@"数据已加载完毕"];
 }
 - (UIWebView *)webView{
     if (_webView == nil) {

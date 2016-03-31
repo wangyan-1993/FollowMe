@@ -83,6 +83,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view resignFirstResponder];
+    [self.userphone resignFirstResponder];
+    [self.verifyCode resignFirstResponder];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
