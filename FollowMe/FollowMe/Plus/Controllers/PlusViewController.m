@@ -111,42 +111,24 @@
             }else{
                 //进行处理
             }
-//            if (imageArray) {
-//                [allArray addObject:imageArray];
-//            }else{
-//                [allArray addObject:@[@"http://file.bmob.cn/M03/05/18/oYYBAFb6hRuAIYwqAABd6nKUys06100.da"]];
-//            }
-//            if (string) {
-//                [titleArray addObject:string];
-//            }else{
-//                [titleArray addObject:@"记录生活点滴"];
-//            }
-            [user setObject:allArray forKey:@"array"];
-//            [user setObject:titleArray forKey:@"titlwArray"];
-//            [user updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-//                if (isSuccessful) {
-//                    WLZLog(@"%d", isSuccessful);
-//                }else{
-//                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"保存失败,请检查自己是否登录" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil];
-//                    [alert show];
-//                }
-//            }];
-                NSLog(@"%lu", imageArray.count);
+            if (imageArray) {
+                [allArray addObject:imageArray];
+            }else{
+                [allArray addObject:@[@"http://file.bmob.cn/M03/05/18/oYYBAFb6hRuAIYwqAABd6nKUys06100.da"]];
+            }
+
         }];
     }
-    if (string) {
+    if ([string isEqualToString:@""]) {
         [titleArray addObject:string];
     }else{
-        [titleArray addObject:@"记录生活点滴"];
+        [titleArray addObject:@[@"记录生活点滴"]];
     }
     WLZLog(@"%@", titleArray);
     [user setObject:titleArray forKey:@"titlwArray"];
-    if (imageArray) {
-        [allArray addObject:imageArray];
-    }else{
-        [allArray addObject:@[@"http://file.bmob.cn/M03/05/18/oYYBAFb6hRuAIYwqAABd6nKUys06100.da"]];
-    }
-    
+    [user setObject:allArray forKey:@"array"];
+    NSLog(@"%lu", imageArray.count);
+
     [user updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
         if (isSuccessful) {
             WLZLog(@"%d", isSuccessful);

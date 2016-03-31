@@ -8,7 +8,6 @@
 
 
 #import "InformationViewController.h"
-
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BecomeHunterViewController.h"
 #import "SettingsViewController.h"
@@ -22,6 +21,8 @@
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSArray *imageArray;
 @property(nonatomic, strong) NSArray *titleArray;
+@property(nonatomic, strong) NSMutableArray *sectionArray;
+
 @end
 
 @implementation InformationViewController
@@ -55,6 +56,10 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
     self.tabBarController.tabBar.hidden = NO;
+    BmobUser *user = [BmobUser getCurrentUser];
+    self.imageArray = [user objectForKey:@"array"];
+    self.titleArray = [user objectForKey:@"titlwArray"];
+
     BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         for (BmobObject *obj in array) {
@@ -72,7 +77,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-        return self.titleArray.count;
+        return 1;
    }
 
 
@@ -82,24 +87,65 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:str];
     }
-    //[cell.imageView sd_setImageWithURL:self.imageArray[indexPath.row][0]];
-    cell.textLabel.text = self.titleArray[indexPath.row];
+   
+            cell.textLabel.text = self.titleArray[indexPath.section][0];
+
     cell.textLabel.numberOfLines = 0;
-        return cell;
+    return cell;
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        NSString *str =self.titleArray[indexPath.row];
-       CGRect textRect = [str boundingRectWithSize:CGSizeMake(kWidth, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:17]}  context:nil];
-        return textRect.size.height;
+//    NSString *str =self.titleArray[indexPath.section];
+//    CGRect textRect = [str boundingRectWithSize:CGSizeMake(kWidth, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:17]}  context:nil];
+    return 100;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.titleArray.count;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kWidth/3)];
+    UIImageView *view1 = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, kWidth/3-10, kWidth/3-10)];
+    UIImageView *view2 = [[UIImageView alloc]initWithFrame:CGRectMake(5+kWidth/3, 5, kWidth/3-10, kWidth/3-10)];
+    UIImageView *view3 = [[UIImageView alloc]initWithFrame:CGRectMake(5+kWidth/3*2, 5, kWidth/3-10, kWidth/3-10)];
+    if (self.imageArray[section][0]) {
+        [view1 sd_setImageWithURL:[NSURL URLWithString:self.imageArray[section][0]]];
+    }else{
+        [view1 sd_setImageWithURL:[NSURL URLWithString:@"http://photos.breadtrip.com/trackpoints_thumbnail_1725439_1459147708309.jpg"]];
     }
-    return kWidth;
+//    if (self.imageArray[section][1]) {
+//        [view2 sd_setImageWithURL:[NSURL URLWithString:self.imageArray[section][1]]];
+//    }
+//    if (self.imageArray[section][2]) {
+//        [view3 sd_setImageWithURL:[NSURL URLWithString:self.imageArray[section][2]]];
+//    }
+
+    [view addSubview:view1];
+    [view addSubview:view2];
+
+    [view addSubview:view3];
+
+    return view;
+    
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGFloat sectionHeaderHeight = kWidth/3;
+    if (scrollView.contentOffset.y <= sectionHeaderHeight && scrollView.contentOffset.y> 0) {
+        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+    }else
+        if(scrollView.contentOffset.y >= sectionHeaderHeight){
+            
+            scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+        }
 }
 
 - (void)addheaderView{
     UIView *header = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kWidth*0.8+20)];
-    UIImageView *imageview = [[UIImageView alloc]initWithFrame:header.frame];
+    UIImageView *imageview = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kWidth*0.8)];
     imageview.image = [UIImage imageNamed:@"200"];
     [header addSubview:imageview];
     UIImageView *black = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kWidth*0.8)];
@@ -195,14 +241,22 @@
 - (void)moneyAction{
     
 }
+
 - (UITableView *)tableView{
     if (_tableView == nil) {
         self.tableView = [[UITableView alloc]initWithFrame:self.view.frame];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        self.tableView.rowHeight = kWidth;
+        self.tableView.sectionHeaderHeight = kWidth/3;
+        //self.tableView.rowHeight = kWidth;
     }
     return _tableView;
+}
+- (NSMutableArray *)sectionArray{
+    if (_sectionArray == nil) {
+        self.sectionArray = [NSMutableArray new];
+    }
+    return _sectionArray;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
