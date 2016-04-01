@@ -14,6 +14,14 @@
 - (instancetype)initWithDictionary:(NSDictionary *)rowdic{
     self = [super init];
     if (self) {
+        if (![rowdic[@"location"]isEqual:[NSNull null]]) {
+            NSDictionary *addressDic = rowdic[@"location"];
+            self.latitude = addressDic[@"latitude"];
+            self.longitude = addressDic[@"longitude"];
+            
+        }
+        
+        
         if (rowdic[@"photo"]!=nil) {
             self.photo_1600 = rowdic[@"photo"];
             if ([rowdic[@"photo_info"]isEqual:[NSNull null]]) {

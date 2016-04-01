@@ -53,7 +53,7 @@ static NSString * const reuseIdentifier = @"tagListViewItemId";
     _tagStrokeColor = [UIColor lightGrayColor];
     _tagBackgroundColor = [UIColor clearColor];
     _tagTextColor = [UIColor darkGrayColor];
-  //  _tagSelectedBackgroundColor = [UIColor colorWithRed:217/255.0f green:217/255.0f blue:217/255.0f alpha:1];
+//    _tagSelectedBackgroundColor = [UIColor redColor];
     
     _tagCornerRadius = 10.0f;
     

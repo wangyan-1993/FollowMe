@@ -12,6 +12,8 @@
 @interface specialTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) specialModel *model;
+@property (nonatomic, strong) UIViewController *owone;
 + (CGFloat)getCellHeightWithModel:(specialModel *)model;
 + (CGFloat)getTextHeightWithText:(NSString *)textLable;
+
 @end

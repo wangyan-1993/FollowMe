@@ -119,6 +119,7 @@ static NSString *cellIdentifier = @"tableViewCell";
 - (void)nearBy{
     _ppp = 0;
     nearByViewController *nearVC = [[nearByViewController alloc] init];
+    nearVC.hellow = @"附近";
     [self.navigationController pushViewController:nearVC animated:YES];
     
     
@@ -158,7 +159,6 @@ static NSString *cellIdentifier = @"tableViewCell";
     
     
     
-    
     [self.searchView addSubview:cancelBtn];
     [self.searchView addSubview:lable3];
     [self.searchView addSubview:lable1];
@@ -170,7 +170,7 @@ static NSString *cellIdentifier = @"tableViewCell";
     //字体颜色
     //    self.foreignView.tagTextColor = [UIColor greenColor];
     //点击之后txt的背景颜色
-    self.foreignView.tagSelectedBackgroundColor = [UIColor brownColor];
+//    self.foreignView.tagSelectedBackgroundColor = [UIColor whiteColor];
     //边框颜色
     //    self.inLandView.tagStrokeColor = [UIColor redColor];
     NSArray *ayyay1 = [NSArray arrayWithArray:self.foreignListArray];
@@ -249,6 +249,7 @@ static NSString *cellIdentifier = @"tableViewCell";
     //搜索按钮的点击方法
     _ppp = 1;
     self.histroyView.canSelectTags = YES;
+    
     self.histroyView.tagCornerRadius = 10.0f;
     [self.histroyView.tags addObject:searchBar.text];
     [self.histroyView.collectionView reloadData];
@@ -288,6 +289,11 @@ static NSString *cellIdentifier = @"tableViewCell";
     //点击空白回收键盘
     [self.mySearchBar resignFirstResponder];
 }
+/**
+ *  http://api.breadtrip.com/trips/2387095924/schedule/?offline=true
+ *http://api.breadtrip.com/trips/2387095924/waypoints/
+ *  @return
+ */
 //添加轻拍手势  回收键盘
 - (void)tapgr{
         UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
@@ -594,6 +600,7 @@ static NSString *cellIdentifier = @"tableViewCell";
     storyVC.spot_id = self.spot_idArray[indexPath.row];
     [self.navigationController pushViewController:storyVC animated:YES];
 }
+
 //返回这个UICollectionView是否可以被选择
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -666,6 +673,7 @@ static NSString *cellIdentifier = @"tableViewCell";
     if (_histroyView == nil) {
         self.histroyView = [[JCTagListView alloc] initWithFrame:CGRectMake(30, 500, kWidth-60, kHeight*0.4)];
         [self.searchView addSubview:self.histroyView];
+        
     }
     return _histroyView;
 }
@@ -681,14 +689,16 @@ static NSString *cellIdentifier = @"tableViewCell";
         self.foreignView = [[JCTagListView alloc] initWithFrame:CGRectMake(30, 120, kWidth-60, kHeight*0.4)];
         self.foreignView.tag = 1;
         [self.searchView addSubview:self.foreignView];
+     
     }
     return _foreignView;
 }
 - (JCTagListView *)inLandView{
     if (_inLandView == nil ) {
         self.inLandView = [[JCTagListView alloc] initWithFrame:CGRectMake(30, 350, kWidth-60, kHeight*0.4)];
-        self.foreignView.tag = 2;
+        self.inLandView.tag = 2;
         [self.searchView addSubview:self.inLandView];
+       
     }
     return _inLandView;
 }

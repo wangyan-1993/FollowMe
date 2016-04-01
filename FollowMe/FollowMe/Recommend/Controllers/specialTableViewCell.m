@@ -8,6 +8,7 @@
 
 #import "specialTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "mapAddressViewController.h"
 @interface specialTableViewCell()
 
 @property (nonatomic, strong) UIImageView *photo;
@@ -15,6 +16,9 @@
 @property (nonatomic, strong) UILabel *time;
 @property (nonatomic, strong) UILabel *name;
 @property (nonatomic, retain) NSString *test;
+@property (nonatomic, strong) NSString *latitude;
+@property (nonatomic, strong) NSString *longitude;
+@property (nonatomic, strong) NSString *address;
 @end
 @implementation specialTableViewCell
 
@@ -24,6 +28,9 @@
 }
 
 -(void)setModel:(specialModel *)model{
+    self.latitude = model.latitude;
+    self.longitude = model.longitude;
+    self.address = model.poi_name;
     CGFloat width;
     CGFloat height;
     if (model.imageWidth == nil) {
@@ -52,7 +59,7 @@
     textFrame.size.height = textHeight;
     self.text.frame = textFrame;
     self.text.text = model.text;
-    self.time = [[UILabel alloc]initWithFrame:CGRectMake(30, height+textHeight+20, 100, 15)];
+    self.time = [[UILabel alloc]initWithFrame:CGRectMake(30, height+textHeight+20, 150, 15)];
     self.time.text = model.local_time;
     self.time.enabled = NO;
     self.time.highlighted = YES;
@@ -77,7 +84,11 @@
     [self addSubview:self.photo];
 }
 - (void)map{
-    
+    mapAddressViewController *mapVC = [[mapAddressViewController alloc] init];
+    mapVC.longitudeZH = self.longitude;
+    mapVC.latitudeZH = self.latitude;
+    mapVC.name = self.address;
+    [self.owone.navigationController pushViewController:mapVC animated:YES];
 }
 + (CGFloat)getCellHeightWithModel:(specialModel *)model{
     
