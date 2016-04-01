@@ -7,7 +7,7 @@
 //
 
 #import "FourTravelViewController.h"
-
+#import "ProgressHUD.h"
 @interface FourTravelViewController ()<UIWebViewDelegate>
 @property(nonatomic, strong) UIWebView *webView;
 
@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [ProgressHUD show:@"数据正在加载"];
     NSURL *url = [[NSURL alloc]initWithString:self.urlString];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     [self showBackBtn];
@@ -28,6 +29,7 @@
 
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [ProgressHUD showSuccess:@"数据已加载完毕"];
     [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('hotel-bottom diff')[0].style.display = 'none'"];
     
 }

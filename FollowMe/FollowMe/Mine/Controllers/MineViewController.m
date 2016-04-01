@@ -22,6 +22,8 @@
 #import "InformationViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <BmobSDK/BmobQuery.h>
+#import <BmobSDK/BmobUser.h>
+#import "InformationViewController.h"
 @interface MineViewController ()<TencentLoginDelegate, TencentSessionDelegate>
 
 @property(nonatomic, strong) UIButton *emailBtn;
@@ -133,7 +135,26 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-   
+    if ([BmobUser getCurrentUser]) {
+        [BmobUser loginInbackgroundWithAccount:[BmobUser getCurrentUser].username andPassword:[BmobUser getCurrentUser].username block:^(BmobUser *user, NSError *error) {
+            InformationViewController *info = [[InformationViewController alloc]init];
+            info.username = [BmobUser getCurrentUser].username;
+            [self.navigationController pushViewController:info animated:YES];
+            BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+                for (BmobObject *obj in array) {
+                    if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
+                    {
+                        return ;
+                    }
+                }
+                BmobObject *object = [BmobObject objectWithClassName:@"info"];
+                [object setObject:[BmobUser getCurrentUser].username forKey:@"user"];
+                [object saveInBackground];
+            }];
+
+        }];
+    }
     self.navigationController.navigationBar.hidden = NO;
     self.tabBarController.tabBar.hidden = NO;
 }

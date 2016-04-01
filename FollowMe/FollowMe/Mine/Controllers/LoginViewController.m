@@ -65,6 +65,8 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
    // self.phonenum
     [self.view resignFirstResponder];
+    [self.phonenum resignFirstResponder];
+    [self.code resignFirstResponder];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
