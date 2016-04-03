@@ -39,7 +39,7 @@
     // Do any additional setup after loading the view.
     self.title = @"我的";
     UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(kWidth*0.2, kHeight*0.13, kWidth*0.58, kHeight*0.08)];
-    title.text = @"你好,面粉!";
+    title.text = @"你好,初行者!";
     title.textAlignment = NSTextAlignmentCenter;
     title.font = [UIFont systemFontOfSize:36];
     title.textColor = [UIColor whiteColor];
@@ -84,7 +84,7 @@
         
     }
     UILabel *title1 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0.45*kHeight, kWidth, kHeight*0.057)];
-    title1.text = @"————使用面包账号登录————";
+    title1.text = @"————使用初行账号登录————";
     title1.textAlignment = NSTextAlignmentCenter;
     title1.font = [UIFont systemFontOfSize:16];
     title1.textColor = [UIColor darkGrayColor];
@@ -98,7 +98,7 @@
         self.emailBtn.titleLabel.font =[UIFont systemFontOfSize:15];
     }
     self.emailBtn.frame = CGRectMake(kWidth*0.19, kHeight*0.64, kWidth*0.605, kHeight*0.057);
-    [self.emailBtn setTitle:@"使用面包账号或邮箱登陆" forState:UIControlStateNormal];
+    [self.emailBtn setTitle:@"使用初行账号或邮箱登陆" forState:UIControlStateNormal];
     self.phoneBtn.backgroundColor = [UIColor whiteColor];
     self.view.backgroundColor = kMainColor;
     self.phoneBtn.layer.cornerRadius = 20;

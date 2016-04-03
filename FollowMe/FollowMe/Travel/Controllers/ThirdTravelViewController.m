@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSURL *url = [[NSURL alloc]initWithString:self.urlString];
-    WLZLog(@"%@",url);
+//    WLZLog(@"%@",url);
     self.navigationController.navigationBar.barTintColor = kMainColor;
 self.title = @"介绍";
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
@@ -44,14 +44,12 @@ self.title = @"介绍";
     NSInteger length = array.count;
     NSString *string1 = array[length-2];
     NSString *string2 = array.lastObject;
-    WLZLog(@"%@", request);
-    WLZLog(@"%ld", (long)navigationType);
+//    WLZLog(@"%@", request);
+//    WLZLog(@"%ld", (long)navigationType);
     FourTravelViewController *four = [[FourTravelViewController alloc]init];
     switch (navigationType) {
         case UIWebViewNavigationTypeLinkClicked:
         {
-            
-
             if ([string1 isEqualToString:@"detail"]) {
                 four.title = @"产品详情";
             }
