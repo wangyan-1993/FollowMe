@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface nearByViewController : UIViewController
-
+@property (nonatomic, retain) NSString *hellow;
 @end

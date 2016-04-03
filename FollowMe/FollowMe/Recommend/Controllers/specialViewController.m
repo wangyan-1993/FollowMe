@@ -22,20 +22,21 @@
 @property (nonatomic, strong) NSMutableArray *sectionArray;
 @property (nonatomic, strong) NSMutableArray *tableViewArray;
 @property (nonatomic, strong) NSMutableArray *daysArray;
+
 @end
 
 @implementation specialViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    WLZLog(@"%@",self.userId);
+
     self.tabBarController.tabBar.hidden = YES;
     [self workOne];
     [self.view addSubview:self.tableView];
 //    [self.tableView registerClass:[specialTableViewCell class] forCellReuseIdentifier:@"cell"];
     self.view.backgroundColor = kCollectionColor;
-
+    //不让导航栏随着tableview上下滑动
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)headWay{
@@ -61,7 +62,10 @@
     
     UIImageView *headImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight*0.25)];
     headImage.backgroundColor = [UIColor blackColor];
-    [headImage sd_setImageWithURL:[NSURL URLWithString:self.headImage] placeholderImage:nil];
+    if ([self.headImage isEqual:[NSNull null]]) {
+        headImage.image = [UIImage imageNamed:@"200"];
+    }else{
+        [headImage sd_setImageWithURL:[NSURL URLWithString:self.headImage] placeholderImage:nil];}
     
     UIImageView *userImage = [[UIImageView alloc] initWithFrame:CGRectMake(kWidth/2-25, kHeight*0.25-25+64, 50, 50)];
     userImage.backgroundColor = [UIColor orangeColor];
@@ -94,7 +98,7 @@
 - (void)workOne{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:[NSString stringWithFormat:@"http://api.breadtrip.com/trips/%@/waypoints/",self.userId] parameters:self.userId progress:^(NSProgress * _Nonnull downloadProgress) {
-        WLZLog(@"%@",downloadProgress);
+//        WLZLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         //WLZLog(@"%@",responseObject);
         NSDictionary *rootDic = responseObject;
@@ -184,7 +188,7 @@
         cell.model = group[indexPath.row];
     }
     
-    
+    cell.owone = self;
     
     return cell;
 }

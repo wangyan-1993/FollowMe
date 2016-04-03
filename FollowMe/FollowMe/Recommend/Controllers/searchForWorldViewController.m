@@ -16,6 +16,9 @@
 #import "destination.h"
 #import "correlation.h"
 #import "farina.h"
+#import "searchViewController.h"
+#import "specialViewController.h"
+#import "PersonViewController.h"
 @interface searchForWorldViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>{
 //    NSInteger _page;
 }
@@ -28,8 +31,10 @@
 @property (nonatomic, strong) NSMutableArray *placeCityNameArray;
 @property (nonatomic, strong) NSMutableArray *tripsArray;
 @property (nonatomic, strong) NSMutableArray *usersArray;
-
-
+@property (nonatomic, strong) NSMutableArray *placeTypeArray;
+@property (nonatomic, strong) NSMutableArray *placeIdArray;
+@property (nonatomic, strong) NSMutableArray *tripsIdArray;
+@property (nonatomic, strong) NSMutableArray *userIdArray;
 @end
 
 @implementation searchForWorldViewController
@@ -130,6 +135,8 @@
      }
           for (NSDictionary *dic in placesArray) {
          destination *model = [[destination alloc] initWithDictionary:dic];
+              [self.placeTypeArray addObject:dic[@"type"]];
+              [self.placeIdArray addObject:dic[@"id"]];
          [self.placeCityNameArray addObject:model];
      }
      //请求相关游记
@@ -140,6 +147,7 @@
      NSArray *tripsArray = dataDic[@"trips"];
      for (NSDictionary *dic in tripsArray) {
          correlation *model = [[correlation alloc] initWithDictionary:dic];
+         [self.tripsIdArray addObject:dic[@"id"]];
          [self.tripsArray addObject:model];
      }
      if (self.usersArray.count>0) {
@@ -149,6 +157,8 @@
      for (NSDictionary *dic in users) {
          farina *model = [[farina alloc] initWithDictionary:dic];
          [self.usersArray addObject:model];
+         [self.userIdArray addObject:dic[@"id"]];
+         
      }
      
     [self.tableView1 reloadData];
@@ -197,7 +207,27 @@ else if ([tableView isEqual:self.tableView2])
     }
     
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([tableView isEqual:self.tableView1]) {
+        searchViewController *seaVC = [[searchViewController alloc] init];
+        seaVC.type = self.placeTypeArray[indexPath.row];
+        seaVC.userId = self.placeIdArray[indexPath.row];
+        [self.navigationController pushViewController:seaVC animated:YES];
+    }
+    else if ([tableView isEqual:self.tableView2]){
+        specialViewController *specialVC = [[specialViewController alloc] init];
+        
+        specialVC.userId = self.tripsIdArray[indexPath.row];
+        WLZLog(@"%@",specialVC.userId);
+        [self.navigationController pushViewController:specialVC animated:YES];
+    }
+    else if ([tableView isEqual:self.tableView3]){
+        PersonViewController *person = [[PersonViewController alloc] init];
+        
+        person.personId = self.userIdArray[indexPath.row];
+        [self.navigationController pushViewController:person animated:NO];
+    }
+}
 #pragma mark --------------tableView懒加载
 - (UITableView *)tableView1{
     if (_tableView1 == nil) {
@@ -240,6 +270,30 @@ else if ([tableView isEqual:self.tableView2])
     
 }
 #pragma mark ----------------数组懒加载
+- (NSMutableArray *)userIdArray{
+    if (_userIdArray == nil) {
+        self.userIdArray = [NSMutableArray new];
+    }
+    return _userIdArray;
+}
+- (NSMutableArray *)tripsIdArray{
+    if (_tripsIdArray == nil) {
+        self.tripsIdArray = [NSMutableArray new];
+    }
+    return _tripsIdArray;
+}
+- (NSMutableArray *)placeIdArray{
+    if (_placeIdArray == nil) {
+        self.placeIdArray = [NSMutableArray new];
+    }
+    return _placeIdArray;
+}
+- (NSMutableArray *)placeTypeArray {
+    if (_placeTypeArray == nil) {
+        self.placeTypeArray = [NSMutableArray new];
+    }
+    return _placeTypeArray;
+}
 - (NSMutableArray *)placeCityNameArray{
     if (_placeCityNameArray == nil) {
         self.placeCityNameArray = [NSMutableArray new];

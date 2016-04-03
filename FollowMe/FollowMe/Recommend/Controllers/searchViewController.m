@@ -14,13 +14,19 @@
  NSString * encodingString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
  
  */
+//http://api.breadtrip.com/place/pois/nearby/?category=0&start=0&count=20&latitude=34.612557&longitude=112.420364
 
+//http://api.breadtrip.com/destination/place/3/10052/pois/sights/?start=0&count=20&sort=default&shift=false&latitude=34.61353270481796&longitude=112.41404471556092
+//http://api.breadtrip.com/destination/place/3/10052/pois/hotel/?start=0&count=20&sort=default&shift=false&latitude=34.61353270481796&longitude=112.41404471556092
+//http://api.breadtrip.com/destination/place/3/10052/pois/restaurant/?start=0&count=20&sort=default&shift=false&latitude=34.61353270481796&longitude=112.41404471556092
 #define ksearchDetail @"http://api.breadtrip.com/destination/place/"
-
+#import "nearByViewController.h"
 #import "searchViewController.h"
 #import "SearchOneCollectionViewCell.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "photoViewController.h"
+#import "allCityViewController.h"
 @interface searchViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionViewOne;
 @property (nonatomic,strong) UIImageView *headerImage;
@@ -51,13 +57,13 @@
     [manger GET:[NSString stringWithFormat:@"%@%@/%@/",ksearchDetail,self.type,self.userId] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
        // WLZLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-       // WLZLog(@"%@",responseObject);
+        //WLZLog(@"%@",responseObject);
         self.rootDic = responseObject;
         //获取头部图片
         NSArray *arr = self.rootDic[@"hottest_places"];
         self.headDic = arr[0];
         //collectionView图片
-      self.pictureArray = [NSArray arrayWithObjects:@"search1",@"search3",@"search5",@"search7",@"search9",@"search11",@"search13", nil];
+      self.pictureArray = [NSArray arrayWithObjects:@"search1",@"search2",@"search3",@"search4",@"search5",@"search6",@"search7", nil];
         [self addContent];
         [self.collectionViewOne reloadData];
         
@@ -101,7 +107,7 @@
         selectBtn.layer.cornerRadius = kHeight/22.f;
         selectBtn.backgroundColor = kCollectionColor;
         selectBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:22];
-        [selectBtn addTarget:selectBtn action:@selector(chickCity) forControlEvents:UIControlEventTouchUpInside];
+        [selectBtn addTarget:self action:@selector(chickCity:) forControlEvents:UIControlEventTouchUpInside];
         
         
         [foot addSubview:selectBtn];
@@ -110,13 +116,27 @@
     return nil;
 }
 #pragma mark ------------全部热门地点
-- (void)chickCity{
-    
+- (void)chickCity:(UIButton *)btn{
+    allCityViewController *allVC = [[allCityViewController alloc] init];
+    allVC.typeId = self.type;
+    allVC.userId = self.userId;
+    [self.navigationController pushViewController:allVC animated:NO];
 }
 #pragma mark ------------图片头部视图方法
-
+- (void) chickImage {
+    photoViewController *photoVC = [[photoViewController alloc] init];
+    WLZLog(@"%@",self.userId);
+    photoVC.typeId = self.type;
+    photoVC.userId = self.userId;
+    [self.navigationController pushViewController:photoVC animated:NO];
+}
 - (void)addContent{
     [self.headerImage sd_setImageWithURL:[NSURL URLWithString:self.headDic[@"photo"]] placeholderImage:nil];
+    self.headerImage.userInteractionEnabled = YES;
+    [self.headerImage addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(chickImage)]];
+     
+    
+    
     //城市
     UILabel *cityLable = [[UILabel alloc] initWithFrame:CGRectMake(10, kHeight/4.2, 100, 30)];
     cityLable.text = self.rootDic[@"name"];

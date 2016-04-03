@@ -15,18 +15,23 @@
 #import "ProgressHUD.h"
 #import "AppDelegate.h"
 #import <AMapLocationKit/AMapLocationKit.h>
+#import "nearDetailsViewController.h"
 @interface nearByViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,AMapLocationManagerDelegate>{
     NSString *kNearBy;
     NSInteger _pagecount;
     //经纬度
     CGFloat _lat;
     CGFloat _lon;
+    NSString *kAllDistance;
+    NSString *kNetWork;
 }
 @property (nonatomic, strong) VOSegmentedControl *segment;
 @property (nonatomic, strong) PullingRefreshTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *allArray;
 @property (nonatomic, assign) BOOL refreash;
 @property (nonatomic, strong) AMapLocationManager *manger;
+@property (nonatomic, strong) NSMutableArray *detailIdArray;
+@property (nonatomic, strong) NSMutableArray *typeArray;
 @end
 
 @implementation nearByViewController
@@ -67,7 +72,7 @@
    
 }
 - (void)mapLocation{
-  [AMapLocationServices sharedServices].apiKey = (NSString *)kZhGaodeMapKey;
+    [AMapLocationServices sharedServices].apiKey = (NSString *)kZhGaodeMapKey;
     self.manger = [[AMapLocationManager alloc] init];
     
     // 带逆地理信息的单次定位（返回坐标和地址信息）
@@ -94,15 +99,14 @@
         }
     }];
 
-    
-
 }
-
+//
 #pragma mark -----网络请求------
 - (void)netWork{
     [self mapLocation];
+        kNetWork = [NSString stringWithFormat:@"%@&start=%ld&latitude=%.15f&longitude=%.15f",kNearBy,(long)_pagecount,_lat,_lon];
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
-    [manger GET:[NSString stringWithFormat:@"%@&start=%ld&latitude=%.15f&longitude=%.15f",kNearBy,(long)_pagecount,_lat,_lon] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manger GET:kNetWork parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         WLZLog(@"")
 //        WLZLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -111,7 +115,8 @@
         }else{
             [ProgressHUD showSuccess:@"加载成功"];
         }
-//        WLZLog(@"%@",responseObject);
+        WLZLog(@"%@",responseObject);
+        
         
         NSDictionary *allDic = responseObject;
         NSArray *itemsArray = allDic[@"items"];
@@ -120,6 +125,8 @@
         if (_refreash) {
             if (self.allArray.count > 0) {
                 [self.allArray removeAllObjects];
+                [self.detailIdArray removeAllObjects];
+                [self.typeArray removeAllObjects];
             }
 
         }
@@ -127,6 +134,8 @@
            for (NSDictionary *dic in itemsArray) {
                nearByModel *model = [[nearByModel alloc] initWithDictionary:dic];
                [self.allArray addObject:model];
+               [self.detailIdArray addObject:dic[@"id"]];
+               [self.typeArray addObject: dic[@"type"]];
            }
         }
         [self.tableView tableViewDidFinishedLoading];
@@ -144,6 +153,14 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
         return self.allArray.count;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+    nearDetailsViewController *nearVC = [[nearDetailsViewController alloc] init];
+    nearVC.detailId = self.detailIdArray[indexPath.row];
+    nearVC.typeId = self.typeArray[indexPath.row];
+    [self.navigationController pushViewController:nearVC animated:YES];
+    
 }
 #pragma mark ---- PullingRefreshTableView代理方法
 //下拉刷新
@@ -204,6 +221,8 @@
         case 0:
             _pagecount = 0;
             [self.allArray removeAllObjects];
+            [self.detailIdArray removeAllObjects];
+            [self.typeArray removeAllObjects];
              kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=0&count=20";
             [self netWork];
             [self.tableView reloadData];
@@ -214,6 +233,8 @@
             _pagecount = 0;
 
             [self.allArray removeAllObjects];
+            [self.detailIdArray removeAllObjects];
+            [self.typeArray removeAllObjects];
             kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=11&count=20";
             [self netWork];
             [self.tableView reloadData];
@@ -221,6 +242,8 @@
         case 2:
             _pagecount = 0;
             [self.allArray removeAllObjects];
+            [self.detailIdArray removeAllObjects];
+            [self.typeArray removeAllObjects];
             kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=10&count=20";
              [self netWork];
             [self.tableView reloadData];
@@ -228,6 +251,8 @@
         case 3:
             _pagecount = 0;
             [self.allArray removeAllObjects];
+            [self.detailIdArray removeAllObjects];
+            [self.typeArray removeAllObjects];
             kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=5&count=20";
              [self netWork];
             [self.tableView reloadData];
@@ -235,6 +260,8 @@
         case 4:
             _pagecount = 0;
             [self.allArray removeAllObjects];
+            [self.detailIdArray removeAllObjects];
+            [self.typeArray removeAllObjects];
             kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=21&count=20";
              [self netWork];
             [self.tableView reloadData];
@@ -242,6 +269,8 @@
         case 5:
             _pagecount = 0;
             [self.allArray removeAllObjects];
+            [self.detailIdArray removeAllObjects];
+            [self.typeArray removeAllObjects];
             kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=6&count=20";
              [self netWork];
             [self.tableView reloadData];
@@ -286,6 +315,18 @@
         self.allArray = [NSMutableArray new];
     }
     return _allArray;
+}
+- (NSMutableArray *)detailIdArray{
+    if (_detailIdArray == nil) {
+        self.detailIdArray = [NSMutableArray new];
+    }
+    return _detailIdArray;
+}
+- (NSMutableArray *)typeArray{
+    if (_typeArray == nil) {
+        self.typeArray = [NSMutableArray new];
+    }
+    return _typeArray;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

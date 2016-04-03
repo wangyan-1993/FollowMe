@@ -16,7 +16,7 @@
 }
 - (void)setModel:(correlation *)model{
      NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
-    self.name.text = model.introduce;
+   self.name.text = model.introduce;
     self.time.text = [NSString stringWithFormat:@"%@足迹",[numberFormatter stringFromNumber:model.foot]];
     
 //    self.distance.text = [numberFormatter stringFromNumber:model.foot];

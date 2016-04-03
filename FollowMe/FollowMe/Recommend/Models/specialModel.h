@@ -13,7 +13,9 @@
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) NSString *local_time;
 @property (nonatomic, retain) NSString *poi_name;
-@property (nonatomic, assign) NSString *imageWidth;
-@property (nonatomic, assign) NSString *imageHeight;
+@property (nonatomic, retain) NSString *imageWidth;
+@property (nonatomic, retain) NSString *imageHeight;
+@property (nonatomic, retain) NSString *latitude;
+@property (nonatomic, retain) NSString *longitude;
 - (instancetype)initWithDictionary:(NSDictionary *)rowdic;
 @end
