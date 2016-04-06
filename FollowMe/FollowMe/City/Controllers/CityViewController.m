@@ -346,7 +346,7 @@ static NSString *identifier = @"cell";
     
         _calendarView = [[LDCalendarView alloc] initWithFrame:CGRectMake(0, kHeight/7, SCREEN_WIDTH,SCREEN_HEIGHT)];
         [self.view addSubview:_calendarView];
-        
+
         __weak typeof(self) weakSelf = self;
         _calendarView.complete = ^(NSArray *result) {
             if (result) {

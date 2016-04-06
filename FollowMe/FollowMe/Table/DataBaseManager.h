@@ -22,7 +22,6 @@
 //关闭数据库
 - (void)closeDataBase;
 
-
 - (void)insertIntoSearch:(NSString *)name;
 - (NSMutableArray *)selectAllCollect;
 

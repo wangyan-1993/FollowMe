@@ -50,7 +50,7 @@ static NSString *cacheStr;
             if ([[BmobUser getCurrentUser].username isEqualToString:[obj objectForKey:@"user"]])
             {
                 self.username = [obj objectForKey:@"name"];
-                self.allArray = @[@[@"个人基本信息"],@[@"添加朋友",@"修改账户密码",@"连接社交网络",cacheStr,@"喜欢我吗？给个评分吧",@"意见反馈"]];
+                self.allArray = @[@[@"个人基本信息"],@[@"添加朋友",@"修改账户密码",@"连接社交网络",cacheStr,@"喜欢我吗？给个评分吧",@"意见反馈",@"我的收藏"]];
                 [self.tableView reloadData];
                 
             }
@@ -143,7 +143,7 @@ static NSString *cacheStr;
             SDImageCache *cache = [SDImageCache sharedImageCache];
             [cache clearDisk];
             
-            self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"连接社交网络",@"清除缓存",@"喜欢我吗？给个评分吧",@"意见反馈"]];
+            self.allArray = @[@[self.username],@[@"添加朋友",@"修改账户密码",@"连接社交网络",@"清除缓存",@"喜欢我吗？给个评分吧",@"意见反馈",@"我的收藏"]];
             [self.tableView reloadData];
 
         }
@@ -158,8 +158,10 @@ static NSString *cacheStr;
             [self sendEmail];
             
         }
-
-        
+        //我的收藏
+        if (indexPath.row == 6) {
+            
+        }
     }
 }
 
@@ -230,7 +232,7 @@ static NSString *cacheStr;
     // 设置邮件代理
     [mailCompose setMailComposeDelegate:self];
     // 设置邮件主题
-    [mailCompose setSubject:@"我是邮件主题"];
+    [mailCompose setSubject:@"初行反馈意见"];
     // 设置收件人
     [mailCompose setToRecipients:@[@"843668546@qq.com"]];
     /**
