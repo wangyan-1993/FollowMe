@@ -96,9 +96,6 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-
-    
-
     return  [WeiboSDK handleOpenURL:url delegate:self]|| [TencentOAuth HandleOpenURL:url]||[WXApi handleOpenURL:url delegate:self] ;
 }
 

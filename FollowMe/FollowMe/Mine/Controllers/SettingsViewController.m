@@ -232,7 +232,7 @@ static NSString *cacheStr;
     // 设置邮件代理
     [mailCompose setMailComposeDelegate:self];
     // 设置邮件主题
-    [mailCompose setSubject:@"我是邮件主题"];
+    [mailCompose setSubject:@"初行反馈意见"];
     // 设置收件人
     [mailCompose setToRecipients:@[@"843668546@qq.com"]];
     /**

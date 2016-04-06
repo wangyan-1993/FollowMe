@@ -26,6 +26,9 @@ self.title = @"更多";
     [self.view addSubview:self.webView];
  
 }
+- (void)viewWillDisappear:(BOOL)animated{
+    [ProgressHUD dismiss];
+}
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     [ProgressHUD show:@"数据正在加载，请稍后"];
     NSString *urlStr = request.URL.absoluteString;

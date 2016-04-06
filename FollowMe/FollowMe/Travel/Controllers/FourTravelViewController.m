@@ -28,6 +28,9 @@
     
 
 }
+- (void)viewWillDisappear:(BOOL)animated{
+    [ProgressHUD dismiss];
+}
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     [ProgressHUD showSuccess:@"数据已加载完毕"];
     [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByClassName('hotel-bottom diff')[0].style.display = 'none'"];
