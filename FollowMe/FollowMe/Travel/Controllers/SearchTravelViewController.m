@@ -146,7 +146,8 @@
     five.hidesBottomBarWhenPushed = YES;
     five.name = self.titleArray[btn.tag];
     WLZLog(@"%@", self.titleArray);
-WLZLog(@"%@", five.name);    self.mySearchBar.hidden = YES;
+WLZLog(@"%@", five.name);
+    self.mySearchBar.hidden = YES;
     [self.navigationController pushViewController:five animated:YES];
 
 }
@@ -155,7 +156,7 @@ WLZLog(@"%@", five.name);    self.mySearchBar.hidden = YES;
     return size;
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    //[self.btn removeFromSuperview];
+    
     [self loadDataWithString:searchBar.text];
 }
 
@@ -180,15 +181,7 @@ WLZLog(@"%@", five.name);    self.mySearchBar.hidden = YES;
     }
     return _titleArray;
 }
-//- (UIButton *)btn{
-//    if (_btn == nil) {
-//        self.btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//        self.btn.frame = CGRectMake(0, 0, kWidth, 50);
-//
-//    }
-//    return _btn;
-//}
-//--------
+
 
 - (UICollectionView *)collectionView{
     if (_collectionView == nil) {
@@ -219,7 +212,9 @@ WLZLog(@"%@", five.name);    self.mySearchBar.hidden = YES;
     }
     return _collectionView;
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.mySearchBar resignFirstResponder];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

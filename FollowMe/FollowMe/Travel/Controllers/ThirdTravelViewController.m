@@ -36,7 +36,9 @@ self.title = @"介绍";
 
 }
 
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [ProgressHUD dismiss];
+}
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     [ProgressHUD show:@"数据正在加载"];
     NSString *urlStr = request.URL.absoluteString;

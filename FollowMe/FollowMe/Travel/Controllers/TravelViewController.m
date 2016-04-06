@@ -56,6 +56,12 @@
     self.mySearchBar.hidden = NO;
     
 }
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [self.mySearchBar resignFirstResponder];
+    [ProgressHUD dismiss];
+
+}
 #pragma mark---common method
 
 - (void)loadData{

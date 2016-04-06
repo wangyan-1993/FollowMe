@@ -399,8 +399,6 @@ static NSString *identifier = @"cell";
 }
 
 -(void)calanderAction{
-    
-
         _calendarView = [[LDCalendarView alloc] initWithFrame:CGRectMake(0, -100, SCREEN_WIDTH,SCREEN_HEIGHT)];
         [self.secondView addSubview:_calendarView];
         
