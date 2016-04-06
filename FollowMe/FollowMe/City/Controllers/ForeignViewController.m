@@ -43,14 +43,17 @@
     
     self.tabBarController.tabBar.hidden = YES;
     
-    //searchBar
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 10, kWidth, 30)];
-    self.searchBar.delegate = self;
-    self.searchBar.placeholder = @"请输入搜索您的信息";
-    self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
-    self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.searchBar.layer.cornerRadius = 10.0;
-    self.searchBar.clipsToBounds = YES;
+//    //searchBar
+//    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 10, kWidth, 30)];
+//    self.searchBar.delegate = self;
+//    self.searchBar.placeholder = @"请输入搜索您的信息";
+//    self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+//    self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+//    self.searchBar.layer.cornerRadius = 10.0;
+//    self.searchBar.clipsToBounds = YES;
+    
+    
+    
     [self.searchBar becomeFirstResponder];
     [self.view addSubview:self.searchBar];
     
@@ -89,7 +92,7 @@
 
 -(void)JcTagesAction{
     
-    self.jctageLiseView = [[JCTagListView alloc] initWithFrame:CGRectMake(0, kWidth*0.25, kWidth, kHeight/6)];
+    self.jctageLiseView = [[JCTagListView alloc] initWithFrame:CGRectMake(0, kHeight/9+10, kWidth, kHeight/6)];
     [self.jctageLiseView.tags addObjectsFromArray: @[@"日本"]];
     self.jctageLiseView.layer.cornerRadius = 15.0f;
     self.jctageLiseView.clipsToBounds = YES;
@@ -147,11 +150,19 @@
 }
 
 -(UIView *)headView{
+    
     if (_headView == nil) {
-        self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, 60, kWidth, kHeight/4)];
+        self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight/4)];
         _gpsLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, kWidth/2, 30)];
         _gpsLable.backgroundColor = [UIColor clearColor];
-        _gpsLable.text = @"GPS定位失败";
+        NSString *cityName = [[NSUserDefaults standardUserDefaults] valueForKey:@"key"];
+        
+        if (cityName == nil) {
+            _gpsLable.text = @"定位失败";
+        }else{
+            
+            _gpsLable.text = cityName;}
+        
         _gpsLable.textColor = [UIColor whiteColor];
         _gpsLable.font = [UIFont systemFontOfSize:13.0];
         
@@ -168,7 +179,7 @@
         [_headView addSubview:self.inLable];
         
         
-        UILabel *inlable = [[UILabel alloc] initWithFrame:CGRectMake(0, 64, kWidth/3, 30)];
+        UILabel *inlable = [[UILabel alloc] initWithFrame:CGRectMake(0, kHeight/9, kWidth/3, 30)];
         inlable.backgroundColor = [UIColor clearColor];
         inlable.text = @"国外热门城市";
         inlable.textColor = [UIColor whiteColor];
@@ -185,8 +196,7 @@
 -(UITableView *)tableView{
     if (_tableView == nil) {
         
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, kWidth, kHeight -150)];
-        
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight -20)];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         self.tableView.backgroundColor = kMainColor;

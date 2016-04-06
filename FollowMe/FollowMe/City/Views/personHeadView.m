@@ -113,28 +113,29 @@
     return _addressLb;
     
 }
--(UIButton *)LookBtn{
-    
-    if (_LookBtn == nil) {
-        self.LookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.LookBtn.frame = CGRectMake(kWidth/6, kWidth/2+40, kWidth/3-10, 40);
-        self.LookBtn.backgroundColor = [UIColor whiteColor];
-        self.LookBtn.layer.cornerRadius = 15.0;
-        self.LookBtn.clipsToBounds = YES;
-        [self.LookBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [self.LookBtn setTitle:@"关注" forState:UIControlStateNormal];
-  
-        
-    }
-    return _LookBtn;
-    
-}
+//-(UIButton *)LookBtn{
+//    
+//    if (_LookBtn == nil) {
+//        self.LookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        self.LookBtn.frame = CGRectMake(kWidth/6, kWidth/2+40, kWidth/3-10, 40);
+//        self.LookBtn.backgroundColor = [UIColor whiteColor];
+//        self.LookBtn.layer.cornerRadius = 15.0;
+//        self.LookBtn.clipsToBounds = YES;
+//        [self.LookBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [self.LookBtn setTitle:@"关注" forState:UIControlStateNormal];
+//  
+//        
+//    }
+//    return _LookBtn;
+//    
+//}
 -(UIButton *)sentBtn{
     
     if (_sentBtn == nil) {
         
         self.sentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.sentBtn.frame = CGRectMake(kWidth/2+10, kWidth/2+40, kWidth/3-10, 40);
+        //self.sentBtn.frame = CGRectMake(kWidth/2+10, kWidth/2+40, kWidth/3-10, 40);
+        self.sentBtn.frame = CGRectMake(kWidth/3, kWidth/2+40, kWidth/3-10, 40);
         self.sentBtn.backgroundColor = [UIColor whiteColor];
         [self.sentBtn setTitle:@"发私信" forState:UIControlStateNormal];
         self.sentBtn.layer.cornerRadius = 15.0;
@@ -179,8 +180,8 @@
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:dic[@"cover"]]];
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:dic[@"avatar_l"]]];
     self.sayLb.text = dic[@"user_desc"];
-    self.fanceLb.text = [NSString stringWithFormat:@"%@ 粉丝",dic[@"followers_count"]];
-    self.LookLb.text = [NSString stringWithFormat:@"%@ 关注",dic[@"followings_count"]];
+    self.fanceLb.text = [NSString stringWithFormat:@"%@   粉丝",dic[@"followers_count"]];
+    self.LookLb.text = [NSString stringWithFormat:@"%@   关注",dic[@"followings_count"]];
     self.nameLable.text = dic[@"name"];
     self.addressLb.text = [NSString stringWithFormat:@"%@/%@",dic[@"profession"],dic[@"location_name"]];
     

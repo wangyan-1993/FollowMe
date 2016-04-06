@@ -37,45 +37,39 @@
     self.ReceiveImage.clipsToBounds = YES;
     self.ReplaView.layer.cornerRadius = 22;
     self.ReplaView.clipsToBounds = YES;
-    
-    
-  
+
 }
 
-//-(void)setDic:(NSDictionary *)dic{
-//    
-//    self.goodLb.text = [NSString stringWithFormat:@"%ld%%",(long)dic[@"goodcomment_rate"]];
-//    if ((long)dic[@"goodcomment_rate"] > 80) {
-//        self.GoodImage.image = [UIImage imageNamed:@"hun_smile"];
-//        
-//    }else{
-//        self.GoodImage.image = [UIImage imageNamed:@"hun_ok"];
-//        
-//    }
-//    self.RemoveLb.text = [NSString stringWithFormat:@"%ld%%",(long)dic[@"receive_rate"]];
-//    if ((long)dic[@"receive_rate"] > 80) {
-//        self.ReceiveImage.image = [UIImage imageNamed:@"hun_smile"];
-//        
-//    }else{
-//        self.ReceiveImage.image = [UIImage imageNamed:@"hun_ok"];
-//        
-//    }
-//    
-//    self.ReblyLb.text = [NSString stringWithFormat:@"%ld%%",(long)dic[@"reply_rate"]];
-//    
-//    if ((long)dic[@"reply_rate"] > 80) {
-//        self.ReplaView.image = [UIImage imageNamed:@"hun_smile"];
-//        
-//    }else{
-//        self.ReplaView.image = [UIImage imageNamed:@"hun_ok"];
-//        
-//    }
-//    
-//
-//    
-//    
-//    
-//}
+-(void)setDic:(NSDictionary *)dic{
+    
+    self.goodLb.text = [NSString stringWithFormat:@"%@%%",dic[@"goodcomment_rate"]];
+    if ([dic[@"goodcomment_rate"] integerValue] > 80) {
+        self.GoodImage.image = [UIImage imageNamed:@"hun_smile"];
+        
+    }else{
+        self.GoodImage.image = [UIImage imageNamed:@"hun_ok"];
+        
+    }
+    self.RemoveLb.text = [NSString stringWithFormat:@"%ld%%",(long)dic[@"receive_rate"]];
+    if ([dic[@"receive_rate"] integerValue] > 80) {
+        self.ReceiveImage.image = [UIImage imageNamed:@"hun_smile"];
+        
+    }else{
+        self.ReceiveImage.image = [UIImage imageNamed:@"hun_ok"];
+        
+    }
+    
+    self.ReblyLb.text = [NSString stringWithFormat:@"%ld%%",(long)dic[@"reply_rate"]];
+    
+    if ([dic[@"reply_rate"] integerValue] > 80) {
+        self.ReplaView.image = [UIImage imageNamed:@"hun_smile"];
+        
+    }else{
+        self.ReplaView.image = [UIImage imageNamed:@"hun_ok"];
+        
+    }
+
+}
 
 -(void)setModel:(ClasifyModel *)model{
     

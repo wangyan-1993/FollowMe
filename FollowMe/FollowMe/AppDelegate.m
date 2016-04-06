@@ -18,12 +18,19 @@
 #import "InformationViewController.h"
 #import "WXApi.h"
 #import <TencentOpenAPI/TencentOAuth.h>
+
 #import "JPUSHService.h"
 #import <TencentOpenAPI/TencentApiInterface.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+
+
 @interface AppDelegate ()<UITabBarControllerDelegate, WeiboSDKDelegate, WXApiDelegate,TencentApiInterfaceDelegate,WBHttpRequestDelegate>
 @property(nonatomic, strong) UITabBarController *tabBarVC;
 @property(nonatomic, strong) UINavigationController *mineNav;
 @property (nonatomic, strong) TencentOAuth *tencentOAuth;
+@property(nonatomic, strong) AMapLocationManager *manger;
+
+
 @end
 
 @implementation AppDelegate
@@ -54,6 +61,52 @@
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kWeiboAppKey];
     [WXApi registerApp:kWeixinAppID];
+    
+    
+    //定位：高德地图
+    [AMapLocationServices sharedServices].apiKey = kZhGaodeMapKey;
+    self.manger = [[AMapLocationManager alloc] init];
+    
+    // 带逆地理信息的单次定位（返回坐标和地址信息）
+    [self.manger setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    //   定位超时时间，可修改，最小2s
+    self.manger.locationTimeout = 3;
+    //    //   逆地理请求超时时间，可修改，最小2s
+    self.manger.reGeocodeTimeout = 3;
+    // 带逆地理（返回坐标和地址信息） YES改为NO,将不会返回地理信息
+    [self.manger requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
+        if (error)
+        {
+            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
+            
+            if (error.code == AMapLocationErrorLocateFailed)
+            {
+                return;
+            }
+        }
+        //        WLZLog(@"location:{lat:%.20f; lon:%f; accuracy:%.10f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
+        //        //在真机,经纬度数据，属性定义
+        //        _lat = location.coordinate.latitude;
+        //        _lon = location.coordinate.longitude;
+        
+        if (regeocode)
+        {
+            NSString *string = [NSString stringWithFormat:@"%@",regeocode];
+            NSArray *array = [string componentsSeparatedByString:@"city:"];
+            NSString *stingd = array[1];
+            NSArray *cityArray = [stingd componentsSeparatedByString:@";"];
+            NSString *city = cityArray[0];
+            
+            NSUserDefaults *userDefult = [NSUserDefaults standardUserDefaults];
+            [userDefult setValue:city forKey:@"key"];
+            NSLog(@"%@",city);
+            
+            
+        }
+    }];
+    
+
+    
     
     self.tabBarVC = [[UITabBarController alloc]init];
     self.tabBarVC.delegate = self;
@@ -155,6 +208,8 @@
             [self.mineNav pushViewController:info animated:YES];
         }
     }];
+         
+         
          BmobQuery *query = [BmobQuery queryWithClassName:@"info"];
          [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
              for (BmobObject *obj in array) {

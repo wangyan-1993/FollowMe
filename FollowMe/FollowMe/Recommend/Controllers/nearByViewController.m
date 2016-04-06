@@ -96,6 +96,8 @@
         if (regeocode)
         {
             NSLog(@"reGeocode:%@", regeocode);
+            
+          
         }
     }];
 
