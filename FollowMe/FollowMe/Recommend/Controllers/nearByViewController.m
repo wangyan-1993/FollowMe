@@ -95,6 +95,7 @@
         _lon = location.coordinate.longitude;
         if (regeocode)
         {
+           
             NSLog(@"reGeocode:%@", regeocode);
         }
     }];
@@ -115,7 +116,7 @@
         }else{
             [ProgressHUD showSuccess:@"加载成功"];
         }
-        WLZLog(@"%@",responseObject);
+        //WLZLog(@"%@",responseObject);
         
         
         NSDictionary *allDic = responseObject;

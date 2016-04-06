@@ -36,7 +36,10 @@
 @end
 
 @implementation searchViewController
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
 
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     //隐藏下方导航

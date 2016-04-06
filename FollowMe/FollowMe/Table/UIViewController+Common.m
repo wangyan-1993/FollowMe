@@ -7,8 +7,17 @@
 //
 
 #import "UIViewController+Common.h"
+#import "WBPopMenuModel.h"
+#import "WBPopMenuSingleton.h"
+#import "WXApi.h"
+#import "WXApiObject.h"
+#import "AppDelegate.h"
+#import "WBHttpRequest+WeiboShare.h"
+#import "WeiboSDK.h"
+#import <MessageUI/MessageUI.h>
 
 @implementation UIViewController (Common)
+
 - (void)showBackBtn{
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(0, 0, 44, 44);
@@ -16,6 +25,15 @@
     [backBtn addTarget:self action:@selector(backBtnAction) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc]initWithCustomView:backBtn];
     self.navigationItem.leftBarButtonItem = leftBarBtn;
+}
+- (void)showWhiteBackBtn{
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame = CGRectMake(0, 0, 44, 44);
+    [backBtn setImage:[UIImage imageNamed:@"whiteBack"] forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(backBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc]initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = leftBarBtn;
+
 }
 - (void)shoeRightBtn{
     UIButton *collectionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -32,5 +50,6 @@
 - (void)backBtnAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 @end

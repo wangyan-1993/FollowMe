@@ -135,6 +135,8 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.navigationItem.backBarButtonItem setTitle:@""];
+    [self.navigationItem setHidesBackButton:YES];
     if ([BmobUser getCurrentUser]) {
         [BmobUser loginInbackgroundWithAccount:[BmobUser getCurrentUser].username andPassword:[BmobUser getCurrentUser].username block:^(BmobUser *user, NSError *error) {
             InformationViewController *info = [[InformationViewController alloc]init];

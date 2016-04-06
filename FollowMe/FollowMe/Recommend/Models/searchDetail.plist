@@ -1,323 +1,5449 @@
+ {
+cities =     (
+"\U6210\U90fd",
+"\U5b9c\U5bbe"
+);
+city = "";
+"city_slug_urls" =     (
+"/chengdu/",
+"/yibin/"
+);
+"comment_count" = 2;
+country = "";
+"cover_image" = "http://photos.breadtrip.com/photo_2016_04_03_3f7d4f97573af596fa9d733fafe249f6.jpg?imageView/2/w/960/q/85";
+"covered_countries" =     (
 {
-data =     {
-places =         (
-{
-country =                 {
-icon = "http://media.breadtrip.com/images/icons/country.png";
-id = CN;
-location =                     {
-lat = "35.861469";
-lng = "104.198074";
-};
+icon = "http://media.breadtrip.com/images/icons/passport/CN.png";
+id = 3793;
 name = "\U4e2d\U56fd";
-"name_orig" = "\U4e2d\U56fd";
-"slug_url" = "/cn/";
 type = 1;
-url = "/scenic/1/3793/";
-};
-"has_experience" = 0;
-"has_route_maps" = 0;
-icon = "http://media.breadtrip.com/images/icons/city.png";
-id = 13961;
-name = "\U4e0a\U6d77";
-province =                 {
-icon = "http://media.breadtrip.com/images/icons/province.png";
-id = 13958;
+}
+);
+"date_added" = 1459551660;
+"date_complete" = 1459781700;
+"day_count" = 3;
+days =     (
+{
+date = "2016-04-02";
+day = 1;
+waypoints =             (
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459551660;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349851936;
+"local_time" = "2016-04-02 07:01:00";
 location =                     {
-lat = "31.228402";
-lng = "121.478143";
+lat = "30.6333";
+latitude = "30.630697";
+lng = "104.030343";
+longitude = "104.032645";
 };
-name = "\U4e0a\U6d77\U5e02";
-"name_en" = Shanghai;
-"name_orig" = "\U4e0a\U6d77\U5e02";
-"name_zh" = "\U4e0a\U6d77\U5e02";
-"slug_url" = "/shanghai-shi/";
-type = 2;
-url = "/scenic/2/13958/";
-};
+model = "<null>";
+photo = "";
+"photo_1600" = "";
+"photo_info" = "<null>";
+"photo_s" = "";
+"photo_w640" = "";
+"photo_weblive" = "";
+"photo_webtrip" = "";
+place =                     {
+city =                         {
+id = 14209;
 type = 3;
-url = "/scenic/3/13961/";
-},
-{
-country =                 {
-icon = "http://media.breadtrip.com/images/icons/country.png";
-id = CN;
-location =                     {
-lat = "35.861469";
-lng = "104.198074";
 };
-name = "\U4e2d\U56fd";
-"name_orig" = "\U4e2d\U56fd";
-"slug_url" = "/cn/";
+country =                         {
+id = 3793;
 type = 1;
-url = "/scenic/1/3793/";
 };
-"has_experience" = 0;
-"has_route_maps" = 0;
-icon = "http://media.breadtrip.com/images/icons/province.png";
-id = 13958;
-name = "\U4e0a\U6d77\U5e02";
+province =                         {
+id = 14207;
 type = 2;
-url = "/scenic/2/13958/";
-}
-);
-trips =         (
-{
-"cover_image" = "http://photos.breadtrip.com/photo_2013_05_15_3131e9d04014f75a7d753259a5e0130e.jpg?imageView/1/w/280/h/280/q/75";
-"cover_image_1600" = "http://photos.breadtrip.com/photo_2013_05_15_3131e9d04014f75a7d753259a5e0130e.jpg?imageView/1/w/640/h/480/q/85";
-"cover_image_default" = "http://photos.breadtrip.com/photo_2013_05_15_3131e9d04014f75a7d753259a5e0130e.jpg?imageView/2/w/960/q/85";
-"cover_image_w640" = "http://photos.breadtrip.com/photo_2013_05_15_3131e9d04014f75a7d753259a5e0130e.jpg?imageView/2/w/1384/h/1384/q/85";
-"date_added" = 1232012640;
-"date_complete" = 1459249064;
-"day_count" = 2631;
-default = 0;
-description = "";
-device = 4;
-id = 2387615861;
-"last_modified" = "1459302456.65858";
-"liked_count" = 4478;
-mileage = "2015.02509859965";
-name = "\U4e0d\U5b8c\U5168\U5403\U8d27\U8bb0";
-privacy = 0;
-recommendations = 793;
-"spot_count" = 0;
-"total_comments_count" = 207;
-version = 1;
-"view_count" = 58632;
-waypoints = 1317;
-"wifi_sync" = 1;
-},
-{
-"cover_image" = "http://photos.breadtrip.com/photo_2013_11_02_8a71d9fbf14029264aed9d7e31a90ac1.jpg?imageView/1/w/280/h/280/q/75";
-"cover_image_1600" = "http://photos.breadtrip.com/photo_2013_11_02_8a71d9fbf14029264aed9d7e31a90ac1.jpg?imageView/1/w/640/h/480/q/85";
-"cover_image_default" = "http://photos.breadtrip.com/photo_2013_11_02_8a71d9fbf14029264aed9d7e31a90ac1.jpg?imageView/2/w/960/q/85";
-"cover_image_w640" = "http://photos.breadtrip.com/photo_2013_11_02_8a71d9fbf14029264aed9d7e31a90ac1.jpg?imageView/2/w/1384/h/1384/q/85";
-"date_added" = 1383276720;
-"date_complete" = 1383925800;
-"day_count" = 8;
-default = 0;
-description = "";
-device = 1;
-id = 2387795558;
-"last_modified" = "1455727034.11449";
-"liked_count" = 3452;
-mileage = "3088.20418188447";
-name = "Korea \U79cb\U610f\U6d53\Ud83c\Udf42";
-privacy = 0;
-recommendations = 763;
-"spot_count" = 0;
-"total_comments_count" = 1256;
-version = 1;
-"view_count" = 23482;
-waypoints = 125;
-"wifi_sync" = 0;
-},
-{
-"cover_image" = "http://photos.breadtrip.com/photo_2015_11_24_986655d776c8cf0d86d309fc9ec50673.jpg?imageView/1/w/280/h/280/q/75";
-"cover_image_1600" = "http://photos.breadtrip.com/photo_2015_11_24_986655d776c8cf0d86d309fc9ec50673.jpg?imageView/1/w/640/h/480/q/85";
-"cover_image_default" = "http://photos.breadtrip.com/photo_2015_11_24_986655d776c8cf0d86d309fc9ec50673.jpg?imageView/2/w/960/q/85";
-"cover_image_w640" = "http://photos.breadtrip.com/photo_2015_11_24_986655d776c8cf0d86d309fc9ec50673.jpg?imageView/2/w/1384/h/1384/q/85";
-"date_added" = 1247660040;
-"date_complete" = 1452418948;
-"day_count" = 2371;
-default = 0;
-description = "";
-device = 1;
-id = 2387919248;
-"last_modified" = "1452612088.67981";
-"liked_count" = 2901;
-mileage = "115967.033170004";
-name = "\U5403\U8d27\U517b\U6210\U8bb0\U3010\U56fd\U5185\U7bc7\U3011";
-privacy = 0;
-recommendations = 1617;
-"spot_count" = 0;
-"total_comments_count" = 201;
-version = 1;
-"view_count" = 199394;
-waypoints = 1817;
-"wifi_sync" = 1;
-},
-{
-"cover_image" = "http://photos.breadtrip.com/photo_2013_11_24_c9fb6cabe5dbac0f0a2a0a24d933459b.jpg?imageView/1/w/280/h/280/q/75";
-"cover_image_1600" = "http://photos.breadtrip.com/photo_2013_11_24_c9fb6cabe5dbac0f0a2a0a24d933459b.jpg?imageView/1/w/640/h/480/q/85";
-"cover_image_default" = "http://photos.breadtrip.com/photo_2013_11_24_c9fb6cabe5dbac0f0a2a0a24d933459b.jpg?imageView/2/w/960/q/85";
-"cover_image_w640" = "http://photos.breadtrip.com/photo_2013_11_24_c9fb6cabe5dbac0f0a2a0a24d933459b.jpg?imageView/2/w/1384/h/1384/q/85";
-"date_added" = 1374929820;
-"date_complete" = 1457176378;
-"day_count" = 953;
-default = 0;
-description = "";
-device = 1;
-id = 2387744215;
-"last_modified" = "1457177712.31966";
-"liked_count" = 1186;
-mileage = "1450.03850493719";
-name = "\U54c1\U5473\U2022\U751f\U6d3b";
-privacy = 0;
-recommendations = 381;
-"spot_count" = 0;
-"total_comments_count" = 45;
-version = 1;
-"view_count" = 19157;
-waypoints = 322;
-"wifi_sync" = 0;
-},
-{
-"cover_image" = "http://photos.breadtrip.com/photo_2015_08_10_becf0c861ce33988b84b2bc5ff031214.jpg?imageView/1/w/280/h/280/q/75";
-"cover_image_1600" = "http://photos.breadtrip.com/photo_2015_08_10_becf0c861ce33988b84b2bc5ff031214.jpg?imageView/1/w/640/h/480/q/85";
-"cover_image_default" = "http://photos.breadtrip.com/photo_2015_08_10_becf0c861ce33988b84b2bc5ff031214.jpg?imageView/2/w/960/q/85";
-"cover_image_w640" = "http://photos.breadtrip.com/photo_2015_08_10_becf0c861ce33988b84b2bc5ff031214.jpg?imageView/2/w/1384/h/1384/q/85";
-"date_added" = 1405170206;
-"date_complete" = 1445063100;
-"day_count" = 463;
-default = 0;
-description = "";
-device = 1;
-id = 2386590411;
-"last_modified" = "1458968632.4989";
-"liked_count" = 197;
-mileage = "49.7449815743804";
-name = "\U5403\U8d27\U4e4b\U65c5";
-privacy = 0;
-recommendations = 372;
-"spot_count" = 0;
-"total_comments_count" = 77;
-version = 1;
-"view_count" = 35471;
-waypoints = 70;
-"wifi_sync" = 0;
-}
-);
-"trips_more" = 1;
-users =         (
-{
-"avatar_l" = "http://photos.breadtrip.com/avatar_c7_c8_6c4831722c59362d77f7d0b3de98f81712285f18.jpg-avatar.l";
-"avatar_m" = "http://photos.breadtrip.com/avatar_c7_c8_6c4831722c59362d77f7d0b3de98f81712285f18.jpg-avatar.m";
-"avatar_s" = "http://photos.breadtrip.com/avatar_c7_c8_6c4831722c59362d77f7d0b3de98f81712285f18.jpg-avatar.s";
-bio = "";
-birthday = "";
-cdc2 = 0;
-"country_code" = "<null>";
-"country_num" = "<null>";
-cover = "http://photos.breadtrip.com/default_user_cover_03.jpg-usercover.display";
-"custom_url" = "";
-email = "";
-"email_verified" = 0;
-"followers_count" = 0;
-"followings_count" = 1;
-gender = 0;
-id = 2387217957;
-"is_hunter" = 0;
-"location_name" = "";
-mobile = "";
-name = "Shanghai\U4f73\U59a4";
-relationship = 1;
-"resident_city_id" = "";
-"user_desc" = "";
-},
-{
-"avatar_l" = "http://media.breadtrip.com/avatars/default/l.png";
-"avatar_m" = "http://media.breadtrip.com/avatars/default/m.png";
-"avatar_s" = "http://media.breadtrip.com/avatars/default/s.png";
-bio = "";
-birthday = "";
-cdc2 = 0;
-"country_code" = "<null>";
-"country_num" = "<null>";
-cover = "http://media.breadtrip.com/user_covers/default/cover_4.jpg";
-"custom_url" = "";
-email = "";
-"email_verified" = 0;
-"followers_count" = 0;
-"followings_count" = 1;
-gender = 0;
-id = 2388327903;
-"is_hunter" = 0;
-"location_name" = "";
-mobile = "";
-name = shanghai;
-relationship = 1;
-"resident_city_id" = "";
-"user_desc" = "";
-},
-{
-"avatar_l" = "http://photos.breadtrip.com/avatar_5e_a2_ccaeb6ea2a7ac44eb36a0fe3200dfb7dbe372271.jpg-avatar.l";
-"avatar_m" = "http://photos.breadtrip.com/avatar_5e_a2_ccaeb6ea2a7ac44eb36a0fe3200dfb7dbe372271.jpg-avatar.m";
-"avatar_s" = "http://photos.breadtrip.com/avatar_5e_a2_ccaeb6ea2a7ac44eb36a0fe3200dfb7dbe372271.jpg-avatar.s";
-bio = "";
-birthday = "";
-cdc2 = 0;
-"country_code" = "<null>";
-"country_num" = "<null>";
-cover = "http://media.breadtrip.com/user_covers/default/cover_2.jpg";
-"custom_url" = "";
-email = "";
-"email_verified" = 0;
-"followers_count" = 1;
-"followings_count" = 1;
-gender = 2;
-id = 2386643923;
-"is_hunter" = 0;
-"location_name" = "";
-mobile = "";
-name = shanghaiD;
-relationship = 1;
-"resident_city_id" = "";
-"user_desc" = "";
-},
-{
-"avatar_l" = "http://photos.breadtrip.com/avatar_99_d4_ee95c50905754d8a24cddd6a4214121d4a454fd5.jpg-avatar.l";
-"avatar_m" = "http://photos.breadtrip.com/avatar_99_d4_ee95c50905754d8a24cddd6a4214121d4a454fd5.jpg-avatar.m";
-"avatar_s" = "http://photos.breadtrip.com/avatar_99_d4_ee95c50905754d8a24cddd6a4214121d4a454fd5.jpg-avatar.s";
-bio = "";
-birthday = "";
-cdc2 = 0;
-"country_code" = "<null>";
-"country_num" = "<null>";
-cover = "http://media.breadtrip.com/user_covers/default/cover_2.jpg";
-"custom_url" = "";
-email = "";
-"email_verified" = 0;
-"followers_count" = 0;
-"followings_count" = 1;
-gender = 1;
-id = 2386814305;
-"is_hunter" = 0;
-"location_name" = "";
-mobile = "";
-name = "Dean_shanghai";
-relationship = 1;
-"resident_city_id" = "";
-"user_desc" = "";
-},
-{
-"avatar_l" = "http://photos.breadtrip.com/avatar_ca_10_b460988be4ce29b0fc88c1937352ba2364e8e949.jpg-avatar.l";
-"avatar_m" = "http://photos.breadtrip.com/avatar_ca_10_b460988be4ce29b0fc88c1937352ba2364e8e949.jpg-avatar.m";
-"avatar_s" = "http://photos.breadtrip.com/avatar_ca_10_b460988be4ce29b0fc88c1937352ba2364e8e949.jpg-avatar.s";
-bio = "HK Wine Tasting Event";
-birthday = "";
-cdc2 = 0;
-"country_code" = "<null>";
-"country_num" = "<null>";
-cover = "http://photos.breadtrip.com/default_user_cover_03.jpg-usercover.display";
-"custom_url" = "";
-email = "";
-"email_verified" = 0;
-"followers_count" = 0;
-"followings_count" = 1;
-gender = 0;
-id = 2387413487;
-"is_hunter" = 0;
-"location_name" = "";
-mobile = "";
-name = AJShanghai;
-relationship = 1;
-"resident_city_id" = "";
-"user_desc" = "";
-}
-);
-"users_more" = 1;
 };
-message = "";
-status = 0;
+};
+poi = "<null>";
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U8d81\U7740\U6e05\U660e\U626b\U5893\Uff0c\U53bb\U4e86\U5b9c\U5bbe\U7684\U8700\U5357\U7af9\U6d77\n\U90fd\U8bf4\U8d8a\U662f\U79bb\U5bb6\U8fd1\U7684\U5730\U65b9\U53cd\U800c\U8d8a\U61d2\U5f97\U53bb\Uff0c\U7684\U786e\U5982\U6b64\Uff0c\U60f3\U60f3\U8fd9\U5730\U65b9\U81ea\U4ece\U5367\U864e\U85cf\U9f99\U51fa\U540d\U4ee5\U6765\U4e5f\U6709\U5341\U51e0\U5e74\U4e86\U2026\U7adf\U7136\U4e00\U6b21\U4e5f\U6ca1\U53bb\U8fc7\n\U7b2c\U4e00\U7ad9\U5148\U53bb\U4e86\U9644\U8fd1\U7684\U674e\U5e84\U53e4\U9547";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459581180;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835218;
+"local_time" = "2016-04-02 15:13:00";
+location =                     {
+lat = "28.807475";
+latitude = "28.804203";
+lng = "104.793792";
+longitude = "104.796463";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_d4e6e998278fed24f87d21721a9e5a9d.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_d4e6e998278fed24f87d21721a9e5a9d.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1103;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_d4e6e998278fed24f87d21721a9e5a9d.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_d4e6e998278fed24f87d21721a9e5a9d.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_d4e6e998278fed24f87d21721a9e5a9d.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_d4e6e998278fed24f87d21721a9e5a9d.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459581300;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835230;
+"local_time" = "2016-04-02 15:15:00";
+location =                     {
+lat = "28.807525";
+latitude = "28.804253";
+lng = "104.793953";
+longitude = "104.796625";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_025d660ce418e88005a9e5d32f99aca6.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_025d660ce418e88005a9e5d32f99aca6.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_025d660ce418e88005a9e5d32f99aca6.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_025d660ce418e88005a9e5d32f99aca6.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_025d660ce418e88005a9e5d32f99aca6.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_025d660ce418e88005a9e5d32f99aca6.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U767d\U9152\U4e5f\U662f\U7279\U4ea7\Uff0c\U6709\U5f88\U591a\U9152\U4f5c\U574a\Uff0c\U8fd9\U5bb6\U597d\U50cf\U8fd8\U5728\U4ec0\U4e48\U7efc\U827a\U8282\U76ee\U91cc\U9732\U8fc7\U8138";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459581300;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835232;
+"local_time" = "2016-04-02 15:15:00";
+location =                     {
+lat = "28.807505";
+latitude = "28.804233";
+lng = "104.793913";
+longitude = "104.796585";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_9f311791ccc69a893a2ea1a3167d8d50.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_9f311791ccc69a893a2ea1a3167d8d50.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_9f311791ccc69a893a2ea1a3167d8d50.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_9f311791ccc69a893a2ea1a3167d8d50.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_9f311791ccc69a893a2ea1a3167d8d50.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_9f311791ccc69a893a2ea1a3167d8d50.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U5bf9\U8fd9\U4e2a\U5730\U65b9\U7684\U552f\U4e00\U8ba4\U8bc6\U5c31\U662f\U674e\U5e84\U767d\U8089\Uff0c\U679c\U7136\U5230\U4e86\U8fd9\U91cc\U5bb6\U5bb6\U9910\U9986\U90fd\U505a\U767d\U8089";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459581600;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835225;
+"local_time" = "2016-04-02 15:20:00";
+location =                     {
+lat = "28.808263";
+latitude = "28.804992";
+lng = "104.794717";
+longitude = "104.797388";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_f8e84aec433c2e75e6712766cef67ff1.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_f8e84aec433c2e75e6712766cef67ff1.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_f8e84aec433c2e75e6712766cef67ff1.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_f8e84aec433c2e75e6712766cef67ff1.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_f8e84aec433c2e75e6712766cef67ff1.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_f8e84aec433c2e75e6712766cef67ff1.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U5404\U5bb6\U996d\U9986\U95e8\U53e3\U90fd\U6709\U8868\U6f14\U7247\U767d\U8089\U7684\U5e08\U5085";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459581660;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835238;
+"local_time" = "2016-04-02 15:21:00";
+location =                     {
+lat = "28.808237";
+latitude = "28.804965";
+lng = "104.794678";
+longitude = "104.79735";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_ac90fe305b174acc7b29f35e9c4c5874.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_ac90fe305b174acc7b29f35e9c4c5874.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_ac90fe305b174acc7b29f35e9c4c5874.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_ac90fe305b174acc7b29f35e9c4c5874.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_ac90fe305b174acc7b29f35e9c4c5874.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_ac90fe305b174acc7b29f35e9c4c5874.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U624b\U827a\U4e5f\U662f\U771f\U597d";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459581719;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835246;
+"local_time" = "2016-04-02 15:21:59";
+location =                     {
+lat = "28.808225";
+latitude = "28.804953";
+lng = "104.7947";
+longitude = "104.797371";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_6df9b28577fe1acbcb37c26b9a041971.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_6df9b28577fe1acbcb37c26b9a041971.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_6df9b28577fe1acbcb37c26b9a041971.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_6df9b28577fe1acbcb37c26b9a041971.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_6df9b28577fe1acbcb37c26b9a041971.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_6df9b28577fe1acbcb37c26b9a041971.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459582080;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835244;
+"local_time" = "2016-04-02 15:28:00";
+location =                     {
+lat = "28.809045";
+latitude = "28.805773";
+lng = "104.795617";
+longitude = "104.798288";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_1da37d4cae5998a0b869d3ffd3e2c459.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_1da37d4cae5998a0b869d3ffd3e2c459.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_1da37d4cae5998a0b869d3ffd3e2c459.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_1da37d4cae5998a0b869d3ffd3e2c459.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_1da37d4cae5998a0b869d3ffd3e2c459.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_1da37d4cae5998a0b869d3ffd3e2c459.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U53e6\U5916\U4e00\U4e2a\U7279\U4ea7\U662f\U767d\U7cd5\Uff0c\U7cef\U7c73\U505a\U7684\U7c73\U7cd5";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459582117;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835260;
+"local_time" = "2016-04-02 15:28:37";
+location =                     {
+lat = "28.809172";
+latitude = "28.8059";
+lng = "104.795783";
+longitude = "104.798455";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_e3541f0d136153c01ccf9dba614ad6c3.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_e3541f0d136153c01ccf9dba614ad6c3.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_e3541f0d136153c01ccf9dba614ad6c3.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_e3541f0d136153c01ccf9dba614ad6c3.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_e3541f0d136153c01ccf9dba614ad6c3.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_e3541f0d136153c01ccf9dba614ad6c3.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459582440;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835255;
+"local_time" = "2016-04-02 15:34:00";
+location =                     {
+lat = "28.809713";
+latitude = "28.806442";
+lng = "104.7975";
+longitude = "104.800171";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_1f935474c48a5b8c14e434ba4932a824.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_1f935474c48a5b8c14e434ba4932a824.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_1f935474c48a5b8c14e434ba4932a824.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_1f935474c48a5b8c14e434ba4932a824.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_1f935474c48a5b8c14e434ba4932a824.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_1f935474c48a5b8c14e434ba4932a824.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U53e4\U9547\U5f00\U53d1\U633a\U4e45\U4e86\U4e0d\U8fc7\U4eba\U6c14\U4e00\U822c";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459582560;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835251;
+"local_time" = "2016-04-02 15:36:00";
+location =                     {
+lat = "28.810008";
+latitude = "28.806737";
+lng = "104.797867";
+longitude = "104.800538";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_9bb22deb7f42704704584eddbc516dfb.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_9bb22deb7f42704704584eddbc516dfb.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1150;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_9bb22deb7f42704704584eddbc516dfb.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_9bb22deb7f42704704584eddbc516dfb.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_9bb22deb7f42704704584eddbc516dfb.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_9bb22deb7f42704704584eddbc516dfb.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U76f8\U6bd4\U6210\U90fd\U5468\U8fb9\U7684\U9ec4\U9f99\U6eaa\U4e4b\U7c7b\U8fd8\U662f\U6253\U9020\U5f97\U6bd4\U8f83\U666e\U901a";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459582695;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835250;
+"local_time" = "2016-04-02 15:38:15";
+location =                     {
+lat = "28.809983";
+latitude = "28.806712";
+lng = "104.79802";
+longitude = "104.800691";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_6b1325d2f7b02f1cd19e2c5aa09c2e97.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_6b1325d2f7b02f1cd19e2c5aa09c2e97.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_6b1325d2f7b02f1cd19e2c5aa09c2e97.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_6b1325d2f7b02f1cd19e2c5aa09c2e97.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_6b1325d2f7b02f1cd19e2c5aa09c2e97.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_6b1325d2f7b02f1cd19e2c5aa09c2e97.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459582860;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835162;
+"local_time" = "2016-04-02 15:41:00";
+location =                     {
+lat = "28.809867";
+latitude = "28.806595";
+lng = "104.797822";
+longitude = "104.800493";
+};
+model = "Apple iPhone 6";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_ac203ad1fefc3de99cb50f564edea320.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_ac203ad1fefc3de99cb50f564edea320.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1178;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_ac203ad1fefc3de99cb50f564edea320.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_ac203ad1fefc3de99cb50f564edea320.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_ac203ad1fefc3de99cb50f564edea320.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_ac203ad1fefc3de99cb50f564edea320.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi = "<null>";
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 1;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459582974;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835262;
+"local_time" = "2016-04-02 15:42:54";
+location =                     {
+lat = "28.809888";
+latitude = "28.806617";
+lng = "104.797828";
+longitude = "104.8005";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_c6d43e428fa8b91b20a4e776c56b403b.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_c6d43e428fa8b91b20a4e776c56b403b.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1200;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_c6d43e428fa8b91b20a4e776c56b403b.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_c6d43e428fa8b91b20a4e776c56b403b.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_c6d43e428fa8b91b20a4e776c56b403b.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_c6d43e428fa8b91b20a4e776c56b403b.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459583100;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835256;
+"local_time" = "2016-04-02 15:45:00";
+location =                     {
+lat = "28.809387";
+latitude = "28.806115";
+lng = "104.79767";
+longitude = "104.800341";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_db7f5cc9ef6f52038374681e15e6ba52.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_db7f5cc9ef6f52038374681e15e6ba52.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_db7f5cc9ef6f52038374681e15e6ba52.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_db7f5cc9ef6f52038374681e15e6ba52.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_db7f5cc9ef6f52038374681e15e6ba52.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_db7f5cc9ef6f52038374681e15e6ba52.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U4e0d\U8fc7\U4e5f\U86ee\U6709\U70b9\U95f9\U4e2d\U53d6\U9759\U7684\U611f\U89c9";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459583100;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835143;
+"local_time" = "2016-04-02 15:45:00";
+location =                     {
+lat = "28.809383";
+latitude = "28.806112";
+lng = "104.797683";
+longitude = "104.800355";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_011d87634a0347fbf12488f091bda26f.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_011d87634a0347fbf12488f091bda26f.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_011d87634a0347fbf12488f091bda26f.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_011d87634a0347fbf12488f091bda26f.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_011d87634a0347fbf12488f091bda26f.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_011d87634a0347fbf12488f091bda26f.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U987a\U8def\U6765\U770b\U770b\U4e5f\U4e0d\U9519\Uff0c\U7279\U610f\U8d70\U4e00\U6b21\U5c31\U6ca1\U591a\U5927\U5fc5\U8981\U4e86";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459583340;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835258;
+"local_time" = "2016-04-02 15:49:00";
+location =                     {
+lat = "28.808638";
+latitude = "28.805367";
+lng = "104.798203";
+longitude = "104.800875";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_4f12d1bf3b85842797e0b1609b55de69.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_4f12d1bf3b85842797e0b1609b55de69.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1200;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_4f12d1bf3b85842797e0b1609b55de69.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_4f12d1bf3b85842797e0b1609b55de69.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_4f12d1bf3b85842797e0b1609b55de69.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_4f12d1bf3b85842797e0b1609b55de69.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U8001\U8857\U4e0a\U7684\U9ebb\U5c06\U9986";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459583427;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835139;
+"local_time" = "2016-04-02 15:50:27";
+location =                     {
+lat = "28.809888";
+latitude = "28.806617";
+lng = "104.797828";
+longitude = "104.8005";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_dc6d8a606fdff19b96b3dd2e25e76ae6.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_dc6d8a606fdff19b96b3dd2e25e76ae6.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1024;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_dc6d8a606fdff19b96b3dd2e25e76ae6.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_dc6d8a606fdff19b96b3dd2e25e76ae6.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_dc6d8a606fdff19b96b3dd2e25e76ae6.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_dc6d8a606fdff19b96b3dd2e25e76ae6.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459584060;
+day = 1;
+device = 1;
+hotel = "<null>";
+id = 2349835144;
+"local_time" = "2016-04-02 16:01:00";
+location =                     {
+lat = "28.804105";
+latitude = "28.800833";
+lng = "104.801178";
+longitude = "104.80385";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_21074bb50f893073f35070d86a9edf44.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_21074bb50f893073f35070d86a9edf44.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_21074bb50f893073f35070d86a9edf44.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_21074bb50f893073f35070d86a9edf44.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_21074bb50f893073f35070d86a9edf44.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_21074bb50f893073f35070d86a9edf44.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:18:03";
+description = "";
+extra1 = 1381697;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389441;
+"is_nearby" = 1;
+location =                         {
+lat = "28.805451";
+lng = "104.802321";
+};
+name = "\U674e\U5e84\U53e4\U9547";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 44;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+}
+);
+},
+{
+date = "2016-04-03";
+day = 2;
+waypoints =             (
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459640160;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349801545;
+"local_time" = "2016-04-03 07:36:00";
+location =                     {
+lat = "28.468465";
+latitude = "28.46506";
+lng = "104.963776";
+longitude = "104.9667";
+};
+model = "<null>";
+photo = "";
+"photo_1600" = "";
+"photo_info" = "<null>";
+"photo_s" = "";
+"photo_w640" = "";
+"photo_weblive" = "";
+"photo_webtrip" = "";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U5b9c\U5bbe\U8700\U5357\U7af9\U6d77\U601d\U6960\U7af9\U56ed\U9152\U5e97";
+category = 10;
+id = 2389776260;
+location =                         {
+lat = "30.630684";
+lng = "104.032685";
+};
+name = "\U5b9c\U5bbe\U8700\U5357\U7af9\U6d77\U601d\U6960\U7af9\U56ed\U9152\U5e97";
+tel = "";
+timezone = "Asia/Chongqing";
+verified = 0;
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U4ece\U674e\U5e84\U5230\U7af9\U6d77\U666f\U533a\U5927\U6982\U4e24\U5c0f\U65f6\Uff0c\U503c\U5f97\U4e00\U63d0\U7684\U662f\U8fd9\U6b21\U5165\U4f4f\U7684\U9152\U5e97\U633a\U4e0d\U9519\Uff0c\U83b7\U5f97\U4e86\U5bb6\U4eba\U4e00\U81f4\U597d\U8bc4\Uff0c\U88c5\U4fee\U633a\U6e05\U723d\U4ef7\U683c\U5408\U7406\U8001\U677f\U4eba\U4e5f\U5f88\U597d \Uff0c\U63a8\U8350\Uff01";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459642080;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835075;
+"local_time" = "2016-04-03 08:08:00";
+location =                     {
+lat = "28.461495";
+latitude = "28.45809";
+lng = "105.016876";
+longitude = "105.0198";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_2f60134c4e7dda884b64ccb684a29807.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_2f60134c4e7dda884b64ccb684a29807.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1200;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_2f60134c4e7dda884b64ccb684a29807.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_2f60134c4e7dda884b64ccb684a29807.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_2f60134c4e7dda884b64ccb684a29807.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_2f60134c4e7dda884b64ccb684a29807.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U597d\U597d\U4f11\U606f\U4e00\U665a\Uff0c\U7b2c\U4e8c\U5929\U4e00\U65e9\U8d77\U6765\U73a9";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459642560;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835085;
+"local_time" = "2016-04-03 08:16:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_1dcc0a50c17ae90d1905ff51b8cd3d21.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_1dcc0a50c17ae90d1905ff51b8cd3d21.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_1dcc0a50c17ae90d1905ff51b8cd3d21.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_1dcc0a50c17ae90d1905ff51b8cd3d21.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_1dcc0a50c17ae90d1905ff51b8cd3d21.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_1dcc0a50c17ae90d1905ff51b8cd3d21.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 1;
+recommended = 0;
+shared = 0;
+text = "\U65e9\U4e0a\U6e38\U5ba2\U8fd8\U6ca1\U8fdb\U5c71\Uff0c\U7af9\U6797\U91cc\U6668\U66e6\U521d\U73b0\U7a7a\U6c14\U5f88\U597d\U54e6";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459642738;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835173;
+"local_time" = "2016-04-03 08:18:58";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_ba6ddf0f1341ebfa071a169a1621c9ea.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_ba6ddf0f1341ebfa071a169a1621c9ea.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_ba6ddf0f1341ebfa071a169a1621c9ea.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_ba6ddf0f1341ebfa071a169a1621c9ea.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_ba6ddf0f1341ebfa071a169a1621c9ea.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_ba6ddf0f1341ebfa071a169a1621c9ea.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 2;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459643100;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835093;
+"local_time" = "2016-04-03 08:25:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_4e5223157000df010b6c0994161401e5.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_4e5223157000df010b6c0994161401e5.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_4e5223157000df010b6c0994161401e5.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_4e5223157000df010b6c0994161401e5.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_4e5223157000df010b6c0994161401e5.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_4e5223157000df010b6c0994161401e5.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U98d2\U98d2\U7684\U98ce\U7a7f\U8fc7\U7af9\U6797";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459643565;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835089;
+"local_time" = "2016-04-03 08:32:45";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_3bd22b15dff34f6e8f0f12ed4c4a99e9.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_3bd22b15dff34f6e8f0f12ed4c4a99e9.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_3bd22b15dff34f6e8f0f12ed4c4a99e9.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_3bd22b15dff34f6e8f0f12ed4c4a99e9.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_3bd22b15dff34f6e8f0f12ed4c4a99e9.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_3bd22b15dff34f6e8f0f12ed4c4a99e9.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459643690;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835090;
+"local_time" = "2016-04-03 08:34:50";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_c2d0b1eb8740774db6dbf8ab5d1d5a52.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_c2d0b1eb8740774db6dbf8ab5d1d5a52.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_c2d0b1eb8740774db6dbf8ab5d1d5a52.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_c2d0b1eb8740774db6dbf8ab5d1d5a52.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_c2d0b1eb8740774db6dbf8ab5d1d5a52.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_c2d0b1eb8740774db6dbf8ab5d1d5a52.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459643820;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835088;
+"local_time" = "2016-04-03 08:37:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_57dc10db26a93f99a47d73b5e3694b3b.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_57dc10db26a93f99a47d73b5e3694b3b.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_57dc10db26a93f99a47d73b5e3694b3b.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_57dc10db26a93f99a47d73b5e3694b3b.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_57dc10db26a93f99a47d73b5e3694b3b.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_57dc10db26a93f99a47d73b5e3694b3b.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U597d\U840c\U7684\U5c0f\U690d\U7269\U554a";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459643868;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835100;
+"local_time" = "2016-04-03 08:37:48";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_db330e02f9f36e88e96a3719d48ef821.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_db330e02f9f36e88e96a3719d48ef821.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_db330e02f9f36e88e96a3719d48ef821.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_db330e02f9f36e88e96a3719d48ef821.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_db330e02f9f36e88e96a3719d48ef821.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_db330e02f9f36e88e96a3719d48ef821.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 1;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459644060;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835102;
+"local_time" = "2016-04-03 08:41:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_bd6c33922a5f8ce91e3942294f790d89.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_bd6c33922a5f8ce91e3942294f790d89.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_bd6c33922a5f8ce91e3942294f790d89.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_bd6c33922a5f8ce91e3942294f790d89.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_bd6c33922a5f8ce91e3942294f790d89.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_bd6c33922a5f8ce91e3942294f790d89.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 2;
+recommended = 0;
+shared = 0;
+text = "\U6b63\U662f\U6625\U5929\U7af9\U5b50\U751f\U957f\U7684\U5b63\U8282\Uff0c\U6ee1\U5730\U90fd\U662f\U5c16\U5c16\U7684\U7af9\U7b0b\U4ece\U571f\U91cc\U94bb\U51fa\U6765";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459644347;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835097;
+"local_time" = "2016-04-03 08:45:47";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_b26e499af1c22cf65758b455a6b41af2.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_b26e499af1c22cf65758b455a6b41af2.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_b26e499af1c22cf65758b455a6b41af2.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_b26e499af1c22cf65758b455a6b41af2.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_b26e499af1c22cf65758b455a6b41af2.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_b26e499af1c22cf65758b455a6b41af2.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459644540;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835096;
+"local_time" = "2016-04-03 08:49:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_99648001535f2bf28ae935901206e3bb.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_99648001535f2bf28ae935901206e3bb.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_99648001535f2bf28ae935901206e3bb.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_99648001535f2bf28ae935901206e3bb.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_99648001535f2bf28ae935901206e3bb.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_99648001535f2bf28ae935901206e3bb.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U666f\U533a\U6e05\U660e\U4eba\U4e0d\U662f\U5f88\U591a\Uff0c\U603b\U4f53\U6765\U8bf4\U8fd8\U662f\U633a\U60ec\U610f\U7684\Uff0c\U5982\U679c\U590f\U5929\U6765\U4f4f\U51e0\U5929\U6d88\U6d88\U6691\U5e94\U8be5\U5f88\U8d5e";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459644574;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835098;
+"local_time" = "2016-04-03 08:49:34";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_87c70bffe698f154b997c7dae129ebf5.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_87c70bffe698f154b997c7dae129ebf5.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_87c70bffe698f154b997c7dae129ebf5.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_87c70bffe698f154b997c7dae129ebf5.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_87c70bffe698f154b997c7dae129ebf5.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_87c70bffe698f154b997c7dae129ebf5.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459644625;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835099;
+"local_time" = "2016-04-03 08:50:25";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_a5f0c8aad8e34031a8a84a934c1b0d84.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_a5f0c8aad8e34031a8a84a934c1b0d84.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_a5f0c8aad8e34031a8a84a934c1b0d84.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_a5f0c8aad8e34031a8a84a934c1b0d84.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_a5f0c8aad8e34031a8a84a934c1b0d84.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_a5f0c8aad8e34031a8a84a934c1b0d84.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459646580;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835092;
+"local_time" = "2016-04-03 09:23:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_6c426de5a705648d85c6e49f5433210d.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_6c426de5a705648d85c6e49f5433210d.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1352;
+w = 996;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_6c426de5a705648d85c6e49f5433210d.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_6c426de5a705648d85c6e49f5433210d.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_6c426de5a705648d85c6e49f5433210d.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_6c426de5a705648d85c6e49f5433210d.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 2;
+recommended = 0;
+shared = 0;
+text = "\U6211\U4e3a\U4ec0\U4e48\U7a7f\U4e86\U8ddf\U7af9\U5b50\U540c\U8272\U7684\U5916\U5957\Ud83d\Ude02";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459646954;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835110;
+"local_time" = "2016-04-03 09:29:14";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_a3218307e1b49ecc7081528c2ae5d2a6.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_a3218307e1b49ecc7081528c2ae5d2a6.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_a3218307e1b49ecc7081528c2ae5d2a6.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_a3218307e1b49ecc7081528c2ae5d2a6.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_a3218307e1b49ecc7081528c2ae5d2a6.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_a3218307e1b49ecc7081528c2ae5d2a6.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459647354;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835117;
+"local_time" = "2016-04-03 09:35:54";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_e191f888434c25757679685ae204d1bc.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_e191f888434c25757679685ae204d1bc.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_e191f888434c25757679685ae204d1bc.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_e191f888434c25757679685ae204d1bc.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_e191f888434c25757679685ae204d1bc.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_e191f888434c25757679685ae204d1bc.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 1;
+"date_added" = 1459647600;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835116;
+"local_time" = "2016-04-03 09:40:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_3f7d4f97573af596fa9d733fafe249f6.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_3f7d4f97573af596fa9d733fafe249f6.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_3f7d4f97573af596fa9d733fafe249f6.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_3f7d4f97573af596fa9d733fafe249f6.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_3f7d4f97573af596fa9d733fafe249f6.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_3f7d4f97573af596fa9d733fafe249f6.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 1;
+recommended = 0;
+shared = 0;
+text = "\U76db\U590f\U65f6\U8282\U7af9\U6797\U80af\U5b9a\U66f4\U7f8e";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459647668;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835107;
+"local_time" = "2016-04-03 09:41:08";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_9a51731468e30dbace17f9cb41fd739d.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_9a51731468e30dbace17f9cb41fd739d.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_9a51731468e30dbace17f9cb41fd739d.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_9a51731468e30dbace17f9cb41fd739d.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_9a51731468e30dbace17f9cb41fd739d.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_9a51731468e30dbace17f9cb41fd739d.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 1;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459647720;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835080;
+"local_time" = "2016-04-03 09:42:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_7e4d577c732e7df22487fd53dd035858.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_7e4d577c732e7df22487fd53dd035858.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 930;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_7e4d577c732e7df22487fd53dd035858.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_7e4d577c732e7df22487fd53dd035858.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_7e4d577c732e7df22487fd53dd035858.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_7e4d577c732e7df22487fd53dd035858.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 2;
+recommended = 0;
+shared = 0;
+text = "\U90fd\U8bf4\U4e86\U7b49\U6211\U6446\U597d\U518d\U62cd";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459647812;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835119;
+"local_time" = "2016-04-03 09:43:32";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_78a4d0b5bc5f68ca018454811a9d366c.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_78a4d0b5bc5f68ca018454811a9d366c.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_78a4d0b5bc5f68ca018454811a9d366c.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_78a4d0b5bc5f68ca018454811a9d366c.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_78a4d0b5bc5f68ca018454811a9d366c.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_78a4d0b5bc5f68ca018454811a9d366c.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 1;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459657440;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835124;
+"local_time" = "2016-04-03 12:24:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_8d3f51b8de899087982129c4cddc29fd.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_8d3f51b8de899087982129c4cddc29fd.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_8d3f51b8de899087982129c4cddc29fd.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_8d3f51b8de899087982129c4cddc29fd.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_8d3f51b8de899087982129c4cddc29fd.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_8d3f51b8de899087982129c4cddc29fd.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 1;
+recommended = 0;
+shared = 0;
+text = "\U51fa\U4e86\U666f\U533a\U8def\U8fc7\U4e00\U7247\U6cb3\U8fb9\U7684\U7af9\U6797\U7adf\U7136\U4e5f\U6709\U60ca\U559c";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 1;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459657560;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349836625;
+"local_time" = "2016-04-03 12:26:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_619de61da714d946a8f4364e49727ee7.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_619de61da714d946a8f4364e49727ee7.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_619de61da714d946a8f4364e49727ee7.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_619de61da714d946a8f4364e49727ee7.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_619de61da714d946a8f4364e49727ee7.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_619de61da714d946a8f4364e49727ee7.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi = "<null>";
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459657620;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835113;
+"local_time" = "2016-04-03 12:27:00";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_5c53c409f0864a6972b35bb40fd3cc74.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_5c53c409f0864a6972b35bb40fd3cc74.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_5c53c409f0864a6972b35bb40fd3cc74.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_5c53c409f0864a6972b35bb40fd3cc74.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_5c53c409f0864a6972b35bb40fd3cc74.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_5c53c409f0864a6972b35bb40fd3cc74.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U4e1d\U6beb\U4e0d\U6bd4\U666f\U533a\U91cc\U5dee\U54e6";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459657678;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835125;
+"local_time" = "2016-04-03 12:27:58";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_4be305749bbeaef09a436b1bfe98ea7a.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_4be305749bbeaef09a436b1bfe98ea7a.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_4be305749bbeaef09a436b1bfe98ea7a.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_4be305749bbeaef09a436b1bfe98ea7a.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_4be305749bbeaef09a436b1bfe98ea7a.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_4be305749bbeaef09a436b1bfe98ea7a.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U5b9c\U5bbe";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459688836;
+day = 2;
+device = 1;
+hotel = "<null>";
+id = 2349835078;
+"local_time" = "2016-04-03 21:07:16";
+location =                     {
+lat = "28.468304";
+latitude = "28.464899";
+lng = "104.963658";
+longitude = "104.966582";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_03_c3f5f1ba4dd57e8fccda1a2792c02644.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_03_c3f5f1ba4dd57e8fccda1a2792c02644.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1067;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_03_c3f5f1ba4dd57e8fccda1a2792c02644.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_03_c3f5f1ba4dd57e8fccda1a2792c02644.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_03_c3f5f1ba4dd57e8fccda1a2792c02644.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_03_c3f5f1ba4dd57e8fccda1a2792c02644.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 65311;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U4e2d\U56fd \U56db\U5ddd\U7701 \U5b9c\U5bbe";
+"arrival_type" = "<null>";
+category = 11;
+currency = CNY;
+"date_added" = "2013-03-13 15:53:23";
+description = "";
+extra1 = 1381695;
+fee = "";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388389395;
+"is_nearby" = 1;
+location =                         {
+lat = "28.464899";
+lng = "104.966582";
+};
+name = "\U8700\U5357\U7af9\U6d77";
+"name_en" = "<null>";
+"opening_time" = "<null>";
+popularity = 67;
+recommended = 0;
+"recommended_reason" = "<null>";
+"spot_region" = "\U5b9c\U5bbe, \U4e2d\U56fd";
+tel = "";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "<null>";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 1;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+}
+);
+},
+{
+date = "2016-04-04";
+day = 3;
+waypoints =             (
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459728000;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851920;
+"local_time" = "2016-04-04 08:00:00";
+location =                     {
+lat = "30.633301";
+latitude = "30.630698";
+lng = "104.030387";
+longitude = "104.032689";
+};
+model = "<null>";
+photo = "";
+"photo_1600" = "";
+"photo_info" = "<null>";
+"photo_s" = "";
+"photo_w640" = "";
+"photo_weblive" = "";
+"photo_webtrip" = "";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi = "<null>";
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "day3 \U6700\U540e\U4e00\U5929\U5047\U671f\U5566\Uff0c\U5c0f\U4f19\U4f34\U4eec\U7ea6\U4e86\U53bb\U90ca\U533aBBQ \U53c8\U662f\U6211\U5bb6\U53a8\U795e\U51fa\U624b\U7684\U65f6\U5019\U4e86";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459741080;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349852013;
+"local_time" = "2016-04-04 11:38:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_27ea37ca3de6f7fba90fb5ca3a7272bd.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_27ea37ca3de6f7fba90fb5ca3a7272bd.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1199;
+w = 1199;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_27ea37ca3de6f7fba90fb5ca3a7272bd.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_27ea37ca3de6f7fba90fb5ca3a7272bd.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_27ea37ca3de6f7fba90fb5ca3a7272bd.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_27ea37ca3de6f7fba90fb5ca3a7272bd.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U8c01\U5bb6\U6625\U71d5\U5544\U65b0\U6ce5 \U6b47\U811a\U7684\U9762\U5e97\U5c4b\U6a90\U4e0b\U6709\U4e00\U5bb6\U5c0f\U71d5\U5b50";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459745160;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349852016;
+"local_time" = "2016-04-04 12:46:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_32282dc3760bd6df5793cc735baefc54.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_32282dc3760bd6df5793cc735baefc54.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_32282dc3760bd6df5793cc735baefc54.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_32282dc3760bd6df5793cc735baefc54.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_32282dc3760bd6df5793cc735baefc54.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_32282dc3760bd6df5793cc735baefc54.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U4e5d\U9f99\U6c9f\U8fd9\U5bb6\U519c\U5bb6\U4e50\U51e0\U5e74\U524d\U6765\U8fc7\U4e00\U6b21\Uff0c\U5c71\U811a\U6709\U4e00\U6761\U5c0f\U6eaa\Uff0c\U5728\U6eaa\U8fb9\U70e7\U70e4\U68d2\U68d2\U7684";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459745280;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349852023;
+"local_time" = "2016-04-04 12:48:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_6384fc7f00c2379daaaf38e1dbe4cb77.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_6384fc7f00c2379daaaf38e1dbe4cb77.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_6384fc7f00c2379daaaf38e1dbe4cb77.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_6384fc7f00c2379daaaf38e1dbe4cb77.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_6384fc7f00c2379daaaf38e1dbe4cb77.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_6384fc7f00c2379daaaf38e1dbe4cb77.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U51c6\U5907\U5de5\U4f5c\U5927\U5bb6\U4e00\U8d77\U5e72\U8d77\U6765";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459745460;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349852008;
+"local_time" = "2016-04-04 12:51:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_030e01bb69020b803217c9544fd4259b.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_030e01bb69020b803217c9544fd4259b.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_030e01bb69020b803217c9544fd4259b.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_030e01bb69020b803217c9544fd4259b.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_030e01bb69020b803217c9544fd4259b.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_030e01bb69020b803217c9544fd4259b.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U54b1\U4eec\U7684\U5ba0\U7269\U4e5f\U4e0d\U80fd\U997f\U7740\Uff0c\U5148\U5403\U4e2a\U96f6\U98df\U5148";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459745460;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349852022;
+"local_time" = "2016-04-04 12:51:00";
+location =                     {
+lat = "30.822425";
+latitude = "30.819924";
+lng = "103.49405";
+longitude = "103.496239";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_1d5fe33157a2e24d6d931366ad3a8168.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_1d5fe33157a2e24d6d931366ad3a8168.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1600;
+w = 1200;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_1d5fe33157a2e24d6d931366ad3a8168.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_1d5fe33157a2e24d6d931366ad3a8168.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_1d5fe33157a2e24d6d931366ad3a8168.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_1d5fe33157a2e24d6d931366ad3a8168.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U6ce1\U6912\U9c7f\U9c7c\U987b";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459745580;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349852024;
+"local_time" = "2016-04-04 12:53:00";
+location =                     {
+lat = "30.822358";
+latitude = "30.819857";
+lng = "103.494087";
+longitude = "103.496275";
+};
+model = "Apple iPhone 5s";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_b9e2c30a02cd7e3cb783cf6e185d4aca.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_b9e2c30a02cd7e3cb783cf6e185d4aca.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1200;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_b9e2c30a02cd7e3cb783cf6e185d4aca.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_b9e2c30a02cd7e3cb783cf6e185d4aca.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_b9e2c30a02cd7e3cb783cf6e185d4aca.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_b9e2c30a02cd7e3cb783cf6e185d4aca.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U7a7f\U7b7e\U7b7e\U8fd9\U4e48\U96be\U7684\U5de5\U4f5c\U8fd8\U662f\U7537\U5b69\U5b50\U6765\Uff01";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459745640;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349852031;
+"local_time" = "2016-04-04 12:54:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_63ed8b3add15c5cea7a9fb38d2ca33e9.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_63ed8b3add15c5cea7a9fb38d2ca33e9.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_63ed8b3add15c5cea7a9fb38d2ca33e9.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_63ed8b3add15c5cea7a9fb38d2ca33e9.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_63ed8b3add15c5cea7a9fb38d2ca33e9.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_63ed8b3add15c5cea7a9fb38d2ca33e9.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U6b64\U9e1f\U5974\U4eca\U5929\U5c31\U5fd9\U7740\U4f3a\U5019\U9e1f\U4e86";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459745640;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851925;
+"local_time" = "2016-04-04 12:54:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_bf5bc02532749641b80cbab126f88ae0.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_bf5bc02532749641b80cbab126f88ae0.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1280;
+w = 960;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_bf5bc02532749641b80cbab126f88ae0.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_bf5bc02532749641b80cbab126f88ae0.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_bf5bc02532749641b80cbab126f88ae0.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_bf5bc02532749641b80cbab126f88ae0.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U6628\U665a\U5df2\U7ecf\U814c\U597d\U7684\U98df\U6750";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459745700;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851927;
+"local_time" = "2016-04-04 12:55:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_7dfd612dd2ee3162aafc41304a56279b.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_7dfd612dd2ee3162aafc41304a56279b.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 960;
+w = 1280;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_7dfd612dd2ee3162aafc41304a56279b.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_7dfd612dd2ee3162aafc41304a56279b.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_7dfd612dd2ee3162aafc41304a56279b.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_7dfd612dd2ee3162aafc41304a56279b.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459746120;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349852029;
+"local_time" = "2016-04-04 13:02:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_c0487763390724d6cb9dbdc5fbae6898.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_c0487763390724d6cb9dbdc5fbae6898.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_c0487763390724d6cb9dbdc5fbae6898.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_c0487763390724d6cb9dbdc5fbae6898.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_c0487763390724d6cb9dbdc5fbae6898.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_c0487763390724d6cb9dbdc5fbae6898.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U70e4\U8089\U7684\U65f6\U5019\U4f60\U5c31\U81ea\U5df1\U6811\U4e0a\U73a9\U4f1a";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459746215;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349852025;
+"local_time" = "2016-04-04 13:03:35";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_56d3d8994e71ce8c3b1cca35f8cee459.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_56d3d8994e71ce8c3b1cca35f8cee459.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_56d3d8994e71ce8c3b1cca35f8cee459.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_56d3d8994e71ce8c3b1cca35f8cee459.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_56d3d8994e71ce8c3b1cca35f8cee459.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_56d3d8994e71ce8c3b1cca35f8cee459.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459748460;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851907;
+"local_time" = "2016-04-04 13:41:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_b29a068d7bb6a5e09600e13b7c687a86.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_b29a068d7bb6a5e09600e13b7c687a86.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_b29a068d7bb6a5e09600e13b7c687a86.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_b29a068d7bb6a5e09600e13b7c687a86.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_b29a068d7bb6a5e09600e13b7c687a86.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_b29a068d7bb6a5e09600e13b7c687a86.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U5927\U53a8\U4eec\U767b\U573a";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459748554;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851904;
+"local_time" = "2016-04-04 13:42:34";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_650e06bf2563ec6169895697009b28e3.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_650e06bf2563ec6169895697009b28e3.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_650e06bf2563ec6169895697009b28e3.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_650e06bf2563ec6169895697009b28e3.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_650e06bf2563ec6169895697009b28e3.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_650e06bf2563ec6169895697009b28e3.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459748577;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851918;
+"local_time" = "2016-04-04 13:42:57";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_f2cbb63a384b824078be77ef30087b7f.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_f2cbb63a384b824078be77ef30087b7f.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" = "<null>";
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_f2cbb63a384b824078be77ef30087b7f.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_f2cbb63a384b824078be77ef30087b7f.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_f2cbb63a384b824078be77ef30087b7f.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_f2cbb63a384b824078be77ef30087b7f.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459748658;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851919;
+"local_time" = "2016-04-04 13:44:18";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_66fef1c3e4f47c82781d3d33cd691cc8.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_66fef1c3e4f47c82781d3d33cd691cc8.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_66fef1c3e4f47c82781d3d33cd691cc8.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_66fef1c3e4f47c82781d3d33cd691cc8.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_66fef1c3e4f47c82781d3d33cd691cc8.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_66fef1c3e4f47c82781d3d33cd691cc8.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459749613;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851914;
+"local_time" = "2016-04-04 14:00:13";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_8b9af89cc19afc7f7a7bb71280143327.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_8b9af89cc19afc7f7a7bb71280143327.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_8b9af89cc19afc7f7a7bb71280143327.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_8b9af89cc19afc7f7a7bb71280143327.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_8b9af89cc19afc7f7a7bb71280143327.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_8b9af89cc19afc7f7a7bb71280143327.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459750636;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851915;
+"local_time" = "2016-04-04 14:17:16";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_698d51f8ac60f62d50353a584ca9f4d6.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_698d51f8ac60f62d50353a584ca9f4d6.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_698d51f8ac60f62d50353a584ca9f4d6.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_698d51f8ac60f62d50353a584ca9f4d6.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_698d51f8ac60f62d50353a584ca9f4d6.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_698d51f8ac60f62d50353a584ca9f4d6.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459751520;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851924;
+"local_time" = "2016-04-04 14:32:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_a2b09ad3c68702649dd24ef4175bca80.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_a2b09ad3c68702649dd24ef4175bca80.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1067;
+w = 1600;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_a2b09ad3c68702649dd24ef4175bca80.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_a2b09ad3c68702649dd24ef4175bca80.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_a2b09ad3c68702649dd24ef4175bca80.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_a2b09ad3c68702649dd24ef4175bca80.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U4e2d\U9014\U90fd\U5fd9\U7740\U5403\U4e86\U8c01\U6709\U7a7a\U62cd\U7167\U554a";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+},
+{
+city = "\U6210\U90fd";
+comments = 0;
+country = "\U4e2d\U56fd";
+cover = 0;
+"date_added" = 1459781700;
+day = 3;
+device = 1;
+hotel = "<null>";
+id = 2349851926;
+"local_time" = "2016-04-04 22:55:00";
+location =                     {
+lat = "30.792762";
+latitude = "30.79026";
+lng = "103.526306";
+longitude = "103.528495";
+};
+model = "<null>";
+photo = "http://photos.breadtrip.com/photo_2016_04_04_8cf4e2ddc1a35f717663446155f1f61b.jpg?imageView/2/w/960/q/85";
+"photo_1600" = "http://photos.breadtrip.com/photo_2016_04_04_8cf4e2ddc1a35f717663446155f1f61b.jpg?imageView/2/w/1384/h/1384/q/85";
+"photo_info" =                     {
+h = 1280;
+w = 960;
+};
+"photo_s" = "http://photos.breadtrip.com/photo_2016_04_04_8cf4e2ddc1a35f717663446155f1f61b.jpg?imageView/1/w/280/h/280/q/75";
+"photo_w640" = "http://photos.breadtrip.com/photo_2016_04_04_8cf4e2ddc1a35f717663446155f1f61b.jpg?imageView/1/w/640/h/480/q/85";
+"photo_weblive" = "http://photos.breadtrip.com/photo_2016_04_04_8cf4e2ddc1a35f717663446155f1f61b.jpg?imageView/2/w/278/q/75";
+"photo_webtrip" = "http://photos.breadtrip.com/photo_2016_04_04_8cf4e2ddc1a35f717663446155f1f61b.jpg?imageView/2/w/640/q/85";
+place =                     {
+city =                         {
+id = 14209;
+type = 3;
+};
+country =                         {
+id = 3793;
+type = 1;
+};
+province =                         {
+id = 14207;
+type = 2;
+};
+};
+poi =                     {
+address = "\U56db\U5ddd\U7701\U5d07\U5dde\U5e02\U4e09\U90ce\U9547";
+"arrival_type" = "1.\U8336\U5e97\U5b50\U8f66\U7ad9\U6709\U8f66\U76f4\U8fbe\Uff0c\U7968\U4ef7\U7ea6\U4e3a18\U5143\Uff0c\U6bcf\U59299\Uff1a30-3:30\U6210\U90fd\U53d1\U8f66\Uff1b
+\n2.\U6210\U90fd\U81f3\U5d07\U5dde\Uff0c\U7968\U4ef7\U7ea6\U4e3a14\U5143\Uff0c\U518d\U8f6c\U81f3\U4e5d\U9f99\U6c9f\U73ed\U8f66\U5373\U53ef\Uff0c\U7968\U4ef7\U7ea6\U4e3a58\U5143\U3002\U5168\U7a0b\U9700\U65f6\U7ea61.5\U5c0f\U65f6\U3002";
+category = 11;
+currency = CNY;
+"date_added" = "2014-11-04 17:36:19";
+description = "\U5d07\U5dde\U4e5d\U9f99\U6c9f\U98ce\U666f\U540d\U80dc\U533a\U4f4d\U4e8e\U5d07\U5dde\U5e02\U4e09\U90ce\U9547\U5883\U5185\Uff0c\U9762\U79ef170\U591a\U5e73\U65b9\U5343\U7c73\Uff0c\U8ddd\U6210\U90fd\U5e02\U533a76\U5343\U7c73\U3002\U4e5d\U9f99\U6c9f\U6709\U201c\U4eba\U95f4\U9f99\U5bab\U201d\U4e4b\U8a89\Uff0c\U56e0\U9f99\U95e8\U5c71\U8936\U76b1\U65ad\U88c2\U5e26\U800c\U5f62\U6210\U72ec\U7279\U7684\U6c34\U3001\U77f3\U3001\U5cf0\U7b49\U666f\U89c2\Uff0c\U65e0\U4e0d\U4e0e\U9f99\U7684\U4f20\U8bf4\U6709\U5173\U3002\U5d07\U5dde\U8fd8\U662f\U7af9\U7f16\U4e4b\U4e61\Uff0c\U7af9\U7f16\U5236\U54c1\U996e\U8a89\U5168\U5ddd\U3002
+\n\U4f4d\U4e8e\U5d07\U5dde\U5e02\U897f\U5317\Uff0c\U8ddd\U79bb\U5d07\U5dde\U5e02\U533a38\U516c\U91cc\Uff0c\U8ddd\U79bb\U6210\U90fd\U5e0276\U516c\U91cc\U3002\U666f\U533a\U4e3b\U8981\U7531\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\Uff0c\U5176\U4e2d\U53c8\U4ee5\U4e5d\U9f99\U6c9f\U52a8\U6001\U6c34\U77f3\U666f\U89c2\U6700\U4e3a\U5f15\U4eba\U5165\U80dc\U3002";
+extra1 = 1794585;
+fee = "\U95e8\U7968\Uff1a30\U5143";
+icon = "http://media.breadtrip.com/images/icons/poi_category_11.png";
+id = 2388522478;
+"is_nearby" = 1;
+location =                         {
+lat = "30.79026";
+lng = "103.528495";
+};
+name = "\U5d07\U5dde\U4e5d\U9f99\U6c9f";
+"name_en" = "";
+"opening_time" = "8\Uff1a00--18\Uff1a00";
+popularity = 5;
+recommended = 1;
+"recommended_reason" = "\U4e5d\U9f99\U6c9f\U6c34\U77f3\U666f\U7247\U3001\U5927\U897f\U5c71\U539f\U59cb\U68ee\U6797\U666f\U7247\U548c\U53e4\U5bfa\U4e09\U90e8\U5206\U7ec4\U6210\U6574\U4e2a\U666f\U533a";
+"spot_region" = "\U6210\U90fd, \U4e2d\U56fd";
+tel = "028-85568847";
+"time_consuming" = "<null>";
+"time_consuming_max" = 0;
+"time_consuming_min" = 0;
+timezone = "Asia/Chongqing";
+type = 5;
+verified = 1;
+website = "";
+};
+privacy = 0;
+province = "\U56db\U5ddd\U7701";
+recommendations = 0;
+recommended = 0;
+shared = 0;
+text = "\U6e05\U660e\U5047\U671f \U6210\U529f\U95ed\U5e55\Uff01\U5b8c\U7f8e\Uff01";
+timezone = "Asia/Chongqing";
+track = 0;
+"trip_id" = 2387285468;
+}
+);
+}
+);
+description = "";
+device = 1;
+"first_day" = "2016-04-02";
+"first_timezone" = "Asia/Chongqing";
+id = 2387285468;
+"last_day" = "2016-04-04";
+"last_modified" = "1459870980.8776";
+mileage = "595.105461137583";
+name = "\U6e05\U660e\U7af9\U68a2\U9752";
+"poi_infos_count" =     {
+flight = 0;
+hotel = 1;
+mall = 0;
+restaurant = 0;
+sights = 3;
+};
+privacy = 0;
+province = "";
+recommendations = 24;
+recommended = 0;
+shared = 0;
+"start_point" =     {
+latitude = "<null>";
+longitude = "<null>";
+};
+"target_waypoint_id" = 0;
+"trackpoints_thumbnail_image" = "http://photos.breadtrip.com/trackpoints_thumbnail_1746712_1459871344428.jpg";
+user =     {
+"avatar_l" = "http://photos.breadtrip.com/avatar_63_23_237d7d9ad09b05832a88830549f71c60207f712e.jpg-avatar.l";
+"avatar_m" = "http://photos.breadtrip.com/avatar_63_23_237d7d9ad09b05832a88830549f71c60207f712e.jpg-avatar.m";
+"avatar_s" = "http://photos.breadtrip.com/avatar_63_23_237d7d9ad09b05832a88830549f71c60207f712e.jpg-avatar.s";
+birthday = "";
+"country_code" = "<null>";
+"country_num" = 86;
+cover = "http://photos.breadtrip.com/user_cover_2016_02_18_59a4ac9afd70a49f2666e423d4e993c5338354d4.jpg-usercover.display";
+"custom_url" = "";
+email = "";
+"email_verified" = 0;
+experience =         {
+"level_info" =             {
+name = "";
+value = 6;
+};
+value = 3153;
+};
+gender = 2;
+id = 2388650153;
+"is_hunter" = 0;
+"location_name" = "";
+mobile = "";
+name = "\U840c\U840c\U5bb6\U7684\U989cVivi";
+"resident_city_id" = "";
+title =         {
+name = "";
+verified = 0;
+};
+"user_desc" = "";
+};
+"view_count" = 2829;
+waypoints = 65;
+"wifi_sync" = 0;
 }
