@@ -254,7 +254,7 @@ static NSString *identifier = @"cell";
     
 //    [self clasifyWays];
     //collection的自定义方法
-    self.tageListView = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth/10, kHeight*0.1, kWidth*0.8, kHeight*0.5)];
+    self.tageListView = [[JCTagListView alloc] initWithFrame:CGRectMake(kWidth/10, kHeight*0.1, kWidth*0.8, kHeight*0.45)];
     self.tageListView.backgroundColor = [UIColor whiteColor];
     
     self.tageListView.layer.cornerRadius = 15.0f;
@@ -305,7 +305,7 @@ static NSString *identifier = @"cell";
     
     
     UIButton *enSure = [UIButton buttonWithType:UIButtonTypeCustom];
-    enSure.frame = CGRectMake(20, kHeight-220, kWidth - 40, 44);
+    enSure.frame = CGRectMake(20, kHeight-0.39*kHeight, kWidth - 40, 30);
     [enSure setTitle:@"确定" forState:UIControlStateNormal];
     [enSure addTarget:self action:@selector(Ensure) forControlEvents:UIControlEventTouchUpInside];
     enSure.layer.cornerRadius = 15.0;
@@ -317,11 +317,9 @@ static NSString *identifier = @"cell";
     [self.firstView addSubview:self.tageListView];
     [UIView animateWithDuration:0.5 animations:^{
         self.backView.alpha  = 0.6;
-        self.firstView.frame = CGRectMake(0, kScreenHeight - 500, kScreenWidth, 500);
+        self.firstView.frame = CGRectMake(0, kScreenHeight - kScreenHeight*2/3, kScreenWidth, kScreenHeight*2/3);
     }];
-    
-    
-    
+ 
 }
 
 - (NSString *)showStr {
@@ -344,7 +342,7 @@ static NSString *identifier = @"cell";
 
 -(void)calanderAction{
     
-        _calendarView = [[LDCalendarView alloc] initWithFrame:CGRectMake(0, kHeight/7, SCREEN_WIDTH,SCREEN_HEIGHT)];
+        _calendarView = [[LDCalendarView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)];
         [self.view addSubview:_calendarView];
 
         __weak typeof(self) weakSelf = self;
@@ -417,7 +415,7 @@ static NSString *identifier = @"cell";
  
     [UIView animateWithDuration:0.5 animations:^{
         self.backView.alpha  = 0.6;
-        self.thirdView.frame = CGRectMake(0, kScreenHeight - 500, kScreenWidth, 500);
+        self.thirdView.frame = CGRectMake(0, kScreenHeight - kScreenHeight*2/3, kScreenWidth, kScreenHeight*2/3);
     }];
   
 }
@@ -567,8 +565,6 @@ static NSString *identifier = @"cell";
             [self.listArray removeAllObjects];
         }
         
-     
-        
         [self uptataConfig];
         
     }
@@ -587,7 +583,7 @@ static NSString *identifier = @"cell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.tableView) {
-        return kHeight*0.42;
+        return 272;
     }else{
         return 40;
     }
@@ -601,11 +597,13 @@ static NSString *identifier = @"cell";
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint point = [touch locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    
     cityModel *Cmodel = self.listArray[indexPath.row];
     
     PersonViewController *person = [[PersonViewController alloc] init];
     
     person.personId = Cmodel.user[@"id"];
+    
     [self.navigationController pushViewController:person animated:NO];
 
 }

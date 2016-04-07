@@ -22,10 +22,10 @@
 #import "JPUSHService.h"
 #import <TencentOpenAPI/TencentApiInterface.h>
 #import <AMapLocationKit/AMapLocationKit.h>
-
+#import "SlideViewController.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate, WeiboSDKDelegate, WXApiDelegate,TencentApiInterfaceDelegate,WBHttpRequestDelegate>
-@property(nonatomic, strong) UITabBarController *tabBarVC;
+
 @property(nonatomic, strong) UINavigationController *mineNav;
 @property (nonatomic, strong) TencentOAuth *tencentOAuth;
 @property(nonatomic, strong) AMapLocationManager *manger;
@@ -137,6 +137,28 @@
     self.tabBarVC.tabBar.tintColor = [UIColor whiteColor];
     self.tabBarVC.tabBar.barTintColor = kMainColor;
     self.window.rootViewController = self.tabBarVC;
+    
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+        NSLog(@"第一次启动");
+        //初始化SlideViewController的一个对象
+        SlideViewController *userGuideVC = [[SlideViewController alloc] init];
+        //把userGuideVC作为根视图控制器
+        self.window.rootViewController = userGuideVC;
+        
+        
+    }else{
+        NSLog(@"不是第一次启动");
+        //把self.mangoNav作为根视图控制器
+        self.window.rootViewController=self.tabBarVC;
+        
+    }
+
+    
+    
+    
+    
 
     
     self.window.backgroundColor = [UIColor whiteColor];

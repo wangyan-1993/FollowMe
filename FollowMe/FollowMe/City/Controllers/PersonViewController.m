@@ -244,7 +244,7 @@ static NSString *Activity = @"ActivityID";
     }else if (indexPath.section == 1){
         return kHeight*0.28;
     }else if (indexPath.section == 2){
-        return kHeight*0.4;
+        return 272;
     }else if (indexPath.section == 3){
         return kHeight*0.35;
     }

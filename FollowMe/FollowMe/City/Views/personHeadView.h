@@ -26,7 +26,7 @@
 
 @property(nonatomic, strong) UILabel *sayLb;
 
-//@property(nonatomic, strong) ClasifyModel *model;
+@property(nonatomic, strong) ClasifyModel *model;
 
 @property(nonatomic, strong) NSDictionary *dic;
 

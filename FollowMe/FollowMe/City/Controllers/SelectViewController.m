@@ -121,7 +121,7 @@ static NSString *identifier = @"cell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return kHeight*0.42;
+    return 272;
 }
 
 -(void)classAction:(UIButton *)button event:(UIEvent*)event{

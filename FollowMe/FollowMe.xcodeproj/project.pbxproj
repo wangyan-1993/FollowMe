@@ -174,6 +174,7 @@
 		7A6FB0091CA3DC3600770481 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6FB0071CA3DC3600770481 /* ActivityTableViewCell.m */; };
 		7A6FB00A1CA3DC3600770481 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6FB0081CA3DC3600770481 /* ActivityTableViewCell.xib */; };
 		7A6FB00F1CA4159600770481 /* otherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6FB00E1CA4159600770481 /* otherModel.m */; };
+		7A7E000F1CB5E34200065437 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7E000E1CB5E34200065437 /* SlideViewController.m */; };
 		7A8279DE1CAA5D9000403131 /* RRCustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8279D71CAA5D9000403131 /* RRCustomScrollView.m */; };
 		7A8279DF1CAA5D9000403131 /* RRMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8279D91CAA5D9000403131 /* RRMessageModel.m */; };
 		7A8279E01CAA5D9000403131 /* RRSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8279DB1CAA5D9000403131 /* RRSendMessageViewController.m */; };
@@ -507,6 +508,8 @@
 		7A6FB0081CA3DC3600770481 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		7A6FB00D1CA4159600770481 /* otherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherModel.h; sourceTree = "<group>"; };
 		7A6FB00E1CA4159600770481 /* otherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherModel.m; sourceTree = "<group>"; };
+		7A7E000D1CB5E34200065437 /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideViewController.h; sourceTree = "<group>"; };
+		7A7E000E1CB5E34200065437 /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
 		7A8279D61CAA5D9000403131 /* RRCustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRCustomScrollView.h; sourceTree = "<group>"; };
 		7A8279D71CAA5D9000403131 /* RRCustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRCustomScrollView.m; sourceTree = "<group>"; };
 		7A8279D81CAA5D9000403131 /* RRMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMessageModel.h; sourceTree = "<group>"; };
@@ -823,6 +826,8 @@
 		7A422B111C97EAB700B51C11 /* FollowMe */ = {
 			isa = PBXGroup;
 			children = (
+				7A7E000D1CB5E34200065437 /* SlideViewController.h */,
+				7A7E000E1CB5E34200065437 /* SlideViewController.m */,
 				7A422B151C97EAB800B51C11 /* AppDelegate.h */,
 				7A422B161C97EAB800B51C11 /* AppDelegate.m */,
 				7A4780D91C980CAA00C6E5C2 /* Header.pch */,
@@ -1623,6 +1628,7 @@
 				7A4AFBA81CAD473D00A1DA51 /* allCityViewController.m in Sources */,
 				7A5EF2E01CA4BF5A0004BEA1 /* MJRefreshStateHeader.m in Sources */,
 				7AB039611C9D3ABC003E32AF /* InlandViewController.m in Sources */,
+				7A7E000F1CB5E34200065437 /* SlideViewController.m in Sources */,
 				7A152DBB1CA9476A00060A25 /* LinkViewController.m in Sources */,
 				7A5EF2E51CA4BF5A0004BEA1 /* UIView+MJExtension.m in Sources */,
 				7A5EF2F11CA4BF5A0004BEA1 /* VPImageCropperViewController.m in Sources */,
