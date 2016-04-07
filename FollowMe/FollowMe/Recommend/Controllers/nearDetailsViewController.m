@@ -31,7 +31,7 @@
     [self imagebtn];
     [self.view addSubview:self.headImage];
     [self.view addSubview:self.scrollView];
-    
+    [self showWhiteBackBtn];
 }
 - (void)imagebtn{
     self.imageBtn = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -27,6 +27,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "photoViewController.h"
 #import "allCityViewController.h"
+#import "messageTwoViewController.h"
 @interface searchViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionViewOne;
 @property (nonatomic,strong) UIImageView *headerImage;
@@ -49,7 +50,7 @@
     [self.view addSubview:self.collectionViewOne];
     [self netWork];
 //    [self addContent];
-
+    [self showWhiteBackBtn];
     
     
 }
@@ -81,6 +82,10 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
     return self.pictureArray.count;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    messageTwoViewController *messVC = [[messageTwoViewController alloc] init];
+    [self.navigationController pushViewController:messVC animated:NO];
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"oneCell" forIndexPath:indexPath];

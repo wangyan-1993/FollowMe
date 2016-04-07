@@ -16,6 +16,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "LinkViewController.h"
+#import "likeViewController.h"
 static NSString *cacheStr;
 @interface SettingsViewController ()<UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 @property(nonatomic, strong) UITableView *tableView;
@@ -160,7 +161,8 @@ static NSString *cacheStr;
         }
         //我的收藏
         if (indexPath.row == 6) {
-            
+            likeViewController *likeVC = [likeViewController new];
+            [self.navigationController pushViewController:likeVC animated:YES];
         }
     }
 }
