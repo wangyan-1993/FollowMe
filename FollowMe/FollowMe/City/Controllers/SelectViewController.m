@@ -52,22 +52,8 @@ static NSString *identifier = @"cell";
     [self uptataConfig];
     
 }
-
-//http://api.breadtrip.com/hunter/products/v2/search/?city_name=%E5%8C%97%E4%BA%AC&lat=34.613476&lng=112.413994&q=%E6%B2%B9%E7%94%BB
-
 -(void)uptataConfig{
-    
-    /*
-     NSString *string = [NSString stringWithFormat:@"%@%@&offset=%d", kListData, self.name, _pageCount * 9];
-     NSString *url = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-     */
-    
-    //http://api.breadtrip.com/hunter/products/v2/search/?city_name=%E5%8C%97%E4%BA%AC&lat=34.613544&lng=112.41408&q=%E7%BE%8E%E9%A3%9F
-    
-   
-    
-    
-//    
+
     NSString *urlStr = [NSString stringWithFormat:@"http://api.breadtrip.com/hunter/products/v2/search/?city_name=%@&lat=34.613476&lng=112.413994&q=%@",self.choseCityName,self.strCityName];
     NSString *url = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
@@ -108,15 +94,22 @@ static NSString *identifier = @"cell";
         cityFirstTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
         
         cell.model = self.listArray[indexPath.row];
-        [cell.ClassifyButton addTarget:self action:@selector(classAction) forControlEvents:UIControlEventTouchUpInside];
+    [cell.ClassifyButton addTarget:self action:@selector(classAction:event:) forControlEvents:UIControlEventTouchUpInside];
     
         return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-        DetailViewController *detail = [[DetailViewController alloc] init];
-        [self.navigationController pushViewController:detail animated:NO];
+    cityModel *model = self.listArray[indexPath.row];
+    
+    DetailViewController *detail = [[DetailViewController alloc] init];
+    
+    detail.IDString = model.product_id;
+    
+    self.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:detail animated:NO];
  
 }
 
@@ -131,8 +124,15 @@ static NSString *identifier = @"cell";
     return kHeight*0.42;
 }
 
--(void)classAction{
+-(void)classAction:(UIButton *)button event:(UIEvent*)event{
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint point = [touch locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    cityModel *Cmodel = self.listArray[indexPath.row];
+    
     PersonViewController *person = [[PersonViewController alloc] init];
+    person.personId = Cmodel.user[@"id"];
     [self.navigationController pushViewController:person animated:NO];
     
 }

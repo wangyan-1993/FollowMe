@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0WU-9p-dEy">
-                        <rect key="frame" x="8" y="2" width="359" height="170"/>
+                        <rect key="frame" x="8" y="8" width="359" height="170"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="170" id="bpi-r6-4ds"/>
                         </constraints>
@@ -72,7 +72,7 @@
                     <constraint firstAttribute="trailingMargin" secondItem="xqO-fP-Ezi" secondAttribute="trailing" id="bud-cd-cpP"/>
                     <constraint firstAttribute="leadingMargin" secondItem="zak-b3-hbn" secondAttribute="leading" id="lGc-8q-6CK"/>
                     <constraint firstItem="zak-b3-hbn" firstAttribute="top" secondItem="0WU-9p-dEy" secondAttribute="bottom" constant="8" id="pNp-jb-Zma"/>
-                    <constraint firstItem="0WU-9p-dEy" firstAttribute="top" secondItem="B1F-Co-qdC" secondAttribute="topMargin" constant="-6" id="rNF-dd-I3h"/>
+                    <constraint firstItem="0WU-9p-dEy" firstAttribute="top" secondItem="B1F-Co-qdC" secondAttribute="topMargin" id="rNF-dd-I3h"/>
                     <constraint firstAttribute="bottomMargin" secondItem="xqO-fP-Ezi" secondAttribute="bottom" constant="-8" id="tUw-Zr-N94"/>
                     <constraint firstAttribute="leadingMargin" secondItem="hE3-ef-XiI" secondAttribute="leading" id="uAM-Kw-d4t"/>
                     <constraint firstItem="hE3-ef-XiI" firstAttribute="top" secondItem="zak-b3-hbn" secondAttribute="bottom" constant="-1" id="wUT-WU-plx"/>

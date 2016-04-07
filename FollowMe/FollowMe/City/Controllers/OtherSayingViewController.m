@@ -19,16 +19,17 @@ static NSString *identiffier = @"identifier";
 @end
 
 @implementation OtherSayingViewController
-//http://api.breadtrip.com/hunter/hunter/2383951943/comments/?start=0
-//http://api.breadtrip.com/hunter/hunter/2383951943/comments/?start=10
-//http://api.breadtrip.com/hunter/hunter/2383951943/comments/?start=20
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //注册cell
     
+    self.navigationItem.leftBarButtonItem.accessibilityElementsHidden = YES;
+    [self showBackBtn];
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"OtherSayingTableViewCell" bundle:nil] forCellReuseIdentifier:identiffier];
+    
     
     [self.view addSubview:self.tableView];
     

@@ -5,7 +5,7 @@
 //  Created by scjy on 16/3/27.
 //  Copyright © 2016年 SCJY. All rights reserved.
 //
-//http://api.breadtrip.com/trips/2387343240/waypoints/
+
 #import "specialViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "specialTableViewCell.h"
@@ -257,6 +257,7 @@
 
 - (void)workOne{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+
     [manager GET:_kURL parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
 //        WLZLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

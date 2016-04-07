@@ -8,30 +8,20 @@
 
 #import "CityViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
-
-//#import "UIViewController+KNSemiModal.h"
-
 #import "cityModel.h"
-
-
 #import "cityFirstTableViewCell.h"
 #import "DetailViewController.h"
 #import "PersonViewController.h"
-
 #import "selectCityViewController.h"
 #import "selectHotViewController.h"
 //左右视图
 #import "InlandViewController.h"
 #import "ForeignViewController.h"
-
-
 #import "JRSegmentViewController.h"
 #import "ProgressHUD.h"
 #import "JCTagListView.h"
 #import "InformationViewController.h"
-
 #import "ChoseCityModel.h"
-
 #import "LDCalendarView.h"
 #import "NSDate+extend.h"
 
@@ -97,25 +87,15 @@ static NSString *identifier = @"cell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kMainColor;
-    if (self.stringName == nil) {
-        self.stringName = @"北京";
-    }
     self.idStr = @"1";
     self.clasifyStr = @"104";
-//    self.dataStr = @"1";
-//    self.title = @"城市猎人带你玩";
     self.navigationItem.title= @"城市猎人带你玩";
     self.navigationController.navigationBar.barTintColor = kMainColor;
     
 //导航左侧视图按钮：
     self.selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.selectButton.frame = CGRectMake(0, 0, 80,44);
-
-    
-
     [self.selectButton addTarget:self action:@selector(selectCity) forControlEvents:UIControlEventTouchUpInside];
-
-    
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     imageview.image = [UIImage imageNamed:@"back"];
 
@@ -123,17 +103,12 @@ static NSString *identifier = @"cell";
     //调整button图片的位置，四个数字分别指，图片距离button边界位置上下左右的距离；
     [self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(10, self.selectButton.frame.size.width-25, 10, 0)];
     [self.selectButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 10)];
-    
-    
     if (self.stringName == nil) {
-        [self.selectButton setTitle:@"北京" forState:UIControlStateNormal];
-        
-//        self.stringName = @"北京";
+        self.stringName = @"北京";
+        [self.selectButton setTitle:self.stringName forState:UIControlStateNormal];
     }else{
         [self.selectButton setTitle:self.stringName forState:UIControlStateNormal];
     }
-    
-
     [self.navigationController.navigationBar addSubview:self.selectButton];
 
     
@@ -143,10 +118,6 @@ static NSString *identifier = @"cell";
     [self.presonButton addTarget:self action:@selector(presonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.presonButton setImage:[UIImage imageNamed:@"yyb_appdetail_showmore"] forState:UIControlStateNormal];
 
-    
-
-    
-
     //调整button图片的位置，四个数字分别指，图片距离button边界位置上下左右的距离；
 //    [self.clasifyButton setImageEdgeInsets:UIEdgeInsetsMake(0, self.clasifyButton.frame.size.width-25, 0, 0)];
     [self.presonButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 10)];
@@ -155,7 +126,7 @@ static NSString *identifier = @"cell";
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:self.presonButton];
     self.navigationItem.rightBarButtonItem = rightBar;
   
-    UIBarButtonItem *leftbar = [[UIBarButtonItem alloc] initWithCustomView:self.presonButton];
+    UIBarButtonItem *leftbar = [[UIBarButtonItem alloc] initWithCustomView:self.selectButton];
     self.navigationItem.leftBarButtonItem = leftbar;
     leftbar.tintColor = [UIColor whiteColor];
     
@@ -175,25 +146,13 @@ static NSString *identifier = @"cell";
     [self.view addSubview:_segmented];
     
     //首页图片
-    
-    
-    
     //注册cell；
     
     [self.tableView registerNib:[UINib nibWithNibName:@"cityFirstTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
-    
-    
-    
-//    WLZLog(@"%@",self.stringName);3
-    
     //请求数据：主页面主要数据
-    
     [self uptataConfig];
-    
     //请求数据：主页面城市数据；
     [self updateCity];
-    
-    
     [self backFrrameCity];
     
 }
@@ -203,22 +162,9 @@ static NSString *identifier = @"cell";
    self.selectButton.hidden = NO;
     self.tabBarController.tabBar.hidden = NO;
 }
-//点击上海，返回主页面主题日期筛选接口：
-//http://api.breadtrip.com/hunter/products/v2/metadata/?city_name=%E5%8C%97%E4%BA%AC&sign=d8c4c7cc232d1b05a8b2e1c52b3e0020
-//重庆：
-//http://api.breadtrip.com/hunter/products/v2/metadata/?city_name=%E9%87%8D%E5%BA%86&sign=82e1194031afb5cb834881a9e1a88aa2
-//主页面显示信息；
-//http://api.breadtrip.com/hunter/products/v2/?city_name=%E5%8C%97%E4%BA%AC&lat=34.61341401561965&lng=112.4141287407534&sign=8d8f4ba7e51d4f3a8440134ac5cbd58f&sorted_id=1&start=0
-//http://api.breadtrip.com/hunter/products/v2/?city_name=%E9%87%8D%E5%BA%86&lat=34.61339564423128&lng=112.4140786252068&sign=bd55703bac6a8494569e982d3bfeed09&sorted_id=1&start=0
-
-
-
 #pragma mark-------------数据加载；
-
 -(void)uptataConfig{
-    
-   //&sign=ac6a66157da8fd3fa171fa0091e282ba
-    
+
     NSString *idurl = [NSString stringWithFormat:@"&sorted_id=%@",self.idStr];
     NSString *dataUrl = [NSString stringWithFormat:@"&data_list=20%@",self.dataStr];
     NSString *clasilyScr = [NSString stringWithFormat:@"&tab_list%@",self.clasifyStr];
@@ -292,7 +238,7 @@ static NSString *identifier = @"cell";
 
             break;
         case 1:
-            [self dataChose];
+            [self calanderAction];
             break;
         case 2:
             [self orderTitle];
@@ -368,8 +314,6 @@ static NSString *identifier = @"cell";
     [self.firstView addSubview:enSure];
     
     
-    
-
     [self.firstView addSubview:self.tageListView];
     [UIView animateWithDuration:0.5 animations:^{
         self.backView.alpha  = 0.6;
@@ -399,9 +343,10 @@ static NSString *identifier = @"cell";
 }
 
 -(void)calanderAction{
-        _calendarView = [[LDCalendarView alloc] initWithFrame:CGRectMake(0, -100, SCREEN_WIDTH,SCREEN_HEIGHT)];
-        [self.secondView addSubview:_calendarView];
-        
+    
+        _calendarView = [[LDCalendarView alloc] initWithFrame:CGRectMake(0, kHeight/7, SCREEN_WIDTH,SCREEN_HEIGHT)];
+        [self.view addSubview:_calendarView];
+
         __weak typeof(self) weakSelf = self;
         _calendarView.complete = ^(NSArray *result) {
             if (result) {
@@ -415,32 +360,33 @@ static NSString *identifier = @"cell";
     [self.calendarView show];
     self.calendarView.defaultDates = _seletedDays;
     
+    
 }
 
 //日期筛选点击方法
 -(void)dataChose{
-    [self.window addSubview:self.backView];
-    self.secondView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kScreenHeight)];
-    self.secondView.backgroundColor = [UIColor whiteColor];
-    [self.window addSubview:self.secondView];
+//    [self.window addSubview:self.backView];
+//    self.secondView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kScreenHeight)];
+//    self.secondView.backgroundColor = [UIColor whiteColor];
+//    [self.window addSubview:self.secondView];
 
     [self calanderAction];
+
+    
+//    UIButton *enSure = [UIButton buttonWithType:UIButtonTypeCustom];
+//    enSure.frame = CGRectMake(20, kHeight-320, kWidth - 40, 44);
+//    [enSure setTitle:@"确定" forState:UIControlStateNormal];
+//    [enSure addTarget:self action:@selector(EnsureSecond) forControlEvents:UIControlEventTouchUpInside];
+//    enSure.layer.cornerRadius = 15.0;
+//    enSure.clipsToBounds = YES;
+//    enSure.backgroundColor = kMainColor;
+//    [self.secondView addSubview:enSure];
     
     
-    UIButton *enSure = [UIButton buttonWithType:UIButtonTypeCustom];
-    enSure.frame = CGRectMake(20, kHeight-320, kWidth - 40, 44);
-    [enSure setTitle:@"确定" forState:UIControlStateNormal];
-    [enSure addTarget:self action:@selector(EnsureSecond) forControlEvents:UIControlEventTouchUpInside];
-    enSure.layer.cornerRadius = 15.0;
-    enSure.clipsToBounds = YES;
-    enSure.backgroundColor = kMainColor;
-    [self.secondView addSubview:enSure];
-    
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        self.backView.alpha  = 0.6;
-        self.secondView.frame = CGRectMake(0, kHeight-500, kScreenWidth, 500);
-    }];
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.backView.alpha  = 0.6;
+//        self.secondView.frame = CGRectMake(0, kHeight-500, kScreenWidth, 500);
+//    }];
 }
 
 
@@ -492,21 +438,21 @@ static NSString *identifier = @"cell";
     }];
 }
 
--(void)EnsureSecond{
-    
-    [self calanderAction];
-    [UIView animateWithDuration:1.0 animations:^{
-        [self.calendarView removeFromSuperview];
-        [self.secondView removeFromSuperview];
-        [self.backView removeFromSuperview];
-        
-    }];
-    if (self.listArray != nil) {
-        [self.listArray removeAllObjects];
-    }
-    [self uptataConfig];
-  
-}
+//-(void)EnsureSecond{
+//    
+//    [self calanderAction];
+//    [UIView animateWithDuration:1.0 animations:^{
+//        [self.calendarView removeFromSuperview];
+//        [self.secondView removeFromSuperview];
+//        [self.backView removeFromSuperview];
+//        
+//    }];
+//    if (self.listArray != nil) {
+//        [self.listArray removeAllObjects];
+//    }
+//    [self uptataConfig];
+//  
+//}
 
 -(void)RemoveThirdViewAction{
     [UIView animateWithDuration:1.0 animations:^{
@@ -656,8 +602,6 @@ static NSString *identifier = @"cell";
     CGPoint point = [touch locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
     cityModel *Cmodel = self.listArray[indexPath.row];
-
-    
     
     PersonViewController *person = [[PersonViewController alloc] init];
     
@@ -687,8 +631,8 @@ static NSString *identifier = @"cell";
      vc.indicatorViewColor = [UIColor whiteColor];
      vc.titleColor = [UIColor whiteColor];
      
-     [vc setViewControllers:@[firstVC, secondVC]];
-     [vc setTitles:@[@"国内", @"国外"]];
+     [vc setViewControllers:@[secondVC,firstVC]];
+     [vc setTitles:@[@"国外", @"国内"]];
      
      [self.navigationController pushViewController:vc animated:YES];
 
@@ -698,6 +642,7 @@ static NSString *identifier = @"cell";
 -(void)presonAction{
     
     selectHotViewController *hotCity = [[selectHotViewController alloc] init];
+    
     hotCity.IDName = self.stringName;
     
     [self.navigationController pushViewController:hotCity animated:NO];

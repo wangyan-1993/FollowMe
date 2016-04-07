@@ -29,6 +29,12 @@
     
     
     
+    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, kHeight -60, kWidth, 60)];
+    lable.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:lable];
+    
+    
+    
     
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{

@@ -146,7 +146,7 @@ static const NSInteger kTotalNum = (kRow - 1) * kCol;
         _done = [UIButton buttonWithType:UIButtonTypeCustom];
         [_done setFrame:CGRectMake((CGRectGetWidth(_contentBgView.frame) - 150) / 2.0, CGRectGetHeight(_contentBgView.frame) - 40, 150, 30)];
         
-        [_done setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_done setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_done.titleLabel setFont:[UIFont systemFontOfSize:14]];
         [_done setBackgroundImage:[[UIImage imageNamed:@"b_com_bt_blue_normal"] stretchableImageWithLeftCapWidth:15 topCapHeight:10] forState:UIControlStateNormal];
         [_done setBackgroundImage:[[UIImage imageNamed:@"b_com_bt_blue_normal"] stretchableImageWithLeftCapWidth:15 topCapHeight:10] forState:UIControlStateSelected];

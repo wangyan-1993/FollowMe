@@ -4,15 +4,6 @@
 //
 //  Created by scjy on 16/3/17.
 //  Copyright © 2016年 SCJY. All rights reserved.
-
-//    //http://api.breadtrip.com/v3/user/2384156923/
-//
-//    UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.frame];
-//    //http://web.breadtrip.com/hunter/2384305001/v2/
-//    NSURL *url = [NSURL URLWithString:@"http://web.breadtrip.com/hunter/2384305001/v2/"];
-//    [webView loadRequest:[NSURLRequest requestWithURL:url]];
-//
-
 #import "PersonViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "personHeadView.h"
@@ -26,6 +17,8 @@
 #import "DetailViewController.h"
 #import "OtherSayingViewController.h"
 #import "StoryViewController.h"
+#import "specialViewController.h"
+
 //注册cell使用到的静态变量；
 static NSString *Inentifier = @"Identifier";
 static NSString *storyID = @"ourStory";
@@ -46,6 +39,7 @@ static NSString *Activity = @"ActivityID";
 
 @property(nonatomic, copy) NSString *otherCountStr;
 @property(nonatomic, copy) NSString *storyCountStr;
+@property(nonatomic, strong) NSMutableArray *arrayID;
 
 
 @end
@@ -55,7 +49,10 @@ static NSString *Activity = @"ActivityID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updataConfig];
-
+    
+    
+    [self.headView.sentBtn addTarget:self action:@selector(SendMessage) forControlEvents:UIControlEventTouchUpInside];
+    
     self.tableView.tableHeaderView = self.headView;
     
     [self.view addSubview:self.tableView];
@@ -68,6 +65,12 @@ static NSString *Activity = @"ActivityID";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"storyTableViewCell" bundle:nil] forCellReuseIdentifier:storyID];
  
+}
+//发送私信点击方法；
+-(void)SendMessage{
+    
+    
+    
 }
 
 #pragma mark--------------------数据加载
@@ -111,7 +114,8 @@ static NSString *Activity = @"ActivityID";
         NSDictionary *trips = data[@"trips"];
         self.storyCountStr = trips[@"total_count"];
         for (NSDictionary *dict in trips[@"data"]) {
-            
+            [self.arrayID addObject: dict[@"id"]];
+//            WLZLog(@"%@",self.arrayID);
             storyMdel *modelStory = [[storyMdel alloc] init];
             [modelStory setValuesForKeysWithDictionary:dict];
         
@@ -221,6 +225,15 @@ static NSString *Activity = @"ActivityID";
         [self.navigationController pushViewController:detail animated:NO];
         
         
+    }else if (indexPath.section == 3){
+        
+        NSString *str = self.arrayID[indexPath.row];
+        specialViewController *specialVC = [[specialViewController alloc] init];
+        
+        
+            specialVC.userId = str;
+        [self.navigationController pushViewController:specialVC animated:YES];
+        
     }
 
 }
@@ -233,7 +246,7 @@ static NSString *Activity = @"ActivityID";
     }else if (indexPath.section == 2){
         return kHeight*0.4;
     }else if (indexPath.section == 3){
-        return kHeight*0.5;
+        return kHeight*0.35;
     }
     else{
        return 50;
@@ -363,7 +376,6 @@ static NSString *Activity = @"ActivityID";
 -(personHeadView *)headView{
     if (_headView == nil) {
         self.headView = [[personHeadView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight*0.7)];
-//        self.headView.backgroundColor = [UIColor cyanColor];
 
     }
     return _headView;
@@ -398,6 +410,14 @@ static NSString *Activity = @"ActivityID";
         self.activityArray = [NSMutableArray new];
     }
     return _activityArray;
+}
+
+
+-(NSMutableArray *)arrayID{
+    if (_arrayID == nil) {
+        self.arrayID = [NSMutableArray new];
+    }
+    return _arrayID;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

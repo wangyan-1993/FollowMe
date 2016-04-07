@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xee-LO-Y1a">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="193"/>
+                        <rect key="frame" x="8" y="8" width="355" height="169"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9人喜欢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8F3-x0-F1k">
                         <rect key="frame" x="98" y="158" width="60" height="21"/>
@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的面包故事" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtV-kP-Pti">
-                        <rect key="frame" x="16" y="13" width="275" height="28"/>
+                        <rect key="frame" x="24" y="21" width="275" height="28"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="BPU-Lw-XtF"/>
                             <constraint firstAttribute="width" constant="275" id="yNs-WN-hQ6"/>
@@ -39,7 +39,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="默认故事集" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMs-0f-6ZL">
-                        <rect key="frame" x="16" y="54" width="169" height="22"/>
+                        <rect key="frame" x="16" y="62" width="169" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="HI7-4n-VkU"/>
                             <constraint firstAttribute="width" constant="169" id="zsM-u5-NUH"/>
@@ -96,9 +96,9 @@
                     <constraint firstAttribute="leadingMargin" secondItem="2dt-xI-tvR" secondAttribute="leading" id="R5l-Rp-S19"/>
                     <constraint firstItem="iXq-RT-PTG" firstAttribute="centerY" secondItem="2dt-xI-tvR" secondAttribute="centerY" id="RIv-Vl-GcC"/>
                     <constraint firstItem="5vq-JB-ZY6" firstAttribute="centerY" secondItem="Hxo-st-LtH" secondAttribute="centerY" id="RZk-s6-GLH"/>
-                    <constraint firstItem="xee-LO-Y1a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="S9R-Q5-b41"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="xee-LO-Y1a" secondAttribute="bottom" constant="-16" id="T7f-1m-bbo"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="xee-LO-Y1a" secondAttribute="trailing" constant="-17" id="TzJ-Uy-PzF"/>
+                    <constraint firstItem="xee-LO-Y1a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="S9R-Q5-b41"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xee-LO-Y1a" secondAttribute="bottom" id="T7f-1m-bbo"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xee-LO-Y1a" secondAttribute="trailing" id="TzJ-Uy-PzF"/>
                     <constraint firstItem="5vq-JB-ZY6" firstAttribute="leading" secondItem="Hxo-st-LtH" secondAttribute="trailing" constant="8" id="h5y-Jb-5CY"/>
                     <constraint firstItem="xee-LO-Y1a" firstAttribute="leading" secondItem="JtV-kP-Pti" secondAttribute="trailing" constant="-291" id="iBo-ei-iCa"/>
                     <constraint firstItem="Hxo-st-LtH" firstAttribute="leading" secondItem="8F3-x0-F1k" secondAttribute="trailing" constant="8" id="lAh-hw-t8v"/>
@@ -106,7 +106,7 @@
                     <constraint firstItem="iXq-RT-PTG" firstAttribute="leading" secondItem="2dt-xI-tvR" secondAttribute="trailing" id="ln0-ey-A8f"/>
                     <constraint firstItem="8F3-x0-F1k" firstAttribute="centerY" secondItem="iXq-RT-PTG" secondAttribute="centerY" id="rmT-5Q-na9"/>
                     <constraint firstItem="rMs-0f-6ZL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="vKV-ub-C6k"/>
-                    <constraint firstItem="xee-LO-Y1a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="wJR-Z7-y9F"/>
+                    <constraint firstItem="xee-LO-Y1a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="wJR-Z7-y9F"/>
                     <constraint firstItem="rMs-0f-6ZL" firstAttribute="top" secondItem="JtV-kP-Pti" secondAttribute="bottom" constant="13" id="yoC-MI-RIe"/>
                 </constraints>
             </tableViewCellContentView>
