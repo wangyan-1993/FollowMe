@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    [self showWhiteBackBtn];
     self.title = @"精选故事";
     self.view.backgroundColor = kCollectionColor;
     //设置导航栏标题颜色

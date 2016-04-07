@@ -44,6 +44,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self showWhiteBackBtn];
     // Do any additional setup after loading the view.
     self.title = @"故事详情";
     [self workOne];

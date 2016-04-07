@@ -14,7 +14,8 @@ static BOOL isProduct = YES;
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *wbtoken;
+//@property(nonatomic,strong) UINavigationController *plusNav;
 
-
+@property(nonatomic, strong) UITabBarController *tabBarVC;
 @end
 

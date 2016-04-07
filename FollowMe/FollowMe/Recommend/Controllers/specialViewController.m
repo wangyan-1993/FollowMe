@@ -154,11 +154,11 @@
         [bmobObject deleteInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
             if (isSuccessful) {
                 //删除成功后的动作
-                NSLog(@"successful");
+//                NSLog(@"successful");
             } else if (error){
-                NSLog(@"%@",error);
+//                NSLog(@"%@",error);
             } else {
-                NSLog(@"UnKnow error");
+//                NSLog(@"UnKnow error");
             }
         }];
         
@@ -261,7 +261,7 @@
     [manager GET:_kURL parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
 //        WLZLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        WLZLog(@"%@",responseObject);
+//        WLZLog(@"%@",responseObject);
         NSDictionary *rootDic = responseObject;
         //头部图片
         self.headImage = rootDic[@"trackpoints_thumbnail_image"];

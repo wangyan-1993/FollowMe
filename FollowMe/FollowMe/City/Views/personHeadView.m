@@ -103,7 +103,7 @@
 }
 -(UILabel *)addressLb{
     if (_addressLb == nil) {
-        self.addressLb = [[UILabel alloc] initWithFrame:CGRectMake(kWidth/4, kHeight/4+35, kWidth/2, 30)];
+        self.addressLb = [[UILabel alloc] initWithFrame:CGRectMake(kWidth/4, kHeight/8+kWidth/3+10, kWidth/2, 30)];
         self.addressLb.textAlignment = NSTextAlignmentCenter;
         self.addressLb.font = [UIFont systemFontOfSize:13.0];
         self.addressLb.backgroundColor = [UIColor clearColor];
@@ -129,23 +129,23 @@
 //    return _LookBtn;
 //    
 //}
--(UIButton *)sentBtn{
-    
-    if (_sentBtn == nil) {
-        
-        self.sentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        //self.sentBtn.frame = CGRectMake(kWidth/2+10, kWidth/2+40, kWidth/3-10, 40);
-        self.sentBtn.frame = CGRectMake(kWidth/3, kWidth/2+40, kWidth/3-10, 40);
-        self.sentBtn.backgroundColor = [UIColor whiteColor];
-        [self.sentBtn setTitle:@"发私信" forState:UIControlStateNormal];
-        self.sentBtn.layer.cornerRadius = 15.0;
-        self.sentBtn.clipsToBounds = YES;
-        [self.sentBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        
-    }
-    return _sentBtn;
-    
-}
+//-(UIButton *)sentBtn{
+//    
+//    if (_sentBtn == nil) {
+//        
+//        self.sentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        //self.sentBtn.frame = CGRectMake(kWidth/2+10, kWidth/2+40, kWidth/3-10, 40);
+//        self.sentBtn.frame = CGRectMake(kWidth/3, kWidth/2+40, kWidth/3-10, 40);
+//        self.sentBtn.backgroundColor = [UIColor whiteColor];
+//        [self.sentBtn setTitle:@"发私信" forState:UIControlStateNormal];
+//        self.sentBtn.layer.cornerRadius = 15.0;
+//        self.sentBtn.clipsToBounds = YES;
+//        [self.sentBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        
+//    }
+//    return _sentBtn;
+//    
+//}
 
 
 
@@ -154,7 +154,6 @@
         _sayLb = [[UILabel alloc] initWithFrame:CGRectMake(20, kHeight/2, kWidth - 40, 100)];
         _sayLb.font = [UIFont systemFontOfSize:13.0];
         _sayLb.textColor = [UIColor blackColor];
-//        _sayLb.backgroundColor = [UIColor blackColor];
         _sayLb.textAlignment = NSTextAlignmentCenter;
         _sayLb.numberOfLines = 0;
     }
@@ -181,7 +180,7 @@
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:dic[@"avatar_l"]]];
     self.sayLb.text = dic[@"user_desc"];
     self.fanceLb.text = [NSString stringWithFormat:@"%@   粉丝",dic[@"followers_count"]];
-    self.LookLb.text = [NSString stringWithFormat:@"%@   关注",dic[@"followings_count"]];
+    self.LookLb.text = [NSString stringWithFormat:@"%@    关注",dic[@"followings_count"]];
     self.nameLable.text = dic[@"name"];
     self.addressLb.text = [NSString stringWithFormat:@"%@/%@",dic[@"profession"],dic[@"location_name"]];
     

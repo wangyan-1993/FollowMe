@@ -42,9 +42,21 @@
     [super viewWillDisappear:animated];
     self.mySearchBar.hidden = YES;
 }
+//添加轻拍手势  回收键盘
+- (void)tapgr{
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionUp |UISwipeGestureRecognizerDirectionDown;
+    //添加到视图上
+    [self.view addGestureRecognizer:swipe];
+}
+- (void)swipeAction:(UISwipeGestureRecognizer *)swipe
+{
+    [self.mySearchBar resignFirstResponder];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBarController.tabBar.hidden = YES;
+    [self showWhiteBackBtn];
     // Do any additional setup after loading the view.
 //    WLZLog(@"%@",self.keyId);
     [self workOne];
@@ -256,6 +268,7 @@ else if ([tableView isEqual:self.tableView2])
     return _tableView2;
 
 }
+
 - (UITableView *)tableView3{
     if (_tableView3 == nil) {
         self.tableView3 = [[UITableView alloc] initWithFrame:CGRectMake(0, 109, kWidth, kHeight) style:UITableViewStylePlain];
@@ -269,6 +282,7 @@ else if ([tableView isEqual:self.tableView2])
     return _tableView3;
     
 }
+
 #pragma mark ----------------数组懒加载
 - (NSMutableArray *)userIdArray{
     if (_userIdArray == nil) {

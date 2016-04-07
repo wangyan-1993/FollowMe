@@ -47,7 +47,7 @@
                         </constraints>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="盘点大学最遗憾的事：没能好好学习，没能完成梦想" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkL-v4-NST">
-                        <rect key="frame" x="8" y="180" width="263" height="40"/>
+                        <rect key="frame" x="8" y="172" width="263" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="263" id="UML-3p-CnF"/>
                             <constraint firstAttribute="height" constant="40" id="pZb-Sj-px8"/>
@@ -81,7 +81,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新奇特" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Kf-mR-UKt">
-                        <rect key="frame" x="65" y="245" width="52" height="21"/>
+                        <rect key="frame" x="65" y="238" width="52" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="52" id="qiZ-7g-Al8"/>
                             <constraint firstAttribute="height" constant="21" id="x4E-zy-peu"/>
@@ -91,7 +91,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="远程" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2U-j1-6mt">
-                        <rect key="frame" x="122" y="245" width="52" height="21"/>
+                        <rect key="frame" x="122" y="238" width="52" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="52" id="sBf-p3-5fp"/>
                             <constraint firstAttribute="height" constant="21" id="zTZ-t6-jiZ"/>
@@ -101,7 +101,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="线上活动" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezU-dT-igg">
-                        <rect key="frame" x="179" y="245" width="52" height="21"/>
+                        <rect key="frame" x="179" y="238" width="52" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="KNy-u6-E9y"/>
                             <constraint firstAttribute="width" constant="52" id="pVI-Kp-WX0"/>
@@ -111,7 +111,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="经验分享" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVT-ig-B3Z">
-                        <rect key="frame" x="8" y="245" width="52" height="21"/>
+                        <rect key="frame" x="8" y="238" width="52" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="NTN-a2-paK"/>
                             <constraint firstAttribute="width" constant="52" id="NmA-jY-AHH"/>
@@ -136,14 +136,14 @@
                     <constraint firstItem="KWk-zh-lAe" firstAttribute="top" secondItem="GTE-4g-Rwu" secondAttribute="bottom" id="RXD-cC-9if"/>
                     <constraint firstItem="0oj-OB-Ew9" firstAttribute="leading" secondItem="NkL-v4-NST" secondAttribute="trailing" id="SZ4-Xt-gjy"/>
                     <constraint firstItem="0oj-OB-Ew9" firstAttribute="top" secondItem="Ilp-Sq-tzl" secondAttribute="bottom" constant="-24" id="TV9-Gi-uEy"/>
+                    <constraint firstItem="TVT-ig-B3Z" firstAttribute="top" secondItem="ybA-Ur-Vb2" secondAttribute="bottom" constant="6" id="TaV-8q-uxS"/>
                     <constraint firstItem="0Kf-mR-UKt" firstAttribute="leading" secondItem="TVT-ig-B3Z" secondAttribute="trailing" constant="5" id="UmK-dx-HwP"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="TVT-ig-B3Z" secondAttribute="bottom" constant="-2" id="W69-E2-Qfz"/>
                     <constraint firstAttribute="leadingMargin" secondItem="ybA-Ur-Vb2" secondAttribute="leading" id="Wjd-km-Fbm"/>
                     <constraint firstItem="ezU-dT-igg" firstAttribute="centerY" secondItem="f2U-j1-6mt" secondAttribute="centerY" id="ZVj-Ez-CbV"/>
                     <constraint firstAttribute="leadingMargin" secondItem="Ilp-Sq-tzl" secondAttribute="leading" id="dC3-S8-mjP"/>
                     <constraint firstAttribute="trailingMargin" secondItem="GTE-4g-Rwu" secondAttribute="trailing" id="dgj-UD-2fv"/>
-                    <constraint firstItem="ybA-Ur-Vb2" firstAttribute="top" secondItem="NkL-v4-NST" secondAttribute="bottom" constant="-1" id="kdD-jY-Yhj"/>
-                    <constraint firstItem="NkL-v4-NST" firstAttribute="top" secondItem="Ilp-Sq-tzl" secondAttribute="bottom" constant="8" id="kp6-DL-zkj"/>
+                    <constraint firstItem="ybA-Ur-Vb2" firstAttribute="top" secondItem="NkL-v4-NST" secondAttribute="bottom" id="kdD-jY-Yhj"/>
+                    <constraint firstItem="NkL-v4-NST" firstAttribute="top" secondItem="Ilp-Sq-tzl" secondAttribute="bottom" id="kp6-DL-zkj"/>
                     <constraint firstAttribute="trailingMargin" secondItem="KWk-zh-lAe" secondAttribute="trailing" constant="5" id="qOW-ja-PyN"/>
                     <constraint firstAttribute="leadingMargin" secondItem="TVT-ig-B3Z" secondAttribute="leading" id="wKl-O1-i8R"/>
                 </constraints>
@@ -161,7 +161,7 @@
                 <outlet property="title" destination="NkL-v4-NST" id="pbT-H1-vpv"/>
                 <outlet property="title_page" destination="Ilp-Sq-tzl" id="Fig-mb-tbg"/>
             </connections>
-            <point key="canvasLocation" x="352.5" y="518.5"/>
+            <point key="canvasLocation" x="436.5" y="486.5"/>
         </tableViewCell>
     </objects>
 </document>

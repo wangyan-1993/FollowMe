@@ -30,6 +30,7 @@
     [self workOne];
     [self.view addSubview:self.tableView];
     [self headWay];
+    [self showWhiteBackBtn];
 }
 - (void)workOne{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
