@@ -45,6 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBarController.tabBar.hidden = YES;
+    [self showWhiteBackBtn];
     // Do any additional setup after loading the view.
 //    WLZLog(@"%@",self.keyId);
     [self workOne];

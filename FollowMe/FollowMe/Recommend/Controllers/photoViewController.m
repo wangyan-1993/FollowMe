@@ -27,7 +27,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _start = 0;
-    
+    self.title = @"图片";
+    [self showWhiteBackBtn];
     //下拉刷新
     self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //增加数据

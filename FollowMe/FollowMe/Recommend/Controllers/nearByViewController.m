@@ -40,7 +40,7 @@
     [super viewDidLoad];
     
     [self mapLocation];
-
+    [self showWhiteBackBtn];
 
     
     kNearBy = @"http://api.breadtrip.com/place/pois/nearby/?category=0&count=20";
