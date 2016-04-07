@@ -106,13 +106,12 @@
         }else{
             [ProgressHUD showSuccess:@"加载成功"];
         }
-                WLZLog(@"%@",responseObject);
+              //  WLZLog(@"%@",responseObject);
         
         
         NSDictionary *allDic = responseObject;
         NSArray *itemsArray = allDic[@"items"];
         //解析boolean类型
-        Boolean more = [allDic[@"more"] boolValue];
         if (_refreash) {
             if (self.allArray.count > 0) {
                 [self.allArray removeAllObjects];
@@ -121,13 +120,12 @@
             }
             
         }
-        if (more == 1) {
-            for (NSDictionary *dic in itemsArray) {
+                    for (NSDictionary *dic in itemsArray) {
                 nearByModel *model = [[nearByModel alloc] initWithDictionary:dic];
                 [self.allArray addObject:model];
                 [self.detailIdArray addObject:dic[@"id"]];
                 [self.typeArray addObject: dic[@"type"]];
-            }
+            
         }
         [self.tableView tableViewDidFinishedLoading];
         self.tableView.reachedTheEnd = NO;

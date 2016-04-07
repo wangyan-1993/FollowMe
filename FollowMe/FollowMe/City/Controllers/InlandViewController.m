@@ -52,18 +52,7 @@
     
     self.tabBarController.tabBar.hidden = YES;
     [self showBackBtn];
-    
-    
-    
-    //searchBar
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 10, kWidth, 30)];
-    self.searchBar.delegate = self;
-    self.searchBar.placeholder = @"请输入搜索您的信息";
-    self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
-    self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.searchBar.layer.cornerRadius = 10.0;
-    self.searchBar.clipsToBounds = YES;
-    [self.view addSubview:self.searchBar];
+
     self.tableView.tableHeaderView = self.headView;
     [self jcCollectionView];
     [self updateSelectCity];
@@ -107,7 +96,7 @@
 
 -(void)jcCollectionView{
     //初始化
-    self.jctageLiseView = [[JCTagListView alloc] initWithFrame:CGRectMake(0, kWidth *0.25, kWidth, kWidth/3)];
+    self.jctageLiseView = [[JCTagListView alloc] initWithFrame:CGRectMake(0, kHeight/9+10, kWidth, kWidth/3)];
     //边框颜色
     self.jctageLiseView.canSelectTags = YES;
     self.jctageLiseView.tagCornerRadius = 15.0f;
@@ -191,10 +180,19 @@
 
 -(UIView *)headView{
     if (_headView == nil) {
-        self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, 60, kWidth, kHeight/3)];
+        self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight/3)];
         _gpsLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, kWidth/2, 30)];
         _gpsLable.backgroundColor = [UIColor clearColor];
-        _gpsLable.text = @"GPS定位失败";
+        
+        NSString *cityName = [[NSUserDefaults standardUserDefaults] valueForKey:@"key"];
+        NSLog(@"%@",cityName);
+        
+        if (cityName == nil) {
+            _gpsLable.text = @"定位失败";
+        }else{
+            
+            _gpsLable.text = cityName;}
+
         _gpsLable.textColor = [UIColor whiteColor];
         _gpsLable.font = [UIFont systemFontOfSize:13.0];
         
@@ -202,7 +200,7 @@
         _headView.backgroundColor = kMainColor;
         
         
-        self.inLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 190, kWidth, 30)];
+        self.inLable = [[UILabel alloc] initWithFrame:CGRectMake(0, kHeight/3-30, kWidth, 30)];
         
         self.inLable.text = @"全部城市";
         self.inLable.font = [UIFont systemFontOfSize:13];
@@ -211,7 +209,7 @@
         [_headView addSubview:self.inLable];
         
         
-        UILabel *inlable = [[UILabel alloc] initWithFrame:CGRectMake(0, 64, kWidth/3, 30)];
+        UILabel *inlable = [[UILabel alloc] initWithFrame:CGRectMake(0, kHeight/9, kWidth/3, 30)];
         inlable.backgroundColor = [UIColor clearColor];
         inlable.text = @"国内热门城市";
         inlable.textColor = [UIColor whiteColor];
@@ -228,7 +226,7 @@
 -(UITableView *)tableView{
     if (_tableView == nil) {
         
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, kWidth, kHeight - 150)];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight - 20)];
         
         self.tableView.delegate = self;
         self.tableView.dataSource = self;

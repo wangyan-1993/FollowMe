@@ -13,4 +13,6 @@
 - (void)showBackBtn;
 - (void)shoeRightBtn;
 - (void)collectionAction;
-@end
+- (void)showWhiteBackBtn;
+
+ @end

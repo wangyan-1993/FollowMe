@@ -93,7 +93,8 @@ static NSString *cellIdentifier = @"tableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    //不让导航栏随着tableview上下滑动
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     _ppp = 0;
     _next_start = nil;
 
@@ -185,9 +186,13 @@ static NSString *cellIdentifier = @"tableViewCell";
         
         weakself.mySearchBar.text = weakself.foreignListArray[index];
         searchViewController *seaVC = [[searchViewController alloc] init];
+        seaVC.title = weakself.mySearchBar.text;
         seaVC.type = weakself.typeForeignArray[index];
         seaVC.userId = weakself.foreignsearchId[index];
-        [weakself.navigationController pushViewController:seaVC animated:YES];
+        seaVC.hidesBottomBarWhenPushed = YES;
+        seaVC.navigationController.navigationBar.hidden = YES;
+        [seaVC showBackBtn];
+        [weakself.navigationController pushViewController:seaVC animated:NO];
         
     }];
     
@@ -196,9 +201,13 @@ static NSString *cellIdentifier = @"tableViewCell";
         WLZLog(@"国内%ld",(long)index);
         weakself.mySearchBar.text = weakself.inlandListArray[index];
         searchViewController *seaVC = [[searchViewController alloc] init];
+        seaVC.title = weakself.mySearchBar.text;
         seaVC.type = weakself.typeInLandArray[index];
         seaVC.userId = weakself.inlandId[index];
-        [weakself.navigationController pushViewController:seaVC animated:YES];
+        seaVC.hidesBottomBarWhenPushed = YES;
+        seaVC.navigationController.navigationBar.hidden = YES;
+        [seaVC showBackBtn];
+        [weakself.navigationController pushViewController:seaVC animated:NO];
         
     }];
     
@@ -220,14 +229,11 @@ static NSString *cellIdentifier = @"tableViewCell";
     [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
     [self.cancelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.cancelBtn addTarget:self action:@selector(cancelView) forControlEvents:UIControlEventTouchUpInside];
-    
     [self.navigationController.navigationBar addSubview:self.cancelBtn];
-    
-    
     [self addWhiteView];
     [self.mySearchBar setShowsCancelButton:NO animated:YES];
     [UIView animateWithDuration:1 animations:^{
-        self.searchView.frame = self.view.frame;
+        self.searchView.frame = CGRectMake(0, -64, kWidth, kHeight);
     }];
     return YES;
 }
@@ -525,7 +531,7 @@ static NSString *cellIdentifier = @"tableViewCell";
         //刷新tableView
         [self.tableView reloadData];
        //刷新collectionview
-        [self.collectionView reloadData];
+//        [self.collectionView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [ProgressHUD showError:@"请求失败"];
         
@@ -557,7 +563,6 @@ static NSString *cellIdentifier = @"tableViewCell";
         }
         else if (self.elementsArr[indexPath.row] == [NSNumber numberWithInteger:4]) {
             specialViewController *specialVC = [[specialViewController alloc] init];
-           
             specialVC.userId = str;
             [self.navigationController pushViewController:specialVC animated:YES];
         
@@ -740,7 +745,7 @@ static NSString *cellIdentifier = @"tableViewCell";
 //tableView的懒加载
 - (UITableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight-108) pullingDelegate:self];
+        self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight-108) pullingDelegate:self];
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
         self.tableView.rowHeight = 250;
@@ -751,7 +756,7 @@ static NSString *cellIdentifier = @"tableViewCell";
 //tableView头部试图的懒加载
 - (UIView *)headerView{
     if (_headerView == nil) {
-        self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth,kHeight*1.1 )];
+        self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, kWidth,kHeight*1.1 )];
     }
     return _headerView;
 }

@@ -5,15 +5,32 @@
 //  Created by scjy on 16/3/27.
 //  Copyright © 2016年 SCJY. All rights reserved.
 //
-//http://api.breadtrip.com/trips/2387343240/waypoints/
+
 #import "specialViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "specialTableViewCell.h"
 #import "specialModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-@interface specialViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
+#import "WBPopMenuModel.h"
+#import "WBPopMenuSingleton.h"
+#import "WXApi.h"
+#import "WXApiObject.h"
+#import "AppDelegate.h"
+#import "WBHttpRequest+WeiboShare.h"
+#import "WeiboSDK.h"
+#import <MessageUI/MessageUI.h>
+#import "ProgressHUD.h"
+#import <BmobSDK/Bmob.h>
+#import "DataBaseManager.h"
+#import "MineViewController.h"
+@interface specialViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>{
+    NSString *_kURL;
+    NSInteger _likepage;
+    NSString *_objectID;
+}
 @property (nonatomic, strong) UITableView *tableView;
 //头部
+@property (nonatomic, strong) UIButton *shareBtn;
 @property (nonatomic, strong) UIView *headView;
 @property (nonatomic, retain) NSString *headImage;
 @property (nonatomic, retain) NSString *userImage;
@@ -22,14 +39,31 @@
 @property (nonatomic, strong) NSMutableArray *sectionArray;
 @property (nonatomic, strong) NSMutableArray *tableViewArray;
 @property (nonatomic, strong) NSMutableArray *daysArray;
-
+@property (nonatomic, strong) UIButton *likeBtn;
+@property (nonatomic, assign) BOOL exist;
 @end
 
 @implementation specialViewController
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+    self.shareBtn.hidden = NO;
+    self.likeBtn.hidden = NO;
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.shareBtn.hidden = YES;
+    self.likeBtn.hidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    _kURL = [NSString stringWithFormat:@"http://api.breadtrip.com/trips/%@/waypoints/",self.userId];
+    self.navigationController.navigationBar.tintColor = kCollectionColor;
+    [self showWhiteBackBtn];
+    [self shareRightBtn];
     self.tabBarController.tabBar.hidden = YES;
     [self workOne];
     [self.view addSubview:self.tableView];
@@ -37,8 +71,134 @@
     self.view.backgroundColor = kCollectionColor;
     //不让导航栏随着tableview上下滑动
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    _likepage = 0;
+    [self bmob];
 }
+- (void)bmob{
+    BmobUser *user = [BmobUser getCurrentUser];
+    BmobQuery *bquery = [BmobQuery queryWithClassName:@"like"];
+    //查询
+    if (user.username != nil) {
+        [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            for (BmobObject *obj in array) {
+                WLZLog(@"tavelLikeId==%@",[obj objectForKey:@"tavelLikeId"]);
+                WLZLog(@"userName == %@",[obj objectForKey:@"userName"]);
+                
+                NSMutableArray *group = [NSMutableArray new];
+                if ([[obj objectForKey:@"userName"]isEqualToString:user.username]) {
+                    [group addObject:[obj objectForKey:@"tavelLikeId"]];
+                    for (NSString *str in group) {
+                        if ([str isEqualToString: _kURL]) {
+                            _objectID = [obj objectForKey:@"objectId"];
+                            WLZLog(@"%@",_objectID);
+                            _likepage = 1;
+                            
+                        }
+                        
+                    }
+                }
+                
+            }
+            [self likeWay];
 
+        }];
+        
+    }
+    else{
+        
+        _likepage = 10;
+    }
+    
+    [self likeWay];
+
+}
+- (void)likeWay{
+    self.likeBtn.frame = CGRectMake(kWidth-70, 10, 24, 24);
+    if (_likepage == 1) {
+        [self.likeBtn setImage:[UIImage imageNamed:@"like2"] forState:UIControlStateNormal];
+    }else{
+        [self.likeBtn setImage:[UIImage imageNamed:@"like1"] forState:UIControlStateNormal];
+    }
+    
+    
+    [self.likeBtn addTarget:self action:@selector(like) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController.navigationBar addSubview:self.likeBtn];
+}
+- (void)like{
+        BmobUser *user = [BmobUser getCurrentUser];
+    if (_likepage == 0) {
+        [self.likeBtn setImage:[UIImage imageNamed:@"like2"] forState:UIControlStateNormal];
+        [ProgressHUD showSuccess:@"收藏成功"];
+        
+        BmobObject *obj = [BmobObject objectWithClassName:@"like"];
+        [obj setObject:user.username forKey:@"userName"];
+        [obj setObject:_kURL forKey:@"tavelLikeId"];
+        [obj saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+            if (isSuccessful) {
+                WLZLog(@"保存成功%@",obj);
+                [self bmob];
+                
+            }
+            else{
+                WLZLog(@"失败");
+            }
+        }];
+        
+        
+        _likepage = 1;
+    }
+    else if(_likepage == 1){
+        [self.likeBtn setImage:[UIImage imageNamed:@"like1"] forState:UIControlStateNormal];
+        
+        BmobObject *bmobObject = [BmobObject objectWithoutDatatWithClassName:@"like"  objectId:_objectID];
+        [bmobObject deleteInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
+            if (isSuccessful) {
+                //删除成功后的动作
+                NSLog(@"successful");
+            } else if (error){
+                NSLog(@"%@",error);
+            } else {
+                NSLog(@"UnKnow error");
+            }
+        }];
+        
+        
+        
+        _likepage = 0;
+
+    }
+    else if (_likepage == 10){
+        //提示框
+//        WLZLog(@"dsawdadw")
+       
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有登录，请先登录" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                self.tabBarController.selectedIndex = 4;
+//                WLZLog(@"sasdadad");
+            }];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            
+            [alert addAction:sureAction];
+            [alert addAction:cancelAction];
+            //添加提示框
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            
+        
+
+        
+        
+    }
+}
+- (void)shareRightBtn{
+    self.shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.shareBtn.frame = CGRectMake(kWidth-35, 10, 24, 24);
+    [self.shareBtn setImage:[UIImage imageNamed:@"sharePicture"] forState:UIControlStateNormal];
+    [self.shareBtn addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController.navigationBar addSubview:self.shareBtn];
+}
 - (void)headWay{
     //得到图片的路径
     NSString *path = [[NSBundle mainBundle] pathForResource:@"follow" ofType:@"gif"];
@@ -97,10 +257,11 @@
 
 - (void)workOne{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:[NSString stringWithFormat:@"http://api.breadtrip.com/trips/%@/waypoints/",self.userId] parameters:self.userId progress:^(NSProgress * _Nonnull downloadProgress) {
+
+    [manager GET:_kURL parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
 //        WLZLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        //WLZLog(@"%@",responseObject);
+        WLZLog(@"%@",responseObject);
         NSDictionary *rootDic = responseObject;
         //头部图片
         self.headImage = rootDic[@"trackpoints_thumbnail_image"];
@@ -208,7 +369,7 @@
 - (UITableView *)tableView{
     if (_tableView == nil) {
         self.tableView = [[UITableView alloc]
-                          initWithFrame:CGRectMake(0, 0, kWidth, kHeight)style:UITableViewStylePlain];
+                          initWithFrame:CGRectMake(0, 0, kWidth, kHeight-64)style:UITableViewStylePlain];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
 //        self.tableView.rowHeight = 375;
@@ -236,6 +397,111 @@
         self.sectionArray = [NSMutableArray new];
     }
     return _sectionArray;
+}
+
+
+////分享
+- (void)share{
+    
+    NSMutableArray *obj = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < [self titles].count; i++) {
+        WBPopMenuModel *info = [WBPopMenuModel new];
+        
+        info.title = [self titles][i];
+        [obj addObject:info];
+    }
+    [[WBPopMenuSingleton shareManager] showPopMenuSelecteWithFrame:160 item:obj action:^(NSInteger index) {
+        //       NSLog(@"index:%ld",(long)index);
+        switch ((long)index) {
+            case 0:
+                //微信分享
+                [self weixinShare];
+                break;
+            case 1:
+                //朋友圈分享
+                [self friendShare];
+                break;
+            case 2:
+                //微博分享
+                [self weiboShare];
+                break;
+            default:
+                break;
+        }
+        
+        
+    }];
+    
+}
+- (void)friendShare{
+    WXMediaMessage *message = [WXMediaMessage message];
+    [message setThumbImage:[UIImage imageNamed:@""]];
+    
+    WXImageObject *ext = [WXImageObject object];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"001" ofType:@".jpg"];
+    
+    ext.imageData = [NSData dataWithContentsOfFile:filePath];
+    
+    
+    UIImage* image = [UIImage imageWithData:ext.imageData];
+    ext.imageData = UIImagePNGRepresentation(image);
+    
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    
+    //朋友圈
+    req.scene =WXSceneTimeline;
+    
+    [WXApi sendReq:req];
+}
+- (void)weixinShare{
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.text = @"follow";
+    req.bText = YES;
+    req.scene = WXSceneSession;
+    [WXApi sendReq:req];
+}
+
+
+- (void)weiboShare{
+    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+    authRequest.redirectURI = kWeiboRedirectURI;
+    authRequest.scope = @"all";
+    
+    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:[self messageToShare] authInfo:authRequest access_token:myDelegate.wbtoken];
+    request.userInfo = @{@"ShareMessageFrom": @"SendMessageToWeiboViewController",
+                         @"Other_Info_1": [NSNumber numberWithInt:123],
+                         @"Other_Info_2": @[@"obj1", @"obj2"],
+                         @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
+    request.shouldOpenWeiboAppInstallPageIfNotInstalled = NO;
+    [WeiboSDK sendRequest:request];
+}
+- (WBMessageObject *)messageToShare{
+    WBMessageObject *message = [WBMessageObject message];
+    message.text = NSLocalizedString(@"更多美食尽在 吃货伙伴app 我在吃货伙伴等你哦！！！", nil);
+    return message;
+}
+
+- (NSArray *) titles {
+    return @[@"微信分享",
+             @"朋友圈分享",
+             @"微博分享"
+             ];
+}
+- (UIButton *)likeBtn{
+    if (_likeBtn == nil) {
+        self.likeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+
+    }
+    return _likeBtn;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
