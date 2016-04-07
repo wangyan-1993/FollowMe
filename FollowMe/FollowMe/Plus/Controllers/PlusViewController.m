@@ -122,7 +122,7 @@
     if (imageArray != nil) {
         [allArray addObject:imageArray];
     }else{
-        [allArray addObject:@[@"http://file.bmob.cn/M03/05/18/oYYBAFb6hRuAIYwqAABd6nKUys06100.da"]];
+        [allArray addObject:@[@"http://photos.breadtrip.com/hunter/product/cover/121607_o_1addme3l77n826j1vcn1o3h7ght.jpg?imageView2/5/w/788/h/426/format/jpg/interlace/1/"]];
     }
 
     if (![string isEqualToString:@""]) {

@@ -192,7 +192,7 @@
     [header addSubview:label];
     
 
-    UILabel *personalLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, kWidth/2 + 45, kWidth, 30)];
+    UILabel *personalLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, kWidth/2 + 30 , kWidth, 30)];
     personalLabel.text = self.personal;
     personalLabel.textAlignment = NSTextAlignmentCenter;
     personalLabel.textColor = [UIColor whiteColor];
